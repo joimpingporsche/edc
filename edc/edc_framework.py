@@ -273,8 +273,8 @@ class EDC:
         if free_model:
             logger.info(f"Freeing model {self.sc_embedder_name, self.sc_llm_name} as it is no longer needed")
             llm_utils.free_model(sc_embedder)
-            llm_utils.free_model(sc_verify_model, sc_verify_tokenizer)
-            del self.loaded_model_dict[self.sc_llm_name]
+            #llm_utils.free_model(sc_verify_model, sc_verify_tokenizer)
+           # del self.loaded_model_dict[self.sc_llm_name]
 
         return canonicalized_triplets_list, canon_candidate_dict_per_entry_list
 
