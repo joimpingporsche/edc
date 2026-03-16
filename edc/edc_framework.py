@@ -421,10 +421,10 @@ class EDC:
     def extract_kg(self, input_text_list: List[str], output_dir: str = None, refinement_iterations=0):
         if output_dir is not None:
             if os.path.exists(output_dir):
-                logger.error(f"Output directory {output_dir} already exists! Quitting.")
-                exit()
-            for iteration in range(refinement_iterations + 1):
-                pathlib.Path(f"{output_dir}/iter{iteration}").mkdir(parents=True, exist_ok=True)
+                logger.warning(f"Output directory {output_dir} already exists! Ergebnisse werden überschrieben oder ergänzt.")
+            else:
+                for iteration in range(refinement_iterations + 1):
+                    pathlib.Path(f"{output_dir}/iter{iteration}").mkdir(parents=True, exist_ok=True)
 
 
         # EDC run

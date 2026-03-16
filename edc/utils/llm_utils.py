@@ -1,5 +1,5 @@
 import os
-import openai
+from langchain_openai import AzureChatOpenAI
 import time
 from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
 import ast
@@ -162,18 +162,32 @@ def generate_completion_transformers(
 
 
 def openai_chat_completion(model, system_prompt, history, temperature=0, max_tokens=512):
-    openai.api_key = os.environ["OPENAI_KEY"]
-    response = None
+    """
+    Führt einen Chat-Completion-Aufruf ausschließlich über Azure OpenAI (langchain_openai) aus.
+    Erwartet folgende Umgebungsvariablen:
+      - AZURE_OPENAI_API_KEY
+      - AZURE_OPENAI_ENDPOINT (z.B. https://<resource>.openai.azure.com/)
+      - AZURE_OPENAI_API_VERSION (z.B. 2023-05-15)
+    """
+    api_key = os.environ["AZURE_OPENAI_API_KEY"]
+    endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
+    api_version = os.environ.get("AZURE_OPENAI_API_VERSION", "2023-05-15")
+    print(f"[LLM-API-CALL] Azure OpenAI Call: model={model}, max_tokens={max_tokens}, temperature={temperature}")
+    print(f"[LLM-API-CALL] Azure OpenAI Endpoint: {endpoint}, API Version: {api_version}")
+    llm = AzureChatOpenAI(
+        model_name=model,
+        azure_endpoint=endpoint,
+        api_version=api_version,
+        api_key=api_key,
+        temperature=temperature,
+        max_tokens=max_tokens,
+    )
     if system_prompt is not None:
         messages = [{"role": "system", "content": system_prompt}] + history
     else:
         messages = history
-    while response is None:
-        try:
-            response = openai.chat.completions.create(
-                model=model, messages=messages, temperature=temperature, max_tokens=max_tokens
-            )
-        except Exception as e:
-            time.sleep(5)
-    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {response.choices[0].message.content}")
-    return response.choices[0].message.content
+    print(f"[LLM-API-CALL] Azure OpenAI Call: model={model}, max_tokens={max_tokens}, temperature={temperature}")
+    response = llm.invoke(messages)
+    content = response.content if hasattr(response, "content") else str(response)
+    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {content}")
+    return content
