@@ -1,0 +1,124 @@
+Subscription Roles in LeanIX
+[TABLE_JSON_START]
+[
+{"content": "• Rollenmodel in LeanIX o Benutzerrollen o Subscription Roles"}
+]
+[TABLE_JSON_END]
+Rollenmodel in LeanIX
+Benutzerrollen
+Obwohl LeanIX nach dem Wiki-Prinzip arbeitet, ist es möglich, die Arbeit mit LeanIX über ein
+einfaches Rollenmodell einzuschränken. In LeanIX können die folgenden Rollen zugewiesen
+werden.
+[TABLE_JSON_START]
+[
+{"role": "Viewer", "description": "Benutzer mit dieser Rolle haben nur lesenden Zugriff auf Fact Sheets", "user_group": "Audits, External"},
+{"role": "Member", "description": "Dies ist die Standart Bearbeiter Rolle in LeanIX. • Mit dieser Rolle kann auf alle Fact Sheets schreibgeschützt zugegriffen werden • Fact Sheets können bearbeitet werden • Diverse Fact Sheet Typen können erstellt werden.", "user_group": "Alle Porsche Mitarbeiter / Digital Family"},
+{"role": "Export User", "description": "Export Benutzer haben neben den Standard Bearbeiter Rechten, zusätzlich die Möglichkeit Fact Sheets zu exportieren.", "user_group": "Ausgewählte Porsche- Mitarbeiter (eine separate Bewerbung ist erforderlich)"},
+{"role": "Key User", "description": "Key User haben neben den Standard Bearbeiter Rechten, die zusätzliche Möglichkeit, Business Capabilities zu erstellen und zu bearbeiten.", "user_group": "Ausgewählte Porsche- Mitarbeiter"}
+]
+[TABLE_JSON_END]
+[TABLE_JSON_START]
+[
+{"security_officer": "Architects", "security_officer_haben_neben_den_standard_bearbeiter_rechten_das_recht_diverse_sicherheitsattribute_auf_einem_it_product_fact_sheets_zu_bearbeiten_nur_zulssig_wenn_keine_befllung_ber_itsa_mglich_ist": "Architekten haben neben den Standard Bearbeiter Rechten, das Recht Fact Sheets des Typen \"IT Component\" und \"Tech Stack\" initial erstellen zu können und Fact Sheets exportieren zu können.", "ausgewhlte_porsche_mitarbeiter_werden_in_der_regel_nicht_an_einzelpersonen_im_pag_vergeben": "Ausgewählte Porsche- Mitarbeiter mit einer Architekten Rolle"},
+{"security_officer": "Admin", "security_officer_haben_neben_den_standard_bearbeiter_rechten_das_recht_diverse_sicherheitsattribute_auf_einem_it_product_fact_sheets_zu_bearbeiten_nur_zulssig_wenn_keine_befllung_ber_itsa_mglich_ist": "Admin-Benutzer haben vollen Zugriff auf alle Funktionen, Bereiche und Fact Sheets von LeanIX.", "ausgewhlte_porsche_mitarbeiter_werden_in_der_regel_nicht_an_einzelpersonen_im_pag_vergeben": "LeanIX Core Team (DevOps)"},
+{"security_officer": "Pfiftyone", "security_officer_haben_neben_den_standard_bearbeiter_rechten_das_recht_diverse_sicherheitsattribute_auf_einem_it_product_fact_sheets_zu_bearbeiten_nur_zulssig_wenn_keine_befllung_ber_itsa_mglich_ist": "Die Rolle \"PFIFTYONE\" ist für Personen bestimmt, die berechtigt sind, zu definieren, was eine P51-App ist und was nicht. Laut Christopher Zech dürfen nur bestimmte Personen die Informationen und Zuordnungen (Zuordnung HA-Abteilung) durchführen.", "ausgewhlte_porsche_mitarbeiter_werden_in_der_regel_nicht_an_einzelpersonen_im_pag_vergeben": "Ausgewählte Porsche- Mitarbeiter (werden in der Regel nicht an Einzelpersonen im PAG vergeben)."}
+]
+[TABLE_JSON_END]
+Subscription Roles
+Funktionale Rollen werden in LeanIX über Abonnements zugewiesen und verwaltet. Diese legen
+fest, wer für ein Fact Sheet wie ein IT Product, eine IT Component, einen Tech Stack etc.
+operativ verantwortlich ist.
+Zudem ist nur der Person mit einer "Responsible" Rolle möglich das Quality Seal eines Fact
+Sheets zu setzen.
+[TABLE_JSON_START]
+[
+{"fact_sheet": "ADR", "subscription_type": "All", "name": "Chief Architect (SAFe)"},
+{"fact_sheet": "ADR", "subscription_type": "All", "name": "Enterprise Architect (SAFe)"},
+{"fact_sheet": "ADR", "subscription_type": "All", "name": "System Architect (SAFe)"}
+]
+[TABLE_JSON_END]
+[TABLE_JSON_START]
+[
+{"column_1": "", "all": "Responsible", "tech_lead_safe": "Owner (non SAFe)"},
+{"column_1": "", "all": "Observer", "tech_lead_safe": "Observer (non SAFe)"},
+{"column_1": "O bjective", "all": "All", "tech_lead_safe": "Business Owner (SAFe)"},
+{"column_1": "O bjective", "all": "All", "tech_lead_safe": "Chief Architect (SAFe)"},
+{"column_1": "O bjective", "all": "All", "tech_lead_safe": "Enterprise Architect (SAFe)"},
+{"column_1": "O bjective", "all": "All", "tech_lead_safe": "Product Management (SAFe)"},
+{"column_1": "O bjective", "all": "All", "tech_lead_safe": "Product Owner (SAFe)"},
+{"column_1": "O bjective", "all": "Responsible", "tech_lead_safe": "Owner (non SAFe)"},
+{"column_1": "O bjective", "all": "Observer", "tech_lead_safe": "Observer (non SAFe)"},
+{"column_1": "I nitiative", "all": "All", "tech_lead_safe": "Business Owner (SAFe)"},
+{"column_1": "I nitiative", "all": "All", "tech_lead_safe": "Chief Architect (SAFe)"},
+{"column_1": "I nitiative", "all": "All", "tech_lead_safe": "Enterprise Architect (SAFe)"},
+{"column_1": "I nitiative", "all": "All", "tech_lead_safe": "Product Management (SAFe)"},
+{"column_1": "I nitiative", "all": "All", "tech_lead_safe": "Product Owner (SAFe)"},
+{"column_1": "I nitiative", "all": "Responsible", "tech_lead_safe": "Owner (non SAFe)"},
+{"column_1": "I nitiative", "all": "Observer", "tech_lead_safe": "Observer (non SAFe)"},
+{"column_1": "Business Capability", "all": "All", "tech_lead_safe": "Chief Architect (SAFe)"}
+]
+[TABLE_JSON_END]
+[TABLE_JSON_START]
+[
+{"column_1": "", "all": "Responsible", "enterprise_architect_safe": "Owner (non SAFe)"},
+{"column_1": "", "all": "Observer", "enterprise_architect_safe": "Observer (non SAFe)"},
+{"column_1": "Process", "all": "Responsible", "enterprise_architect_safe": "Owner (non SAFe)"},
+{"column_1": "Process", "all": "Observer", "enterprise_architect_safe": "Observer (non SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "Business Owner (SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "Chief Architect (SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "Enterprise Architect (SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "Product Management (SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "Product Owner (SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "System Architect (SAFe)"},
+{"column_1": "User Group", "all": "All", "enterprise_architect_safe": "Tech Lead (SAFe)"},
+{"column_1": "User Group", "all": "Responsible", "enterprise_architect_safe": "Owner (non SAFe)"},
+{"column_1": "User Group", "all": "Observer", "enterprise_architect_safe": "Observer (non SAFe)"},
+{"column_1": "Digital Solution", "all": "All", "enterprise_architect_safe": "Business Owner (SAFe)"},
+{"column_1": "Digital Solution", "all": "All", "enterprise_architect_safe": "Chief Architect (SAFe)"},
+{"column_1": "Digital Solution", "all": "All", "enterprise_architect_safe": "Enterprise Architect (SAFe)"},
+{"column_1": "Digital Solution", "all": "All", "enterprise_architect_safe": "Product Management (SAFe)"}
+]
+[TABLE_JSON_END]
+[TABLE_JSON_START]
+[
+{"column_1": "", "all": "Responsible", "system_architect_safe": "Owner (non SAFe)"},
+{"column_1": "", "all": "Observer", "system_architect_safe": "Observer (non SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "Business Owner (SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "Chief Architect (SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "Enterprise Architect (SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "Product Management (SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "Product Owner (SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "System Architect (SAFe)"},
+{"column_1": "IT Product", "all": "All", "system_architect_safe": "Tech Lead (SAFe)"},
+{"column_1": "IT Product", "all": "Responsible", "system_architect_safe": "Owner (non SAFe)"},
+{"column_1": "IT Product", "all": "Observer", "system_architect_safe": "Observer (non SAFe)"},
+{"column_1": "Interface", "all": "All", "system_architect_safe": "Chief Architect (SAFe)"},
+{"column_1": "Interface", "all": "All", "system_architect_safe": "Enterprise Architect (SAFe)"},
+{"column_1": "Interface", "all": "All", "system_architect_safe": "Product Owner (SAFe)"},
+{"column_1": "Interface", "all": "All", "system_architect_safe": "System Architect (SAFe)"},
+{"column_1": "Interface", "all": "All", "system_architect_safe": "Tech Lead (SAFe)"},
+{"column_1": "Interface", "all": "Responsible", "system_architect_safe": "Owner (non SAFe)"},
+{"column_1": "Interface", "all": "Observer", "system_architect_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[TABLE_JSON_START]
+[
+{"it_component": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"},
+{"it_component": "", "all": "All", "chief_architect_safe": "Product Owner (SAFe)"},
+{"it_component": "", "all": "All", "chief_architect_safe": "System Architect (SAFe)"},
+{"it_component": "", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"},
+{"it_component": "", "all": "Responsible", "chief_architect_safe": "Technical Responsible (non SAFe)"},
+{"it_component": "", "all": "Responsible", "chief_architect_safe": "Business Responsible (non SAFe)"},
+{"it_component": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"},
+{"it_component": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"},
+{"it_component": "Vendor", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"},
+{"it_component": "Vendor", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"},
+{"it_component": "Tech Capability", "all": "All", "chief_architect_safe": "Chief Architect (SAFe)"},
+{"it_component": "Tech Capability", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"},
+{"it_component": "Tech Capability", "all": "All", "chief_architect_safe": "System Architect (SAFe)"},
+{"it_component": "Tech Capability", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"},
+{"it_component": "Tech Capability", "all": "Responsible", "chief_architect_safe": "Business Responsible (non SAFe)"},
+{"it_component": "Tech Capability", "all": "Responsible", "chief_architect_safe": "Technical Responsible (non SAFe)"},
+{"it_component": "Tech Capability", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"}
+]
+[TABLE_JSON_END]

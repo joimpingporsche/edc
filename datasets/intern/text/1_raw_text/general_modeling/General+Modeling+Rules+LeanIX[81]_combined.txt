@@ -1,0 +1,416 @@
+=== PAGE 1 ===
+General Modeling Rules LeanIX
+
+[TABLE_JSON_START]
+[
+  {
+    "content": "• Overview • General Modeling Rules o 📘Subscriptions § 🔹 Responsibility Requirement § 🔹 Change of Responsibility § 🔹 Automated Quality Checks o 📘 Lifecycle Management in LeanIX Fact Sheets § 🔹 Recommended Practice § 🔹 Benefits o 📘Organizational Responsibilities § Responsibility at the Organizational Structure Level § 🔹 Example § 🔹 Key Principles § Responsibility at the Process Organization Level § 🔹 Assignment Guidelines § 🔹 Key Principles o 📘 Modeling Version History with Successor and Predecessor Relations § Best Practice for Unused Relations § 🔹 Key Principles o 📘 Modeling Hierarchies with Parent/Child Relations in LeanIX § 🔹 Usage Guidelines § 🔹 Special Rule for IT Products § 🔹 Best Practices § 🔹 Benefits • 📊 LLM-Ready Structure Summary (LeanIX Modeling Guidelines)"
+  }
+]
+[TABLE_JSON_END]
+
+Overview
+
+The following modeling guidelines apply to all fact sheets that can be created by a user with the
+
+standard member role. These modelling guidelines must be observed and followed in any case.
+
+The implementation of the guidelines is tracked and tracked as part of the regular quality
+
+assurance measures.
+
+If you have any questions about the guidelines described or if you need support, LeanIX support
+
+will be happy to help!
+
+=== PAGE 2 ===
+General Modeling Rules
+
+📘Subscriptions
+
+In LeanIX, subscriptions are used to assign individuals and roles to a Fact Sheet. There are two
+
+main types of subscriptions:
+
+• Responsible: Individuals accountable for the content and maintenance of the Fact Sheet.
+
+• Observer: Individuals who are informed but not responsible for the content.
+
+The specific roles that can be assigned to a Fact Sheet are defined in the modeling guidelines for
+
+each Fact Sheet type.
+
+🔹 Responsibility Requirement
+
+Each Fact Sheet must have at least one person assigned as Responsible. This person (or
+
+persons):
+
+• Is accountable for the accuracy, completeness, and currency of the Fact Sheet.
+
+• Receives notifications about changes to the Fact Sheet.
+
+• Acts as the primary contact for questions, clarifications, or requirements related to the
+
+Fact Sheet.
+
+🔹 Change of Responsibility
+
+If a Responsible person:
+
+• Changes roles,
+
+• Leaves the company or department,
+
+• Or is no longer involved with the Fact Sheet,
+
+…it is their duty to ensure a successor is assigned to maintain the Fact Sheet.
+
+🔹 Automated Quality Checks
+
+LeanIX includes automated processes to ensure data quality. These processes include:
+
+1. Inactive Responsible Person
+
+If a Responsible person is no longer active in the company or subsidiary (e.g., due to
+
+departure), the system checks for other Responsible persons:
+
+o If none exist, the direct manager of the former Responsible is identified and
+
+automatically assigned as the new Responsible.
+
+=== PAGE 3 ===
+o The manager also receives a To-Do to assign a new, appropriate Responsible
+
+person.
+
+o This escalation continues up to the department head level if necessary.
+
+2. No Responsible Assigned
+
+If no Responsible is assigned to a Fact Sheet:
+
+o The system uses the "Responsible IT Department" relation to identify the
+
+appropriate manager.
+
+o This manager is then assigned as the Responsible person and is expected
+
+to nominate a qualified business owner.
+
+📘 Lifecycle Management in LeanIX Fact Sheets
+
+Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment
+
+is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+
+🔹 Recommended Practice
+
+Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the
+
+following information:
+
+• Start of productive use (Go-Live date)
+
+• Decommissioning date (if known)
+
+Depending on the desired level of detail, additional lifecycle milestones can also be modeled
+
+(e.g., development start, pilot phase, sunset planning).
+
+🔹 Benefits
+
+Accurate lifecycle data supports:
+
+• Strategic planning and portfolio management
+
+• Compliance with regulatory and audit requirements
+
+• Impact analysis for changes and decommissioning
+
+• Architecture governance across all layers
+
+📘Organizational Responsibilities
+
+Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This
+
+responsibility can be defined at two levels:
+
+=== PAGE 4 ===
+• Organizational Structure Level (e.g., departments, business units)
+
+• Process Organization Level (e.g., Agile Release Trains, portfolios)
+
+For certain Fact Sheet types, a distinction may also be made between functional (business)
+
+responsibility and technical (IT) responsibility.
+
+✅ At least one form of responsibility must be specified—either at the
+
+organizational structure level or the process organization level.
+
+🔄 Ideally, both levels should be documented to ensure full traceability and
+
+accountability.
+
+⚠ If IT responsibility is defined as mandatory in the modeling guidelines for
+
+a specific Fact Sheet type, it must be provided without exception.
+
+Responsibility at the Organizational Structure Level
+
+At Porsche, the organizational structure is defined by the official organizational chart, which
+
+organizes the company into hierarchical levels such as:
+
+• Division
+
+• Main Department
+
+• Department
+
+• Subdepartment (lowest level)
+
+In LeanIX modeling, unless explicitly stated otherwise, responsibility must
+
+always be assigned to the lowest available level of the organizational structure.
+
+🔹 Example
+
+If an IT Product is operationally managed by the FDB1 department, then the organizational
+
+Fact Sheet for FDB1 must be assigned in LeanIX as the responsible unit.
+
+❌ Assigning the higher-level unit FDB would be incorrect and violate modeling
+
+standards.
+
+🔹 Key Principles
+
+• Always reference the most granular organizational unit available.
+
+• Ensure that the assigned unit reflects the actual operational responsibility.
+
+• This ensures clear accountability, accurate reporting, and effective governance.
+
+=== PAGE 5 ===
+Responsibility at the Process Organization Level
+
+Many IT products and applications at Porsche are developed and operated by Agile Release
+
+Trains (ARTs). Others are managed within specific portfolios.
+
+🔹 Assignment Guidelines
+
+• If an ART is responsible for a product (or any other relevant Fact Sheet type), this
+
+responsibility must be explicitly documented in LeanIX by assigning the corresponding
+
+ART Fact Sheet.
+
+• If the responsibility lies with a single portfolio—as is often the case with P51
+
+applications—then assigning the portfolio is sufficient.
+
+✅ Always ensure that the assigned ART or portfolio accurately reflects
+
+the operational ownership of the product.
+
+🔹 Key Principles
+
+• Use the ART Fact Sheet when agile teams are responsible for development and
+
+operations.
+
+• Use the Portfolio Fact Sheet when responsibility is anchored in a business or IT
+
+portfolio.
+
+• This ensures clear accountability, supports agile governance, and aligns with LeanIX
+
+modeling standards.
+
+Please note
+
+Only organizational fact sheets that are tagged with "Synced" or "Manual" may be used! The
+
+use of fact sheets with the tag "Legacy" is not allowed!
+
+📘 Modeling Version History with Successor and
+
+Predecessor Relations
+
+In LeanIX, the Successor and Predecessor relations are used to model the version history of
+
+Fact Sheets over time.
+
+These relations should be applied whenever a new version of an existing Fact Sheet is created
+
+to replace an older version.
+
+=== PAGE 6 ===
+✅ Successor relations can also be used while the previous version is still
+
+active and in productive use.
+
+Best Practice for Unused Relations
+
+If no predecessor or successor exists for a given Fact Sheet, it is recommended to explicitly set
+
+the relation field to:
+
+“Leave empty”
+
+This ensures clarity in the data model and avoids ambiguity in version tracking.
+
+🔹 Key Principles
+
+• Use Successor/Predecessor to document version transitions.
+
+• Apply even if the older version is still operational.
+
+• If not applicable, set the relation field to “Leave empty” instead of leaving it undefined.
+
+📘 Modeling Hierarchies with Parent/Child Relations in
+
+LeanIX
+
+In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These
+
+relations help structure complex systems, portfolios, or organizational units by defining logical
+
+containment or ownership hierarchies.
+
+🔹 Usage Guidelines
+
+• A Parent Fact Sheet represents a higher-level entity that logically contains or governs
+
+one or more Child Fact Sheets.
+
+• A Child Fact Sheet is a subordinate entity that inherits context or structure from its
+
+parent.
+
+This relation is commonly used in the following scenarios:
+
+=== PAGE 7 ===
+[TABLE_JSON_START]
+[
+  {
+    "use_case": "Application Suite",
+    "parent_type": "Application",
+    "child_type": "Application"
+  },
+  {
+    "use_case": "Platform Composition",
+    "parent_type": "Platform",
+    "child_type": "IT Component"
+  },
+  {
+    "use_case": "Organizational Hierarchy",
+    "parent_type": "Organization Unit",
+    "child_type": "Sub-Unit"
+  },
+  {
+    "use_case": "Portfolio Structure",
+    "parent_type": "Portfolio",
+    "child_type": "Product / Application"
+  }
+]
+[TABLE_JSON_END]
+
+🔹 Special Rule for IT Products
+
+⚠ For the Fact Sheet type "IT Product", the Parent/Child relation must only
+
+be used after prior consultation with the responsible Portfolio Architect and
+
+the LeanIX team.
+
+This ensures that hierarchical modeling aligns with enterprise architecture
+
+principles and avoids misrepresentation of product structures.
+
+🔹 Best Practices
+
+• Use Parent/Child relations to group related Fact Sheets under a common context.
+
+• Ensure that the hierarchy reflects actual ownership or architectural structure.
+
+• Avoid circular or ambiguous relationships.
+
+• Document the rationale for the hierarchy in the description field of the Fact Sheet if
+
+needed.
+
+• ✅ If the Parent/Child relation is not applicable, explicitly set the field to “Leave
+
+empty” to ensure clarity and data quality.
+
+🔹 Benefits
+
+• Improves navigability and traceability in LeanIX.
+
+• Supports impact analysis and portfolio planning.
+
+• Enables structured reporting and governance alignment.
+
+LLM-Ready Structure Summary
+
+📊 LLM-Ready Structure Summary (LeanIX
+
+Modeling Guidelines)
+
+=== PAGE 8 ===
+[TABLE_JSON_START]
+[
+  {
+    "topic": "Subscriptions",
+    "key_concepts": "Responsible & Observer roles for Fact Sheets",
+    "rules__requirements": "- Each Fact Sheet must have at least one Responsible person - Responsible receives notifications and acts as contact",
+    "best_practices": "- Assign successors when roles change - Use automated checks to maintain data quality",
+    "exceptions__warnings": "- If no Responsible exists, system escalates to manager or department head",
+    "benefits": "- Ensures accountability - Maintains data accuracy - Supports governance"
+  },
+  {
+    "topic": "Lifecycle Management",
+    "key_concepts": "Lifecycle phases: Go-Live, Decommissioning, etc.",
+    "rules__requirements": "- Lifecycle assignment may be mandatory depending on Fact Sheet type",
+    "best_practices": "- Always provide Go-Live and Decommissioning dates - Include additional milestones if relevant",
+    "exceptions__warnings": "- None specified",
+    "benefits": "- Supports strategic planning - Enables impact analysis - Ensures compliance"
+  },
+  {
+    "topic": "Organizational Responsibilities",
+    "key_concepts": "Structure vs. Process-level responsibility",
+    "rules__requirements": "- At least one responsibility must be defined - IT responsibility mandatory if modeling guidelines require it",
+    "best_practices": "- Assign to lowest organizational level (e.g., Subdepartment) - Use ART or Portfolio Fact Sheets for process-level responsibility",
+    "exceptions__warnings": "- Do not assign higher-level units (e.g., FDB instead of FDB1) - Only use Fact Sheets tagged \"Synced\" or \"Manual\"",
+    "benefits": "- Enables traceability - Aligns with governance - Improves reporting"
+  },
+  {
+    "topic": "Version History",
+    "key_concepts": "Successor / Predecessor relations",
+    "rules__requirements": "- Use when creating new versions of Fact Sheets - Apply even if older version is still active",
+    "best_practices": "- If not applicable, explicitly set field to “Leave empty”",
+    "exceptions__warnings": "- Leaving field undefined causes ambiguity",
+    "benefits": "- Clarifies version transitions - Improves data quality"
+  }
+]
+[TABLE_JSON_END]
+
+=== PAGE 9 ===
+[TABLE_JSON_START]
+[
+  {
+    "topic": "Hierarchies",
+    "key_concepts": "Parent / Child relations",
+    "rules__requirements": "- Parent = higher-level entity - Child = subordinate entity",
+    "best_practices": "- Use for grouping related Fact Sheets - Document rationale in description field - Explicitly set to “Leave empty” if not applicable",
+    "exceptions__warnings": "- For IT Products, use only after consulting Portfolio Architect and LeanIX team - Avoid circular or ambiguous relationships",
+    "benefits": "- Improves navigability - Enables structured reporting - Supports impact analysis"
+  }
+]
+[TABLE_JSON_END]
+

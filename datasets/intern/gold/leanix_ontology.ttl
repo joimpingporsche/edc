@@ -1,0 +1,2758 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix leanix: <https://example.org/ont/leanix#> .
+@prefix lxc: <https://example.org/ont/leanix/lifecycle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/ont/leanix>
+    rdf:type owl:Ontology ;
+    dct:title "LeanIX Enterprise Architecture Ontology"@en ;
+    dct:description "Core classes and properties from LeanIX metamodel."@en ;
+    owl:versionInfo "v0.1.0" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://example.org/ont/leanix#LXO0001
+
+leanix:LXO0001 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0031 , leanix:LXO0059 ;
+    rdfs:comment "Architecture Decision Records (ADR): collection of decision artefacts capturing architectural choices and their rationale.@en"@en ;
+    rdfs:label "ADR@en"@en .
+
+###  https://example.org/ont/leanix#LXO0006
+
+leanix:LXO0006 rdf:type owl:Class ;
+    rdfs:comment "Strategic layer defining objectives, initiatives and transformation direction.@en"@en ;
+    rdfs:label "Architecture Vision@en"@en .
+
+###  https://example.org/ont/leanix#LXO0007
+
+leanix:LXO0007 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0006 , leanix:LXO0059 ;
+    rdfs:comment "Objectives serve as clear targets that provide direction and focus for activities. (source LeanIX)@en"@en ;
+    rdfs:label "Objective@en"@en .
+
+###  https://example.org/ont/leanix#LXO0008
+
+leanix:LXO0008 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0006 ;
+    rdfs:comment "Structured endeavor aimed at driving change or improvement (source LeanIX).@en"@en ;
+    rdfs:label "Initiative@en"@en .
+
+###  https://example.org/ont/leanix#LXO0009
+
+leanix:LXO0009 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0006 ;
+    rdfs:comment "Planned architectural or product evolution artifact (distinct from lifecycle state usage).@en"@en ;
+    rdfs:label "Plan@en"@en .
+
+###  https://example.org/ont/leanix#LXO0010
+
+leanix:LXO0010 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0006 ;
+    rdfs:comment "Time-phased sequence of planned architectural or solution milestones.@en"@en ;
+    rdfs:label "Roadmap@en"@en .
+
+###  https://example.org/ont/leanix#LXO0011
+
+leanix:LXO0011 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0006 , leanix:LXO0059 ;
+    rdfs:comment "Temporary organization established to deliver a defined architectural change.@en"@en ;
+    rdfs:label "Project@en"@en .
+
+###  https://example.org/ont/leanix#LXO0012
+
+leanix:LXO0012 rdf:type owl:Class ;
+    rdfs:comment "Structured framework for processes, capabilities and IT alignment. (source LeanIX)@en"@en ;
+    rdfs:label "Business Architecture@en"@en .
+
+###  https://example.org/ont/leanix#LXO0013
+
+leanix:LXO0013 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0012 ;
+    rdfs:comment "Container for architecture elements enabling hierarchy and ownership analysis. (source LeanIX)@en"@en ;
+    rdfs:label "Organization@en"@en .
+
+###  https://example.org/ont/leanix#LXO0014
+
+leanix:LXO0014 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0012 , leanix:LXO0059 ;
+    rdfs:comment "Abstract representation of business ability independent of structure or technology. (source LeanIX)@en"@en ;
+    rdfs:label "Business Capability@en"@en .
+
+###  https://example.org/ont/leanix#LXO0015
+
+leanix:LXO0015 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0014 ;
+    rdfs:comment "Group/category abstraction bundling related business capabilities.@en"@en ;
+    rdfs:label "Capability Category@en"@en .
+
+###  https://example.org/ont/leanix#LXO0016
+
+leanix:LXO0016 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0014 ;
+    rdfs:comment "Finer-grained capability element refining a parent business capability.@en"@en ;
+    rdfs:label "Sub Capability@en"@en .
+
+###  https://example.org/ont/leanix#LXO0017
+
+leanix:LXO0017 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0012 , leanix:LXO0059 ;
+    rdfs:comment "Structured set of activities achieving defined business goals. (source LeanIX)@en"@en ;
+    rdfs:label "Process@en"@en .
+
+###  https://example.org/ont/leanix#LXO0018
+
+leanix:LXO0018 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0012 ;
+    rdfs:comment "Discrete unit of business functionality accessible via defined interfaces. (source LeanIX)@en"@en ;
+    rdfs:label "Business Service@en"@en .
+
+###  https://example.org/ont/leanix#LXO0019
+
+leanix:LXO0019 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0012 ;
+    rdfs:comment "Specific business scenario where capabilities or IT products deliver value. (source LeanIX)@en"@en ;
+    rdfs:label "Business Use Case@en"@en .
+
+###  https://example.org/ont/leanix#LXO0020
+
+leanix:LXO0020 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0012 , leanix:LXO0021 ;
+    rdfs:comment "Business-relevant information entity used in processes and applications. (no explicit description found; placeholder)@en"@en ;
+    rdfs:label "Information Object@en"@en .
+
+###  https://example.org/ont/leanix#LXO0021
+
+leanix:LXO0021 rdf:type owl:Class ;
+    rdfs:comment "Central layer mapping implementation of business capabilities via applications & data.@en"@en ;
+    rdfs:label "Information Systems Architecture@en"@en .
+
+###  https://example.org/ont/leanix#LXO0022
+
+leanix:LXO0022 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0021 ;
+    rdfs:comment "Subset of Information Systems Architecture covering applications & interfaces.@en"@en ;
+    rdfs:label "Application Architecture@en"@en .
+
+###  https://example.org/ont/leanix#LXO0023
+
+leanix:LXO0023 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0022 , leanix:LXO0059 ;
+    rdfs:comment "Technology-based product or service delivering measurable customer value. (source LeanIX)@en"@en ;
+    rdfs:label "Digital Solution@en"@en .
+
+###  https://example.org/ont/leanix#LXO0024
+
+leanix:LXO0024 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0022 ;
+    rdfs:comment "Composite application/product with components, data and interfaces. (source LeanIX)@en"@en ;
+    rdfs:label "IT Product@en"@en .
+
+###  https://example.org/ont/leanix#LXO0027
+
+leanix:LXO0027 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0024 , leanix:LXO0059 ;
+    rdfs:comment "Uniform basis composed of structured components; may be recursive. (source LeanIX)@en"@en ;
+    rdfs:label "Tech Platform@en"@en .
+
+###  https://example.org/ont/leanix#LXO0025
+
+leanix:LXO0025 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0024 , leanix:LXO0059 ;
+    rdfs:comment "Specific type of IT Product performing defined business functions. (source LeanIX)@en"@en ;
+    rdfs:label "Application@en"@en .
+
+###  https://example.org/ont/leanix#LXO0026
+
+leanix:LXO0026 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0024 ;
+    rdfs:comment "Collection of related applications managed as cohesive unit. (source LeanIX)@en"@en ;
+    rdfs:label "Group Application@en"@en .
+
+###  https://example.org/ont/leanix#LXO0028
+
+leanix:LXO0028 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0022 , leanix:LXO0059 ;
+    rdfs:comment "Boundary/protocol definition enabling system interaction & data exchange. (source LeanIX)@en"@en ;
+    rdfs:label "Interface@en"@en .
+
+###  https://example.org/ont/leanix#LXO0029
+
+leanix:LXO0029 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0021 ;
+    rdfs:comment "Layer modeling data / information structures supporting applications.@en"@en ;
+    rdfs:label "Information Architecture@en"@en .
+
+###  https://example.org/ont/leanix#LXO0030
+
+leanix:LXO0030 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0029 , leanix:LXO0059 ;
+    rdfs:comment "Structured data entity managed within information architecture.@en"@en ;
+    rdfs:label "Data Object@en"@en .
+
+###  https://example.org/ont/leanix#LXO0031
+
+leanix:LXO0031 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0021 ;
+    rdfs:comment "Layer supporting technical realization of applications (infrastructure & runtime).@en"@en ;
+    rdfs:label "Technology Architecture@en"@en .
+
+###  https://example.org/ont/leanix#LXO0032
+
+leanix:LXO0032 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0031 , leanix:LXO0059 ;
+    rdfs:comment "Foundational building block encapsulating technological capability. (source LeanIX)@en"@en ;
+    rdfs:label "IT Component@en"@en .
+
+###  https://example.org/ont/leanix#LXO0033
+
+leanix:LXO0033 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Foundational elements like servers, storage, networks, cloud platforms. (source LeanIX)@en"@en ;
+    rdfs:label "Infrastructure Component@en"@en .
+
+###  https://example.org/ont/leanix#LXO0035
+
+leanix:LXO0035 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Host executing application logic; mediates between users & back-end systems. (source LeanIX)@en"@en ;
+    rdfs:label "Application Server@en"@en .
+
+###  https://example.org/ont/leanix#LXO0036
+
+leanix:LXO0036 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Managed IT service (maintenance, support, transformation, hosting). (source LeanIX)@en"@en ;
+    rdfs:label "Service@en"@en .
+
+###  https://example.org/ont/leanix#LXO0037
+
+leanix:LXO0037 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Structured collection storing asset & configuration information. (source LeanIX)@en"@en ;
+    rdfs:label "Database@en"@en .
+
+###  https://example.org/ont/leanix#LXO0040
+
+leanix:LXO0040 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 , leanix:LXO0059 ;
+    rdfs:comment "Complete set of technologies enabling a software system. (source LeanIX)@en"@en ;
+    rdfs:label "Tech Stack@en"@en .
+
+###  https://example.org/ont/leanix#LXO0041
+
+leanix:LXO0041 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Software delivered via internet subscription model. (source LeanIX)@en"@en ;
+    rdfs:label "SaaS@en"@en .
+
+###  https://example.org/ont/leanix#LXO0042
+
+leanix:LXO0042 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Generic cloud-delivered technical capability (placeholder; refine if scoped).@en"@en ;
+    rdfs:label "Cloud Service@en"@en .
+
+###  https://example.org/ont/leanix#LXO0043
+
+leanix:LXO0043 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Platform as a Service for building/deploying applications. (source LeanIX)@en"@en ;
+    rdfs:label "PaaS@en"@en .
+
+###  https://example.org/ont/leanix#LXO0044
+
+leanix:LXO0044 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0032 ;
+    rdfs:comment "Infrastructure as a Service virtualized computing resources. (source LeanIX)@en"@en ;
+    rdfs:label "IaaS@en"@en .
+
+###  https://example.org/ont/leanix#LXO0045
+
+leanix:LXO0045 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0031 ;
+    rdfs:comment "Abstract representation of technological ability. (source LeanIX)@en"@en ;
+    rdfs:label "Tech Capability@en"@en .
+
+###  https://example.org/ont/leanix#LXO0046
+
+leanix:LXO0046 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0031 , leanix:LXO0059 ;
+    rdfs:comment "External entity providing software, hardware or services. (source LeanIX)@en"@en ;
+    rdfs:label "Vendor@en"@en .
+
+###  https://example.org/ont/leanix#LXO0047
+
+leanix:LXO0047 rdf:type owl:Class ;
+    rdfs:comment "Domain grouping transversal governance, compliance, security and privacy aspects.@en"@en ;
+    rdfs:label "Cross-Cutting Concern@en"@en .
+
+###  https://example.org/ont/leanix#LXO0048
+
+leanix:LXO0048 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0047 ;
+    rdfs:comment "Adherence to laws, regulations, standards and internal policies. (source LeanIX)@en"@en ;
+    rdfs:label "Compliance@en"@en .
+
+###  https://example.org/ont/leanix#LXO0049
+
+leanix:LXO0049 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0047 ;
+    rdfs:comment "Handling & protection of personal/sensitive information. (source LeanIX)@en"@en ;
+    rdfs:label "Data Privacy@en"@en .
+
+###  https://example.org/ont/leanix#LXO0050
+
+leanix:LXO0050 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0047 ;
+    rdfs:comment "Identification, assessment and mitigation of business & IT risks. (source LeanIX)@en"@en ;
+    rdfs:label "Risk Management@en"@en .
+
+###  https://example.org/ont/leanix#LXO0051
+
+leanix:LXO0051 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0047 ;
+    rdfs:comment "Policies and decision structures guiding IT/business alignment. (source LeanIX)@en"@en ;
+    rdfs:label "Governance@en"@en .
+
+###  https://example.org/ont/leanix#LXO0052
+
+leanix:LXO0052 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0047 ;
+    rdfs:comment "Strategies & practices protecting digital assets and data. (source LeanIX)@en"@en ;
+    rdfs:label "IT Security@en"@en .
+
+###  https://example.org/ont/leanix#LXO0053
+
+leanix:LXO0053 rdf:type owl:Class ;
+    rdfs:comment "Grouping of human or organizational actors interacting with architecture.@en"@en ;
+    rdfs:label "Stakeholder Entity@en"@en .
+
+###  https://example.org/ont/leanix#LXO0054
+
+leanix:LXO0054 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0053 ;
+    rdfs:comment "Human actor planning, managing or depending on configuration items. (source LeanIX / BMC)@en"@en ;
+    rdfs:label "Person@en"@en .
+
+###  https://example.org/ont/leanix#LXO0055
+
+leanix:LXO0055 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0053 , leanix:LXO0059 ;
+    rdfs:comment "Defined set of stakeholders interacting with systems or processes. (source LeanIX)@en"@en ;
+    rdfs:label "User Group@en"@en .
+
+###  https://example.org/ont/leanix#LXO0056
+
+leanix:LXO0056 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0053 ;
+    rdfs:comment "Organizational division with distinct responsibilities and goals. (source LeanIX)@en"@en ;
+    rdfs:label "Department@en"@en .
+
+###  https://example.org/ont/leanix#LXO0057
+
+leanix:LXO0057 rdf:type owl:Class ;
+    rdfs:comment "Abstract axis used to categorize architecture elements (e.g. category, tech category).@en"@en ;
+    rdfs:label "Classification Dimension@en"@en .
+
+###  https://example.org/ont/leanix#LXO0058
+
+leanix:LXO0058 rdf:type owl:Class ;
+    rdfs:subClassOf leanix:LXO0057 ;
+    rdfs:comment "Classification of technologies by function/domain (cloud, database, security etc.). (source LeanIX)@en"@en ;
+    rdfs:label "Tech Category@en"@en .
+
+###  https://example.org/ont/leanix#LXO0059
+
+leanix:LXO0059 rdf:type owl:Class ;
+    rdfs:comment "Abstract superclass for all LeanIX fact sheet types used in this Ontology.@en"@en ;
+    rdfs:label "Fact Sheet@en"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://example.org/ont/leanix#relToChild
+
+leanix:relToChild rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:label "relToChild"@en ;
+    rdfs:comment "Hierarchical child relation between Fact Sheets (must stay within same Fact Sheet type)."@en .
+
+###  https://example.org/ont/leanix#relToParent
+
+leanix:relToParent rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:label "relToParent"@en ;
+    rdfs:comment "Hierarchical parent relation between Fact Sheets (must stay within same Fact Sheet type)."@en .
+
+###  https://example.org/ont/leanix#relToPredecessor
+
+leanix:relToPredecessor rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:label "relToPredecessor"@en ;
+    rdfs:comment "Versioning/lineage predecessor within the same Fact Sheet type."@en .
+
+###  https://example.org/ont/leanix#relToSuccessor
+
+leanix:relToSuccessor rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:label "relToSuccessor"@en ;
+    rdfs:comment "Versioning/lineage successor within the same Fact Sheet type."@en .
+
+###  https://example.org/ont/leanix#relToRequires
+
+leanix:relToRequires rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:label "relToRequires"@en ;
+    rdfs:comment "Dependency: the subject requires the object (any Fact Sheet type allowed)."@en .
+
+###  https://example.org/ont/leanix#relToRequiredBy
+
+leanix:relToRequiredBy rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0011 leanix:LXO0014 leanix:LXO0017 leanix:LXO0025 leanix:LXO0032 leanix:LXO0040 leanix:LXO0055 leanix:LXO0059 leanix:LXO0059 ) ] ;
+    rdfs:label "relToRequiredBy"@en ;
+    rdfs:comment "Reverse dependency: the subject is required by the object (any Fact Sheet type allowed)."@en .
+
+###  https://example.org/ont/leanix#relADRToProject
+
+leanix:relADRToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relADRToProject"@en ;
+    rdfs:comment "ADR relates to Project(s)."@en .
+
+###  https://example.org/ont/leanix#relADRToUserGroup
+
+leanix:relADRToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relADRToUserGroup"@en ;
+    rdfs:comment "ADR relates to User Group(s)."@en .
+
+###  https://example.org/ont/leanix#relADRToApplication
+
+leanix:relADRToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relADRToApplication"@en ;
+    rdfs:comment "ADR relates to Application(s)."@en .
+
+###  https://example.org/ont/leanix#relADRToTechPlatform
+
+leanix:relADRToTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range leanix:LXO0045 ;
+    rdfs:label "relADRToTechPlatform"@en ;
+    rdfs:comment "ADR relates to Tech Platform(s)."@en .
+
+###  https://example.org/ont/leanix#relObjectiveToProject
+
+leanix:relObjectiveToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relObjectiveToProject"@en ;
+    rdfs:comment "Objective is linked to one or more Projects."@en .
+
+###  https://example.org/ont/leanix#relObjectiveToBusinessCapability
+
+leanix:relObjectiveToBusinessCapability rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "relObjectiveToBusinessCapability"@en ;
+    rdfs:comment "Objective contributes to or depends on Business Capabilities."@en .
+
+###  https://example.org/ont/leanix#relObjectiveToUserGroup
+
+leanix:relObjectiveToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relObjectiveToUserGroup"@en ;
+    rdfs:comment "Objective addresses specific User Groups."@en .
+
+###  https://example.org/ont/leanix#relProjectToProcess
+
+leanix:relProjectToProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0017 ;
+    rdfs:label "relProjectToProcess"@en ;
+    rdfs:comment "Project is related to business processes."@en .
+
+###  https://example.org/ont/leanix#relProjectToProvider
+
+leanix:relProjectToProvider rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0046 ;
+    rdfs:label "relProjectToProvider"@en ;
+    rdfs:comment "Project involves or is delivered by a provider/vendor."@en .
+
+###  https://example.org/ont/leanix#relProjectToUserGroup
+
+leanix:relProjectToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relProjectToUserGroup"@en ;
+    rdfs:comment "Project targets or engages a user group."@en .
+
+###  https://example.org/ont/leanix#relProjectToBlockedProject
+
+leanix:relProjectToBlockedProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relProjectToBlockedProject"@en ;
+    rdfs:comment "Project is blocked by another Project."@en .
+
+###  https://example.org/ont/leanix#relProjectToITComponent
+
+leanix:relProjectToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relProjectToITComponent"@en ;
+    rdfs:comment "Project depends on or delivers IT components."@en .
+
+###  https://example.org/ont/leanix#relProjectToTechnicalStack
+
+leanix:relProjectToTechnicalStack rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0040 ;
+    rdfs:label "relProjectToTechnicalStack"@en ;
+    rdfs:comment "Project introduces or uses technical stacks."@en .
+
+###  https://example.org/ont/leanix#relProjectToDataObject
+
+leanix:relProjectToDataObject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0030 ;
+    rdfs:label "relProjectToDataObject"@en ;
+    rdfs:comment "Project creates, uses, or modifies data objects."@en .
+
+###  https://example.org/ont/leanix#relProjectToBusinessCapability
+
+leanix:relProjectToBusinessCapability rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "relProjectToBusinessCapability"@en ;
+    rdfs:comment "Project enables or affects business capabilities."@en .
+
+###  https://example.org/ont/leanix#relProjectToApplication
+
+leanix:relProjectToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relProjectToApplication"@en ;
+    rdfs:comment "Project delivers or changes applications."@en .
+
+###  https://example.org/ont/leanix#relProjectToTechPlatform
+
+leanix:relProjectToTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0027 ;
+    rdfs:label "relProjectToTechPlatform"@en ;
+    rdfs:comment "Project uses or delivers a technology platform."@en .
+
+###  https://example.org/ont/leanix#relProjectToBlockingProject
+
+leanix:relProjectToBlockingProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relProjectToBlockingProject"@en ;
+    rdfs:comment "Project blocks another Project."@en .
+
+###  https://example.org/ont/leanix#relProjectToInterface
+
+leanix:relProjectToInterface rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0028 ;
+    rdfs:label "relProjectToInterface"@en ;
+    rdfs:comment "Project introduces or modifies interfaces."@en .
+
+###  https://example.org/ont/leanix#relProjectToObjective
+
+leanix:relProjectToObjective rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0007 ;
+    rdfs:label "relProjectToObjective"@en ;
+    rdfs:comment "Project contributes to Objectives."@en .
+
+###  https://example.org/ont/leanix#relProjectToADR
+
+leanix:relProjectToADR rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range leanix:LXO0001 ;
+    rdfs:label "relProjectToADR"@en ;
+    rdfs:comment "Project is governed or guided by ADRs."@en .
+
+###  https://example.org/ont/leanix#relBusinessCapabilityToUserGroup
+
+leanix:relBusinessCapabilityToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0014 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relBusinessCapabilityToUserGroup"@en ;
+    rdfs:comment "BusinessCapability is relevant for a user group."@en .
+
+###  https://example.org/ont/leanix#relBusinessCapabilityToProject
+
+leanix:relBusinessCapabilityToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0014 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relBusinessCapabilityToProject"@en ;
+    rdfs:comment "BusinessCapability is realized by or contributes to Projects."@en .
+
+###  https://example.org/ont/leanix#relBusinessCapabilityToProcess
+
+leanix:relBusinessCapabilityToProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0014 ;
+    rdfs:range leanix:LXO0017 ;
+    rdfs:label "relBusinessCapabilityToProcess"@en ;
+    rdfs:comment "BusinessCapability is implemented via business processes."@en .
+
+###  https://example.org/ont/leanix#relBusinessCapabilityToDigitalSolution
+
+leanix:relBusinessCapabilityToDigitalSolution rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0014 ;
+    rdfs:range leanix:LXO0023 ;
+    rdfs:label "relBusinessCapabilityToDigitalSolution"@en ;
+    rdfs:comment "BusinessCapability is supported by digital solutions."@en .
+
+###  https://example.org/ont/leanix#relBusinessCapabilityToObjective
+
+leanix:relBusinessCapabilityToObjective rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0014 ;
+    rdfs:range leanix:LXO0007 ;
+    rdfs:label "relBusinessCapabilityToObjective"@en ;
+    rdfs:comment "BusinessCapability contributes to objectives."@en .
+
+###  https://example.org/ont/leanix#relBusinessCapabilityToApplication
+
+leanix:relBusinessCapabilityToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0014 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relBusinessCapabilityToApplication"@en ;
+    rdfs:comment "BusinessCapability is realized by applications."@en .
+
+###  https://example.org/ont/leanix#relProcessToProject
+
+leanix:relProcessToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0017 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relProcessToProject"@en ;
+    rdfs:comment "Process is implemented/realized by or related to a Project."@en .
+
+###  https://example.org/ont/leanix#relProcessToBusinessCapability
+
+leanix:relProcessToBusinessCapability rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0017 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "relProcessToBusinessCapability"@en ;
+    rdfs:comment "Process supports or realizes a Business Capability."@en .
+
+###  https://example.org/ont/leanix#relProcessToApplication
+
+leanix:relProcessToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0017 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relProcessToApplication"@en ;
+    rdfs:comment "Process is supported by an Application."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToProject
+
+leanix:relUserGroupToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relUserGroupToProject"@en ;
+    rdfs:comment "UserGroup relates to or participates in Projects."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToApplication
+
+leanix:relUserGroupToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relUserGroupToApplication"@en ;
+    rdfs:comment "UserGroup uses or is supported by Applications."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToADR
+
+leanix:relUserGroupToADR rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0001 ;
+    rdfs:label "relUserGroupToADR"@en ;
+    rdfs:comment "UserGroup governed or influenced by ADRs."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToBusinessCapability
+
+leanix:relUserGroupToBusinessCapability rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "relUserGroupToBusinessCapability"@en ;
+    rdfs:comment "UserGroup associated with BusinessCapabilities it depends on or enables."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToObjective
+
+leanix:relUserGroupToObjective rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0007 ;
+    rdfs:label "relUserGroupToObjective"@en ;
+    rdfs:comment "UserGroup targeted by, or contributing to, Objectives."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToDigitalSolution
+
+leanix:relUserGroupToDigitalSolution rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0023 ;
+    rdfs:label "relUserGroupToDigitalSolution"@en ;
+    rdfs:comment "UserGroup consumes Digital Solutions."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToITComponent
+
+leanix:relUserGroupToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relUserGroupToITComponent"@en ;
+    rdfs:comment "UserGroup depends on IT Components."@en .
+
+###  https://example.org/ont/leanix#relUserGroupToTechPlatform
+
+leanix:relUserGroupToTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0027 ;
+    rdfs:label "relUserGroupToTechPlatform"@en ;
+    rdfs:comment "UserGroup relies on Tech Platform."@en .
+
+###  https://example.org/ont/leanix#relFaBrItUserGroupToApplication
+
+leanix:relFaBrItUserGroupToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relFaBrItUserGroupToApplication"@en ;
+    rdfs:comment "UserGroup (fabric integration pattern) linked to Applications (specialized relation variant)."@en .
+
+###  https://example.org/ont/leanix#relDigitalSolutionToBusinessCapability
+
+leanix:relDigitalSolutionToBusinessCapability rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0023 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "relDigitalSolutionToBusinessCapability"@en ;
+    rdfs:comment "DigitalSolution supports or is mapped to BusinessCapabilities."@en .
+
+###  https://example.org/ont/leanix#relDigitalSolutionToTestApplication
+
+leanix:relDigitalSolutionToTestApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0023 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relDigitalSolutionToTestApplication"@en ;
+    rdfs:comment "DigitalSolution is linked to test/staging Application instances."@en .
+
+###  https://example.org/ont/leanix#relDigitalSolutionToUserGroup
+
+leanix:relDigitalSolutionToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0023 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relDigitalSolutionToUserGroup"@en ;
+    rdfs:comment "DigitalSolution is used by / targeted at UserGroups."@en .
+
+###  https://example.org/ont/leanix#relProviderApplicationToInterface
+
+leanix:relProviderApplicationToInterface rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0028 ;
+    rdfs:label "relProviderApplicationToInterface"@en ;
+    rdfs:comment "Providing Application exposes Interface(s)."@en .
+
+###  https://example.org/ont/leanix#relApplicationToBusinessCapability
+
+leanix:relApplicationToBusinessCapability rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "relApplicationToBusinessCapability"@en ;
+    rdfs:comment "Application supports Business Capabilities."@en .
+
+###  https://example.org/ont/leanix#relApplicationToUserGroup
+
+leanix:relApplicationToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relApplicationToUserGroup"@en ;
+    rdfs:comment "Application used by User Groups."@en .
+
+###  https://example.org/ont/leanix#relApplicationToProject
+
+leanix:relApplicationToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relApplicationToProject"@en ;
+    rdfs:comment "Application delivered / changed by Projects."@en .
+
+###  https://example.org/ont/leanix#relApplicationToDataObject
+
+leanix:relApplicationToDataObject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0030 ;
+    rdfs:label "relApplicationToDataObject"@en ;
+    rdfs:comment "Application creates / uses Data Objects."@en .
+
+###  https://example.org/ont/leanix#relApplicationToADR
+
+leanix:relApplicationToADR rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0001 ;
+    rdfs:label "relApplicationToADR"@en ;
+    rdfs:comment "Application governed by ADRs."@en .
+
+###  https://example.org/ont/leanix#relApplicationToITComponent
+
+leanix:relApplicationToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relApplicationToITComponent"@en ;
+    rdfs:comment "Application depends on IT Components."@en .
+
+###  https://example.org/ont/leanix#relApplicationToFaBrItUserGroup
+
+leanix:relApplicationToFaBrItUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relApplicationToFaBrItUserGroup"@en ;
+    rdfs:comment "Special fabric relation to User Group."@en .
+
+###  https://example.org/ont/leanix#relTestApplicationToDigitalSolution
+
+leanix:relTestApplicationToDigitalSolution rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0023 ;
+    rdfs:label "relTestApplicationToDigitalSolution"@en ;
+    rdfs:comment "Test Application instance linked to Digital Solution."@en .
+
+###  https://example.org/ont/leanix#relConsumerApplicationToInterface
+
+leanix:relConsumerApplicationToInterface rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0028 ;
+    rdfs:label "relConsumerApplicationToInterface"@en ;
+    rdfs:comment "Consuming Application uses Interface(s)."@en .
+
+###  https://example.org/ont/leanix#relApplicationToProcess
+
+leanix:relApplicationToProcess rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0017 ;
+    rdfs:label "relApplicationToProcess"@en ;
+    rdfs:comment "Application supports Processes."@en .
+
+###  https://example.org/ont/leanix#relApplicationToTechPlatform
+
+leanix:relApplicationToTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range leanix:LXO0027 ;
+    rdfs:label "relApplicationToTechPlatform"@en ;
+    rdfs:comment "Application runs on / uses Tech Platform."@en .
+
+###  https://example.org/ont/leanix#relInterfaceToConsumerApplication
+
+leanix:relInterfaceToConsumerApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relInterfaceToConsumerApplication"@en ;
+    rdfs:comment "Interface consumed by Application(s)."@en .
+
+###  https://example.org/ont/leanix#relInterfaceToProject
+
+leanix:relInterfaceToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relInterfaceToProject"@en ;
+    rdfs:comment "Interface introduced / changed by Project(s)."@en .
+
+###  https://example.org/ont/leanix#relInterfaceToProviderApplication
+
+leanix:relInterfaceToProviderApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relInterfaceToProviderApplication"@en ;
+    rdfs:comment "Providing Application for the Interface."@en .
+
+###  https://example.org/ont/leanix#relInterfaceToDataObject
+
+leanix:relInterfaceToDataObject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range leanix:LXO0030 ;
+    rdfs:label "relInterfaceToDataObject"@en ;
+    rdfs:comment "Interface transfers DataObject(s)."@en .
+
+###  https://example.org/ont/leanix#relInterfaceToITComponent
+
+leanix:relInterfaceToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relInterfaceToITComponent"@en ;
+    rdfs:comment "Interface depends on IT Component(s)."@en .
+
+###  https://example.org/ont/leanix#relITComponentToInterface
+
+leanix:relITComponentToInterface rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0028 ;
+    rdfs:label "relITComponentToInterface"@en ;
+    rdfs:comment "IT Component exposes or depends on an Interface."@en .
+
+###  https://example.org/ont/leanix#relITComponentToApplication
+
+leanix:relITComponentToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relITComponentToApplication"@en ;
+    rdfs:comment "IT Component is used by / embedded in an Application."@en .
+
+###  https://example.org/ont/leanix#relITComponentToProject
+
+leanix:relITComponentToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relITComponentToProject"@en ;
+    rdfs:comment "IT Component is related to a Project."@en .
+
+###  https://example.org/ont/leanix#relITComponentToUserGroup
+
+leanix:relITComponentToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relITComponentToUserGroup"@en ;
+    rdfs:comment "IT Component is used by a User Group."@en .
+
+###  https://example.org/ont/leanix#relITComponentToProvider
+
+leanix:relITComponentToProvider rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0046 ;
+    rdfs:label "relITComponentToProvider"@en ;
+    rdfs:comment "IT Component is provided by a specific Provider."@en .
+
+###  https://example.org/ont/leanix#relITComponentToTechnologyStack
+
+leanix:relITComponentToTechnologyStack rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0040 ;
+    rdfs:label "relITComponentToTechnicalStack"@en ;
+    rdfs:comment "IT Component belongs to a Technical Stack."@en .
+
+###  https://example.org/ont/leanix#relITComponentToTechPlatform
+
+leanix:relITComponentToTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range leanix:LXO0027 ;
+    rdfs:label "relITComponentToTechPlatform"@en ;
+    rdfs:comment "IT Component runs on / is part of a Tech Platform."@en .
+
+###  https://example.org/ont/leanix#relTechPlatformToProject
+
+leanix:relTechPlatformToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relTechPlatformToProject"@en ;
+    rdfs:comment "Tech Platform is delivered or changed by Projects."@en .
+
+###  https://example.org/ont/leanix#relTechPlatformToITComponent
+
+leanix:relTechPlatformToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relTechPlatformToITComponent"@en ;
+    rdfs:comment "Tech Platform depends on constituent IT Components."@en .
+
+###  https://example.org/ont/leanix#relTechPlatformToApplication
+
+leanix:relTechPlatformToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relTechPlatformToApplication"@en ;
+    rdfs:comment "Applications run on or use the Tech Platform."@en .
+
+###  https://example.org/ont/leanix#relTechPlatformToUserGroup
+
+leanix:relTechPlatformToUserGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "relTechPlatformToUserGroup"@en ;
+    rdfs:comment "Tech Platform is relevant for specific User Groups."@en .
+
+###  https://example.org/ont/leanix#relTechPlatformToADR
+
+leanix:relTechPlatformToADR rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0001 ;
+    rdfs:label "relTechPlatformToADR"@en ;
+    rdfs:comment "Tech Platform decisions governed by ADRs."@en .
+
+###  https://example.org/ont/leanix#relToTechPlatform
+
+leanix:relToTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0027 ;
+    rdfs:label "relToTechPlatform"@en ;
+    rdfs:comment "Outgoing relation to another Tech Platform."@en .
+
+###  https://example.org/ont/leanix#relFromTechPlatform
+
+leanix:relFromTechPlatform rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range leanix:LXO0027 ;
+    rdfs:label "relFromTechPlatform"@en ;
+    rdfs:comment "Incoming relation from another Tech Platform."@en .
+
+###  https://example.org/ont/leanix#relProviderToITComponent
+
+leanix:relProviderToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relProviderToITComponent"@en ;
+    rdfs:comment "Provider supplies or is associated with IT Components."@en .
+
+###  https://example.org/ont/leanix#relProviderToProject
+
+leanix:relProviderToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relProviderToProject"@en ;
+    rdfs:comment "Provider engaged by or relevant to Projects."@en .
+
+###  https://example.org/ont/leanix#relTechnologyStackToITComponent
+
+leanix:relTechnologyStackToITComponent rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0040 ;
+    rdfs:range leanix:LXO0032 ;
+    rdfs:label "relTechnologyStackToITComponent"@en ;
+    rdfs:comment "Technical Stack contains or groups IT Components."@en .
+
+###  https://example.org/ont/leanix#relTechnicalStackToProject
+
+leanix:relTechnicalStackToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0040 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relTechnicalStackToProject"@en ;
+    rdfs:comment "Technical Stack is related to Projects leveraging or evolving it."@en .
+
+###  https://example.org/ont/leanix#relDataObjectToApplication
+
+leanix:relDataObjectToApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range leanix:LXO0025 ;
+    rdfs:label "relDataObjectToApplication"@en ;
+    rdfs:comment "DataObject is used by / produced by Applications."@en .
+
+###  https://example.org/ont/leanix#relDataObjectToInterface
+
+leanix:relDataObjectToInterface rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range leanix:LXO0028 ;
+    rdfs:label "relDataObjectToInterface"@en ;
+    rdfs:comment "DataObject transported via Interface(s)."@en .
+
+###  https://example.org/ont/leanix#relDataObjectToProject
+
+leanix:relDataObjectToProject rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range leanix:LXO0011 ;
+    rdfs:label "relDataObjectToProject"@en ;
+    rdfs:comment "DataObject impacted by Project(s)."@en .
+
+###  ?predicate
+
+<?predicate> rdf:type owl:ObjectProperty ;
+    rdfs:label "?predicateLabel"@en ;
+    rdfs:comment "?predicateDescription"@en .
+
+###  https://example.org/ont/leanix#owned_by
+
+leanix:owned_by rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0007 leanix:LXO0013 leanix:LXO0017 leanix:LXO0024 leanix:LXO0025 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0007 leanix:LXO0008 leanix:LXO0013 leanix:LXO0055 leanix:LXO0056 ) ] ;
+    rdfs:label "owned_by"@en ;
+    rdfs:comment "Subject is owned by (or formally belongs to) the object organization or group."@en .
+
+###  https://example.org/ont/leanix#responsible_for
+
+leanix:responsible_for rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0006 leanix:LXO0013 leanix:LXO0051 leanix:LXO0056 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0006 leanix:LXO0007 leanix:LXO0008 leanix:LXO0014 leanix:LXO0017 leanix:LXO0023 leanix:LXO0024 leanix:LXO0025 leanix:LXO0028 leanix:LXO0032 leanix:LXO0045 leanix:LXO0050 ) ] ;
+    rdfs:label "responsible_for"@en ;
+    rdfs:comment "Subject has operational or governance responsibility for the object."@en .
+
+###  https://example.org/ont/leanix#requires
+
+leanix:requires rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0014 leanix:LXO0024 leanix:LXO0025 leanix:LXO0028 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0027 leanix:LXO0032 leanix:LXO0034 leanix:LXO0038 leanix:LXO0039 ) ] ;
+    rdfs:label "requires"@en ;
+    rdfs:comment "Subject depends on the object; inverse dependency variants merged (required_by, must_have, runs_on)."@en .
+
+###  https://example.org/ont/leanix#supports
+
+leanix:supports rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0007 leanix:LXO0008 leanix:LXO0023 leanix:LXO0024 leanix:LXO0027 leanix:LXO0039 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0001 leanix:LXO0007 leanix:LXO0008 leanix:LXO0014 leanix:LXO0017 leanix:LXO0023 leanix:LXO0024 leanix:LXO0025 ) ] ;
+    rdfs:label "supports"@en ;
+    rdfs:comment "Subject functionally or structurally enables the object (includes hosts, integrates, enables, sponsors)."@en .
+
+###  https://example.org/ont/leanix#supported_by
+
+leanix:supported_by rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0017 leanix:LXO0023 leanix:LXO0024 leanix:LXO0032 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0055 ) ] ;
+    rdfs:label "supported_by"@en ;
+    rdfs:comment "Subject is enabled or sustained by the object (kept as explicit inverse of supports)."@en .
+
+###  https://example.org/ont/leanix#consists_of
+
+leanix:consists_of rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0013 leanix:LXO0021 leanix:LXO0023 leanix:LXO0026 leanix:LXO0027 leanix:LXO0032 leanix:LXO0033 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0021 leanix:LXO0023 leanix:LXO0024 leanix:LXO0025 leanix:LXO0040 leanix:LXO0052 leanix:LXO0055 ) ] ;
+    rdfs:label "consists_of"@en ;
+    rdfs:comment "Subject is composed of object elements (merged: contains, set_of, has, has_a, category_of, has_category, belongs_to, part_of, is_part_of, is_a_critical_part_of, groups, structured_by, structured_in, can_have_a)."@en .
+
+###  https://example.org/ont/leanix#consumes
+
+leanix:consumes rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0013 leanix:LXO0024 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0023 leanix:LXO0024 leanix:LXO0052 leanix:LXO0056 ) ] ;
+    rdfs:label "consumes"@en ;
+    rdfs:comment "Subject uses resources/services provided by the object (distinct from general uses/requires)."@en .
+
+###  https://example.org/ont/leanix#affects
+
+leanix:affects rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0008 ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0014 leanix:LXO0017 leanix:LXO0023 leanix:LXO0024 leanix:LXO0028 leanix:LXO0032 leanix:LXO0040 leanix:LXO0045 leanix:LXO0055 ) ] ;
+    rdfs:label "affects"@en ;
+    rdfs:comment "Subject influences status, risk, cost or performance of the object (merged impacts, directs, related_to)."@en .
+
+###  https://example.org/ont/leanix#improves
+
+leanix:improves rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range leanix:LXO0014 ;
+    rdfs:label "improves"@en ;
+    rdfs:comment "Subject enhances quality or capability of the object."@en .
+
+###  https://example.org/ont/leanix#realizes
+
+leanix:realizes rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0014 leanix:LXO0025 leanix:LXO0032 leanix:LXO0041 leanix:LXO0046 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0006 leanix:LXO0018 leanix:LXO0025 leanix:LXO0045 ) ] ;
+    rdfs:label "realizes"@en ;
+    rdfs:comment "Subject implements or realizes the abstract concept represented by the object (merged implements, implemented_by, realized_by, realized_through)."@en .
+
+###  https://example.org/ont/leanix#uses
+
+leanix:uses rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0019 leanix:LXO0024 leanix:LXO0028 leanix:LXO0032 leanix:LXO0039 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0014 leanix:LXO0037 leanix:LXO0040 leanix:LXO0052 ) ] ;
+    rdfs:label "uses"@en ;
+    rdfs:comment "Subject uses the object in execution (kept separate from requires for lighter interaction)."@en .
+
+###  https://example.org/ont/leanix#transmits
+
+leanix:transmits rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0017 leanix:LXO0028 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0020 leanix:LXO0028 ) ] ;
+    rdfs:label "transmits"@en ;
+    rdfs:comment "Subject transfers data/information to the object (merged imported_via for simplification)."@en .
+
+###  https://example.org/ont/leanix#provides
+
+leanix:provides rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0018 leanix:LXO0024 leanix:LXO0032 leanix:LXO0041 leanix:LXO0046 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0025 leanix:LXO0027 leanix:LXO0028 leanix:LXO0046 leanix:LXO0056 ) ] ;
+    rdfs:label "provides"@en ;
+    rdfs:comment "Subject supplies or delivers the object service/capability (merged delivers, delivered_by, provided_by, offers, maintains)."@en .
+
+###  https://example.org/ont/leanix#governed_by
+
+leanix:governed_by rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0023 ;
+    rdfs:range leanix:LXO0055 ;
+    rdfs:label "governed_by"@en ;
+    rdfs:comment "Subject is governed or constrained by the object."@en .
+
+###  https://example.org/ont/leanix#regulates
+
+leanix:regulates rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0049 leanix:LXO0051 leanix:LXO0052 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0028 leanix:LXO0052 ) ] ;
+    rdfs:label "regulates"@en ;
+    rdfs:comment "Subject enforces rules or constraints on the object (merged constrains, controls)."@en .
+
+###  https://example.org/ont/leanix#ensures
+
+leanix:ensures rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0051 ;
+    rdfs:range leanix:LXO0048 ;
+    rdfs:label "ensures"@en ;
+    rdfs:comment "Subject assures required quality/compliance of the object (merged guarantees)."@en .
+
+###  https://example.org/ont/leanix#protects
+
+leanix:protects rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0052 ;
+    rdfs:range leanix:LXO0052 ;
+    rdfs:label "protects"@en ;
+    rdfs:comment "Subject safeguards or secures the object (security-focused control)."@en .
+
+###  https://example.org/ont/leanix#defines
+
+leanix:defines rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0033 ;
+    rdfs:range leanix:LXO0052 ;
+    rdfs:label "defines"@en ;
+    rdfs:comment "Subject documents or specifies the structure/semantics of the object (merged is_described_in)."@en .
+
+###  https://example.org/ont/leanix#versioned_as
+
+leanix:versioned_as rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0028 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0028 ) ] ;
+    rdfs:label "versioned_as"@en ;
+    rdfs:comment "Subject is linked in a version/evolution chain with the object (merged successor, predecessor, follows, can_have_a in version context)."@en .
+
+###  https://example.org/ont/leanix#informs
+
+leanix:informs rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0050 ;
+    rdfs:range leanix:LXO0006 ;
+    rdfs:label "informs"@en ;
+    rdfs:comment "Subject provides information influencing decisions about the object."@en .
+
+###  https://example.org/ont/leanix#classifies
+
+leanix:classifies rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0025 leanix:LXO0027 leanix:LXO0032 leanix:LXO0036 leanix:LXO0039 leanix:LXO0041 leanix:LXO0043 leanix:LXO0044 leanix:LXO0046 ) ] ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0025 leanix:LXO0026 leanix:LXO0027 leanix:LXO0057 ) ] ;
+    rdfs:label "classifies"@en ;
+    rdfs:comment "Subject classifies or types the object (merged is_a, of_type, has_category, category_of)."@en .
+
+###  https://example.org/ont/leanix#status_of
+
+leanix:status_of rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0009 ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0024 leanix:LXO0055 ) ] ;
+    rdfs:label "status_of"@en ;
+    rdfs:comment "Subject represents a lifecycle/status facet of the object."@en .
+
+###  https://example.org/ont/leanix#is_similar_to
+
+leanix:is_similar_to rdf:type owl:ObjectProperty ;
+    rdfs:domain leanix:LXO0021 ;
+    rdfs:range [ rdf:type owl:Class ; owl:unionOf ( leanix:LXO0023 leanix:LXO0024 ) ] ;
+    rdfs:label "is_similar_to"@en ;
+    rdfs:comment "Subject has notable similarity to the object."@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+###  https://example.org/ont/leanix#fsId
+
+leanix:fsId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "id"@en ;
+    rdfs:comment "Opaque identifier of a Fact Sheet (UUID string). If absent on import, a new Fact Sheet is created; if present, it is updated."@en .
+
+###  https://example.org/ont/leanix#fsType
+
+leanix:fsType rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "type"@en ;
+    rdfs:comment "Original LeanIX Fact Sheet type field (ADR, Objective, Project, BusinessCapability, Process, UserGroup, DigitalSolution, Application, Interface, ITComponent, TechPlatform, Provider, TechnicalStack, DataObject). Prefer rdf:type for RDF instances."@en .
+
+###  https://example.org/ont/leanix#name
+
+leanix:name rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "name"@en ;
+    rdfs:comment "Human-readable name/title of the Fact Sheet."@en .
+
+###  https://example.org/ont/leanix#fullName
+
+leanix:fullName rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "fullName"@en ;
+    rdfs:comment "System-computed full name according to LeanIX naming rules (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix#displayName
+
+leanix:displayName rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "displayName"@en ;
+    rdfs:comment "System-computed display name, unique per Fact Sheet type (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix#description
+
+leanix:description rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "description"@en ;
+    rdfs:comment "Free-text description of the Fact Sheet."@en .
+
+###  http://purl.org/dc/terms/created
+
+dct:created rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "createdAt"@en ;
+    rdfs:comment "Timestamp when the Fact Sheet was created (read-only in source system)."@en .
+
+###  http://purl.org/dc/terms/modified
+
+dct:modified rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "updatedAt"@en ;
+    rdfs:comment "Timestamp when the Fact Sheet was last modified (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix#status
+
+leanix:status rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "status"@en ;
+    rdfs:comment "Lifecycle status of the Fact Sheet (read-only in export). Allowed value in export: ACTIVE."@en .
+
+###  https://example.org/ont/leanix#completion
+
+leanix:completion rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "completion"@en ;
+    rdfs:comment "Completion percentage of the Fact Sheet (0–100)."@en .
+
+###  https://example.org/ont/leanix#level
+
+leanix:level rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:integer ;
+    rdfs:label "level"@en ;
+    rdfs:comment "Hierarchy level as computed via relToParent."@en .
+
+###  https://example.org/ont/leanix#qualitySeal
+
+leanix:qualitySeal rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:string ;
+    rdfs:label "qualitySeal"@en ;
+    rdfs:comment "Data quality seal. Allowed values: DISABLED, APPROVED, BROKEN (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix/lifecycle#plan
+
+lxc:plan rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:date ;
+    rdfs:label "lifecycle:plan"@en ;
+    rdfs:comment "Planned lifecycle date."@en .
+
+###  https://example.org/ont/leanix/lifecycle#phaseIn
+
+lxc:phaseIn rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:date ;
+    rdfs:label "lifecycle:phaseIn"@en ;
+    rdfs:comment "Phase-in lifecycle date."@en .
+
+###  https://example.org/ont/leanix/lifecycle#active
+
+lxc:active rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:date ;
+    rdfs:label "lifecycle:active"@en ;
+    rdfs:comment "Active lifecycle date."@en .
+
+###  https://example.org/ont/leanix/lifecycle#phaseOut
+
+lxc:phaseOut rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:date ;
+    rdfs:label "lifecycle:phaseOut"@en ;
+    rdfs:comment "Phase-out lifecycle date."@en .
+
+###  https://example.org/ont/leanix/lifecycle#endOfLife
+
+lxc:endOfLife rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0059 ;
+    rdfs:range xsd:date ;
+    rdfs:label "lifecycle:endOfLife"@en ;
+    rdfs:comment "End-of-life lifecycle date."@en .
+
+###  https://example.org/ont/leanix#AssumptionDescription
+
+leanix:AssumptionDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "AssumptionDescription"@en ;
+    rdfs:comment "Assumptions that frame the decision context."@en .
+
+###  https://example.org/ont/leanix#AlternativesDescription
+
+leanix:AlternativesDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "AlternativesDescription"@en ;
+    rdfs:comment "Alternatives considered as part of the ADR."@en .
+
+###  https://example.org/ont/leanix#DecisionDescription
+
+leanix:DecisionDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "DecisionDescription"@en ;
+    rdfs:comment "The actual decision taken in the ADR."@en .
+
+###  https://example.org/ont/leanix#ConsequencesDescription
+
+leanix:ConsequencesDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "ConsequencesDescription"@en ;
+    rdfs:comment "Consequences (positive/negative) of the decision."@en .
+
+###  https://example.org/ont/leanix#ContextDescription
+
+leanix:ContextDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "ContextDescription"@en ;
+    rdfs:comment "Context necessary to understand the decision."@en .
+
+###  https://example.org/ont/leanix#category
+
+leanix:category rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range xsd:string ;
+    rdfs:label "category"@en ;
+    rdfs:comment "Type classification for IT Component (saas, paas, iaas, service, software, hardware)."@en .
+
+###  https://example.org/ont/leanix#externalId
+
+leanix:externalId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "externalId"@en ;
+    rdfs:comment "External system identifier for the DataObject."@en .
+
+###  https://example.org/ont/leanix#adrId
+
+leanix:adrId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "adrId"@en ;
+    rdfs:comment "System-assigned ADR identifier (read-only in source)."@en .
+
+###  https://example.org/ont/leanix#test
+
+leanix:test rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0001 ;
+    rdfs:range xsd:string ;
+    rdfs:label "test"@en ;
+    rdfs:comment "Free-form test/placeholder field."@en .
+
+###  https://example.org/ont/leanix#projectStatus
+
+leanix:projectStatus rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "projectStatus"@en ;
+    rdfs:comment "Traffic-light status of the Project (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix#alias
+
+leanix:alias rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "alias"@en ;
+    rdfs:comment "Alternate short name for the DataObject."@en .
+
+###  https://example.org/ont/leanix/objectiveLifecycle#planned
+
+<https://example.org/ont/leanix/objectiveLifecycle#planned> rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range xsd:date ;
+    rdfs:label "objectiveLifecycle:planned"@en ;
+    rdfs:comment "Planned start of the Objective lifecycle."@en .
+
+###  https://example.org/ont/leanix/objectiveLifecycle#active
+
+<https://example.org/ont/leanix/objectiveLifecycle#active> rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range xsd:date ;
+    rdfs:label "objectiveLifecycle:active"@en ;
+    rdfs:comment "Date when the Objective becomes active."@en .
+
+###  https://example.org/ont/leanix/objectiveLifecycle#done
+
+<https://example.org/ont/leanix/objectiveLifecycle#done> rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range xsd:date ;
+    rdfs:label "objectiveLifecycle:done"@en ;
+    rdfs:comment "Completion date of the Objective."@en .
+
+###  https://example.org/ont/leanix/objectiveLifecycle#obsolete
+
+<https://example.org/ont/leanix/objectiveLifecycle#obsolete> rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0007 ;
+    rdfs:range xsd:date ;
+    rdfs:label "objectiveLifecycle:obsolete"@en ;
+    rdfs:comment "Date when the Objective becomes obsolete."@en .
+
+###  https://example.org/ont/leanix#budgetOpEx
+
+leanix:budgetOpEx rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "budgetOpEx"@en ;
+    rdfs:comment "Operational expenditure budget associated with the Project."@en .
+
+###  https://example.org/ont/leanix#netPresentValue
+
+leanix:netPresentValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "netPresentValue"@en ;
+    rdfs:comment "Net Present Value (NPV) of the Project."@en .
+
+###  https://example.org/ont/leanix#paybackPeriod
+
+leanix:paybackPeriod rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "paybackPeriod"@en ;
+    rdfs:comment "Payback period of the Project (in years or months as decimal)."@en .
+
+###  https://example.org/ont/leanix#benefitDescription
+
+leanix:benefitDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "benefitDescription"@en ;
+    rdfs:comment "Business benefits expected from the Project."@en .
+
+###  https://example.org/ont/leanix#projectRisk
+
+leanix:projectRisk rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "projectRisk"@en ;
+    rdfs:comment "Qualitative risk rating of the Project."@en .
+
+###  https://example.org/ont/leanix#costDescription
+
+leanix:costDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "costDescription"@en ;
+    rdfs:comment "Free-text description of Project costs."@en .
+
+###  https://example.org/ont/leanix#businessValueDescription
+
+leanix:businessValueDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "businessValueDescription"@en ;
+    rdfs:comment "Free-text description of the expected business value."@en .
+
+###  https://example.org/ont/leanix#budgetCapEx
+
+leanix:budgetCapEx rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "budgetCapEx"@en ;
+    rdfs:comment "Capital expenditure budget associated with the Project."@en .
+
+###  https://example.org/ont/leanix#businessValue
+
+leanix:businessValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "businessValue"@en ;
+    rdfs:comment "Categorical assessment of business value."@en .
+
+###  https://example.org/ont/leanix#projectRiskDescription
+
+leanix:projectRiskDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0011 ;
+    rdfs:range xsd:string ;
+    rdfs:label "projectRiskDescription"@en ;
+    rdfs:comment "Explanation of the Project risk assessment."@en .
+
+###  https://example.org/ont/leanix#leanixId
+
+leanix:leanixId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "leanixId"@en ;
+    rdfs:comment "LeanIX internal identifier (read-only)."@en .
+
+###  https://example.org/ont/leanix#lxCatalogStatus
+
+leanix:lxCatalogStatus rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0040 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxCatalogStatus"@en ;
+    rdfs:comment "Catalog link status (linked|ignored)."@en .
+
+###  https://example.org/ont/leanix#lxTransformationStatus
+
+leanix:lxTransformationStatus rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxTransformationStatus"@en ;
+    rdfs:comment "Transformation status (planned|created)."@en .
+
+###  https://example.org/ont/leanix#signavioGlossaryItemId
+
+leanix:signavioGlossaryItemId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "signavioGlossaryItemId"@en ;
+    rdfs:comment "Read-only Signavio Glossary reference."@en .
+
+###  https://example.org/ont/leanix#serviceNowExternalId
+
+leanix:serviceNowExternalId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0040 ;
+    rdfs:range xsd:string ;
+    rdfs:label "serviceNowExternalId"@en ;
+    rdfs:comment "ServiceNow reference identifier (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix#collibraExternalId
+
+leanix:collibraExternalId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "collibraExternalId"@en ;
+    rdfs:comment "Collibra external ID (read-only)."@en .
+
+###  https://example.org/ont/leanix#signavioProcessId
+
+leanix:signavioProcessId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0017 ;
+    rdfs:range xsd:string ;
+    rdfs:label "signavioProcessId"@en ;
+    rdfs:comment "Read-only Signavio process identifier."@en .
+
+###  https://example.org/ont/leanix#location
+
+leanix:location rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range xsd:string ;
+    rdfs:label "location"@en ;
+    rdfs:comment "Geographic location; must resolve via geolocation service on import in source system."@en .
+
+###  https://example.org/ont/leanix#StructObjectKey
+
+leanix:StructObjectKey rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range xsd:string ;
+    rdfs:label "StructObjectKey"@en ;
+    rdfs:comment "Structural object key reference (source system specific)."@en .
+
+###  https://example.org/ont/leanix#companyCode
+
+leanix:companyCode rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range xsd:string ;
+    rdfs:label "companyCode"@en ;
+    rdfs:comment "Owning/associated company code."@en .
+
+###  https://example.org/ont/leanix#parentId
+
+leanix:parentId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range xsd:string ;
+    rdfs:label "parentId"@en ;
+    rdfs:comment "External parent identifier (redundant to relToParent; for import reconciliation)."@en .
+
+###  https://example.org/ont/leanix#relationshipAllowed
+
+leanix:relationshipAllowed rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "relationshipAllowed"@en ;
+    rdfs:comment "Flag whether relations are allowed (yes|no)."@en .
+
+###  https://example.org/ont/leanix#keyCompany
+
+leanix:keyCompany rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0055 ;
+    rdfs:range xsd:string ;
+    rdfs:label "keyCompany"@en ;
+    rdfs:comment "Key company reference (multi-tenant / legal entity scoping)."@en .
+
+###  https://example.org/ont/leanix#functionalSuitabilityDescription
+
+leanix:functionalSuitabilityDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "functionalSuitabilityDescription"@en ;
+    rdfs:comment "Free-text justification for functional suitability."@en .
+
+###  https://example.org/ont/leanix#technicalSuitabilityDescription
+
+leanix:technicalSuitabilityDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "technicalSuitabilityDescription"@en ;
+    rdfs:comment "Justification of technical suitability rating."@en .
+
+###  https://example.org/ont/leanix#functionalSuitability
+
+leanix:functionalSuitability rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "functionalSuitability"@en ;
+    rdfs:comment "Functional suitability rating."@en .
+
+###  https://example.org/ont/leanix#technicalSuitability
+
+leanix:technicalSuitability rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "technicalSuitability"@en ;
+    rdfs:comment "Technical suitability (inappropriate|unreasonable|adequate|fullyAppropriate)."@en .
+
+###  https://example.org/ont/leanix#businessCriticality
+
+leanix:businessCriticality rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "businessCriticality"@en ;
+    rdfs:comment "Business criticality level."@en .
+
+###  https://example.org/ont/leanix#aggregatedObsolescenceRisk
+
+leanix:aggregatedObsolescenceRisk rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "aggregatedObsolescenceRisk"@en ;
+    rdfs:comment "Aggregated obsolescence risk."@en .
+
+###  https://example.org/ont/leanix#release
+
+leanix:release rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "release"@en ;
+    rdfs:comment "Release / version identifier (mandatory)."@en .
+
+###  https://example.org/ont/leanix#businessCriticalityDescription
+
+leanix:businessCriticalityDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "businessCriticalityDescription"@en ;
+    rdfs:comment "Explanation of the business criticality."@en .
+
+###  https://example.org/ont/leanix#orderingState
+
+leanix:orderingState rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "orderingState"@en ;
+    rdfs:comment "Ordering/approval state of the Application."@en .
+
+###  https://example.org/ont/leanix#lxTimeClassification
+
+leanix:lxTimeClassification rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxTimeClassification"@en ;
+    rdfs:comment "Time classification (Tolerate, Invest, Migrate, Eliminate)."@en .
+
+###  https://example.org/ont/leanix#lxTimeClassificationDescription
+
+leanix:lxTimeClassificationDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxTimeClassificationDescription"@en ;
+    rdfs:comment "Explanation for the time classification."@en .
+
+###  https://example.org/ont/leanix#lxSixRClassification
+
+leanix:lxSixRClassification rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxSixRClassification"@en ;
+    rdfs:comment "Six-R strategy classification."@en .
+
+###  https://example.org/ont/leanix#lxSixRRiskClassification
+
+leanix:lxSixRRiskClassification rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxSixRRiskClassification"@en ;
+    rdfs:comment "Risk classification for Six-R strategy."@en .
+
+###  https://example.org/ont/leanix#lxSixRTimePriority
+
+leanix:lxSixRTimePriority rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxSixRTimePriority"@en ;
+    rdfs:comment "Time priority for Six-R (wave1..3)."@en .
+
+###  https://example.org/ont/leanix#lxSixRClassificationDescription
+
+leanix:lxSixRClassificationDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxSixRClassificationDescription"@en ;
+    rdfs:comment "Explanation of the Six-R classification."@en .
+
+###  https://example.org/ont/leanix#lxProductCategory
+
+leanix:lxProductCategory rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxProductCategory"@en ;
+    rdfs:comment "Product category label from catalog."@en .
+
+###  https://example.org/ont/leanix#lxHostingType
+
+leanix:lxHostingType rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxHostingType"@en ;
+    rdfs:comment "Hosting type (cloud|saas|onPremise|hybrid|external|desktopOrLaptop|mobile|paas|iaas)."@en .
+
+###  https://example.org/ont/leanix#lxHostingDescription
+
+leanix:lxHostingDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxHostingDescription"@en ;
+    rdfs:comment "Free-text explanation of hosting type."@en .
+
+###  https://example.org/ont/leanix#lxSsoProvider
+
+leanix:lxSsoProvider rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxSsoProvider"@en ;
+    rdfs:comment "Name/identifier of SSO provider."@en .
+
+###  https://example.org/ont/leanix#lxStatusSSO
+
+leanix:lxStatusSSO rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxStatusSSO"@en ;
+    rdfs:comment "SSO support status (supported|notSupported)."@en .
+
+###  https://example.org/ont/leanix#authenticity
+
+leanix:authenticity rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "authenticity"@en ;
+    rdfs:comment "Security: authenticity level."@en .
+
+###  https://example.org/ont/leanix#confidentiality
+
+leanix:confidentiality rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "confidentiality"@en ;
+    rdfs:comment "Security: confidentiality level."@en .
+
+###  https://example.org/ont/leanix#availability
+
+leanix:availability rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "availability"@en ;
+    rdfs:comment "Security: availability level."@en .
+
+###  https://example.org/ont/leanix#integrity
+
+leanix:integrity rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "integrity"@en ;
+    rdfs:comment "Security: integrity level."@en .
+
+###  https://example.org/ont/leanix#riskClassification
+
+leanix:riskClassification rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "riskClassification"@en ;
+    rdfs:comment "Overall risk class (A..E)."@en .
+
+###  https://example.org/ont/leanix#versionSecurityApprovalProcess
+
+leanix:versionSecurityApprovalProcess rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "versionSecurityApprovalProcess"@en ;
+    rdfs:comment "Version of security approval process applied."@en .
+
+###  https://example.org/ont/leanix#pentestDate
+
+leanix:pentestDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "pentestDate"@en ;
+    rdfs:comment "Date of last pentest (string format in source)."@en .
+
+###  https://example.org/ont/leanix#bafinRelevance
+
+leanix:bafinRelevance rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "bafinRelevance"@en ;
+    rdfs:comment "Is BaFin relevant? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#acsms
+
+leanix:acsms rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "acsms"@en ;
+    rdfs:comment "ACSMS applicable? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#personalData
+
+leanix:personalData rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "personalData"@en ;
+    rdfs:comment "Processes personal data? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#personalDataComment
+
+leanix:personalDataComment rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "personalDataComment"@en ;
+    rdfs:comment "Notes regarding personal data handling."@en .
+
+###  https://example.org/ont/leanix#privacyQ1
+
+leanix:privacyQ1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ1"@en ;
+    rdfs:comment "Privacy question 1 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC1
+
+leanix:privacyC1 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC1"@en ;
+    rdfs:comment "Comment for privacyQ1."@en .
+
+###  https://example.org/ont/leanix#privacyQ2
+
+leanix:privacyQ2 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ2"@en ;
+    rdfs:comment "Privacy question 2 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC2
+
+leanix:privacyC2 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC2"@en ;
+    rdfs:comment "Comment for privacyQ2."@en .
+
+###  https://example.org/ont/leanix#privacyQ3
+
+leanix:privacyQ3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ3"@en ;
+    rdfs:comment "Privacy question 3 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC3
+
+leanix:privacyC3 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC3"@en ;
+    rdfs:comment "Comment for privacyQ3."@en .
+
+###  https://example.org/ont/leanix#privacyQ4
+
+leanix:privacyQ4 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ4"@en ;
+    rdfs:comment "Privacy question 4 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC4
+
+leanix:privacyC4 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC4"@en ;
+    rdfs:comment "Comment for privacyQ4."@en .
+
+###  https://example.org/ont/leanix#privacyQ5
+
+leanix:privacyQ5 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ5"@en ;
+    rdfs:comment "Privacy question 5 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC5
+
+leanix:privacyC5 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC5"@en ;
+    rdfs:comment "Comment for privacyQ5."@en .
+
+###  https://example.org/ont/leanix#privacyQ6
+
+leanix:privacyQ6 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ6"@en ;
+    rdfs:comment "Privacy question 6 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC6
+
+leanix:privacyC6 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC6"@en ;
+    rdfs:comment "Comment for privacyQ6."@en .
+
+###  https://example.org/ont/leanix#privacyQ7
+
+leanix:privacyQ7 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ7"@en ;
+    rdfs:comment "Privacy question 7 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC7
+
+leanix:privacyC7 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC7"@en ;
+    rdfs:comment "Comment for privacyQ7."@en .
+
+###  https://example.org/ont/leanix#privacyQ8
+
+leanix:privacyQ8 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ8"@en ;
+    rdfs:comment "Privacy question 8 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC8
+
+leanix:privacyC8 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC8"@en ;
+    rdfs:comment "Comment for privacyQ8."@en .
+
+###  https://example.org/ont/leanix#privacyQ9
+
+leanix:privacyQ9 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ9"@en ;
+    rdfs:comment "Privacy question 9 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC9
+
+leanix:privacyC9 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC9"@en ;
+    rdfs:comment "Comment for privacyQ9."@en .
+
+###  https://example.org/ont/leanix#privacyQ10
+
+leanix:privacyQ10 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ10"@en ;
+    rdfs:comment "Privacy question 10 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC10
+
+leanix:privacyC10 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC10"@en ;
+    rdfs:comment "Comment for privacyQ10."@en .
+
+###  https://example.org/ont/leanix#privacyQ11
+
+leanix:privacyQ11 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ11"@en ;
+    rdfs:comment "Privacy question 11 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC11
+
+leanix:privacyC11 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC11"@en ;
+    rdfs:comment "Comment for privacyQ11."@en .
+
+###  https://example.org/ont/leanix#privacyQ12
+
+leanix:privacyQ12 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ12"@en ;
+    rdfs:comment "Privacy question 12 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC12
+
+leanix:privacyC12 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC12"@en ;
+    rdfs:comment "Comment for privacyQ12."@en .
+
+###  https://example.org/ont/leanix#privacyQ13
+
+leanix:privacyQ13 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ13"@en ;
+    rdfs:comment "Privacy question 13 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC13
+
+leanix:privacyC13 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC13"@en ;
+    rdfs:comment "Comment for privacyQ13."@en .
+
+###  https://example.org/ont/leanix#privacyQ14
+
+leanix:privacyQ14 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ14"@en ;
+    rdfs:comment "Privacy question 14 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC14
+
+leanix:privacyC14 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC14"@en ;
+    rdfs:comment "Comment for privacyQ14."@en .
+
+###  https://example.org/ont/leanix#privacyQ15
+
+leanix:privacyQ15 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ15"@en ;
+    rdfs:comment "Privacy question 15 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC15
+
+leanix:privacyC15 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC15"@en ;
+    rdfs:comment "Comment for privacyQ15."@en .
+
+###  https://example.org/ont/leanix#privacyQ16
+
+leanix:privacyQ16 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ16"@en ;
+    rdfs:comment "Privacy question 16 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC16
+
+leanix:privacyC16 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC16"@en ;
+    rdfs:comment "Comment for privacyQ16."@en .
+
+###  https://example.org/ont/leanix#privacyQ17
+
+leanix:privacyQ17 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ17"@en ;
+    rdfs:comment "Privacy question 17 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC17
+
+leanix:privacyC17 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC17"@en ;
+    rdfs:comment "Comment for privacyQ17."@en .
+
+###  https://example.org/ont/leanix#privacyQ18
+
+leanix:privacyQ18 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ18"@en ;
+    rdfs:comment "Privacy question 18 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC18
+
+leanix:privacyC18 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC18"@en ;
+    rdfs:comment "Comment for privacyQ18."@en .
+
+###  https://example.org/ont/leanix#privacyQ19
+
+leanix:privacyQ19 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ19"@en ;
+    rdfs:comment "Privacy question 19 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC19
+
+leanix:privacyC19 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC19"@en ;
+    rdfs:comment "Comment for privacyQ19."@en .
+
+###  https://example.org/ont/leanix#privacyQ20
+
+leanix:privacyQ20 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ20"@en ;
+    rdfs:comment "Privacy question 20 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC20
+
+leanix:privacyC20 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC20"@en ;
+    rdfs:comment "Comment for privacyQ20."@en .
+
+###  https://example.org/ont/leanix#privacyQ21
+
+leanix:privacyQ21 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ21"@en ;
+    rdfs:comment "Privacy question 21 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC21
+
+leanix:privacyC21 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC21"@en ;
+    rdfs:comment "Comment for privacyQ21."@en .
+
+###  https://example.org/ont/leanix#privacyQ22
+
+leanix:privacyQ22 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ22"@en ;
+    rdfs:comment "Privacy question 22 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC22
+
+leanix:privacyC22 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC22"@en ;
+    rdfs:comment "Comment for privacyQ22."@en .
+
+###  https://example.org/ont/leanix#privacyQ23
+
+leanix:privacyQ23 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ23"@en ;
+    rdfs:comment "Privacy question 23 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC23
+
+leanix:privacyC23 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC23"@en ;
+    rdfs:comment "Comment for privacyQ23."@en .
+
+###  https://example.org/ont/leanix#privacyQ24
+
+leanix:privacyQ24 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyQ24"@en ;
+    rdfs:comment "Privacy question 24 (yes|no|unnecessary)."@en .
+
+###  https://example.org/ont/leanix#privacyC24
+
+leanix:privacyC24 rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "privacyC24"@en ;
+    rdfs:comment "Comment for privacyQ24."@en .
+
+###  https://example.org/ont/leanix#sensitivePersonalData
+
+leanix:sensitivePersonalData rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "sensitivePersonalData"@en ;
+    rdfs:comment "Contains sensitive personal data? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#gobdRelevance
+
+leanix:gobdRelevance rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "gobdRelevance"@en ;
+    rdfs:comment "GoBD relevance (yes|no|yesNotYetImplemented)."@en .
+
+###  https://example.org/ont/leanix#ItsaId
+
+leanix:ItsaId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "ItsaId"@en ;
+    rdfs:comment "ITSa identifier (if any)."@en .
+
+###  https://example.org/ont/leanix#sharedService
+
+leanix:sharedService rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "sharedService"@en ;
+    rdfs:comment "Shared service? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#hostingProvider
+
+leanix:hostingProvider rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "hostingProvider"@en ;
+    rdfs:comment "Hosting provider enum (aws_cam, azure_cam, sap, saas, vw, …)."@en .
+
+###  https://example.org/ont/leanix#standardizationLevel
+
+leanix:standardizationLevel rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "standardizationLevel"@en ;
+    rdfs:comment "Standardization level (numeric score)."@en .
+
+###  https://example.org/ont/leanix#standardizationDate
+
+leanix:standardizationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "standardizationDate"@en ;
+    rdfs:comment "Date of standardization status (string format in source)."@en .
+
+###  https://example.org/ont/leanix#securityApprovalDate
+
+leanix:securityApprovalDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "securityApprovalDate"@en ;
+    rdfs:comment "Security approval date (string format in source)."@en .
+
+###  https://example.org/ont/leanix#securityApproval
+
+leanix:securityApproval rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "securityApproval"@en ;
+    rdfs:comment "Security approval (yes|no)."@en .
+
+###  https://example.org/ont/leanix#bcmComment
+
+leanix:bcmComment rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "bcmComment"@en ;
+    rdfs:comment "Business continuity comment."@en .
+
+###  https://example.org/ont/leanix#bcmRelevance
+
+leanix:bcmRelevance rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "bcmRelevance"@en ;
+    rdfs:comment "BCM relevance (yes|no)."@en .
+
+###  https://example.org/ont/leanix#bcmRpo
+
+leanix:bcmRpo rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:integer ;
+    rdfs:label "bcmRpo"@en ;
+    rdfs:comment "Recovery Point Objective (integer)."@en .
+
+###  https://example.org/ont/leanix#bcmRto
+
+leanix:bcmRto rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:integer ;
+    rdfs:label "bcmRto"@en ;
+    rdfs:comment "Recovery Time Objective (integer)."@en .
+
+###  https://example.org/ont/leanix#legacyAppId
+
+leanix:legacyAppId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "legacyAppId"@en ;
+    rdfs:comment "Legacy application identifier."@en .
+
+###  https://example.org/ont/leanix#exportControlRelevance
+
+leanix:exportControlRelevance rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "exportControlRelevance"@en ;
+    rdfs:comment "Export control relevance (yes|no)."@en .
+
+###  https://example.org/ont/leanix#exportControlLastCheck
+
+leanix:exportControlLastCheck rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "exportControlLastCheck"@en ;
+    rdfs:comment "Last export-control check date (string format)."@en .
+
+###  https://example.org/ont/leanix#csdClassification
+
+leanix:csdClassification rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "csdClassification"@en ;
+    rdfs:comment "CSD classification (outsideRegulatory0, temporary1, onlyCategories2, temporaryAndCategories3)."@en .
+
+###  https://example.org/ont/leanix#csdRequirementsImplemented
+
+leanix:csdRequirementsImplemented rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "csdRequirementsImplemented"@en ;
+    rdfs:comment "CSD requirements implemented? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#legacyIctoId
+
+leanix:legacyIctoId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "legacyIctoId"@en ;
+    rdfs:comment "Legacy ICTO identifier for the Tech Platform."@en .
+
+###  https://example.org/ont/leanix#codeAnalysis
+
+leanix:codeAnalysis rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "codeAnalysis"@en ;
+    rdfs:comment "Code analysis performed? (yes|no|notRelevant)."@en .
+
+###  https://example.org/ont/leanix#codeAnalysisDate
+
+leanix:codeAnalysisDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "codeAnalysisDate"@en ;
+    rdfs:comment "Code analysis date (string format in source)."@en .
+
+###  https://example.org/ont/leanix#hostingType
+
+leanix:hostingType rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "hostingType"@en ;
+    rdfs:comment "Hosting type (cloud|saas|onPrem|hybrid|client)."@en .
+
+###  https://example.org/ont/leanix#mitigatedObsolescenceRiskPercentage
+
+leanix:mitigatedObsolescenceRiskPercentage rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "mitigatedObsolescenceRiskPercentage"@en ;
+    rdfs:comment "Mitigated obsolescence risk (%)."@en .
+
+###  https://example.org/ont/leanix#obsolescenceMissingDataPercentage
+
+leanix:obsolescenceMissingDataPercentage rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "obsolescenceMissingDataPercentage"@en ;
+    rdfs:comment "Obsolescence missing data (%)."@en .
+
+###  https://example.org/ont/leanix#unaddressedObsolescenceRiskPercentage
+
+leanix:unaddressedObsolescenceRiskPercentage rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "unaddressedObsolescenceRiskPercentage"@en ;
+    rdfs:comment "Unaddressed obsolescence risk (%)."@en .
+
+###  https://example.org/ont/leanix#LastSecurityCheck
+
+leanix:LastSecurityCheck rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "LastSecurityCheck"@en ;
+    rdfs:comment "Last security check date (string format in source)."@en .
+
+###  https://example.org/ont/leanix#NextSecurityCheck
+
+leanix:NextSecurityCheck rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "NextSecurityCheck"@en ;
+    rdfs:comment "Next security check date (string format in source)."@en .
+
+###  https://example.org/ont/leanix#groupLeanixId
+
+leanix:groupLeanixId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "groupLeanixId"@en ;
+    rdfs:comment "Group LeanIX identifier (if part of an Application group)."@en .
+
+###  https://example.org/ont/leanix#groupUrl
+
+leanix:groupUrl rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "groupUrl"@en ;
+    rdfs:comment "Group URL (link to group information)."@en .
+
+###  https://example.org/ont/leanix#AppURL
+
+leanix:AppURL rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "AppURL"@en ;
+    rdfs:comment "Application URL."@en .
+
+###  https://example.org/ont/leanix#InternetFacing
+
+leanix:InternetFacing rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "InternetFacing"@en ;
+    rdfs:comment "Internet-facing? (Yes|No)."@en .
+
+###  https://example.org/ont/leanix#securityassessment
+
+leanix:securityassessment rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "securityassessment"@en ;
+    rdfs:comment "Security assessment type (Securtiy_Manager_Business|BIA)."@en .
+
+###  https://example.org/ont/leanix#lxSiId
+
+leanix:lxSiId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxSiId"@en ;
+    rdfs:comment "LeanIX SI identifier."@en .
+
+###  https://example.org/ont/leanix#lxCatalogId
+
+leanix:lxCatalogId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0025 ;
+    rdfs:range xsd:string ;
+    rdfs:label "lxCatalogId"@en ;
+    rdfs:comment "LeanIX Catalog identifier."@en .
+
+###  https://example.org/ont/leanix#interfaceType
+
+leanix:interfaceType rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range xsd:string ;
+    rdfs:label "interfaceType"@en ;
+    rdfs:comment "Interface type (synchronous|asynchronous|batch)."@en .
+
+###  https://example.org/ont/leanix#dataFlowDirection
+
+leanix:dataFlowDirection rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range xsd:string ;
+    rdfs:label "dataFlowDirection"@en ;
+    rdfs:comment "Data flow direction (incoming|outgoing|biDirectional)."@en .
+
+###  https://example.org/ont/leanix#frequency
+
+leanix:frequency rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range xsd:string ;
+    rdfs:label "frequency"@en ;
+    rdfs:comment "Transfer frequency (hourly|daily|weekly|monthly|yearly|realtime|onDemand)."@en .
+
+###  https://example.org/ont/leanix#interfaceIdSequence
+
+leanix:interfaceIdSequence rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0028 ;
+    rdfs:range xsd:string ;
+    rdfs:label "interfaceIdSequence"@en ;
+    rdfs:comment "Sequence/identifier generated by source (read-only)."@en .
+
+###  https://example.org/ont/leanix#ltlsStatus
+
+leanix:ltlsStatus rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range xsd:string ;
+    rdfs:label "ltlsStatus"@en ;
+    rdfs:comment "Technology lifecycle status (linked|requested|ignored)."@en .
+
+###  https://example.org/ont/leanix#foss
+
+leanix:foss rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range xsd:string ;
+    rdfs:label "foss"@en ;
+    rdfs:comment "Whether the component is open source (yes|no)."@en .
+
+###  https://example.org/ont/leanix#legacyCompId
+
+leanix:legacyCompId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0032 ;
+    rdfs:range xsd:string ;
+    rdfs:label "legacyCompId"@en ;
+    rdfs:comment "Legacy component identifier."@en .
+
+###  https://example.org/ont/leanix#technopediaId
+
+leanix:technopediaId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0040 ;
+    rdfs:range xsd:string ;
+    rdfs:label "technopediaId"@en ;
+    rdfs:comment "Technopedia reference identifier (read-only in source system)."@en .
+
+###  https://example.org/ont/leanix#assessment
+
+leanix:assessment rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "assessment"@en ;
+    rdfs:comment "Free-text assessment summary for the Tech Platform."@en .
+
+###  https://example.org/ont/leanix#assessmentDate
+
+leanix:assessmentDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "assessmentDate"@en ;
+    rdfs:comment "Date of last platform assessment (string or ISO date)."@en .
+
+###  https://example.org/ont/leanix#legacyCategory
+
+leanix:legacyCategory rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "legacyCategory"@en ;
+    rdfs:comment "Legacy category classification label."@en .
+
+###  https://example.org/ont/leanix#legacyPlatId
+
+leanix:legacyPlatId rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0027 ;
+    rdfs:range xsd:string ;
+    rdfs:label "legacyPlatId"@en ;
+    rdfs:comment "Legacy platform identifier."@en .
+
+###  https://example.org/ont/leanix#providerCriticalityDescription
+
+leanix:providerCriticalityDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range xsd:string ;
+    rdfs:label "providerCriticalityDescription"@en ;
+    rdfs:comment "Explanation of assigned provider criticality."@en .
+
+###  https://example.org/ont/leanix#providerCriticality
+
+leanix:providerCriticality rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range xsd:string ;
+    rdfs:label "providerCriticality"@en ;
+    rdfs:comment "Criticality of provider (commodity|operational|tactical|strategic)."@en .
+
+###  https://example.org/ont/leanix#providerQuality
+
+leanix:providerQuality rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range xsd:string ;
+    rdfs:label "providerQuality"@en ;
+    rdfs:comment "Quality rating (unreasonable|insufficient|appropriate|perfect)."@en .
+
+###  https://example.org/ont/leanix#providerQualityDescription
+
+leanix:providerQualityDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range xsd:string ;
+    rdfs:label "providerQualityDescription"@en ;
+    rdfs:comment "Justification of provider quality rating."@en .
+
+###  https://example.org/ont/leanix#tisax
+
+leanix:tisax rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0046 ;
+    rdfs:range xsd:string ;
+    rdfs:label "tisax"@en ;
+    rdfs:comment "TISAX compliant? (yes|no)."@en .
+
+###  https://example.org/ont/leanix#dataClassification
+
+leanix:dataClassification rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "dataClassification"@en ;
+    rdfs:comment "Data classification (public|sensitive|restricted|confidential)."@en .
+
+###  https://example.org/ont/leanix#dataClassificationDescription
+
+leanix:dataClassificationDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain leanix:LXO0030 ;
+    rdfs:range xsd:string ;
+    rdfs:label "dataClassificationDescription"@en ;
+    rdfs:comment "Explanation/justification of data classification."@en .
+
