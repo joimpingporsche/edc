@@ -46,7 +46,8 @@ class SchemaCanonicalizer:
     def retrieve_similar_relations(self, query_relation_definition: str, top_k=5):
         target_relation_list = list(self.schema_embedding_dict.keys())
         target_relation_embedding_list = list(self.schema_embedding_dict.values())
-        if "sts_query" in self.embedder.prompts:
+        embedder_prompts = getattr(self.embedder, "prompts", {}) or {}
+        if "sts_query" in embedder_prompts:
             query_embedding = self.embedder.encode(query_relation_definition, prompt_name="sts_query")
         else:
             query_embedding = self.embedder.encode(query_relation_definition)
@@ -154,7 +155,8 @@ class SchemaCanonicalizer:
             # Cannot be canonicalized
             if enrich:
                 self.schema_dict[open_relation] = open_relation_definition_dict[open_relation]
-                if "sts_query" in self.embedder.prompts:
+                embedder_prompts = getattr(self.embedder, "prompts", {}) or {}
+                if "sts_query" in embedder_prompts:
                     embedding = self.embedder.encode(
                         open_relation_definition_dict[open_relation], prompt_name="sts_query"
                     )

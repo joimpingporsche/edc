@@ -1,5 +1,6 @@
 import os
 from langchain_openai import AzureChatOpenAI
+from openai import AzureOpenAI
 import time
 from transformers import AutoModelForCausalLM, AutoTokenizer, GenerationConfig
 import ast
@@ -8,8 +9,42 @@ from typing import List
 import gc
 import torch
 import logging
+import numpy as np
 
 logger = logging.getLogger(__name__)
+
+
+class AzureEmbeddingModel:
+    """SentenceTransformer-compatible adapter backed by Azure OpenAI embeddings."""
+
+    def __init__(self, deployment_name: str, api_version: str = None):
+        self.deployment_name = deployment_name
+        self.api_version = api_version or os.environ.get("AZURE_OPENAI_API_VERSION", "2023-05-15")
+        self.prompts = {}
+
+        api_key = os.environ["AZURE_OPENAI_API_KEY"]
+        endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
+
+        self.client = AzureOpenAI(
+            api_key=api_key,
+            azure_endpoint=endpoint,
+            api_version=self.api_version,
+        )
+
+    def encode(self, text: str, prompt_name=None, prompt=None):
+        request_text = text
+        if prompt:
+            request_text = f"{prompt}{text}"
+
+        response = self.client.embeddings.create(
+            input=[request_text],
+            model=self.deployment_name,
+        )
+        embedding = np.asarray(response.data[0].embedding, dtype=np.float32)
+        norm = np.linalg.norm(embedding)
+        if norm > 0:
+            embedding = embedding / norm
+        return embedding
 
 
 def free_model(model: AutoModelForCausalLM = None, tokenizer: AutoTokenizer = None):

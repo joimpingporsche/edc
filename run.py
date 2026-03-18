@@ -47,6 +47,17 @@ if __name__ == "__main__":
         "--sc_embedder", default="intfloat/e5-mistral-7b-instruct", help="Embedder used for schema canonicalization. Has to be a sentence transformer. Please refer to https://sbert.net/"
     )
     parser.add_argument(
+        "--embedding_api",
+        choices=["local", "azure"],
+        default="local",
+        help="Embedding backend. local uses SentenceTransformer, azure uses Azure OpenAI embeddings endpoint.",
+    )
+    parser.add_argument(
+        "--azure_openai_api_version",
+        default=None,
+        help="Azure OpenAI API version for embeddings. Falls back to AZURE_OPENAI_API_VERSION when omitted.",
+    )
+    parser.add_argument(
         "--sc_prompt_template_file_path",
         default="./prompt_templates/sc_template.txt",
         help="Prompt template used for schema canonicalization verification.",

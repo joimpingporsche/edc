@@ -39,6 +39,8 @@ class EDC:
         self.sc_llm_name = edc_configuration["sc_llm"]
         self.sc_embedder_name = edc_configuration["sc_embedder"]
         self.sc_template_file_path = edc_configuration["sc_prompt_template_file_path"]
+        self.embedding_api = edc_configuration.get("embedding_api", "local")
+        self.azure_openai_api_version = edc_configuration.get("azure_openai_api_version", None)
 
         # Refinement settings
         self.sr_adapter_path = edc_configuration["sr_adapter_path"]
@@ -159,7 +161,13 @@ class EDC:
                 )
                 self.loaded_model_dict[model_name] = (model, tokenizer)
             elif model_type == "sts":
-                model = SentenceTransformer(model_name, trust_remote_code=True)
+                if self.embedding_api == "azure":
+                    model = llm_utils.AzureEmbeddingModel(
+                        deployment_name=model_name,
+                        api_version=self.azure_openai_api_version,
+                    )
+                else:
+                    model = SentenceTransformer(model_name, trust_remote_code=True)
                 self.loaded_model_dict[model_name] = model
         return self.loaded_model_dict[model_name]
 
@@ -233,7 +241,7 @@ class EDC:
         
 
         if not llm_utils.is_model_openai(self.sc_llm_name):
-            sc_verify_model, sc_verify_tokenizer = self.load_model(self.sc_llm_name, "sts")
+            sc_verify_model, sc_verify_tokenizer = self.load_model(self.sc_llm_name, "hf")
             # if self.sc_llm_name not in self.loaded_model_dict:
             #     logger.info(f"Loading model {self.sc_llm_name}")
             #     sc_verify_model, sc_verify_tokenizer = (
@@ -272,7 +280,8 @@ class EDC:
 
         if free_model:
             logger.info(f"Freeing model {self.sc_embedder_name, self.sc_llm_name} as it is no longer needed")
-            llm_utils.free_model(sc_embedder)
+            if self.embedding_api != "azure":
+                llm_utils.free_model(sc_embedder)
             #llm_utils.free_model(sc_verify_model, sc_verify_tokenizer)
            # del self.loaded_model_dict[self.sc_llm_name]
 
@@ -412,7 +421,8 @@ class EDC:
 
         if free_model:
             logger.info(f"Freeing model {self.sr_embedder_name, self.ee_llm_name} as it is no longer needed")
-            llm_utils.free_model(sr_embedding_model)
+            if self.embedding_api != "azure":
+                llm_utils.free_model(sr_embedding_model)
             llm_utils.free_model(ee_model, ee_tokenizer)
             del self.loaded_model_dict[self.sr_embedder_name]
             del self.loaded_model_dict[self.ee_llm_name]

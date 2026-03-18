@@ -1,0 +1,1143 @@
+[
+    {
+        "index": 0,
+        "input_text": "SECTION_TITLE: Definition: Digital Solution\nCONTENT:\nIn alignment with the Scaled Agile Framework (SAFe) and extended by Porsche-specific terminology, a Digital Solution is defined as follows: A Digital Solution is a cohesive construct that delivers business value by integrating multiple IT Products. These IT Products are modular, technically and logically bounded units that implement specific business functionalities. Together, they form the technical foundation of a Digital Solution. In addition to IT Products, a Digital Solution may also include: \u2022 Business processes \u2022 Methods and practices \u2022 Organizational structures",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Digital_Solution",
+                "alignedWith",
+                "Scaled_Agile_Framework_(SAFe)"
+            ],
+            [
+                "Digital_Solution",
+                "extendedBy",
+                "Porsche-specific_terminology"
+            ],
+            [
+                "Digital_Solution",
+                "definition",
+                "cohesive_construct_that_delivers_business_value_by_integrating_multiple_IT_Products"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "modular"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "technically_bounded_units"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "logically_bounded_units"
+            ],
+            [
+                "IT_Products",
+                "function",
+                "implement_specific_business_functionalities"
+            ],
+            [
+                "IT_Products",
+                "form",
+                "technical_foundation_of_Digital_Solution"
+            ],
+            [
+                "Digital_Solution",
+                "includes",
+                "IT_Products"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Business_processes"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Methods_and_practices"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Organizational_structures"
+            ]
+        ],
+        "schema_definition": {
+            "alignedWith": "The subject entity is in alignment or accordance with the object entity.",
+            "extendedBy": "The subject entity is expanded, supplemented, or further specified by the object entity.",
+            "definition": "The object entity provides the defining description or meaning of the subject entity.",
+            "characteristic": "The subject entity possesses or exhibits the attribute or quality specified by the object entity.",
+            "function": "The subject entity performs or carries out the role or activity specified by the object entity.",
+            "form": "The subject entity constitutes or makes up the object entity, serving as its component or basis.",
+            "includes": "The subject entity contains or comprises the object entity as a part of itself.",
+            "mayInclude": "The subject entity can optionally contain or comprise the object entity as part of itself."
+        },
+        "canonicalization_candidates": "[{'located in the administrative territorial entity': np.float32(0.6493594), 'country': np.float32(0.6493113), 'contains settlement': np.float32(0.6341552), 'contains administrative territorial entity': np.float32(0.59660697), 'place of birth': np.float32(0.5931995)}, {'country': np.float32(0.6526121), 'contains administrative territorial entity': np.float32(0.6508633), 'located in the administrative territorial entity': np.float32(0.65077734), 'contains settlement': np.float32(0.6415173), 'alignedWith': np.float32(0.62696356)}, {'alignedWith': np.float32(0.64556086), 'contains administrative territorial entity': np.float32(0.61552274), 'country': np.float32(0.6150757), 'contains settlement': np.float32(0.60268563), 'located in the administrative territorial entity': np.float32(0.5936911)}, {'alignedWith': np.float32(0.70708656), 'definition': np.float32(0.6779821), 'located in the administrative territorial entity': np.float32(0.6733609), 'country': np.float32(0.6689702), 'contains administrative territorial entity': np.float32(0.6393753)}, {}, {}, {'characteristic': np.float32(0.7351155), 'alignedWith': np.float32(0.64318657), 'definition': np.float32(0.63383883), 'country': np.float32(0.62932354), 'located in the administrative territorial entity': np.float32(0.6280334)}, {'characteristic': np.float32(0.73580414), 'definition': np.float32(0.73073703), 'alignedWith': np.float32(0.6987535), 'contains settlement': np.float32(0.667083), 'contains administrative territorial entity': np.float32(0.66076404)}, {'form': np.float32(0.84607905), 'characteristic': np.float32(0.73913693), 'contains administrative territorial entity': np.float32(0.69778633), 'alignedWith': np.float32(0.68589157), 'contains settlement': np.float32(0.67099094)}, {'form': np.float32(0.7458513), 'contains administrative territorial entity': np.float32(0.66973287), 'characteristic': np.float32(0.66696477), 'contains settlement': np.float32(0.6605139), 'country': np.float32(0.6302484)}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "Digital_Solution",
+                "alignedWith",
+                "Scaled_Agile_Framework_(SAFe)"
+            ],
+            [
+                "Digital_Solution",
+                "alignedWith",
+                "Porsche-specific_terminology"
+            ],
+            [
+                "Digital_Solution",
+                "definition",
+                "cohesive_construct_that_delivers_business_value_by_integrating_multiple_IT_Products"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "modular"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "technically_bounded_units"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "logically_bounded_units"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "implement_specific_business_functionalities"
+            ],
+            [
+                "IT_Products",
+                "form",
+                "technical_foundation_of_Digital_Solution"
+            ],
+            [
+                "Digital_Solution",
+                "form",
+                "IT_Products"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Business_processes"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Methods_and_practices"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Organizational_structures"
+            ]
+        ]
+    },
+    {
+        "index": 1,
+        "input_text": "SECTION_TITLE: Definition: Digital Solution\nCONTENT:\nIn addition to IT Products, a Digital Solution may also include: \u2022 Business processes \u2022 Methods and practices \u2022 Organizational structures",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Digital_Solution",
+                "includes",
+                "IT_Products"
+            ],
+            [
+                "Digital_Solution",
+                "includes",
+                "Business_processes"
+            ],
+            [
+                "Digital_Solution",
+                "includes",
+                "Methods_and_practices"
+            ],
+            [
+                "Digital_Solution",
+                "includes",
+                "Organizational_structures"
+            ]
+        ],
+        "schema_definition": {
+            "includes": "The subject entity contains, comprises, or encompasses the object entity as a part or component."
+        },
+        "canonicalization_candidates": "[{'mayInclude': np.float32(0.83630127), 'form': np.float32(0.80071604), 'characteristic': np.float32(0.70879567), 'contains administrative territorial entity': np.float32(0.65900606), 'alignedWith': np.float32(0.64748466)}, {'mayInclude': np.float32(0.83630127), 'form': np.float32(0.80071604), 'characteristic': np.float32(0.70879567), 'contains administrative territorial entity': np.float32(0.65900606), 'alignedWith': np.float32(0.64748466)}, {'mayInclude': np.float32(0.83630127), 'form': np.float32(0.80071604), 'characteristic': np.float32(0.70879567), 'contains administrative territorial entity': np.float32(0.65900606), 'alignedWith': np.float32(0.64748466)}, {'mayInclude': np.float32(0.83630127), 'form': np.float32(0.80071604), 'characteristic': np.float32(0.70879567), 'contains administrative territorial entity': np.float32(0.65900606), 'alignedWith': np.float32(0.64748466)}]",
+        "schema_canonicalizaiton": [
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "IT_Products"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Business_processes"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Methods_and_practices"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "Organizational_structures"
+            ]
+        ]
+    },
+    {
+        "index": 2,
+        "input_text": "SECTION_TITLE: Characteristics of a Digital Solution\nCONTENT:\n\u2022 Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).\n\u2022 Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.\n\u2022 Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by delivering measurable business value.\n\u2022 Is Developed Within a Single Agile Release Train (ART) Each Digital Solution is budgeted and managed within one portfolio and is developed by one or more agile teams within a single ART.\n\u2022 Is Part of a Development Value Stream (DVS) The contributing teams are part of a DVS and are responsible for defining, building, validating, and releasing the IT Products that make up the Digital Solution.\n\u2022 Supports Independent Delivery IT Products within a Digital Solution are potentially independently deployable and operable, ensuring resilience, scalability, and speed.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Digital_Solution",
+                "consistsOf",
+                "IT_Products"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "application"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "business_service"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "business_platform"
+            ],
+            [
+                "IT_Product",
+                "deliveredTo",
+                "internal_users"
+            ],
+            [
+                "IT_Product",
+                "deliveredTo",
+                "external_users"
+            ],
+            [
+                "IT_Product",
+                "enables",
+                "business_capabilities"
+            ],
+            [
+                "IT_Product",
+                "enables",
+                "processes"
+            ],
+            [
+                "IT_Product",
+                "enables",
+                "data_entities"
+            ],
+            [
+                "Digital_Solution",
+                "supports",
+                "Operational_Value_Streams"
+            ],
+            [
+                "Digital_Solution",
+                "designedTo",
+                "support_and_enhance_Operational_Value_Streams"
+            ],
+            [
+                "Digital_Solution",
+                "delivers",
+                "measurable_business_value"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "Single_Agile_Release_Train"
+            ],
+            [
+                "Digital_Solution",
+                "budgetedAndManagedWithin",
+                "one_portfolio"
+            ],
+            [
+                "Digital_Solution",
+                "developedBy",
+                "one_or_more_agile_teams"
+            ],
+            [
+                "agile_teams",
+                "partOf",
+                "Single_Agile_Release_Train"
+            ],
+            [
+                "Digital_Solution",
+                "partOf",
+                "Development_Value_Stream"
+            ],
+            [
+                "contributing_teams",
+                "partOf",
+                "Development_Value_Stream"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "defining_IT_Products"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "building_IT_Products"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "validating_IT_Products"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "releasing_IT_Products"
+            ],
+            [
+                "IT_Products",
+                "makeUp",
+                "Digital_Solution"
+            ],
+            [
+                "IT_Products",
+                "potentially",
+                "independently_deployable"
+            ],
+            [
+                "IT_Products",
+                "potentially",
+                "independently_operable"
+            ],
+            [
+                "IT_Products",
+                "ensure",
+                "resilience"
+            ],
+            [
+                "IT_Products",
+                "ensure",
+                "scalability"
+            ],
+            [
+                "IT_Products",
+                "ensure",
+                "speed"
+            ]
+        ],
+        "schema_definition": {
+            "developedBy": "The subject entity is created, built, or produced by the person, group, or entity specified by the object entity.",
+            "makeUp": "The subject entity forms or constitutes the components or parts of the object entity.",
+            "deliveredTo": "The subject entity is provided, sent, or made available to the recipient or group specified by the object entity.",
+            "delivers": "The subject entity provides, produces, or yields the outcome, result, or value specified by the object entity.",
+            "potentially": "The subject entity has the capability or possibility to exhibit or perform the characteristic or action specified by the object entity.",
+            "type": "The subject entity belongs to or is classified under the category or kind specified by the object entity.",
+            "supports": "The subject entity assists, upholds, or enables the function, activity, or entity specified by the object entity.",
+            "enables": "The subject entity makes possible or facilitates the occurrence, function, or existence of the object entity.",
+            "responsibleFor": "The subject entity has the duty, role, or obligation to carry out or manage the activity or task specified by the object entity.",
+            "consistsOf": "The subject entity is composed of or includes the parts or elements specified by the object entity.",
+            "budgetedAndManagedWithin": "The subject entity is financially planned and administratively controlled within the scope or boundary specified by the object entity.",
+            "ensure": "The subject entity guarantees or makes certain the presence, quality, or condition specified by the object entity.",
+            "developedWithin": "The subject entity is created or produced inside the framework, environment, or structure specified by the object entity.",
+            "partOf": "The subject entity belongs to, is included in, or forms a component of the object entity.",
+            "designedTo": "The subject entity is intended, planned, or created with the purpose of achieving or supporting the function or outcome specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'mayInclude': np.float32(0.8120934), 'form': np.float32(0.795015), 'characteristic': np.float32(0.7137287), 'contains administrative territorial entity': np.float32(0.685094), 'alignedWith': np.float32(0.66114223)}, {'characteristic': np.float32(0.7667028), 'form': np.float32(0.6988914), 'located in the administrative territorial entity': np.float32(0.68392885), 'alignedWith': np.float32(0.67946136), 'country': np.float32(0.67935777)}, {}, {}, {'form': np.float32(0.66072506), 'characteristic': np.float32(0.65341014), 'country': np.float32(0.64545923), 'contains settlement': np.float32(0.6358221), 'mayInclude': np.float32(0.62931085)}, {}, {'form': np.float32(0.7478115), 'characteristic': np.float32(0.70329857), 'definition': np.float32(0.691291), 'type': np.float32(0.65217495), 'deliveredTo': np.float32(0.64976627)}, {}, {}, {'enables': np.float32(0.8085891), 'form': np.float32(0.6967758), 'characteristic': np.float32(0.6656527), 'definition': np.float32(0.66479504), 'alignedWith': np.float32(0.63965183)}, {'enables': np.float32(0.7445866), 'definition': np.float32(0.68693864), 'form': np.float32(0.67196524), 'characteristic': np.float32(0.641327), 'type': np.float32(0.6409522)}, {'enables': np.float32(0.75875306), 'form': np.float32(0.727676), 'characteristic': np.float32(0.7186955), 'deliveredTo': np.float32(0.7119856), 'definition': np.float32(0.69427705)}, {'form': np.float32(0.71389663), 'enables': np.float32(0.6858367), 'place of birth': np.float32(0.67901695), 'deliveredTo': np.float32(0.67594075), 'country': np.float32(0.6715722)}, {'contains administrative territorial entity': np.float32(0.6682764), 'located in the administrative territorial entity': np.float32(0.6682663), 'developedWithin': np.float32(0.62915486), 'alignedWith': np.float32(0.6248871), 'type': np.float32(0.6240083)}, {'developedWithin': np.float32(0.8586461), 'form': np.float32(0.73599106), 'deliveredTo': np.float32(0.71552914), 'enables': np.float32(0.70870245), 'characteristic': np.float32(0.69542974)}, {'type': np.float32(0.8000673), 'form': np.float32(0.7743665), 'mayInclude': np.float32(0.7659383), 'characteristic': np.float32(0.70939684), 'developedWithin': np.float32(0.68461335)}, {'type': np.float32(0.8000673), 'form': np.float32(0.7743665), 'mayInclude': np.float32(0.7659383), 'characteristic': np.float32(0.70939684), 'developedWithin': np.float32(0.68461335)}, {'type': np.float32(0.8000673), 'form': np.float32(0.7743665), 'mayInclude': np.float32(0.7659383), 'characteristic': np.float32(0.70939684), 'developedWithin': np.float32(0.68461335)}, {'enables': np.float32(0.69854003), 'characteristic': np.float32(0.6921366), 'form': np.float32(0.66298085), 'type': np.float32(0.64250004), 'deliveredTo': np.float32(0.64066607)}, {}, {}, {}, {'form': np.float32(0.8989724), 'mayInclude': np.float32(0.75774336), 'type': np.float32(0.72193825), 'developedWithin': np.float32(0.72019094), 'characteristic': np.float32(0.71456563)}, {'characteristic': np.float32(0.81291574), 'enables': np.float32(0.7549091), 'responsibleFor': np.float32(0.70814204), 'type': np.float32(0.6798789), 'mayInclude': np.float32(0.6646245)}, {'characteristic': np.float32(0.8132619), 'enables': np.float32(0.7553168), 'responsibleFor': np.float32(0.7080826), 'type': np.float32(0.68041253), 'mayInclude': np.float32(0.6650195)}, {'characteristic': np.float32(0.72721696), 'enables': np.float32(0.6918047), 'form': np.float32(0.6759889), 'responsibleFor': np.float32(0.66252947), 'type': np.float32(0.6388355)}, {'characteristic': np.float32(0.72721696), 'enables': np.float32(0.6918047), 'form': np.float32(0.6759889), 'responsibleFor': np.float32(0.66252947), 'type': np.float32(0.6388355)}, {'characteristic': np.float32(0.72721696), 'enables': np.float32(0.6918047), 'form': np.float32(0.6759889), 'responsibleFor': np.float32(0.66252947), 'type': np.float32(0.6388355)}]",
+        "schema_canonicalizaiton": [
+            [
+                "Digital_Solution",
+                "form",
+                "IT_Products"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "application"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "business_service"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "business_platform"
+            ],
+            [
+                "IT_Product",
+                "deliveredTo",
+                "internal_users"
+            ],
+            [
+                "IT_Product",
+                "deliveredTo",
+                "external_users"
+            ],
+            [
+                "IT_Product",
+                "enables",
+                "business_capabilities"
+            ],
+            [
+                "IT_Product",
+                "enables",
+                "processes"
+            ],
+            [
+                "IT_Product",
+                "enables",
+                "data_entities"
+            ],
+            [
+                "Digital_Solution",
+                "enables",
+                "Operational_Value_Streams"
+            ],
+            [
+                "Digital_Solution",
+                "enables",
+                "support_and_enhance_Operational_Value_Streams"
+            ],
+            [
+                "Digital_Solution",
+                "enables",
+                "measurable_business_value"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "Single_Agile_Release_Train"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "one_portfolio"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "one_or_more_agile_teams"
+            ],
+            [
+                "agile_teams",
+                "developedWithin",
+                "Single_Agile_Release_Train"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "Development_Value_Stream"
+            ],
+            [
+                "contributing_teams",
+                "developedWithin",
+                "Development_Value_Stream"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "defining_IT_Products"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "building_IT_Products"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "validating_IT_Products"
+            ],
+            [
+                "contributing_teams",
+                "responsibleFor",
+                "releasing_IT_Products"
+            ],
+            [
+                "IT_Products",
+                "form",
+                "Digital_Solution"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "independently_deployable"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "independently_operable"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "resilience"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "scalability"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "speed"
+            ]
+        ]
+    },
+    {
+        "index": 3,
+        "input_text": "SECTION_TITLE: Purpose and Benefits\nCONTENT:\n[\n{\"section\": \"Definition\", \"element\": \"Digital Solution\", \"description\": \"Aconstruct composed of IT Products and potentially processes, methods, and organizational elements\"},\n{\"section\": \"Definition\", \"element\": \"IT Product\", \"description\": \"Application, service, or platform with supporting technologies\"},\n{\"section\": \"Composition\", \"element\": \"Modular Structure\", \"description\": \"Multiple IT Products form a Digital Solution\"},\n{\"section\": \"Composition\", \"element\": \"Logical Boundaries\", \"description\": \"Each IT Product is technically and logically self- contained\"},\n{\"section\": \"Functionality\", \"element\": \"Business Enablement\", \"description\": \"Supports business capabilities, processes, and data entities\"},\n{\"section\": \"Functionality\", \"element\": \"Value Stream Alignment\", \"description\": \"Supports Operational Value Streams (OVS)\"},\n{\"section\": \"Development Context\", \"element\": \"Agile Release Train (ART)\", \"description\": \"Each Digital Solution is developed within a single ART\"},\n{\"section\": \"Development Context\", \"element\": \"Development Value Stream (DVS)\", \"description\": \"Teams within the DVS define, build, validate, and release IT Products\"},\n{\"section\": \"Development Context\", \"element\": \"Portfolio Alignment\", \"description\": \"Budgeted and governed within one portfolio\"},\n{\"section\": \"Delivery Model\", \"element\": \"Independent Deployability\", \"description\": \"IT Products can be released and operated independently\"},\n{\"section\": \"Delivery Model\", \"element\": \"Resilience & Speed\", \"description\": \"Ensures scalable, stable, and fast delivery\"},\n{\"section\": \"Customer Value\", \"element\": \"Outcome-Oriented\", \"description\": \"Customers seek complete solutions, not isolated features\"},\n{\"section\": \"Customer Value\", \"element\": \"Internal & External Users\", \"description\": \"Solutions serve both internal employees and external customers\"}\n]",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Digital_Solution",
+                "composedOf",
+                "IT_Products"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "processes"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "methods"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "organizational_elements"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "Application"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "Service"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "Platform"
+            ],
+            [
+                "IT_Product",
+                "has",
+                "supporting_technologies"
+            ],
+            [
+                "Modular_Structure",
+                "forms",
+                "Digital_Solution"
+            ],
+            [
+                "Modular_Structure",
+                "composedOf",
+                "Multiple_IT_Products"
+            ],
+            [
+                "IT_Product",
+                "hasProperty",
+                "Logical_Boundaries"
+            ],
+            [
+                "Logical_Boundaries",
+                "characteristic",
+                "technically_self-contained"
+            ],
+            [
+                "Logical_Boundaries",
+                "characteristic",
+                "logically_self-contained"
+            ],
+            [
+                "Business_Enablement",
+                "supports",
+                "business_capabilities"
+            ],
+            [
+                "Business_Enablement",
+                "supports",
+                "processes"
+            ],
+            [
+                "Business_Enablement",
+                "supports",
+                "data_entities"
+            ],
+            [
+                "Value_Stream_Alignment",
+                "supports",
+                "Operational_Value_Streams"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "Agile_Release_Train"
+            ],
+            [
+                "Teams",
+                "within",
+                "Development_Value_Stream"
+            ],
+            [
+                "Teams",
+                "define",
+                "IT_Products"
+            ],
+            [
+                "Teams",
+                "build",
+                "IT_Products"
+            ],
+            [
+                "Teams",
+                "validate",
+                "IT_Products"
+            ],
+            [
+                "Teams",
+                "release",
+                "IT_Products"
+            ],
+            [
+                "Portfolio_Alignment",
+                "budgetedWithin",
+                "one_portfolio"
+            ],
+            [
+                "Portfolio_Alignment",
+                "governedWithin",
+                "one_portfolio"
+            ],
+            [
+                "IT_Products",
+                "canBeReleased",
+                "independently"
+            ],
+            [
+                "IT_Products",
+                "canBeOperated",
+                "independently"
+            ],
+            [
+                "Resilience_&_Speed",
+                "ensures",
+                "scalable_delivery"
+            ],
+            [
+                "Resilience_&_Speed",
+                "ensures",
+                "stable_delivery"
+            ],
+            [
+                "Resilience_&_Speed",
+                "ensures",
+                "fast_delivery"
+            ],
+            [
+                "Outcome-Oriented",
+                "customersSeek",
+                "complete_solutions"
+            ],
+            [
+                "Outcome-Oriented",
+                "customersDoNotSeek",
+                "isolated_features"
+            ],
+            [
+                "Solutions",
+                "serve",
+                "internal_employees"
+            ],
+            [
+                "Solutions",
+                "serve",
+                "external_customers"
+            ]
+        ],
+        "schema_definition": {
+            "has": "The subject entity possesses or includes the object entity as one of its components or attributes.",
+            "developedWithin": "The subject entity is created, built, or developed inside the context or environment specified by the object entity.",
+            "customersDoNotSeek": "The subject entity indicates that customers do not desire or look for the object entity.",
+            "ensures": "The subject entity guarantees or makes certain that the object entity occurs or is maintained.",
+            "governedWithin": "The subject entity is managed, controlled, or regulated within the scope or boundaries specified by the object entity.",
+            "characteristic": "The subject entity exhibits or is defined by the quality or feature specified by the object entity.",
+            "budgetedWithin": "The subject entity has its financial resources allocated or planned within the limits specified by the object entity.",
+            "customersSeek": "The subject entity indicates that customers desire or look for the object entity.",
+            "type": "The subject entity belongs to the category, class, or kind specified by the object entity.",
+            "within": "The subject entity exists or operates inside the area, group, or system specified by the object entity.",
+            "hasProperty": "The subject entity possesses the attribute or property specified by the object entity.",
+            "mayInclude": "The subject entity can optionally contain or comprise the object entity.",
+            "release": "The subject entity makes available, publishes, or launches the object entity.",
+            "canBeOperated": "The subject entity is capable of being used, run, or managed independently as specified by the object entity.",
+            "canBeReleased": "The subject entity is capable of being published, launched, or made available independently as specified by the object entity.",
+            "forms": "The subject entity constitutes or creates the object entity as a whole or part of it.",
+            "define": "The subject entity specifies, determines, or establishes the characteristics or details of the object entity.",
+            "build": "The subject entity constructs, develops, or creates the object entity.",
+            "composedOf": "The subject entity consists of or is made up of the object entity or entities.",
+            "validate": "The subject entity checks, confirms, or ensures the correctness or quality of the object entity.",
+            "supports": "The subject entity provides assistance, enables, or facilitates the object entity.",
+            "serve": "The subject entity provides services, functions, or benefits to the object entity."
+        },
+        "canonicalization_candidates": "[{'form': np.float32(0.8762515), 'mayInclude': np.float32(0.792223), 'developedWithin': np.float32(0.73025405), 'type': np.float32(0.712728), 'characteristic': np.float32(0.7126602)}, {}, {}, {}, {}, {}, {}, {'mayInclude': np.float32(0.8081186), 'form': np.float32(0.7969585), 'characteristic': np.float32(0.7873262), 'type': np.float32(0.75851834), 'enables': np.float32(0.6794838)}, {'form': np.float32(0.86295986), 'developedWithin': np.float32(0.7786109), 'mayInclude': np.float32(0.7430129), 'enables': np.float32(0.70993316), 'characteristic': np.float32(0.6817455)}, {'form': np.float32(0.8762515), 'mayInclude': np.float32(0.792223), 'developedWithin': np.float32(0.73025405), 'type': np.float32(0.712728), 'characteristic': np.float32(0.7126602)}, {'characteristic': np.float32(0.9201073), 'type': np.float32(0.7752518), 'form': np.float32(0.7261952), 'alignedWith': np.float32(0.7232528), 'located in the administrative territorial entity': np.float32(0.7079381)}, {}, {}, {'enables': np.float32(0.82635516), 'responsibleFor': np.float32(0.64740705), 'form': np.float32(0.64623225), 'deliveredTo': np.float32(0.6437061), 'characteristic': np.float32(0.6286627)}, {'enables': np.float32(0.82635516), 'responsibleFor': np.float32(0.64740705), 'form': np.float32(0.64623225), 'deliveredTo': np.float32(0.6437061), 'characteristic': np.float32(0.6286627)}, {'enables': np.float32(0.8263371), 'responsibleFor': np.float32(0.64742386), 'form': np.float32(0.6462345), 'deliveredTo': np.float32(0.64369667), 'characteristic': np.float32(0.62865067)}, {'enables': np.float32(0.82635516), 'responsibleFor': np.float32(0.64740705), 'form': np.float32(0.64623225), 'deliveredTo': np.float32(0.6437061), 'characteristic': np.float32(0.6286627)}, {}, {'developedWithin': np.float32(0.7640292), 'country': np.float32(0.74592614), 'located in the administrative territorial entity': np.float32(0.7413131), 'type': np.float32(0.7326263), 'characteristic': np.float32(0.7325351)}, {'definition': np.float32(0.7689622), 'characteristic': np.float32(0.76746225), 'form': np.float32(0.76614344), 'type': np.float32(0.73661613), 'enables': np.float32(0.72650456)}, {'developedWithin': np.float32(0.80617136), 'form': np.float32(0.7660603), 'enables': np.float32(0.75117016), 'responsibleFor': np.float32(0.695449), 'characteristic': np.float32(0.6945577)}, {'characteristic': np.float32(0.67817986), 'alignedWith': np.float32(0.64865804), 'form': np.float32(0.6434575), 'build': np.float32(0.6405777), 'responsibleFor': np.float32(0.64024585)}, {'deliveredTo': np.float32(0.707019), 'build': np.float32(0.6821831), 'enables': np.float32(0.65782076), 'developedWithin': np.float32(0.63818896), 'form': np.float32(0.5939976)}, {'alignedWith': np.float32(0.6021929), 'type': np.float32(0.58827996), 'located in the administrative territorial entity': np.float32(0.58531153), 'contains settlement': np.float32(0.58124876), 'developedWithin': np.float32(0.5812039)}, {'located in the administrative territorial entity': np.float32(0.71029276), 'type': np.float32(0.7022233), 'responsibleFor': np.float32(0.69895554), 'budgetedWithin': np.float32(0.6951761), 'contains administrative territorial entity': np.float32(0.6929697)}, {'deliveredTo': np.float32(0.68768924), 'developedWithin': np.float32(0.63228273), 'enables': np.float32(0.6234478), 'build': np.float32(0.6160443), 'mayInclude': np.float32(0.61402625)}, {'responsibleFor': np.float32(0.68475235), 'characteristic': np.float32(0.65947115), 'enables': np.float32(0.65766984), 'mayInclude': np.float32(0.65227246), 'deliveredTo': np.float32(0.6368413)}, {'enables': np.float32(0.7303028), 'responsibleFor': np.float32(0.6662915), 'characteristic': np.float32(0.66534936), 'form': np.float32(0.66111636), 'build': np.float32(0.654598)}, {'enables': np.float32(0.7303666), 'responsibleFor': np.float32(0.6662355), 'characteristic': np.float32(0.6653453), 'form': np.float32(0.66114473), 'build': np.float32(0.6545986)}, {'enables': np.float32(0.7303666), 'responsibleFor': np.float32(0.6662355), 'characteristic': np.float32(0.6653453), 'form': np.float32(0.66114473), 'build': np.float32(0.6545986)}, {'characteristic': np.float32(0.5965583), 'build': np.float32(0.5736512), 'definition': np.float32(0.5734993), 'enables': np.float32(0.56733084), 'country': np.float32(0.5452821)}, {'definition': np.float32(0.5164701), 'characteristic': np.float32(0.50262564), 'build': np.float32(0.49918514), 'deliveredTo': np.float32(0.49676108), 'enables': np.float32(0.494929)}, {'enables': np.float32(0.7602128), 'build': np.float32(0.71093524), 'deliveredTo': np.float32(0.69868135), 'responsibleFor': np.float32(0.6985857), 'characteristic': np.float32(0.6860205)}, {'enables': np.float32(0.7602128), 'build': np.float32(0.71093524), 'deliveredTo': np.float32(0.69868135), 'responsibleFor': np.float32(0.6985857), 'characteristic': np.float32(0.6860205)}]",
+        "schema_canonicalizaiton": [
+            [
+                "Digital_Solution",
+                "form",
+                "IT_Products"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "processes"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "methods"
+            ],
+            [
+                "Digital_Solution",
+                "mayInclude",
+                "organizational_elements"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "Application"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "Service"
+            ],
+            [
+                "IT_Product",
+                "type",
+                "Platform"
+            ],
+            [
+                "IT_Product",
+                "mayInclude",
+                "supporting_technologies"
+            ],
+            [
+                "Modular_Structure",
+                "form",
+                "Digital_Solution"
+            ],
+            [
+                "Modular_Structure",
+                "form",
+                "Multiple_IT_Products"
+            ],
+            [
+                "IT_Product",
+                "characteristic",
+                "Logical_Boundaries"
+            ],
+            [
+                "Logical_Boundaries",
+                "characteristic",
+                "technically_self-contained"
+            ],
+            [
+                "Logical_Boundaries",
+                "characteristic",
+                "logically_self-contained"
+            ],
+            [
+                "Business_Enablement",
+                "enables",
+                "business_capabilities"
+            ],
+            [
+                "Business_Enablement",
+                "enables",
+                "processes"
+            ],
+            [
+                "Business_Enablement",
+                "enables",
+                "data_entities"
+            ],
+            [
+                "Value_Stream_Alignment",
+                "enables",
+                "Operational_Value_Streams"
+            ],
+            [
+                "Digital_Solution",
+                "developedWithin",
+                "Agile_Release_Train"
+            ],
+            [
+                "Teams",
+                "developedWithin",
+                "Development_Value_Stream"
+            ],
+            [
+                "Teams",
+                "definition",
+                "IT_Products"
+            ],
+            [
+                "Teams",
+                "build",
+                "IT_Products"
+            ],
+            [
+                "Teams",
+                "build",
+                "IT_Products"
+            ],
+            [
+                "Teams",
+                "build",
+                "IT_Products"
+            ],
+            [
+                "Portfolio_Alignment",
+                "budgetedWithin",
+                "one_portfolio"
+            ],
+            [
+                "Portfolio_Alignment",
+                "budgetedWithin",
+                "one_portfolio"
+            ],
+            [
+                "IT_Products",
+                "build",
+                "independently"
+            ],
+            [
+                "IT_Products",
+                "characteristic",
+                "independently"
+            ],
+            [
+                "Resilience_&_Speed",
+                "enables",
+                "scalable_delivery"
+            ],
+            [
+                "Resilience_&_Speed",
+                "enables",
+                "stable_delivery"
+            ],
+            [
+                "Resilience_&_Speed",
+                "enables",
+                "fast_delivery"
+            ],
+            [
+                "Outcome-Oriented",
+                "characteristic",
+                "complete_solutions"
+            ],
+            [
+                "Outcome-Oriented",
+                "customersDoNotSeek",
+                "isolated_features"
+            ],
+            [
+                "Solutions",
+                "deliveredTo",
+                "internal_employees"
+            ],
+            [
+                "Solutions",
+                "enables",
+                "external_customers"
+            ]
+        ]
+    },
+    {
+        "index": 4,
+        "input_text": "SECTION_TITLE: Purpose and Benefits\nCONTENT:\n\u2022 A Digital Solution delivers end-to-end value to internal or external customers.\n\u2022 Customers do not purchase isolated features or capabilities\u2014they seek complete solutions that fulfill their desired outcomes.\n\u2022 Digital Solutions enable organizations to align technical delivery with business strategy and customer needs.",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Digital_Solution",
+                "delivers",
+                "end-to-end_value"
+            ],
+            [
+                "Digital_Solution",
+                "deliversValueTo",
+                "internal_customers"
+            ],
+            [
+                "Digital_Solution",
+                "deliversValueTo",
+                "external_customers"
+            ],
+            [
+                "Customers",
+                "doNotPurchase",
+                "isolated_features"
+            ],
+            [
+                "Customers",
+                "seek",
+                "complete_solutions"
+            ],
+            [
+                "complete_solutions",
+                "fulfill",
+                "desired_outcomes"
+            ],
+            [
+                "Digital_Solutions",
+                "enable",
+                "organizations"
+            ],
+            [
+                "Digital_Solutions",
+                "align",
+                "technical_delivery_with_business_strategy"
+            ],
+            [
+                "Digital_Solutions",
+                "align",
+                "technical_delivery_with_customer_needs"
+            ]
+        ],
+        "schema_definition": {
+            "deliversValueTo": "The subject entity provides value or benefits to the object entity.",
+            "seek": "The subject entity desires or looks for the object entity.",
+            "delivers": "The subject entity provides or supplies the object entity.",
+            "doNotPurchase": "The subject entity does not buy or acquire the object entity.",
+            "enable": "The subject entity makes it possible or facilitates the object entity.",
+            "align": "The subject entity brings into agreement or coordination with the object entity.",
+            "fulfill": "The subject entity satisfies or meets the requirements or expectations of the object entity."
+        },
+        "canonicalization_candidates": "[{'build': np.float32(0.78371304), 'enables': np.float32(0.76681924), 'form': np.float32(0.75961983), 'deliveredTo': np.float32(0.75843287), 'characteristic': np.float32(0.7219975)}, {'enables': np.float32(0.73403805), 'build': np.float32(0.72076255), 'characteristic': np.float32(0.70503414), 'form': np.float32(0.6933593), 'definition': np.float32(0.684963)}, {'enables': np.float32(0.73185515), 'build': np.float32(0.71871406), 'characteristic': np.float32(0.7022189), 'form': np.float32(0.69257724), 'definition': np.float32(0.68514323)}, {'customersDoNotSeek': np.float32(0.69116795), 'build': np.float32(0.6351279), 'enables': np.float32(0.59163254), 'form': np.float32(0.5804162), 'characteristic': np.float32(0.58019316)}, {'characteristic': np.float32(0.66986537), 'customersDoNotSeek': np.float32(0.65938276), 'build': np.float32(0.63120794), 'enables': np.float32(0.60357475), 'alignedWith': np.float32(0.5936569)}, {'alignedWith': np.float32(0.74259514), 'characteristic': np.float32(0.72614586), 'type': np.float32(0.67481625), 'form': np.float32(0.66746366), 'enables': np.float32(0.66122746)}, {'enables': np.float32(0.94209886), 'build': np.float32(0.7695708), 'form': np.float32(0.75488746), 'responsibleFor': np.float32(0.70282495), 'characteristic': np.float32(0.69917876)}, {'alignedWith': np.float32(0.7765081), 'build': np.float32(0.6932181), 'form': np.float32(0.68657976), 'enables': np.float32(0.6828512), 'fulfill': np.float32(0.6747689)}, {'alignedWith': np.float32(0.7765081), 'build': np.float32(0.6932181), 'form': np.float32(0.68657976), 'enables': np.float32(0.6828512), 'fulfill': np.float32(0.6747689)}]",
+        "schema_canonicalizaiton": [
+            [
+                "Digital_Solution",
+                "enables",
+                "end-to-end_value"
+            ],
+            [
+                "Digital_Solution",
+                "enables",
+                "internal_customers"
+            ],
+            [
+                "Digital_Solution",
+                "enables",
+                "external_customers"
+            ],
+            [
+                "Customers",
+                "customersDoNotSeek",
+                "isolated_features"
+            ],
+            [
+                "Customers",
+                "seek",
+                "complete_solutions"
+            ],
+            [
+                "complete_solutions",
+                "fulfill",
+                "desired_outcomes"
+            ],
+            [
+                "Digital_Solutions",
+                "enables",
+                "organizations"
+            ],
+            [
+                "Digital_Solutions",
+                "enables",
+                "technical_delivery_with_business_strategy"
+            ],
+            [
+                "Digital_Solutions",
+                "enables",
+                "technical_delivery_with_customer_needs"
+            ]
+        ]
+    },
+    {
+        "index": 5,
+        "input_text": "SECTION_TITLE: Responsible / Subscriptions\nCONTENT:\n[\n{\"digital_solution\": \"\", \"all\": \"All\", \"business_owner_safe\": \"Chief Architect (SAFe)\"},\n{\"digital_solution\": \"\", \"all\": \"All\", \"business_owner_safe\": \"Enterprise Architect (SAFe)\"},\n{\"digital_solution\": \"\", \"all\": \"All\", \"business_owner_safe\": \"Product Management (SAFe)\"},\n{\"digital_solution\": \"\", \"all\": \"All\", \"business_owner_safe\": \"System Architect (SAFe)\"},\n{\"digital_solution\": \"\", \"all\": \"Responsible\", \"business_owner_safe\": \"Owner (non SAFe)\"},\n{\"digital_solution\": \"\", \"all\": \"Observer\", \"business_owner_safe\": \"Observer (non SAFe)\"}\n]",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Chief_Architect_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Enterprise_Architect_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Product_Management_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "System_Architect_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Owner_(non_SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Observer_(non_SAFe)",
+                "role",
+                "Observer"
+            ]
+        ],
+        "schema_definition": {
+            "role": "The subject entity has the role or function specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'responsibleFor': np.float32(0.81709874), 'characteristic': np.float32(0.777709), 'enables': np.float32(0.75155866), 'type': np.float32(0.7408452), 'form': np.float32(0.7389296)}, {}, {}, {}, {}, {}]",
+        "schema_canonicalizaiton": [
+            [
+                "Chief_Architect_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Enterprise_Architect_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Product_Management_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "System_Architect_(SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Owner_(non_SAFe)",
+                "role",
+                "Responsible"
+            ],
+            [
+                "Observer_(non_SAFe)",
+                "role",
+                "Observer"
+            ]
+        ]
+    },
+    {
+        "index": 6,
+        "input_text": "SECTION_TITLE: Responsible / Subscriptions\nCONTENT:\nEach Digital Solution Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet",
+        "entity_hint": "",
+        "relation_hint": "",
+        "oie": [
+            [
+                "Digital_Solution_Fact_Sheet",
+                "requires",
+                "person_in_subscriptions"
+            ],
+            [
+                "person_in_subscriptions",
+                "responsibleFor",
+                "content_and_quality_of_data"
+            ],
+            [
+                "assignment",
+                "type",
+                "type"
+            ],
+            [
+                "assignment",
+                "person",
+                "person"
+            ],
+            [
+                "assignment",
+                "role",
+                "role"
+            ],
+            [
+                "assignment",
+                "doneVia",
+                "subscriptions_in_fact_sheet"
+            ]
+        ],
+        "schema_definition": {
+            "requires": "The subject entity needs or demands the object entity to be present or involved.",
+            "responsibleFor": "The subject entity has the duty or obligation to oversee, manage, or ensure the object entity.",
+            "type": "The object entity specifies the category, classification, or kind of the subject entity.",
+            "person": "The object entity identifies the individual associated with or assigned to the subject entity.",
+            "role": "The object entity defines the function, position, or part played by the subject entity.",
+            "doneVia": "The subject entity is carried out, executed, or accomplished through the means or method specified by the object entity."
+        },
+        "canonicalization_candidates": "[{'seek': np.float32(0.74865854), 'characteristic': np.float32(0.65682733), 'enables': np.float32(0.6523661), 'fulfill': np.float32(0.6441083), 'form': np.float32(0.6414479)}, {}, {}, {'definition': np.float32(0.7393592), 'role': np.float32(0.7167497), 'type': np.float32(0.6823815), 'responsibleFor': np.float32(0.6630862), 'form': np.float32(0.66286314)}, {}, {'role': np.float32(0.7519181), 'responsibleFor': np.float32(0.7396678), 'deliveredTo': np.float32(0.7306305), 'enables': np.float32(0.7040651), 'characteristic': np.float32(0.69556713)}]",
+        "schema_canonicalizaiton": [
+            [
+                "Digital_Solution_Fact_Sheet",
+                "requires",
+                "person_in_subscriptions"
+            ],
+            [
+                "person_in_subscriptions",
+                "responsibleFor",
+                "content_and_quality_of_data"
+            ],
+            [
+                "assignment",
+                "type",
+                "type"
+            ],
+            [
+                "assignment",
+                "responsibleFor",
+                "person"
+            ],
+            [
+                "assignment",
+                "role",
+                "role"
+            ],
+            [
+                "assignment",
+                "enables",
+                "subscriptions_in_fact_sheet"
+            ]
+        ]
+    }
+]
