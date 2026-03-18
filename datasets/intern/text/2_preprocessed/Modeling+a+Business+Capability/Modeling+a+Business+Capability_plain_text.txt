@@ -1,0 +1,90 @@
+=== PAGE 1 ===
+Introduction This page describes the modeling guidelines for business capabilities in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining Business Capability fact sheets in LeanIX. The creation and editing of a business capability fact sheet follows the standard procedure for creating a general fact sheet as described in "How to create a fact sheet".
+General Modeling Rules Subscriptions In LeanIX, subscriptions are used to assign individuals and roles to a Fact Sheet. There are two main types of subscriptions:
+• Responsible: Individuals accountable for the content and maintenance of the Fact Sheet.
+• Observer: Individuals who are informed but not responsible for the content.
+The specific roles that can be assigned to a Fact Sheet are defined in the modeling guidelines for each Fact Sheet type.
+Responsibility Requirement Each Fact Sheet must have at least one person assigned as Responsible. This person (or persons):
+• Is accountable for the accuracy, completeness, and currency of the Fact Sheet.
+• Receives notifications about changes to the Fact Sheet.
+• Acts as the primary contact for questions, clarifications, or requirements related to the Fact Sheet.
+Change of Responsibility If a Responsible person:
+• Changes roles, • Leaves the company or department, • Or is no longer involved with the Fact Sheet,
+=== PAGE 2 ===
+…it is their duty to ensure a successor is assigned to maintain the Fact Sheet.
+Automated Quality Checks LeanIX includes automated processes to ensure data quality. These processes include:
+1. Inactive Responsible Person If a Responsible person is no longer active in the company or subsidiary (e.g., due to departure), the system checks for other Responsible persons:
+o If none exist, the direct manager of the former Responsible is identified and automatically assigned as the new Responsible.
+o The manager also receives a To-Do to assign a new, appropriate Responsible person.
+o This escalation continues up to the department head level if necessary.
+2. No Responsible Assigned If no Responsible is assigned to a Fact Sheet:
+o The system uses the "Responsible IT Department" relation to identify the appropriate manager.
+o This manager is then assigned as the Responsible person and is expected to nominate a qualified business owner.
+Lifecycle Management in LeanIX Fact Sheets Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements
+=== PAGE 3 ===
+• Impact analysis for changes and decommissioning • Architecture governance across all layers Organizational Responsibilities Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This responsibility can be defined at two levels:
+• Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility.
+At least one form of responsibility must be specified—either at the organizational structure level or the process organization level.
+Ideally, both levels should be documented to ensure full traceability and accountability.
+⚠️ If IT responsibility is defined as mandatory in the modeling guidelines for a specific Fact Sheet type, it must be provided without exception.
+Responsibility at the Organizational Structure Level At Porsche, the organizational structure is defined by the official organizational chart, which organizes the company into hierarchical levels such as:
+• Division • Main Department • Department • Subdepartment (lowest level) In LeanIX modeling, unless explicitly stated otherwise, responsibility must always be assigned to the lowest available level of the organizational structure.
+Key Principles • Always reference the most granular organizational unit available.
+• Ensure that the assigned unit reflects the actual operational responsibility.
+• This ensures clear accountability, accurate reporting, and effective governance.
+=== PAGE 4 ===
+Responsibility at the Process Organization Level Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios.
+Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet.
+• If the responsibility lies with a single portfolio—as is often the case with P51 applications—then assigning the portfolio is sufficient.
+Always ensure that the assigned ART or portfolio accurately reflects the operational ownership of the product.
+Key Principles • Use the ART Fact Sheet when agile teams are responsible for development and operations.
+• Use the Portfolio Fact Sheet when responsibility is anchored in a business or IT portfolio.
+• This ensures clear accountability, supports agile governance, and aligns with LeanIX modeling standards.
+Please note Only organizational fact sheets that are tagged with "Synced" or "Manual" may be used! The use of fact sheets with the tag "Legacy" is not allowed!
+Modeling Version History with Successor and Predecessor Relations In LeanIX, the Successor and Predecessor relations are used to model the version history of Fact Sheets over time.
+These relations should be applied whenever a new version of an existing Fact Sheet is created to replace an older version.
+=== PAGE 5 ===
+Successor relations can also be used while the previous version is still active and in productive use.
+Best Practice for Unused Relations If no predecessor or successor exists for a given Fact Sheet, it is recommended to explicitly set the relation field to:
+“Leave empty” This ensures clarity in the data model and avoids ambiguity in version tracking.
+Key Principles • Use Successor/Predecessor to document version transitions.
+• Apply even if the older version is still operational.
+• If not applicable, set the relation field to “Leave empty” instead of leaving it undefined.
+Modeling Hierarchies with Parent/Child Relations in LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.
+Usage Guidelines • A Parent Fact Sheet represents a higher-level entity that logically contains or governs one or more Child Fact Sheets.
+• A Child Fact Sheet is a subordinate entity that inherits context or structure from its parent.
+This relation is commonly used in the following scenarios:
+=== PAGE 6 ===
+Special Rule for IT Products For the Fact Sheet type "IT Product", the Parent/Child relation must only be used after prior consultation with the responsible Portfolio Architect and the LeanIX team.
+This ensures that hierarchical modeling aligns with enterprise architecture principles and avoids misrepresentation of product structures.
+Best Practices • Use Parent/Child relations to group related Fact Sheets under a common context.
+• Ensure that the hierarchy reflects actual ownership or architectural structure.
+• Avoid circular or ambiguous relationships.
+• Document the rationale for the hierarchy in the description field of the Fact Sheet if needed.
+• If the Parent/Child relation is not applicable, explicitly set the field to “Leave empty” to ensure clarity and data quality.
+Benefits • Improves navigability and traceability in LeanIX.
+• Supports impact analysis and portfolio planning.
+• Enables structured reporting and governance alignment.
+Specific Modelling Rules and Best Practices for a Business Capability Purpose of Business Capabilities in EAM
+=== PAGE 7 ===
+A business capability serves as a stable, strategic abstraction of what an organization must be able to do to deliver value and fulfill its mission. In the context of Enterprise Architecture Management (EAM), business capabilities provide a structured, technology-neutral view of the enterprise’s functional needs and enable alignment between business and IT.
+Modeling Considerations for Business Capabilities at Porsche AG Organizational Autonomy and Recommendations Within Porsche AG and its subsidiaries, there is currently no standardized approach or binding definition for the use of business capabilities. Each organizational unit is free to use capabilities as part of its IT landscape modeling.
+To promote consistency, recommended modeling practices have been developed. These are non-binding and serve as guidance for defining and structuring business capabilities.
+Subtypes in LeanIX In LeanIX, business capabilities are divided into two subtypes:
+Structured Element • Used to organize and group business capabilities hierarchically.
+• Cannot be linked directly to other fact sheets.
+• Typically represents Level 1 or Level 2 capabilities.
+Business Capability • Used to describe actual functional abilities in detail.
+• Can be linked directly to other fact sheets (e.g., applications, initiatives).
+• Represents Level 3 capabilities or lower, where meaningful relationships can be modeled.
+Only capabilities of subtype "Business Capability" should be used for linking in the business architecture, as higher-level groupings (Structured Elements) do not provide sufficient informational value.
+Extensibility and Responsibility
+=== PAGE 8 ===
+• Each organizational unit may extend the existing capability map with its own capabilities as needed.
+• The accuracy, maintenance, and relevance of these additions are the sole responsibility of the respective unit.
+Governance Disclaimer Due to the lack of centralized coordination and maintenance, the core architecture team cannot guarantee that all reporting requirements will be met across the organization.
+Structure Summary Metamodel View The diagram shows the possible relations between the entities that can be used to model a business capability in the context of the appropriate architecture level.

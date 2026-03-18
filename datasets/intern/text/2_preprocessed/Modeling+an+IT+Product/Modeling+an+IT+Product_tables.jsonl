@@ -1,0 +1,45 @@
+{"_page": 1, "_table": 1, "_row": 1, "if_the_artifact": "...directly supports a business process", "then_model_it_as": "IT Product"}
+{"_page": 1, "_table": 1, "_row": 2, "if_the_artifact": "...implements a Business Capability", "then_model_it_as": "IT Product"}
+{"_page": 1, "_table": 1, "_row": 3, "if_the_artifact": "...implements a Technical Capability", "then_model_it_as": "IT Component"}
+{"_page": 2, "_table": 2, "_row": 1, "name": "Thunder", "description": "Web application supporting the sales process", "classification": "IT Product", "justification": "Supports multiple business capabilities like \"Vehicle Sales\""}
+{"_page": 2, "_table": 2, "_row": 2, "name": "Python", "description": "Programming language", "classification": "IT Component", "justification": "Not directly tied to a business capability"}
+{"_page": 2, "_table": 2, "_row": 3, "name": "Paint.NET", "description": "Image editing software", "classification": "Neither", "justification": "No direct business relevance in the organization"}
+{"_page": 2, "_table": 2, "_row": 4, "name": "Oracle DB 19c", "description": "Database system", "classification": "IT Component", "justification": "Supports data storage, which is a technical capability"}
+{"_page": 2, "_table": 2, "_row": 5, "name": "LeanIX", "description": "SaaS for Enterprise Architecture", "classification": "IT Product & IT Component", "justification": "Application: supports business capabilities; Component: software product"}
+{"_page": 2, "_table": 2, "_row": 6, "name": "Group Retail Portal", "description": "Platform for retailer access", "classification": "IT Product", "justification": "Supports business and IT security capabilities"}
+{"_page": 2, "_table": 2, "_row": 7, "name": "Excel", "description": "Spreadsheet software", "classification": "IT Component", "justification": "Not tied to a specific business process"}
+{"_page": 2, "_table": 2, "_row": 8, "name": "Adobe Reader DC", "description": "PDF viewer and signer", "classification": "IT Component", "justification": "Signing is a technical skill, not a business capability"}
+{"_page": 2, "_table": 2, "_row": 9, "name": "CATIA", "description": "3D design software", "classification": "IT Product (multiple)", "justification": "Used in different business contexts with distinct responsibilities"}
+{"_page": 3, "_table": 3, "_row": 1, "section": "Decision Rule", "key_concept": "Classification Logic", "description": "Defines when to use IT Product vs. IT Component", "examples": "Business Capability → IT Product; Technical Capability → IT Component"}
+{"_page": 3, "_table": 3, "_row": 2, "section": "IT Product Characteristics", "key_concept": "Definition", "description": "Logical bundle of business functions, may include custom or third-party software", "examples": "SaaS, on-prem apps, business platforms"}
+{"_page": 3, "_table": 3, "_row": 3, "section": "Examples", "key_concept": "Real-world Mapping", "description": "Classification of common tools and systems", "examples": "Thunder = IT Product; Python = IT Component"}
+{"_page": 3, "_table": 3, "_row": 4, "section": "Modeling Rule", "key_concept": "Contextual Differentiation", "description": "When to model separate IT Products for the same software", "examples": "CATIA used in different departments"}
+{"_page": 3, "_table": 3, "_row": 5, "section": "Responsibilities", "key_concept": "Stakeholder Guidance", "description": "Ensures correct modeling by business and IT roles", "examples": "Business units define context-specific IT Products"}
+{"_page": 8, "_table": 4, "_row": 1, "use_case": "Application Suite", "parent_type": "Application", "child_type": "Application"}
+{"_page": 8, "_table": 4, "_row": 2, "use_case": "Platform Composition", "parent_type": "Platform", "child_type": "IT Component"}
+{"_page": 8, "_table": 4, "_row": 3, "use_case": "Organizational Hierarchy", "parent_type": "Organization Unit", "child_type": "Sub-Unit"}
+{"_page": 8, "_table": 4, "_row": 4, "use_case": "Portfolio Structure", "parent_type": "Portfolio", "child_type": "Product / Application"}
+{"_page": 9, "_table": 5, "_row": 1, "category": "Application", "description": "Provides functionality via graphical or text- based user interfaces", "examples": "CATIA, Matlab, LeanIX, Vector CANoe"}
+{"_page": 9, "_table": 5, "_row": 2, "category": "Platform", "description": "Provides technical infrastructure", "examples": "CLUU, Cloud Account Management, Dataiku"}
+{"_page": 9, "_table": 5, "_row": 3, "category": "Group Application", "description": "Applications developed and operated by Group brands and used by Porsche", "examples": "eAkte, EXAM, FLAUDO"}
+{"_page": 12, "_table": 6, "_row": 1, "section": "IT Product Fact Sheet", "attribute__concept": "Required Elements", "description": "Category, Naming, Versioning, Description, Interfaces, Architecture, etc.", "notes__examples": "—"}
+{"_page": 13, "_table": 7, "_row": 1, "section": "Category", "attribute__concept": "Application / Platform / Group App", "description": "Defines the type of IT Product", "notes__examples": "CATIA = Application"}
+{"_page": 13, "_table": 7, "_row": 2, "section": "Naming", "attribute__concept": "Contextual, user-friendly", "description": "Should reflect business use and be unique", "notes__examples": "\"HR- Manager\""}
+{"_page": 13, "_table": 7, "_row": 3, "section": "Versioning", "attribute__concept": "Release", "description": "Functional versioning, not technical", "notes__examples": "Start with 1.0"}
+{"_page": 13, "_table": 7, "_row": 4, "section": "Description", "attribute__concept": "Business context", "description": "In English, include GoBD relevance if applicable", "notes__examples": "—"}
+{"_page": 13, "_table": 7, "_row": 5, "section": "Interfaces", "attribute__concept": "Provided/Consumed", "description": "Link to Interface Fact Sheets", "notes__examples": "—"}
+{"_page": 13, "_table": 7, "_row": 6, "section": "Business Architecture", "attribute__concept": "Digital Solution, Capabilities, Processes", "description": "Defines business alignment", "notes__examples": "SAFe, ART"}
+{"_page": 13, "_table": 7, "_row": 7, "section": "Technical Architecture", "attribute__concept": "Components, Platforms", "description": "Includes hosting type, software, OS, DB, runtime, etc.", "notes__examples": "On-Prem, Cloud"}
+{"_page": 13, "_table": 7, "_row": 8, "section": "Governance", "attribute__concept": "Compliance areas", "description": "IT Security, GoBD, Export Control, etc.", "notes__examples": "—"}
+{"_page": 13, "_table": 7, "_row": 9, "section": "Enterprise Portfolio Management", "attribute__concept": "TIME, 7R Classification", "description": "For strategic evaluation", "notes__examples": "—"}
+{"_page": 14, "_table": 8, "_row": 1, "element": "Initiative", "relationship_type": "Affected by", "description": "The IT Product is influenced or impacted by strategic or operational initiatives."}
+{"_page": 14, "_table": 8, "_row": 2, "element": "Digital Solution", "relationship_type": "Supports", "description": "The IT Product is part of or supported by a Digital Solution, especially in agile (SAFe) contexts."}
+{"_page": 14, "_table": 8, "_row": 3, "element": "Organization", "relationship_type": "Responsible for", "description": "Abusiness unit or team is accountable for the lifecycle and governance of the IT Product."}
+{"_page": 14, "_table": 8, "_row": 4, "element": "Interface", "relationship_type": "Provides / Consumes", "description": "The IT Product either offers or uses interfaces to exchange data or functionality."}
+{"_page": 14, "_table": 8, "_row": 5, "element": "Process", "relationship_type": "Supports", "description": "The IT Product enables or automates specific business processes."}
+{"_page": 14, "_table": 8, "_row": 6, "element": "Business Capability", "relationship_type": "Supports", "description": "The IT Product contributes to the realization of one or more business capabilities."}
+{"_page": 14, "_table": 8, "_row": 7, "element": "IT Component", "relationship_type": "Requires", "description": "The IT Product depends on technical components (e.g., software, platforms) for implementation."}
+{"_page": 14, "_table": 8, "_row": 8, "element": "ADR (Architecture Decision Record)", "relationship_type": "Supports", "description": "The IT Product is linked to architectural decisions that guide its design and evolution."}
+{"_page": 15, "_table": 9, "_row": 1, "togaf_layer": "A. Architecture Vision", "description": "High-level strategic alignment of the IT Product with business goals."}
+{"_page": 15, "_table": 9, "_row": 2, "togaf_layer": "B. Business Architecture", "description": "Captures the business processes and capabilities supported by the IT Product."}
+{"_page": 15, "_table": 9, "_row": 3, "togaf_layer": "C. Technical Architecture", "description": "Describes the technical components and platforms required by the IT Product."}

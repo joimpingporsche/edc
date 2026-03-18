@@ -1,0 +1,44 @@
+[SECTION_START]
+TITLE: Definition: Interface
+CONTENT:
+In the context of enterprise architecture, an Interface represents a logical connection between two IT Products. It models the way in which data is exchanged between these IT Products, including the direction, frequency, and type of information being transferred.
+[SECTION_END]
+[SECTION_START]
+TITLE: Purpose and benefits
+CONTENT:
+The Interface object in LeanIX serves as a critical link between the Application Architecture and the Information & Data Architecture. It provides structured metadata about:
+• What type of information objects are exchanged (e.g., master data, transactional data) • How the exchange occurs (e.g., synchronous, asynchronous) • In which direction the data flows (e.g., unidirectional, bidirectional) • At what frequency the exchange takes place (e.g., real-time, daily, batch) By modeling interfaces, architects gain visibility into data dependencies, integration complexity, and potential risks across the application landscape. This supports:
+• Improved data governance • Better integration design • Enhanced impact analysis • Alignment with SAFe value streams and IT product boundaries
+[SECTION_END]
+[SECTION_START]
+TITLE: Structure Summary: Interface Modeling in
+CONTENT:
+LeanIX
+[TABLE_JSON_START]
+[
+{"section": "Context", "element": "Domain", "description": "Enterprise Architecture, SAFe, LeanIX"},
+{"section": "Context", "element": "Purpose", "description": "Visualize how interfaces connect applications and link application and data architecture"},
+{"section": "Core Concept", "element": "Interface", "description": "Logical connection between two applications for data exchange"},
+{"section": "Core Concept", "element": "Applications", "description": "Application Aand Application Bare connected via the interface"},
+{"section": "Metadata Attributes", "element": "Information Object Type", "description": "Describes the type of data exchanged (e.g., master data, transactions)"},
+{"section": "Metadata Attributes", "element": "Direction", "description": "Indicates data flow direction (e.g., unidirectional, bidirectional)"},
+{"section": "Metadata Attributes", "element": "Frequency", "description": "Specifies how often data is exchanged (e.g., real-time, batch)"},
+{"section": "Architectural Layers", "element": "Application Architecture", "description": "Layer where applications reside"},
+{"section": "Architectural Layers", "element": "Information & Data Architecture", "description": "Layer where data semantics and flows are defined"},
+{"section": "Architectural Layers", "element": "Interface Role", "description": "Acts as a bridge between the two architecture layers"},
+{"section": "Standards & Style", "element": "Visual Style", "description": "Clean, modern, enterprise-ready; Porsche corporate colors (black, white, grey, red)"},
+{"section": "Standards & Style", "element": "Semantic Alignment", "description": "Supports traceability, integration design, and architectural governance"}
+]
+[TABLE_JSON_END]
+Responsible / Subscriptions Each Interface Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet
+[TABLE_JSON_START]
+[
+{"interface": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"},
+{"interface": "", "all": "All", "chief_architect_safe": "Product Owner (SAFe)"},
+{"interface": "", "all": "All", "chief_architect_safe": "System Architect (SAFe)"},
+{"interface": "", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"},
+{"interface": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"},
+{"interface": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[SECTION_END]

@@ -1,0 +1,45 @@
+[SECTION_START]
+TITLE: Definition: Tech Capability
+CONTENT:
+A Technical Capability represents a functional classification of IT components based on what the technology enables. It describes the core function or purpose of a technology, such as a database, operating system, or server software. Unlike rapidly evolving technologies, the technical capability model remains relatively stable over time and is industry-agnostic.
+[SECTION_END]
+[SECTION_START]
+TITLE: Purpose and Benefits
+CONTENT:
+The primary purpose of modeling Technical Capabilities is to analyze the technical structure of the IT landscape and derive actionable insights. By assigning IT components to specific capabilities, organizations can:
+• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
+• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
+• Business Stakeholders benefit from a clearer understanding of how technology supports business needs, enabling better alignment between IT and business strategy.
+[SECTION_END]
+[SECTION_START]
+TITLE: Summary
+CONTENT:
+[TABLE_JSON_START]
+[
+{"field": "Entity", "description": "Technical Capability"},
+{"field": "Definition", "description": "Astable, functional classification of IT components based on their purpose"},
+{"field": "Examples", "description": "Database, Operating System, Server Software"},
+{"field": "Stability", "description": "Stable over time, industry-independent"},
+{"field": "Purpose", "description": "Analyze IT structure, derive requirements"},
+{"field": "Key Benefits", "description": "Transparency, Redundancy Detection, Whitespot Identification"},
+{"field": "Primary Users", "description": "Product Teams, Domain Architects, Enterprise Architects, Business Units"},
+{"field": "Use Cases", "description": "Component selection, Portfolio optimization, Gap analysis"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsible / Subscriptions
+CONTENT:
+Each Tech Capability Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet
+[TABLE_JSON_START]
+[
+{"tech_capability": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"},
+{"tech_capability": "", "all": "All", "chief_architect_safe": "System Architect (SAFe)"},
+{"tech_capability": "", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"},
+{"tech_capability": "", "all": "Responsible", "chief_architect_safe": "Business Responsible (non SAFe)"},
+{"tech_capability": "", "all": "Responsible", "chief_architect_safe": "Technical Responsible (non SAFe)"},
+{"tech_capability": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"},
+{"tech_capability": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[SECTION_END]

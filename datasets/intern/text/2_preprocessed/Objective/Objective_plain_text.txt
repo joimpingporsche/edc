@@ -1,0 +1,12 @@
+=== PAGE 1 ===
+Definition: Objective An Objective Fact Sheet is used to represent a strategic goal and the transformations required to achieve it. It serves as a formalized anchor for planning, tracking, and aligning enterprise-wide initiatives with business strategy.
+Objectives provide structure and traceability for transformation programs and enable consistent communication across business and IT stakeholders.
+Summary Purpose and Benefits of Objectives Strategic Monitoring and Control Objectives enable the high-level monitoring and steering of enterprise-wide transformations, such as cloud migrations, digitalization programs, or organizational restructuring. They provide a strategic anchor for evaluating progress and ensuring alignment with business goals.
+Capability-Based Transparency By linking business capabilities to objectives, organizations can:
+• Identify critical capabilities that are essential for achieving strategic goals.
+• Gain organization-wide transparency into how well objectives are supported across business domains.
+• Detect gaps or misalignments between strategic intent and operational execution.
+=== PAGE 2 ===
+This capability-to-objective mapping supports both impact analysis and strategic reporting.
+Summary Responsible / Subscriptions Each Objective Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. Currently, this person can have the role of Product Owner or Business Owner. The assignment of type, person and role is done via the subscriptions in the respective fact sheet.
+The owner organization and the assigned person are solely responsible for the creation and maintenance of an objective fact sheet in terms of both technical aspects and content!

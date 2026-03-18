@@ -1,0 +1,46 @@
+=== PAGE 1 ===
+Introduction All organizational units—both structural and procedural—are primarily created and maintained in systems outside of LeanIX, with few exceptions.
+• Structural organization data is sourced from the Volkswagen Corporate Directory (VCD). This directory centrally provides data for Porsche AG (PAG) and its subsidiaries. The data is synchronized daily into LeanIX.
+• SAFe organization data currently lacks a central system of record. Portfolio and ART (Agile Release Train) information is manually maintained in a temporary database and also synchronized daily with LeanIX.
+General Modeling Rules • Only Fact Sheets tagged with "Synced" ( ) or "Manual" ( ) may be used to model consumers or responsible units.
+• Since modeling occurs outside of LeanIX, no additional general modeling rules apply to this Fact Sheet type.
+Specific Modelling Rules and Best Practices for Organizations Assignment of Organizations Organizations can be assigned to any Fact Sheet type as either user or responsible party.
+Assignments should always be made from the perspective of the respective Fact Sheet.
+Example: When modeling an IT Product, assign the consuming and responsible organizational units directly within the IT Product Fact Sheet.
+Modeling Consumers vs. Responsibilities Consumers • Consuming units can be modeled at any level of the organizational hierarchy.
+• If an IT Product is used by all departments within a main division (e.g., "FD"), it is sufficient to assign "FD" as the consuming unit.
+• There is no need to list each sub-department individually.
+Responsibilities • Responsible units must be modeled at the deepest available level of the organizational structure.
+• This is necessary to identify the appropriate manager when no individual contact is assigned to a Fact Sheet.
+• Example: If the responsible unit is "FDB1", then "FDB1" must be assigned.
+Assigning only "FDB" is insufficient.
+Manual Creation of Organizations In exceptional cases, and with proper justification, users may request the creation of an organization from LeanIX administrators. This is only permitted for elements not part of the official structural or procedural organization.
+• In such cases, the responsible business unit must be consulted.
+• Manually created organizations are tagged with "Manual" ( ).
+Automatic Updates and Lifecycle Management One key benefit of centralized organization management is the automatic update of organizational structures during reorganizations (e.g., PPO changes).
+• If an organizational unit is dissolved or merged, LeanIX checks whether it is still linked to any objects.
+o If no links exist, the Fact Sheet is archived and becomes unusable.
+o If links exist, the Fact Sheet is tagged as "Legacy" ( ) Important: Fact Sheets tagged with "Legacy" ( ) must not be used in modeling. It is the responsibility of Fact Sheet owners to update or remove existing relations to these legacy organizations.
+Structure Summary: Organization Modeling in LeanIX (PAG)
+=== PAGE 2 ===
+Metamodel View The diagram shows the possible relations between the entities that can be used to model an organizationin the context of the appropriate architecture level.
+=== PAGE 3 ===
+LLM-ready structure summary Image Title: Metamodel View – Organization Purpose:
+To visualize how the concept of Organization relates to various architectural elements across the TOGAF® architecture layers using the relationship "responsible / affected".
+Diagram Structure:
+The diagram is divided into three horizontal sections, each representing a layer of the TOGAF® framework. At the center of all sections is a green box labeled "Organization", which connects to various elements in each layer.
+1. TOGAF® A – Architecture Vision (Top Section) • Elements:
+o Objective (pink box) o Initiative (pink box)
+=== PAGE 4 ===
+• Relationship to Organization:
+o Both elements are connected to Organization via arrows labeled "responsible / affected".
+2. TOGAF® B – Business Architecture (Middle Section) • Elements:
+o Business Capability (pink box) o IT Product (pink box) o Process (pink box) o Interface (pink box) o Digital Solution (pink box) • Relationship to Organization:
+o All elements are connected to Organization via arrows labeled "responsible / affected".
+3. TOGAF® C – Technical Architecture (Bottom Section) • Elements:
+o IT Component (pink box) o Tech Capability (pink box) o ADR (pink box) • Relationship to Organization:
+o All elements are connected to Organization via arrows labeled "responsible / affected".
+Visual Cues:
+• Each TOGAF® section is enclosed in a yellow-bordered rectangle.
+• On the right side of each section is a yellow circle labeled with the corresponding TOGAF® phase:
+o A. Architecture Vision o B. Business Architecture o C. Technical Architecture

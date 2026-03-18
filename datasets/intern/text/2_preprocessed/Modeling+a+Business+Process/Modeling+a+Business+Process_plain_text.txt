@@ -1,0 +1,33 @@
+=== PAGE 1 ===
+Introduction At Porsche AG and its subsidiaries, all business processes are modeled and maintained exclusively by designated process owners using the BIC Process Design tool.
+In LeanIX, no new business processes are created or modified. All process- related modeling activities—including the assignment of IT products to process activities—are performed solely in BIC.
+General Modeling Rules • The "Process" fact sheet in LeanIX is read-only and does not follow a dedicated modeling guideline.
+• Business processes are not modeled or edited directly in LeanIX.
+System Integration: LeanIX ↔ BIC To support enterprise architecture modeling, especially the business architecture layer, LeanIX relies on the availability of active business processes. For this reason, a synchronization interface is in place:
+Process Import from BIC to LeanIX • All active business processes modeled in BIC are automatically imported into LeanIX.
+• These processes are available in LeanIX for reference and linkage to other architectural elements (e.g., applications, capabilities, initiatives).
+• If an application has been assigned to a process step in BIC, this assignment is also synchronized to LeanIX Application Export from LeanIX to BIC • All active IT products in LeanIX are synchronized to BIC as applications.
+• These applications can then be assigned to process activities within BIC.
+This bidirectional integration ensures consistency between process modeling and enterprise architecture views.
+=== PAGE 2 ===
+Zusätzliche Relationen In addition to the automatically existing assignments between IT product and process, which are synchronized from BIC, business capabilities and modeling initiatives can be assigned to a process. Manual assignment of IT products via LeanIX should be avoided and should be done exclusively in BIC!
+Further Information Detailed technical and functional information about the synchronization between LeanIX and BIC can be found in the chapter LeanIX System Integration with BIC.
+Structure Summary Metamodel View The diagram shows the possible relations between the entities that can be used to model a process in the context of the appropriate architecture level.
+Structure Summary Image Description for LLM Input: ModelView Process Diagram
+=== PAGE 3 ===
+Title: ModelView Process Structure:
+The image is a schematic diagram illustrating the relationships between components in an enterprise architecture context. It is divided into two main sections, each enclosed in a yellow- bordered rectangle.
+Top Section:
+• Magenta-colored box labeled "Initiative" o Relationship: "is linked to" an element in the bottom section.
+Bottom Section:
+• Three boxes:
+1. Magenta-colored box labeled "IT Product" ▪ Relationship: "supports" another element.
+2. Magenta-colored box labeled "Business Capability" ▪ Relationship: "is linked to" another element.
+3. Green-colored box labeled "Process" ▪ Relationships:
+▪ Supported by the IT Product ▪ Linked to the Business Capability Right Side:
+• Two yellow circles containing TOGAF® references:
+1. Top circle:
+▪ TOGAF® ▪ A.
+▪ Architecture Vision 2. Bottom circle:
+▪ TOGAF® ▪ B.
+▪ Business Architecture

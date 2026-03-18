@@ -1,0 +1,13 @@
+{"_page": 1, "_table": 1, "_row": 1, "element": "Entity Type", "description": "Business Capability"}
+{"_page": 1, "_table": 1, "_row": 2, "element": "Core Purpose", "description": "Describes what the organization must be able to do"}
+{"_page": 1, "_table": 1, "_row": 3, "element": "Characteristics", "description": "Stable, cross-functional, independent of processes or systems"}
+{"_page": 1, "_table": 1, "_row": 4, "element": "Usage Context", "description": "Strategic planning, capability mapping, IT alignment"}
+{"_page": 1, "_table": 1, "_row": 5, "element": "Stakeholders", "description": "Enterprise Architects, Business Analysts, Portfolio Managers"}
+{"_page": 1, "_table": 2, "_row": 1, "section": "Application Classification", "key_concept": "Capability ↔ System Type", "description": "Distinguishes business application vs. technical component"}
+{"_page": 1, "_table": 2, "_row": 2, "section": "Conceptual Separation", "key_concept": "Capability ≠ Process", "description": "\"What\" vs. \"How\" distinction"}
+{"_page": 1, "_table": 2, "_row": 3, "section": "Analytical Use", "key_concept": "Capability → IT Landscape", "description": "Identifies gaps, overlaps, and optimization potential"}
+{"_page": 1, "_table": 2, "_row": 4, "section": "Lifecycle Management", "key_concept": "Capability → Application", "description": "Enables lifecycle tracking and planning"}
+{"_page": 1, "_table": 2, "_row": 5, "section": "Strategic Alignment", "key_concept": "Capability → Strategy", "description": "Supports reporting and alignment with business goals"}
+{"_page": 2, "_table": 3, "_row": 1, "business_capability": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"}
+{"_page": 2, "_table": 3, "_row": 2, "business_capability": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"}
+{"_page": 2, "_table": 3, "_row": 3, "business_capability": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"}

@@ -1,0 +1,60 @@
+=== PAGE 1 ===
+Introduction This document outlines the modeling guidelines for Interface Fact Sheets within the enterprise architecture framework at Porsche. It builds upon the PAG General Modeling Guidelines and provides specific instructions for creating and maintaining Interface Fact Sheets in LeanIX. The creation process follows the general fact sheet creation procedure described in "How to Create a Fact Sheet." Description In LeanIX, interfaces are modeled from a business-oriented perspective. They represent the data exchange and integration between IT Products. Each Interface Fact Sheet captures:
+• The direction of data flow • The type of data transfer • The frequency of exchange • The underlying IT Products (software, hardware, or services) This approach enables a clear understanding of how systems interact and supports strategic decision-making across business and IT.
+General Modeling Rules Lifecycle Management in LeanIX Fact Sheets Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers Modeling Organizations in an Interface No organizational assignments are modeled on an interface fact sheet. All responsibilities and uses of the interface are derived from the assigned provider IT product!
+Specific Modelling Rules and Best Practices for an Interface Interface Creation Interfaces must be created by the IT product provider!
+However, if an interface was not modeled when the product owner created the IT product, any user consuming the interface can and should create it and associate it with the IT product providing it. All modeling must comply with the defined guidelines.
+Naming Conventions While there is no strict naming rule, it is recommended to include:
+• The source IT Product • The technology used (e.g., REST, GraphQL) • Optionally, the target system (if it’s a point-to-point connection) Examples:
+• LeanIX EAM GraphQL • LeanIX EAM Collibra This improves discoverability and transparency for business architecture modeling.
+Responsibility Assignment
+=== PAGE 2 ===
+Each interface must be linked to a responsible person. By default, this is the person responsible for the associated IT Product. If no responsible person is assigned, an automated process will assign the responsible person from the related IT Product.
+Interfaces Without IT Product Association Interfaces not linked to an IT Product are marked with the tag "to delete". During quality assurance, responsible users are contacted. If no response is received, the interface will be archived after 30 days.
+Interface Versioning A new version should only be created if:
+• The interface type changes • The content or structure of the interface changes Example: One IT Product uses version 1, another uses version 2. The decision to version remains with the responsible person.
+Interfaces to External Systems In enterprise architecture, it is common for IT Products to interact with external systems— for example, to exchange data with banks, government agencies, or third-party services.
+These systems are considered external if they:
+• Are not part of the Porsche network (including ToGe networks), • Are not operated by PAG, a subsidiary, or a group brand, • Are not part of the internal Porsche IT landscape.
+Important: External systems must not be modeled as IT Products in LeanIX.
+Instead, interactions with external systems are documented exclusively through Interface Fact Sheets.
+Modeling Guidelines:
+• Create an Interface Fact Sheet to represent the connection.
+• Name the interface clearly to indicate it connects to an external system.
+• Assign the consuming IT Product as the consumer of the interface.
+• Assign a responsible person on the consuming side.
+Examples:
+1. Customs Integration:
+o Scenario: The IT Product Zollabfertigung (Customs Clearance) consumes a REST API provided by the German Customs Authority.
+o Interface Name: External: Zollbehörde REST o Consumer: Zollabfertigung o Responsible Person: Defined on the Zollabfertigung Fact Sheet 2. Credit Check Integration:
+o Scenario: The IT Product Kreditprüfung (Credit Check) uses a SOAP interface from SCHUFA.
+o Interface Name: External: SCHUFA SOAP o Consumer: Kreditprüfung o Responsible Person: Defined on the Kreditprüfung Fact Sheet This modeling approach ensures that external dependencies are clearly visible, traceable, and governed without violating LeanIX modeling principles.
+Technical Implementation of Interfaces Interfaces are not always implemented directly by the IT Product that provides or consumes them. In many cases, middleware platforms, API gateways, or integration services handle the technical implementation.
+This separation between logical ownership and technical realization is essential for accurate modeling and architecture governance.
+Modeling Guidelines:
+• The logical interface is modeled between the provider and consumer IT Products.
+• The technical implementation is modeled by linking a platform IT Product (e.g., middleware, API gateway) in the “Technical Architecture” section of the Interface Fact Sheet.
+• This allows for clear separation of concerns: business logic vs. technical infrastructure.
+Examples:
+1. API Gateway Integration:
+o Scenario: LeanIX provides an API, but the actual technical delivery is handled via the Porsche API Gateway.
+o Interface Name: LeanIX EAM GraphQL o Provider: LeanIX o Consumer: Any consuming IT Product o Technical Implementation: API Management Service (linked in the Interface Fact Sheet) 2. Middleware-Based Integration:
+o Scenario: CRM System and ERP System exchange data via a middleware called Integration Hub.
+o Interface Name: CRM to ERP Sync o Provider: CRM System o Consumer: ERP System
+=== PAGE 3 ===
+o Technical Implementation: Integration Hub (middleware platform) Structure Summary – Interface Fact Sheets in LeanIX Metamodel View The diagram shows the possible relations between the entities that can be used to model an Interface in the context of the appropriate architecture level.
+LLM-Ready Description LLM-Ready Description: Metamodel View – Interface Overview The diagram titled "Metamodel View Interface" illustrates the conceptual relationships between Initiatives, IT Products/Platforms, and Interfaces within the context of enterprise architecture modeling in LeanIX. It aligns with the TOGAF® framework, specifically the Architecture Vision and Business Architecture phases.
+Diagram Structure The diagram is divided into two horizontal sections, each representing a different architectural perspective:
+1. Upper Section – Strategic Alignment (TOGAF® A: Architecture Vision) • Element: Initiative (colored pink) • Element: Interface (colored green) • Relationship: A downward arrow from Initiative to Interface indicates that the initiative is influenced by or dependent on the interface.
+• Contextual Tag: A yellow circle labeled "TOGAF® A. Architecture Vision" is placed to the right, signifying that this relationship supports strategic planning and vision alignment.
+=== PAGE 4 ===
+2. Lower Section – Operational Dependency (TOGAF® B: Business Architecture) • Element: IT Product / Platform (colored pink) • Element: Interface (colored green) • Relationship: A rightward arrow from IT Product / Platform to Interface indicates that the IT Product or Platform requires the interface to function.
+• Contextual Tag: A yellow circle labeled "TOGAF® B. Business Architecture" is placed to the right, signifying that this relationship supports business capability modeling and operational design.
+Key Modeling Concepts Modeling Implications in LeanIX • Interfaces are central integration points that connect strategic initiatives and operational systems.
+• Initiatives may depend on the availability or design of specific interfaces to achieve business goals.
+• IT Products consume or provide interfaces, which must be modeled to reflect technical dependencies.
+• The diagram supports cross-layer traceability from strategy to execution in LeanIX.

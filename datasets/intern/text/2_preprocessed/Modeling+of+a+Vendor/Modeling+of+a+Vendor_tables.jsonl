@@ -1,0 +1,16 @@
+{"_page": 2, "_table": 1, "_row": 1, "use_case": "Application Suite", "parent_type": "Application", "child_type": "Application"}
+{"_page": 2, "_table": 1, "_row": 2, "use_case": "Platform Composition", "parent_type": "Platform", "child_type": "IT Component"}
+{"_page": 2, "_table": 1, "_row": 3, "use_case": "Organizational Hierarchy", "parent_type": "Organization Unit", "child_type": "Sub-Unit"}
+{"_page": 2, "_table": 1, "_row": 4, "use_case": "Portfolio Structure", "parent_type": "Portfolio", "child_type": "Product / Application"}
+{"_page": 6, "_table": 2, "_row": 1, "section": "Authorization", "field__concept": "User Role", "description__instruction": "Only administrators can create vendors"}
+{"_page": 6, "_table": 2, "_row": 2, "section": "Creation Process", "field__concept": "Automatic vs. Manual", "description__instruction": "Vendors are usually created during IT Component modeling; otherwise via Help Center request"}
+{"_page": 6, "_table": 2, "_row": 3, "section": "Vendor Attributes", "field__concept": "Name", "description__instruction": "Full legal company name including legal form"}
+{"_page": 6, "_table": 2, "_row": 4, "section": "Vendor Attributes", "field__concept": "Alias", "description__instruction": "Short or alternative name for searchability"}
+{"_page": 6, "_table": 2, "_row": 5, "section": "Vendor Attributes", "field__concept": "Description", "description__instruction": "Must include address and contact details from official sources"}
+{"_page": 6, "_table": 2, "_row": 6, "section": "Relationships", "field__concept": "Parent-Child", "description__instruction": "Not recommended unless necessary"}
+{"_page": 6, "_table": 2, "_row": 7, "section": "Relationships", "field__concept": "Successor/Predecessor", "description__instruction": "Used for company renaming or legal succession"}
+{"_page": 6, "_table": 2, "_row": 8, "section": "Relationships", "field__concept": "Active From", "description__instruction": "Indicates when the successor relationship starts"}
+{"_page": 6, "_table": 2, "_row": 9, "section": "Relationships", "field__concept": "Description (in relation)", "description__instruction": "Reason for succession"}
+{"_page": 6, "_table": 2, "_row": 10, "section": "Lifecycle Management", "field__concept": "Predecessor Lifecycle", "description__instruction": "Must be updated to avoid incorrect usage"}
+{"_page": 6, "_table": 2, "_row": 11, "section": "IT Component Linkage", "field__concept": "Vendor-to-IT Component", "description__instruction": "Modeled during IT Component creation"}
+{"_page": 6, "_table": 2, "_row": 12, "section": "Certification", "field__concept": "TISAX Certified", "description__instruction": "Indicates compliance with automotive information security standards"}

@@ -1,0 +1,48 @@
+{"_page": 1, "_table": 1, "_row": 1, "question": "1. Does the object provide purely technical functionality without business logic?", "if_yes_": "→ IT Component", "if_no_": "→ Proceed to Question 2"}
+{"_page": 1, "_table": 1, "_row": 2, "question": "2. Does the object directly support a business process?", "if_yes_": "→ IT Product", "if_no_": "→ Proceed to Question 3"}
+{"_page": 1, "_table": 1, "_row": 3, "question": "3. Is the object organizational, physical, or contractual in nature?", "if_yes_": "→ Not an IT Component", "if_no_": "→ Proceed to Question 4"}
+{"_page": 1, "_table": 1, "_row": 4, "question": "4. Is the object actively used by end users?", "if_yes_": "→ Likely an IT Product", "if_no_": "→ Possibly technical infrastructure"}
+{"_page": 1, "_table": 1, "_row": 5, "question": "5. Does the object consist of multiple technical components?", "if_yes_": "→ IT Product or IT Service", "if_no_": "→ Evaluate as a single component"}
+{"_page": 1, "_table": 1, "_row": 6, "question": "6. Can the object be documented in architecture tools like LeanIX?", "if_yes_": "→ Check if it fits as Product or Component", "if_no_": "→ Likely not directly modelable"}
+{"_page": 1, "_table": 2, "_row": 1, "object": "Microsoft SQL Server", "classification": "IT Component", "reason": "Technical platform without business logic"}
+{"_page": 1, "_table": 2, "_row": 2, "object": "SAP S/4HANA", "classification": "IT Product", "reason": "Supports business processes like finance and logistics"}
+{"_page": 1, "_table": 2, "_row": 3, "object": "Customer (data object)", "classification": "Not an IT Component", "reason": "Represents business data, not technical functionality"}
+{"_page": 1, "_table": 2, "_row": 4, "object": "Azure Active Directory", "classification": "IT Component", "reason": "Technical security component"}
+{"_page": 1, "_table": 2, "_row": 5, "object": "Jira", "classification": "IT Product", "reason": "Used by end users to support business workflows"}
+{"_page": 1, "_table": 2, "_row": 6, "object": "Project “CRM Migration”", "classification": "Not an IT Component", "reason": "Temporary organizational construct"}
+{"_page": 2, "_table": 3, "_row": 1, "field": "Section Title", "content": "Interface Fact Sheet Modeling Guideline"}
+{"_page": 2, "_table": 3, "_row": 2, "field": "Purpose", "content": "To guide users in distinguishing between IT Components and IT Products in LeanIX modeling."}
+{"_page": 2, "_table": 3, "_row": 3, "field": "Target Roles", "content": "Enterprise Architects, Business Analysts, Business Stakeholders"}
+{"_page": 2, "_table": 3, "_row": 4, "field": "Key Concepts", "content": "IT Component, IT Product, Technical Architecture, Vendor Lifecycle, Modeling Criteria"}
+{"_page": 2, "_table": 3, "_row": 5, "field": "IT Component Definition", "content": "Atechnical unit (hardware or software) with a defined lifecycle, vendor, and operational independence."}
+{"_page": 2, "_table": 3, "_row": 6, "field": "Modeling Requirement", "content": "Every IT Product must be linked to at least one IT Component that reflects its technical characteristics."}
+{"_page": 2, "_table": 3, "_row": 7, "field": "Decision Support", "content": "Includes a structured checklist and real-world examples"}
+{"_page": 2, "_table": 3, "_row": 8, "field": "Common Challenge", "content": "Differentiating between business-facing and technical elements"}
+{"_page": 2, "_table": 3, "_row": 9, "field": "Tool Context", "content": "LeanIX – Interface Fact Sheet"}
+{"_page": 2, "_table": 3, "_row": 10, "field": "Language", "content": "English (optimized for clarity, consistency, and LLM training)"}
+{"_page": 2, "_table": 3, "_row": 11, "field": "Use Cases", "content": "Architecture documentation, modeling governance, onboarding, training"}
+{"_page": 2, "_table": 3, "_row": 12, "field": "LLM Readiness", "content": "Structured, role-specific, terminology-aligned, and example-driven content suitable for training and automation"}
+{"_page": 4, "_table": 4, "_row": 1, "category": "Hardware", "description": "Physical IT infrastructure", "examples": "IBM z15, HP ProLiant DL560"}
+{"_page": 4, "_table": 4, "_row": 2, "category": "IaaS", "description": "Virtualized infrastructure", "examples": "AWS EC2, Azure VMs"}
+{"_page": 4, "_table": 4, "_row": 3, "category": "PaaS", "description": "Cloud platforms for development", "examples": "Google App Engine, SAP BTP"}
+{"_page": 4, "_table": 4, "_row": 4, "category": "SaaS", "description": "Subscription-based software", "examples": "Salesforce, LeanIX"}
+{"_page": 4, "_table": 4, "_row": 5, "category": "Service", "description": "Managed IT services", "examples": "Hosting, Support, Analytics"}
+{"_page": 4, "_table": 4, "_row": 6, "category": "Software", "description": "Commercial/open-source software", "examples": ".NET Framework 4.8"}
+{"_page": 5, "_table": 5, "_row": 1, "value": "Inappropriate", "meaning": "Must be replaced"}
+{"_page": 5, "_table": 5, "_row": 2, "value": "Unreasonable", "meaning": "Replacement recommended"}
+{"_page": 5, "_table": 5, "_row": 3, "value": "Adequate", "meaning": "Optimization possible"}
+{"_page": 5, "_table": 5, "_row": 4, "value": "Fully Appropriate", "meaning": "No action needed"}
+{"_page": 6, "_table": 6, "_row": 1, "field": "Name", "description": "Component name", "required": "", "controlled_vocabulary": "—", "notes": "—"}
+{"_page": 6, "_table": 6, "_row": 2, "field": "Category", "description": "Type of component", "required": "", "controlled_vocabulary": "Hardware, IaaS, PaaS, SaaS, Service, Software", "notes": "—"}
+{"_page": 6, "_table": 6, "_row": 3, "field": "Version", "description": "Major version only", "required": "", "controlled_vocabulary": "Format: X.x", "notes": "Minor/patch optional only if significant"}
+{"_page": 6, "_table": 6, "_row": 4, "field": "Description", "description": "English product description", "required": "", "controlled_vocabulary": "—", "notes": "Use vendor source"}
+{"_page": 6, "_table": 6, "_row": 5, "field": "Vendor", "description": "Manufacturer (not reseller)", "required": "", "controlled_vocabulary": "Linked Vendor Fact Sheet", "notes": "—"}
+{"_page": 6, "_table": 6, "_row": 6, "field": "Lifecycle", "description": "Activation & end- of-life dates", "required": "", "controlled_vocabulary": "—", "notes": "Based on vendor lifecycle"}
+{"_page": 6, "_table": 6, "_row": 7, "field": "Responsible", "description": "Person accountable for the component", "required": "", "controlled_vocabulary": "—", "notes": "Must be assigned"}
+{"_page": 6, "_table": 6, "_row": 8, "field": "Technical Capability", "description": "Linked capability", "required": "", "controlled_vocabulary": "From Capability Map", "notes": "Support Type: Supports / Leading"}
+{"_page": 6, "_table": 6, "_row": 9, "field": "Technical Fit", "description": "Suitability rating", "required": "Optional", "controlled_vocabulary": "Inappropriate, Unreasonable, Adequate, Fully Appropriate", "notes": "—"}
+{"_page": 6, "_table": 6, "_row": 10, "field": "Linked IT Products", "description": "Related IT products", "required": "Optional", "controlled_vocabulary": "—", "notes": "Assign from product side"}
+{"_page": 6, "_table": 6, "_row": 11, "field": "Governance", "description": "Export control & FOSS status", "required": "Optional", "controlled_vocabulary": "—", "notes": "Managed via PASS"}
+{"_page": 6, "_table": 6, "_row": 12, "field": "Linked Initiatives", "description": "Related initiatives", "required": "Optional", "controlled_vocabulary": "—", "notes": "No modeling rules"}
+{"_page": 6, "_table": 6, "_row": 13, "field": "Cloud Components", "description": "Auto-imported", "required": "—", "controlled_vocabulary": "—", "notes": "Managed via CAM"}
+{"_page": 6, "_table": 6, "_row": 14, "field": "Versioning", "description": "Successor linkage", "required": "—", "controlled_vocabulary": "—", "notes": "Clone & link new version"}

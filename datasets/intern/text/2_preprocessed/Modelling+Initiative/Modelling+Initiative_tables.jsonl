@@ -1,0 +1,9 @@
+{"_page": 6, "_table": 1, "_row": 1, "use_case": "Application Suite", "parent_type": "Application", "child_type": "Application"}
+{"_page": 6, "_table": 1, "_row": 2, "use_case": "Platform Composition", "parent_type": "Platform", "child_type": "IT Component"}
+{"_page": 6, "_table": 1, "_row": 3, "use_case": "Organizational Hierarchy", "parent_type": "Organization Unit", "child_type": "Sub-Unit"}
+{"_page": 6, "_table": 1, "_row": 4, "use_case": "Portfolio Structure", "parent_type": "Portfolio", "child_type": "Product / Application"}
+{"_page": 8, "_table": 2, "_row": 1, "section": "Purpose", "key_entity": "Initiative", "relationships__rules": "implements strategic or operational goals"}
+{"_page": 8, "_table": 2, "_row": 2, "section": "Link to Objectives", "key_entity": "Initiative → Objective", "relationships__rules": "one-to-one (mandatory)"}
+{"_page": 8, "_table": 2, "_row": 3, "section": "System Assignment", "key_entity": "Initiative → IT Product", "relationships__rules": "one-to-many (lowest level only); avoid redundancy with Objective"}
+{"_page": 8, "_table": 2, "_row": 4, "section": "Impact Modeling", "key_entity": "Initiative → [Business Capability, IT Component, Process]", "relationships__rules": "inferred via linked IT Products"}
+{"_page": 8, "_table": 2, "_row": 5, "section": "Governance", "key_entity": "Initiative → Architect Roles", "relationships__rules": "advisory only; no central control"}

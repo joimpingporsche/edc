@@ -1,0 +1,142 @@
+=== PAGE 1 ===
+Introduction This page describes the modeling guidelines for IT Products in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining IT Products in LeanIX. The creation and editing of an IT Product fact sheet follows the standard procedure for creating a general fact sheet as described in "How to create a fact sheet".
+Decision Guidelines: IT Product vs. IT Component in LeanIX Core Decision Rule To model your IT landscape effectively in LeanIX, it is essential to distinguish between IT Products and IT Components. Use the following rule:
+This rule is typically sufficient for accurate classification.
+Characteristics of an IT Product An IT Product is defined by the following attributes:
+• It bundles business functions in a logically and functionally bounded way to process data.
+• It may include custom-developed elements such as application code, configuration data, macros, etc.
+• It can be a third-party software product, used as SaaS, cloud-based, or on-premises.
+• It may represent a bundle of technical components that together provide infrastructure or business platforms.
+=== PAGE 2 ===
+Examples Modeling Rule: When to Create a Separate IT Product Even if the same software is used across departments (e.g., CATIA, MATLAB), a separate IT Product must be modeled if:
+• It is used in a different business or logical context • It processes different types of data, possibly with different classifications • It involves different organizational responsibilities • It runs on different infrastructures (e.g., cloud vs. on-prem, Windows vs. Linux)
+=== PAGE 3 ===
+Structure Summary General Modeling Rules Subscriptions In LeanIX, subscriptions are used to assign individuals and roles to a Fact Sheet. There are two main types of subscriptions:
+• Responsible: Individuals accountable for the content and maintenance of the Fact Sheet.
+• Observer: Individuals who are informed but not responsible for the content.
+The specific roles that can be assigned to a Fact Sheet are defined in the modeling guidelines for each Fact Sheet type.
+Responsibility Requirement Each Fact Sheet must have at least one person assigned as Responsible. This person (or persons):
+• Is accountable for the accuracy, completeness, and currency of the Fact Sheet.
+• Receives notifications about changes to the Fact Sheet.
+=== PAGE 4 ===
+• Acts as the primary contact for questions, clarifications, or requirements related to the Fact Sheet.
+Change of Responsibility If a Responsible person:
+• Changes roles, • Leaves the company or department, • Or is no longer involved with the Fact Sheet, …it is their duty to ensure a successor is assigned to maintain the Fact Sheet.
+Automated Quality Checks LeanIX includes automated processes to ensure data quality. These processes include:
+1. Inactive Responsible Person If a Responsible person is no longer active in the company or subsidiary (e.g., due to departure), the system checks for other Responsible persons:
+o If none exist, the direct manager of the former Responsible is identified and automatically assigned as the new Responsible.
+o The manager also receives a To-Do to assign a new, appropriate Responsible person.
+o This escalation continues up to the department head level if necessary.
+2. No Responsible Assigned If no Responsible is assigned to a Fact Sheet:
+o The system uses the "Responsible IT Department" relation to identify the appropriate manager.
+o This manager is then assigned as the Responsible person and is expected to nominate a qualified business owner.
+Lifecycle Management in LeanIX Fact Sheets Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date)
+=== PAGE 5 ===
+• Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers Organizational Responsibilities Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This responsibility can be defined at two levels:
+• Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility.
+At least one form of responsibility must be specified—either at the organizational structure level or the process organization level.
+Ideally, both levels should be documented to ensure full traceability and accountability.
+⚠️ If IT responsibility is defined as mandatory in the modeling guidelines for a specific Fact Sheet type, it must be provided without exception.
+Responsibility at the Organizational Structure Level At Porsche, the organizational structure is defined by the official organizational chart, which organizes the company into hierarchical levels such as:
+• Division • Main Department • Department
+=== PAGE 6 ===
+• Subdepartment (lowest level) In LeanIX modeling, unless explicitly stated otherwise, responsibility must always be assigned to the lowest available level of the organizational structure.
+Key Principles • Always reference the most granular organizational unit available.
+• Ensure that the assigned unit reflects the actual operational responsibility.
+• This ensures clear accountability, accurate reporting, and effective governance.
+Responsibility at the Process Organization Level Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios.
+Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet.
+• If the responsibility lies with a single portfolio—as is often the case with P51 applications—then assigning the portfolio is sufficient.
+Always ensure that the assigned ART or portfolio accurately reflects the operational ownership of the product.
+Key Principles • Use the ART Fact Sheet when agile teams are responsible for development and operations.
+• Use the Portfolio Fact Sheet when responsibility is anchored in a business or IT portfolio.
+• This ensures clear accountability, supports agile governance, and aligns with LeanIX modeling standards.
+Please note Only organizational fact sheets that are tagged with "Synced" or "Manual" may be used! The use of fact sheets with the tag "Legacy" is not allowed!
+=== PAGE 7 ===
+Modeling Version History with Successor and Predecessor Relations In LeanIX, the Successor and Predecessor relations are used to model the version history of Fact Sheets over time.
+These relations should be applied whenever a new version of an existing Fact Sheet is created to replace an older version.
+Successor relations can also be used while the previous version is still active and in productive use.
+Best Practice for Unused Relations If no predecessor or successor exists for a given Fact Sheet, it is recommended to explicitly set the relation field to:
+“Leave empty” This ensures clarity in the data model and avoids ambiguity in version tracking.
+Key Principles • Use Successor/Predecessor to document version transitions.
+• Apply even if the older version is still operational.
+• If not applicable, set the relation field to “Leave empty” instead of leaving it undefined.
+Modeling Hierarchies with Parent/Child Relations in LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.
+=== PAGE 8 ===
+Usage Guidelines • A Parent Fact Sheet represents a higher-level entity that logically contains or governs one or more Child Fact Sheets.
+• A Child Fact Sheet is a subordinate entity that inherits context or structure from its parent.
+This relation is commonly used in the following scenarios:
+Special Rule for IT Products For the Fact Sheet type "IT Product", the Parent/Child relation must only be used after prior consultation with the responsible Portfolio Architect and the LeanIX team.
+This ensures that hierarchical modeling aligns with enterprise architecture principles and avoids misrepresentation of product structures.
+Best Practices • Use Parent/Child relations to group related Fact Sheets under a common context.
+• Ensure that the hierarchy reflects actual ownership or architectural structure.
+• Avoid circular or ambiguous relationships.
+• Document the rationale for the hierarchy in the description field of the Fact Sheet if needed.
+• If the Parent/Child relation is not applicable, explicitly set the field to “Leave empty” to ensure clarity and data quality.
+Benefits • Improves navigability and traceability in LeanIX.
+• Supports impact analysis and portfolio planning.
+• Enables structured reporting and governance alignment.
+=== PAGE 9 ===
+Specific Modelling Rules and Best Practices for an IT Product When an IT Product is identified, it must be modeled using an IT Product Fact Sheet in LeanIX. The following attributes and relationships are required:
+• Category • Naming • Versioning • Description • Interfaces • Business Architecture • Technical Architecture • Governance • Enterprise Portfolio Management Category Assignment Each IT Product must be assigned to one of the following categories:
+Naming Conventions • Names should be technology- and product-neutral where possible, and reflect the business context.
+• Use terms familiar to users (e.g., product name, vendor name, or internal nickname).
+• Examples:
+o A CATIA-based application may be named "CATIA" or "Lighting Simulation".
+o An Excel macro used in HR and known as "HR-Manager" should be named accordingly.
+o LeanIX as a product is simply named "LeanIX".
+=== PAGE 10 ===
+Important: No two IT Products in LeanIX can have the same name and version. If a name conflict occurs:
+• Check if a new version should be created.
+• Otherwise, assign a new, unique name.
+Versioning • Versioning is managed via the "Release" attribute.
+• The release refers to the functional version of the product, not the technical component version.
+• Initial release should be set to "1.0".
+• A new version is required when:
+o The technical architecture changes (e.g., migration to cloud).
+o The responsibility shifts to another department or portfolio.
+Link versions using the Successor/Predecessor relationship.
+Description • Provide a clear description of the product in its business context.
+• Include notes on GoBD relevance if applicable.
+• The description must be written in English.
+Interfaces • If the IT Product provides or consumes interfaces, link or create the appropriate Interface Fact Sheets.
+Business Architecture Define the business context by linking the IT Product to:
+• Digital Solution (if developed under SAFe/ART) • Business Capabilities • Processes (via BIC-LeanIX sync only) Digital Solution
+=== PAGE 11 ===
+• If the product is part of an Agile Release Train (ART), link it to the corresponding Digital Solution.
+• If the required Digital Solution is missing, request it from the responsible Program Management team.
+Business Capabilities • Link supported capabilities from the maintained Business Capability Map.
+• Always set the Support Type to indicate how the product supports the capability.
+Processes • Process links are managed automatically via the BIC-LeanIX synchronization.
+• Manual linking is not allowed.
+Technical Architecture Each IT Product must include a description of its technical architecture, including:
+• Software components • Platforms • Hosting type and provider (mandatory) On-Premises Architecture Model the following components:
+• Deployed software product • OS platforms (e.g., Windows, Linux) • Databases and DBMS platforms • Runtime environments (e.g., Tomcat) • Container platforms • Required services Ensure all components are documented in the correct version.
+Cloud Architecture • Cloud services are automatically created if the product runs on AWS or Azure via PAG Cloud Application Management.
+• Only deployed software products need to be modeled manually.
+• For SaaS products, model the SaaS as an IT Component and link it to the product.
+=== PAGE 12 ===
+Client Architecture • For client-side software, assign the installed product as a component.
+• Also assign the correct client type (e.g., BK-Client, Tech-Client) and platform version.
+Governance Each IT Product must include governance-related information from the following areas:
+• IT Security • GoBD • Export Control • Document Classification • P51 Assignment • Data Protection Refer to the internal governance documentation for responsibilities and further details.
+Enterprise Portfolio Management Enterprise Architecture attributes for classification and evaluation include:
+• TIME Classification • 7R Classification For questions, contact your Enterprise Architecture team.
+Structure Summary
+=== PAGE 13 ===
+Metamodel View The diagram shows the possible relations between the entities that can be used to model an IT Product in the context of the appropriate architecture level.
+LLM-Ready Structure Summary IT Product Metamodel – LeanIX Enterprise Architecture Context Overview
+=== PAGE 14 ===
+The image presents a metamodel of an IT Product within an enterprise architecture framework, modeled in LeanIX. It visually defines the relationships between the IT Product and other architectural elements, aligning with TOGAF® standards.
+Central Element • IT Product (highlighted in green):
+The core entity in the model, representing a business-facing software solution or application that supports business capabilities and processes.
+Connected Elements and Relationships TOGAF® Alignment The model aligns with the following TOGAF® architecture domains:
+=== PAGE 15 ===
+Purpose and Usage This metamodel serves as a reference structure for modeling IT Products in LeanIX. It ensures consistency, traceability, and alignment with enterprise architecture principles. It is particularly useful for:
+• Enterprise Architects: to maintain architectural integrity and trace dependencies.
+• Business Analysts: to understand business impact and capability support.
+• Business Units: to manage ownership, governance, and compliance.

@@ -19,9 +19,9 @@ python run.py \
   --sc_llm gpt-4.1-mini \
   --sc_embedder intfloat/e5-base-v2 \
   --enrich_schema \
-   --logging_verbose \
-  --input_text_file_path ./evaluation/intern/text/cleaned_text.txt \
-  --output_dir ./output/erster_test_cleaned
+  --logging_verbose \
+  --input_text_file_path ./datasets/intern/text/1_raw_text/subscription/Subscription+Roles+in+LeanIX[7\]_combined.txt \
+  --output_dir ./output/test_subscription_confluence
  
 
-python edc/preprocessing/pdf_to_text_and_tables.py datasets/intern/pdfs/Subscription+Roles+in+LeanIX\.pdf --output_dir datasets/intern/text/1_raw_text/subscription
+python edc/preprocessing/pdf_to_text_and_tables.py datasets/intern/pdfs/Subscription+Roles+in+LeanIX\[35\].pdf  --output_dir datasets/intern/text/1_raw_text/subscription

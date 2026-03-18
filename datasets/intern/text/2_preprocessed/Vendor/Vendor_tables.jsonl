@@ -1,0 +1,11 @@
+{"_page": 1, "_table": 1, "_row": 1, "ld": "object_type", "description": "Vendor / Provider"}
+{"_page": 1, "_table": 1, "_row": 2, "ld": "leanix_reference", "description": "Known as \"Provider\" in the original LeanIX metamodel"}
+{"_page": 1, "_table": 1, "_row": 3, "ld": "definition", "description": "External organization supplying or manufacturing an IT component"}
+{"_page": 1, "_table": 1, "_row": 4, "ld": "purpose", "description": "Document and manage supplier information"}
+{"_page": 1, "_table": 1, "_row": 5, "ld": "key_attributes", "description": "Contact details, certifications (e.g., TISAX), metadata"}
+{"_page": 1, "_table": 1, "_row": 6, "ld": "use_cases", "description": "Vendor mapping, in-house vs. third-party analysis, vendor lock-in identification"}
+{"_page": 1, "_table": 1, "_row": 7, "ld": "modeling_guideline", "description": "Do not model internal org units as vendors"}
+{"_page": 1, "_table": 1, "_row": 8, "ld": "internal_vendor_mapping", "description": "Internal development is abstracted to \"Dr. h.c. F. Porsche AG\""}
+{"_page": 1, "_table": 1, "_row": 9, "ld": "target_roles", "description": "Enterprise Architects, Business Analysts, Business Unit Representatives"}
+{"_page": 1, "_table": 1, "_row": 10, "ld": "strategic_value", "description": "Supports sourcing strategy, risk management, and compliance"}
+{"_page": 1, "_table": 2, "_row": 1, "vendor": "", "responsible": "Observer", "owner_non_safe": "Observer (non SAFe)"}

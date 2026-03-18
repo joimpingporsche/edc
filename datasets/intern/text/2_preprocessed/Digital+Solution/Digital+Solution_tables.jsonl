@@ -1,0 +1,19 @@
+{"_page": 2, "_table": 1, "_row": 1, "section": "Definition", "element": "Digital Solution", "description": "Aconstruct composed of IT Products and potentially processes, methods, and organizational elements"}
+{"_page": 2, "_table": 1, "_row": 2, "section": "Definition", "element": "IT Product", "description": "Application, service, or platform with supporting technologies"}
+{"_page": 2, "_table": 1, "_row": 3, "section": "Composition", "element": "Modular Structure", "description": "Multiple IT Products form a Digital Solution"}
+{"_page": 2, "_table": 1, "_row": 4, "section": "Composition", "element": "Logical Boundaries", "description": "Each IT Product is technically and logically self- contained"}
+{"_page": 2, "_table": 1, "_row": 5, "section": "Functionality", "element": "Business Enablement", "description": "Supports business capabilities, processes, and data entities"}
+{"_page": 2, "_table": 1, "_row": 6, "section": "Functionality", "element": "Value Stream Alignment", "description": "Supports Operational Value Streams (OVS)"}
+{"_page": 2, "_table": 1, "_row": 7, "section": "Development Context", "element": "Agile Release Train (ART)", "description": "Each Digital Solution is developed within a single ART"}
+{"_page": 2, "_table": 1, "_row": 8, "section": "Development Context", "element": "Development Value Stream (DVS)", "description": "Teams within the DVS define, build, validate, and release IT Products"}
+{"_page": 2, "_table": 1, "_row": 9, "section": "Development Context", "element": "Portfolio Alignment", "description": "Budgeted and governed within one portfolio"}
+{"_page": 2, "_table": 1, "_row": 10, "section": "Delivery Model", "element": "Independent Deployability", "description": "IT Products can be released and operated independently"}
+{"_page": 2, "_table": 1, "_row": 11, "section": "Delivery Model", "element": "Resilience & Speed", "description": "Ensures scalable, stable, and fast delivery"}
+{"_page": 2, "_table": 1, "_row": 12, "section": "Customer Value", "element": "Outcome-Oriented", "description": "Customers seek complete solutions, not isolated features"}
+{"_page": 2, "_table": 1, "_row": 13, "section": "Customer Value", "element": "Internal & External Users", "description": "Solutions serve both internal employees and external customers"}
+{"_page": 3, "_table": 2, "_row": 1, "digital_solution": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 2, "digital_solution": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 3, "digital_solution": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 4, "digital_solution": "", "all": "All", "business_owner_safe": "System Architect (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 5, "digital_solution": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"}
+{"_page": 3, "_table": 2, "_row": 6, "digital_solution": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}

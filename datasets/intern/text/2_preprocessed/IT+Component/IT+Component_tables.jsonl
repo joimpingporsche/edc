@@ -1,0 +1,41 @@
+{"_page": 1, "_table": 1, "_row": 1, "field": "Entity", "content": "IT Component"}
+{"_page": 1, "_table": 1, "_row": 2, "field": "Definition", "content": "Atechnical building block of an IT product, independent of business logic, sourced from vendors or developed in-house."}
+{"_page": 1, "_table": 1, "_row": 3, "field": "Purpose", "content": "Enables organizations to run, maintain, and change IT products."}
+{"_page": 1, "_table": 1, "_row": 4, "field": "Usage Context", "content": "Used within technical platforms or directly in IT products."}
+{"_page": 1, "_table": 1, "_row": 5, "field": "Key Benefits", "content": "Lifecycle planning, transparency, responsibility mapping, redundancy/gap analysis, synergy identification, operational reliability."}
+{"_page": 1, "_table": 1, "_row": 6, "field": "Stakeholders", "content": "Enterprise Architects, Business Analysts, Business Units"}
+{"_page": 1, "_table": 1, "_row": 7, "field": "Architecture Relevance", "content": "Supports strategic IT planning and architecture governance."}
+{"_page": 1, "_table": 1, "_row": 8, "field": "Documentation Goal", "content": "Ensure completeness and accuracy to support planning and operations."}
+{"_page": 2, "_table": 2, "_row": 1, "category": "Database", "example": "Microsoft SQL Server", "type": "Commercial (COTS)", "description": "Arelational database platform used to store and manage structured data."}
+{"_page": 2, "_table": 2, "_row": 2, "category": "Middleware", "example": "Apache Kafka", "type": "Open Source / In-house", "description": "Adistributed streaming platform for real-time data pipelines and messaging."}
+{"_page": 2, "_table": 2, "_row": 3, "category": "Operating System", "example": "Red Hat Enterprise Linux", "type": "Commercial (COTS)", "description": "Asecure and scalable server operating system."}
+{"_page": 2, "_table": 2, "_row": 4, "category": "Web Server", "example": "NGINX", "type": "Open Source", "description": "Ahigh-performance web server and reverse proxy."}
+{"_page": 2, "_table": 2, "_row": 5, "category": "Runtime Environment", "example": "Java Runtime Environment (JRE)", "type": "Open Source / COTS", "description": "Provides the libraries and components to run Java applications."}
+{"_page": 2, "_table": 2, "_row": 6, "category": "Development Framework", "example": ".NET Framework", "type": "Commercial (COTS)", "description": "Asoftware framework for building and running Windows applications."}
+{"_page": 2, "_table": 2, "_row": 7, "category": "Monitoring Tool", "example": "Prometheus", "type": "Open Source", "description": "Amonitoring and alerting toolkit for IT infrastructure."}
+{"_page": 2, "_table": 2, "_row": 8, "category": "Security Component", "example": "Azure Active Directory", "type": "Commercial (COTS)", "description": "Identity and access management service for cloud and on- premises environments."}
+{"_page": 2, "_table": 2, "_row": 9, "category": "Container Platform", "example": "Docker Engine", "type": "Open Source / COTS", "description": "Aplatform for developing, shipping, and running containerized applications."}
+{"_page": 2, "_table": 2, "_row": 10, "category": "CI/CD Tool", "example": "Jenkins", "type": "Open Source", "description": "Automation server for continuous integration and delivery."}
+{"_page": 2, "_table": 2, "_row": 11, "category": "Custom Library", "example": "CompanyXYZ.LoggingFramework", "type": "In-house", "description": "Aproprietary logging library developed for internal use."}
+{"_page": 2, "_table": 2, "_row": 12, "category": "API Gateway", "example": "Amazon API Gateway", "type": "Commercial (COTS)", "description": "Amanaged service for creating, publishing, and securing APIs."}
+{"_page": 2, "_table": 3, "_row": 1, "field": "Section Title", "content": "Examples of IT Components"}
+{"_page": 2, "_table": 3, "_row": 2, "field": "Section Type", "content": "Informative / Reference"}
+{"_page": 2, "_table": 3, "_row": 3, "field": "Purpose", "content": "To provide categorized, real-world examples of IT components for better understanding and documentation."}
+{"_page": 2, "_table": 3, "_row": 4, "field": "Target Audience", "content": "Enterprise Architects, Business Analysts, Business Stakeholders"}
+{"_page": 2, "_table": 3, "_row": 5, "field": "Context", "content": "Supplementary material to the definition and purpose of IT components in enterprise architecture documentation."}
+{"_page": 2, "_table": 3, "_row": 6, "field": "Introduction Summary", "content": "Explains the rationale for listing examples, emphasizes practical relevance, and highlights the role of IT components in running, maintaining, and changing IT products."}
+{"_page": 2, "_table": 3, "_row": 7, "field": "Example Categories", "content": "Database, Middleware, Operating System, Web Server, Runtime Environment, Development Framework, Monitoring Tool, Security Component, Container Platform, CI/CD Tool, Custom Library, API Gateway"}
+{"_page": 2, "_table": 3, "_row": 8, "field": "Example Format", "content": "Table with Category, Example, Type (COTS/Open Source/In-house), and Description"}
+{"_page": 2, "_table": 3, "_row": 9, "field": "Example Count", "content": "12"}
+{"_page": 2, "_table": 3, "_row": 10, "field": "Example Use Cases", "content": "Architecture modeling, documentation in LeanIX, onboarding, training, system classification"}
+{"_page": 2, "_table": 3, "_row": 11, "field": "Language", "content": "English (source), German (available)"}
+{"_page": 2, "_table": 3, "_row": 12, "field": "Dependencies", "content": "None (self-contained content)"}
+{"_page": 2, "_table": 3, "_row": 13, "field": "Visual Support", "content": "Diagram available (bar chart showing categories and examples)"}
+{"_page": 3, "_table": 4, "_row": 1, "it_component": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"}
+{"_page": 3, "_table": 4, "_row": 2, "it_component": "", "all": "All", "chief_architect_safe": "Product Owner (SAFe)"}
+{"_page": 3, "_table": 4, "_row": 3, "it_component": "", "all": "All", "chief_architect_safe": "System Architect (SAFe)"}
+{"_page": 3, "_table": 4, "_row": 4, "it_component": "", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"}
+{"_page": 3, "_table": 4, "_row": 5, "it_component": "", "all": "Responsible", "chief_architect_safe": "Technical Responsible (non SAFe)"}
+{"_page": 3, "_table": 4, "_row": 6, "it_component": "", "all": "Responsible", "chief_architect_safe": "Business Responsible (non SAFe)"}
+{"_page": 3, "_table": 4, "_row": 7, "it_component": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"}
+{"_page": 3, "_table": 4, "_row": 8, "it_component": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"}

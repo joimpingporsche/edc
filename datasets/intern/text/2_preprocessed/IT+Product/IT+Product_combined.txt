@@ -1,0 +1,56 @@
+[SECTION_START]
+TITLE: Definition: IT Product
+CONTENT:
+At Porsche, an IT Product is classified as either an Application or a Platform. Regardless of category, each IT Product must have clearly defined ownership and accountability.
+Applikationen An Application is an IT Product that delivers specific business functionality to support business processes—for example, by automating process steps. Applications contribute to the realization of business capabilities and are aligned with the value creation process.
+Key characteristics:
+• Requires IT Components to operate • Includes tools, systems, software, and user-facing touchpoints • Provides functionality via graphical or text-based user interfaces • May optionally expose APIs • Always supports an operational value stream Platform A Platform is an IT Product that provides technical infrastructure, including IT Components and potentially other platforms. It serves as the foundation for developing, deploying, and operating Applications.
+Group Application Group Applications are Applications developed and operated by Group brands and used by Porsche.
+[SECTION_END]
+[SECTION_START]
+TITLE: Purpose and Benefits
+CONTENT:
+From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers.
+It enables:
+• Functional development planning • Portfolio and release planning • Centralized documentation of:
+o Security
+o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring:
+• Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due diligence and risk management obligations • Adherence to ISO 27001 – Information Security • Implementation of BSI IT-Grundschutz (German Federal Office for Information Security) Additionally, IT Products serve as information hubs for integration with enterprise tools and processes, such as:
+• OneTrust (data processing records) • CMDB (change and asset management) For further details, refer to the Systems Integration chapter.
+[SECTION_END]
+[SECTION_START]
+TITLE: Structure Summary
+CONTENT:
+[TABLE_JSON_START]
+[
+{"section": "IT Product", "description": "Central modeling object; categorized as Application or Platform"},
+{"section": "Ownership Requirement", "description": "Must have clearly defined ownership and accountability"},
+{"section": "Application Definition", "description": "Supports business processes and capabilities; user-facing"},
+{"section": "Application Characteristics", "description": "UI/API-based access; requires IT Components; supports value streams"},
+{"section": "Platform Definition", "description": "Provides infrastructure for application development and operation"},
+{"section": "Group Applications", "description": "Applications developed by Group brands and used by Porsche"},
+{"section": "Modeling Purpose", "description": "Enables planning, documentation, compliance, and governance"},
+{"section": "Compliance References", "description": "BDSG, ISO 27001, BSI IT-Grundschutz, corporate governance"},
+{"section": "Integration Points", "description": "OneTrust, CMDB, and other enterprise systems"},
+{"section": "IT Product vs. IT Component", "description": "Business Capability = IT Product; Technical Capability = IT Component"},
+{"section": "Decision Rule Summary", "description": "Direct business support = IT Product; otherwise = IT Component"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsible / Subscriptions
+CONTENT:
+Each IT Product Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet
+[TABLE_JSON_START]
+[
+{"it_product_all_categories": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"},
+{"it_product_all_categories": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"},
+{"it_product_all_categories": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"},
+{"it_product_all_categories": "", "all": "All", "business_owner_safe": "Product Owner (SAFe)"},
+{"it_product_all_categories": "", "all": "All", "business_owner_safe": "System Architect (SAFe)"},
+{"it_product_all_categories": "", "all": "All", "business_owner_safe": "Tech Lead (SAFe)"},
+{"it_product_all_categories": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"},
+{"it_product_all_categories": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[SECTION_END]

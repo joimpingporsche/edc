@@ -1,0 +1,24 @@
+=== PAGE 1 ===
+Definition: Business Capability A business capability defines what an organization must be able to do to fulfill its mission and deliver value. It represents a stable, organization-wide function that is independent of specific processes, systems, or organizational structures.
+Enterprise architects use business capabilities to:
+• Capture cross-functional needs across business units.
+• Provide a common language for strategic planning and transformation.
+• Identify the technologies and resources required to support those capabilities.
+Business capabilities form a foundational layer in enterprise architecture, enabling alignment between business strategy and IT execution.
+Structure Summary Purpose and Benefits of Business Capabilities Role in Application Classification Business capabilities are used to determine whether a software-based system should be classified as a business application or merely a technical component. This classification is essential for maintaining a consistent and business-aligned IT landscape.
+Without a complete and validated capability map, it is difficult to analyze the IT landscape from a business perspective.
+Differentiation from Business Processes Business capabilities and business processes serve distinct purposes:
+• Capabilities describe what the organization must be able to do.
+• Processes describe how those capabilities are executed.
+While overlaps may occur, the abstraction level and modeling intent are fundamentally different.
+Analytical and Operational Value A well-maintained capability model enables:
+• Identification of gaps ("white spots") in the IT landscape.
+• Detection of redundant application support for the same capability.
+• Capability-based application portfolio optimization.
+Lifecycle and Strategic Planning With sufficient data quality and maintenance, business capabilities support:
+• Lifecycle tracking of application support per capability.
+• Planning of transitions and investments in business units or portfolios.
+• Strategic alignment reporting by linking capabilities to applications and corporate goals.
+Structure Summary
+=== PAGE 2 ===
+Responsible / Subscriptions Each Business Capability Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

@@ -1,0 +1,15 @@
+=== PAGE 1 ===
+Definition: IT Component An IT Component is a foundational element within the technical architecture of an IT product. It operates independently of any business logic or context. IT components can either be:
+• Commercial off-the-shelf (COTS) products acquired from external vendors, or • Custom-developed software created in-house.
+They serve as the technical building blocks that enable the functionality and operation of IT products.
+Purpose and benefits IT components are essential to run, maintain, and change IT products. They may be:
+• Encapsulated within technical platforms, or • Directly integrated into the IT product.
+The use of IT components supports strategic architecture management by enabling:
+• Lifecycle planning of technical assets • Clear documentation of ownership, responsibilities, and competencies • Transparency in the technical landscape • Identification of redundancies (overengineering) or gaps (underengineering) in technical capabilities • Discovery of synergies that can inform IT planning and optimization Accurate and complete documentation of IT components also contributes to operational stability and reliability.
+Structure Summary Examples of IT Components To support a clear and practical understanding of the concept of IT components, this section provides categorized examples that reflect real-world technologies commonly used in enterprise IT landscapes. These examples illustrate how IT components—whether commercial, open source, or developed in-house—serve as foundational building blocks within the technical architecture of IT products.
+Each example is mapped to a specific category, such as databases, middleware, operating systems, or security components, and highlights its role in enabling organizations to run, maintain, and change their IT solutions effectively. This structured overview helps stakeholders across architecture, business, and operations to better identify, classify, and manage IT components within tools like LeanIX.
+=== PAGE 2 ===
+These components are technical in nature, not tied to business logic, and can be either purchased, open source, or internally developed. They are commonly used in IT architecture modeling and are suitable for documentation in tools like LeanIX.
+Structure Summary: IT Component Examples & Introduction Responsible / Subscriptions
+=== PAGE 3 ===
+Each IT Component Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

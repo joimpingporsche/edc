@@ -1,0 +1,8 @@
+{"_page": 5, "_table": 1, "_row": 1, "togaf_layer": "Architecture Vision", "leanix_objects": "Objectives, Initiatives (Projects)", "notes": "Represents strategy and transformation"}
+{"_page": 5, "_table": 1, "_row": 2, "togaf_layer": "Business Architecture", "leanix_objects": "Organization, Business Capability, Process", "notes": "Process and Organization modeled outside LeanIX"}
+{"_page": 5, "_table": 1, "_row": 3, "togaf_layer": "Information Systems Architecture", "leanix_objects": "Digital Solution, IT Product (Application, Platform, Group Application), Interface", "notes": "Represents implementation of business capabilities"}
+{"_page": 5, "_table": 1, "_row": 4, "togaf_layer": "Information Architecture", "leanix_objects": "Data Object", "notes": "Managed separately from Application Architecture"}
+{"_page": 5, "_table": 1, "_row": 5, "togaf_layer": "Technology Architecture", "leanix_objects": "IT Product (Platform), IT Component, Vendor, Tech Capability", "notes": "Supports infrastructure and technical realization"}
+{"_page": 6, "_table": 2, "_row": 1, "page_type": "Main Page", "content": "Definition, Purpose and Benefit"}
+{"_page": 6, "_table": 2, "_row": 2, "page_type": "Attributes Page", "content": "Detailed list of attributes per object"}
+{"_page": 6, "_table": 2, "_row": 3, "page_type": "Modeling Page", "content": "Modeling logic, responsibilities, Porsche-specific guidelines, LeanIX links"}

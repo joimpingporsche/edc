@@ -1,0 +1,17 @@
+=== PAGE 1 ===
+Definition: IT Product At Porsche, an IT Product is classified as either an Application or a Platform. Regardless of category, each IT Product must have clearly defined ownership and accountability.
+Applikationen An Application is an IT Product that delivers specific business functionality to support business processes—for example, by automating process steps. Applications contribute to the realization of business capabilities and are aligned with the value creation process.
+Key characteristics:
+• Requires IT Components to operate • Includes tools, systems, software, and user-facing touchpoints • Provides functionality via graphical or text-based user interfaces • May optionally expose APIs • Always supports an operational value stream Platform A Platform is an IT Product that provides technical infrastructure, including IT Components and potentially other platforms. It serves as the foundation for developing, deploying, and operating Applications.
+Group Application Group Applications are Applications developed and operated by Group brands and used by Porsche.
+Purpose and Benefits From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers.
+It enables:
+• Functional development planning • Portfolio and release planning • Centralized documentation of:
+o Security
+=== PAGE 2 ===
+o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring:
+• Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due diligence and risk management obligations • Adherence to ISO 27001 – Information Security • Implementation of BSI IT-Grundschutz (German Federal Office for Information Security) Additionally, IT Products serve as information hubs for integration with enterprise tools and processes, such as:
+• OneTrust (data processing records) • CMDB (change and asset management) For further details, refer to the Systems Integration chapter.
+Structure Summary
+=== PAGE 3 ===
+Responsible / Subscriptions Each IT Product Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

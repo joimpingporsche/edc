@@ -1,0 +1,15 @@
+{"_page": 2, "_table": 1, "_row": 1, "field": "Entity", "description": "Technical Capability"}
+{"_page": 2, "_table": 1, "_row": 2, "field": "Definition", "description": "Astable, functional classification of IT components based on their purpose"}
+{"_page": 2, "_table": 1, "_row": 3, "field": "Examples", "description": "Database, Operating System, Server Software"}
+{"_page": 2, "_table": 1, "_row": 4, "field": "Stability", "description": "Stable over time, industry-independent"}
+{"_page": 2, "_table": 1, "_row": 5, "field": "Purpose", "description": "Analyze IT structure, derive requirements"}
+{"_page": 2, "_table": 1, "_row": 6, "field": "Key Benefits", "description": "Transparency, Redundancy Detection, Whitespot Identification"}
+{"_page": 2, "_table": 1, "_row": 7, "field": "Primary Users", "description": "Product Teams, Domain Architects, Enterprise Architects, Business Units"}
+{"_page": 2, "_table": 1, "_row": 8, "field": "Use Cases", "description": "Component selection, Portfolio optimization, Gap analysis"}
+{"_page": 2, "_table": 2, "_row": 1, "tech_capability": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"}
+{"_page": 2, "_table": 2, "_row": 2, "tech_capability": "", "all": "All", "chief_architect_safe": "System Architect (SAFe)"}
+{"_page": 2, "_table": 2, "_row": 3, "tech_capability": "", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"}
+{"_page": 2, "_table": 2, "_row": 4, "tech_capability": "", "all": "Responsible", "chief_architect_safe": "Business Responsible (non SAFe)"}
+{"_page": 2, "_table": 2, "_row": 5, "tech_capability": "", "all": "Responsible", "chief_architect_safe": "Technical Responsible (non SAFe)"}
+{"_page": 2, "_table": 2, "_row": 6, "tech_capability": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"}
+{"_page": 2, "_table": 2, "_row": 7, "tech_capability": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"}

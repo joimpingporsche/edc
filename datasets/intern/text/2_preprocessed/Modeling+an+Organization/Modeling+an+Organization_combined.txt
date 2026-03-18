@@ -1,0 +1,109 @@
+[SECTION_START]
+TITLE: Introduction
+CONTENT:
+All organizational units—both structural and procedural—are primarily created and maintained in systems outside of LeanIX, with few exceptions.
+• Structural organization data is sourced from the Volkswagen Corporate Directory (VCD). This directory centrally provides data for Porsche AG (PAG) and its subsidiaries. The data is synchronized daily into LeanIX.
+• SAFe organization data currently lacks a central system of record. Portfolio and ART (Agile Release Train) information is manually maintained in a temporary database and also synchronized daily with LeanIX.
+[SECTION_END]
+[SECTION_START]
+TITLE: General Modeling Rules
+CONTENT:
+• Only Fact Sheets tagged with "Synced" ( ) or "Manual" ( ) may be used to model consumers or responsible units.
+• Since modeling occurs outside of LeanIX, no additional general modeling rules apply to this Fact Sheet type.
+[SECTION_END]
+[SECTION_START]
+TITLE: Specific Modelling Rules and Best
+CONTENT:
+Practices for Organizations Assignment of Organizations Organizations can be assigned to any Fact Sheet type as either user or responsible party.
+Assignments should always be made from the perspective of the respective Fact Sheet.
+Example: When modeling an IT Product, assign the consuming and responsible organizational units directly within the IT Product Fact Sheet.
+[SECTION_END]
+[SECTION_START]
+TITLE: Modeling Consumers vs. Responsibilities
+CONTENT:
+Consumers • Consuming units can be modeled at any level of the organizational hierarchy.
+• If an IT Product is used by all departments within a main division (e.g., "FD"), it is sufficient to assign "FD" as the consuming unit.
+• There is no need to list each sub-department individually.
+Responsibilities • Responsible units must be modeled at the deepest available level of the organizational structure.
+• This is necessary to identify the appropriate manager when no individual contact is assigned to a Fact Sheet.
+• Example: If the responsible unit is "FDB1", then "FDB1" must be assigned.
+Assigning only "FDB" is insufficient.
+[SECTION_END]
+[SECTION_START]
+TITLE: Manual Creation of Organizations
+CONTENT:
+In exceptional cases, and with proper justification, users may request the creation of an organization from LeanIX administrators. This is only permitted for elements not part of the official structural or procedural organization.
+• In such cases, the responsible business unit must be consulted.
+• Manually created organizations are tagged with "Manual" ( ).
+[SECTION_END]
+[SECTION_START]
+TITLE: Automatic Updates and Lifecycle Management
+CONTENT:
+One key benefit of centralized organization management is the automatic update of organizational structures during reorganizations (e.g., PPO changes).
+• If an organizational unit is dissolved or merged, LeanIX checks whether it is still linked to any objects.
+o If no links exist, the Fact Sheet is archived and becomes unusable.
+o If links exist, the Fact Sheet is tagged as "Legacy" ( ) Important: Fact Sheets tagged with "Legacy" ( ) must not be used in modeling. It is the responsibility of Fact Sheet owners to update or remove existing relations to these legacy organizations.
+[SECTION_END]
+[SECTION_START]
+TITLE: Structure Summary: Organization Modeling in LeanIX (PAG)
+CONTENT:
+[SECTION_END]
+[SECTION_START]
+TITLE: Metamodel View
+CONTENT:
+[TABLE_JSON_START]
+[
+{"section": "1. Introduction", "topic": "Data Sources", "key_concepts__rules": "- Structural org data from Volkswagen Corporate Directory (VCD) - SAFe org data manually maintained in a temporary DB - Both synced daily to LeanIX"},
+{"section": "1. Introduction", "topic": "Scope", "key_concepts__rules": "- Most org units are modeled outside LeanIX - Few exceptions exist"},
+{"section": "2. General Modeling Rules", "topic": "Fact Sheet Usage", "key_concepts__rules": "- Only use Fact Sheets tagged \"Synced\" or \"Manual\" for modeling consumers or responsibilities"},
+{"section": "2. General Modeling Rules", "topic": "Modeling Guidelines", "key_concepts__rules": "- No additional modeling rules apply since modeling occurs outside LeanIX"},
+{"section": "3. Specific Modeling Rules", "topic": "Assignment Logic", "key_concepts__rules": "- Organizations can be assigned as users or responsible parties to any Fact Sheet - Assignments should be made from the perspective of the Fact Sheet"},
+{"section": "3. Specific Modeling Rules", "topic": "Consumer Modeling", "key_concepts__rules": "- Can be modeled at any hierarchy level - Example: If all sub-units of \"FD\" use a system, assign only \"FD\""},
+{"section": "3. Specific Modeling Rules", "topic": "Responsibility Modeling", "key_concepts__rules": "- Must be modeled at the deepest level of the org structure - Used to identify responsible managers when no individual is assigned - Example: Use \"FDB1\", not just \"FDB\""},
+{"section": "4. Manual Organization Creation", "topic": "Exception Handling", "key_concepts__rules": "- Manual creation allowed only with justification - Only for org units not part of official structure - Must involve responsible business unit - Tagged as \"Manual\""},
+{"section": "5. Automatic Updates", "topic": "Reorganization Handling", "key_concepts__rules": "- Changes from reorganizations (e.g., PPO) are automatically synced - If an org unit is unused, its Fact Sheet is archived"},
+{"section": "5. Automatic Updates", "topic": "Legacy Tagging", "key_concepts__rules": "- If still linked to objects, the Fact Sheet is tagged \"Legacy\" - Fact Sheet owners must update/remove these relations - \"Legacy\"-tagged orgs must not be used in modeling"}
+]
+[TABLE_JSON_END]
+The diagram shows the possible relations between the entities that can be used to model an organizationin the context of the appropriate architecture level.
+[SECTION_END]
+[SECTION_START]
+TITLE: LLM-ready structure summary
+CONTENT:
+Image Title: Metamodel View – Organization Purpose:
+To visualize how the concept of Organization relates to various architectural elements across the TOGAF® architecture layers using the relationship "responsible / affected".
+[SECTION_END]
+[SECTION_START]
+TITLE: Diagram Structure:
+CONTENT:
+The diagram is divided into three horizontal sections, each representing a layer of the TOGAF® framework. At the center of all sections is a green box labeled "Organization", which connects to various elements in each layer.
+[SECTION_END]
+[SECTION_START]
+TITLE: 1. TOGAF® A – Architecture Vision (Top Section)
+CONTENT:
+• Elements:
+o Objective (pink box) o Initiative (pink box)
+• Relationship to Organization:
+o Both elements are connected to Organization via arrows labeled "responsible / affected".
+[SECTION_END]
+[SECTION_START]
+TITLE: 2. TOGAF® B – Business Architecture (Middle Section)
+CONTENT:
+• Elements:
+o Business Capability (pink box) o IT Product (pink box) o Process (pink box) o Interface (pink box) o Digital Solution (pink box) • Relationship to Organization:
+o All elements are connected to Organization via arrows labeled "responsible / affected".
+[SECTION_END]
+[SECTION_START]
+TITLE: 3. TOGAF® C – Technical Architecture (Bottom Section)
+CONTENT:
+• Elements:
+o IT Component (pink box) o Tech Capability (pink box) o ADR (pink box) • Relationship to Organization:
+o All elements are connected to Organization via arrows labeled "responsible / affected".
+[SECTION_END]
+[SECTION_START]
+TITLE: Visual Cues:
+CONTENT:
+• Each TOGAF® section is enclosed in a yellow-bordered rectangle.
+• On the right side of each section is a yellow circle labeled with the corresponding TOGAF® phase:
+o A. Architecture Vision o B. Business Architecture o C. Technical Architecture
+[SECTION_END]

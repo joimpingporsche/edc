@@ -1,0 +1,19 @@
+{"_page": 2, "_table": 1, "_row": 1, "section": "IT Product", "description": "Central modeling object; categorized as Application or Platform"}
+{"_page": 2, "_table": 1, "_row": 2, "section": "Ownership Requirement", "description": "Must have clearly defined ownership and accountability"}
+{"_page": 2, "_table": 1, "_row": 3, "section": "Application Definition", "description": "Supports business processes and capabilities; user-facing"}
+{"_page": 2, "_table": 1, "_row": 4, "section": "Application Characteristics", "description": "UI/API-based access; requires IT Components; supports value streams"}
+{"_page": 2, "_table": 1, "_row": 5, "section": "Platform Definition", "description": "Provides infrastructure for application development and operation"}
+{"_page": 2, "_table": 1, "_row": 6, "section": "Group Applications", "description": "Applications developed by Group brands and used by Porsche"}
+{"_page": 2, "_table": 1, "_row": 7, "section": "Modeling Purpose", "description": "Enables planning, documentation, compliance, and governance"}
+{"_page": 2, "_table": 1, "_row": 8, "section": "Compliance References", "description": "BDSG, ISO 27001, BSI IT-Grundschutz, corporate governance"}
+{"_page": 2, "_table": 1, "_row": 9, "section": "Integration Points", "description": "OneTrust, CMDB, and other enterprise systems"}
+{"_page": 2, "_table": 1, "_row": 10, "section": "IT Product vs. IT Component", "description": "Business Capability = IT Product; Technical Capability = IT Component"}
+{"_page": 2, "_table": 1, "_row": 11, "section": "Decision Rule Summary", "description": "Direct business support = IT Product; otherwise = IT Component"}
+{"_page": 3, "_table": 2, "_row": 1, "it_product_all_categories": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 2, "it_product_all_categories": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 3, "it_product_all_categories": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 4, "it_product_all_categories": "", "all": "All", "business_owner_safe": "Product Owner (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 5, "it_product_all_categories": "", "all": "All", "business_owner_safe": "System Architect (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 6, "it_product_all_categories": "", "all": "All", "business_owner_safe": "Tech Lead (SAFe)"}
+{"_page": 3, "_table": 2, "_row": 7, "it_product_all_categories": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"}
+{"_page": 3, "_table": 2, "_row": 8, "it_product_all_categories": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}

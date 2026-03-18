@@ -1,0 +1,10 @@
+{"_page": 5, "_table": 1, "_row": 1, "use_case": "Application Suite", "parent_type": "Application", "child_type": "Application"}
+{"_page": 6, "_table": 2, "_row": 1, "use_case": "Platform Composition", "parent_type": "Platform", "child_type": "IT Component"}
+{"_page": 6, "_table": 2, "_row": 2, "use_case": "Organizational Hierarchy", "parent_type": "Organization Unit", "child_type": "Sub-Unit"}
+{"_page": 6, "_table": 2, "_row": 3, "use_case": "Portfolio Structure", "parent_type": "Portfolio", "child_type": "Product / Application"}
+{"_page": 8, "_table": 3, "_row": 1, "section": "Purpose", "key_entity": "Objective", "relationships": "defines strategic intent"}
+{"_page": 8, "_table": 3, "_row": 2, "section": "Scope", "key_entity": "Objective → Strategic Level", "relationships": "one-to-one"}
+{"_page": 8, "_table": 3, "_row": 3, "section": "Responsibility", "key_entity": "Objective → Org Unit(s)", "relationships": "one-to-one or one-to-many"}
+{"_page": 8, "_table": 3, "_row": 4, "section": "Capability Impact", "key_entity": "Objective → Business Capability", "relationships": "one-to-many"}
+{"_page": 8, "_table": 3, "_row": 5, "section": "Initiative Linkage", "key_entity": "Objective → Initiative(s)", "relationships": "one-to-many"}
+{"_page": 8, "_table": 3, "_row": 6, "section": "Governance", "key_entity": "Objective → Architect Roles", "relationships": "advisory"}

@@ -1,0 +1,14 @@
+{"_page": 1, "_table": 1, "_row": 1, "element": "Entity Type", "description": "Initiative"}
+{"_page": 1, "_table": 1, "_row": 2, "element": "Core Purpose", "description": "Drives change and supports the realization of objectives"}
+{"_page": 1, "_table": 1, "_row": 3, "element": "Characteristics", "description": "Time-bound, resource- intensive, architecture- relevant"}
+{"_page": 1, "_table": 1, "_row": 4, "element": "Strategic Role", "description": "Operationalizes objectives and enables traceable execution"}
+{"_page": 1, "_table": 1, "_row": 5, "element": "Stakeholders", "description": "Business Analysts, Enterprise Architects, Portfolio Managers"}
+{"_page": 3, "_table": 2, "_row": 1, "section": "Impact Analysis", "key_concept": "Initiative → Architecture Elements", "description": "Shows impact on capabilities, systems, and organizational units"}
+{"_page": 3, "_table": 2, "_row": 2, "section": "Strategic Alignment", "key_concept": "Initiative → Objective", "description": "Links execution to strategic goals"}
+{"_page": 3, "_table": 2, "_row": 3, "section": "Operational Metadata", "key_concept": "Initiative → Budget, Timeline, Roles", "description": "Surfaces key planning and governance data"}
+{"_page": 3, "_table": 3, "_row": 1, "i_nitiative": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"}
+{"_page": 3, "_table": 3, "_row": 2, "i_nitiative": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"}
+{"_page": 3, "_table": 3, "_row": 3, "i_nitiative": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"}
+{"_page": 3, "_table": 3, "_row": 4, "i_nitiative": "", "all": "All", "business_owner_safe": "Product Owner (SAFe)"}
+{"_page": 3, "_table": 3, "_row": 5, "i_nitiative": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"}
+{"_page": 3, "_table": 3, "_row": 6, "i_nitiative": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}

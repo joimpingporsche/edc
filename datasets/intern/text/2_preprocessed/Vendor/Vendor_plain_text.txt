@@ -1,0 +1,13 @@
+=== PAGE 1 ===
+Definition: Vendor / Provider A Vendor (referred to as Provider in the original LeanIX metamodel) represents an external organization responsible for supplying or manufacturing an IT component.
+Purpose and Benefits The Vendor Fact Sheet is used to document and manage information about the suppliers of technical components. It enables organizations to:
+• Maintain detailed contact information and relevant metadata (e.g., TISAX certification).
+• Build a comprehensive vendor landscape across the IT portfolio.
+• Analyze the ratio between in-house development and third-party software.
+• Identify and assess potential vendor lock-in risks within specific portfolios or departments.
+This structured documentation supports strategic decision-making, risk mitigation, and compliance management within the enterprise architecture.
+Clarification: Organization vs. Vendor / Provider It is essential to distinguish between the Vendor / Provider and the Organization Fact Sheet types:
+• Organizational units (whether part of the structural or process organization) are not modeled as vendors.
+• Internal software development by organizational units is abstracted and attributed to the vendor entity "Dr. h.c. F. Porsche AG".
+This modeling approach ensures consistency, clarity, and separation of concerns between internal responsibilities and external suppliers.
+Summary Responsible / Subscriptions Each Vendor Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

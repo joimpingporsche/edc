@@ -1,0 +1,118 @@
+=== PAGE 1 ===
+Introduction This page describes the modeling guidelines for IT Components in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining IT Component in LeanIX. The creation and editing of an IT Component fact sheet follows the standard procedure for creating a general fact sheet as described in "How to create a fact sheet".
+IT components are modeled to describe the technical architecture of an IT product. In addition to infrastructure, platform, and service components required by the IT product, there must be at least one IT component that represents the technical characteristics of the product—such as its version, vendor lifecycle, or manufacturer.
+IT components can only be created by an authorized group of users. Currently, this group consists of the administrators and the users with the role "Architect" IT-Component or IT Product? One of the most common challenges in architecture modeling is determining whether a given object should be classified as a technical IT component or a business-facing IT product.
+Key Characteristics of an IT Component An IT component typically meets the following criteria:
+• It is a hardware or software unit with a clearly defined and dedicated use.
+• It can be installed, enabled, disabled, or removed from an operational perspective.
+• It represents the smallest modelable unit that forms part of an information system.
+• It can be independently modified, distributed, or replaced by third parties.
+• It has a managed vendor or manufacturer support lifecycle.
+• It has a known vendor, manufacturer, or developer.
+• It may incur costs (e.g., purchase, licensing, support).
+• It may be subject to service-level agreements or operational targets.
+Checklist for Classifying Architecture Objects The following criteria help distinguish whether a given object should be classified as a technical IT component or a business-facing IT product. Use the checklist below to decide whether an object should be modeled as an IT Component, an IT Product, or is not relevant for architecture modeling.
+Decision Questions Example Classifications The following examples illustrate how to distinguish between IT Components, IT Products, and non-architecture-relevant objects. These classifications help ensure consistent documentation and modeling in enterprise architecture tools such as LeanIX. Use them as guidance when evaluating new or existing elements in your IT landscape.
+Structure Summary
+=== PAGE 2 ===
+General Modeling Rules Subscriptions In LeanIX, subscriptions are used to assign individuals and roles to a Fact Sheet. There are two main types of subscriptions:
+• Responsible: Individuals accountable for the content and maintenance of the Fact Sheet.
+• Observer: Individuals who are informed but not responsible for the content.
+The specific roles that can be assigned to a Fact Sheet are defined in the modeling guidelines for each Fact Sheet type.
+Responsibility Requirement Each Fact Sheet must have at least one person assigned as Responsible. This person (or persons):
+• Is accountable for the accuracy, completeness, and currency of the Fact Sheet.
+• Receives notifications about changes to the Fact Sheet.
+• Acts as the primary contact for questions, clarifications, or requirements related to the Fact Sheet.
+Change of Responsibility If a Responsible person:
+• Changes roles, • Leaves the company or department, • Or is no longer involved with the Fact Sheet, …it is their duty to ensure a successor is assigned to maintain the Fact Sheet.
+Automated Quality Checks LeanIX includes automated processes to ensure data quality. These processes include:
+1. Inactive Responsible Person If a Responsible person is no longer active in the company or subsidiary (e.g., due to departure), the system checks for other Responsible persons:
+o If none exist, the direct manager of the former Responsible is identified and automatically assigned as the new Responsible.
+o The manager also receives a To-Do to assign a new, appropriate Responsible person.
+o This escalation continues up to the department head level if necessary.
+2. No Responsible Assigned If no Responsible is assigned to a Fact Sheet:
+o The system uses the "Responsible IT Department" relation to identify the appropriate manager.
+o This manager is then assigned as the Responsible person and is expected to nominate a qualified business owner.
+Lifecycle Management in LeanIX Fact Sheets Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits
+=== PAGE 3 ===
+Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers Organizational Responsibilities Each Fact Sheet in LeanIX must include an assignment of organizational responsibility.
+This responsibility can be defined at two levels:
+• Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility.
+At least one form of responsibility must be specified—either at the organizational structure level or the process organization level.
+Ideally, both levels should be documented to ensure full traceability and accountability.
+⚠️ If IT responsibility is defined as mandatory in the modeling guidelines for a specific Fact Sheet type, it must be provided without exception.
+Responsibility at the Organizational Structure Level At Porsche, the organizational structure is defined by the official organizational chart, which organizes the company into hierarchical levels such as:
+• Division • Main Department • Department • Subdepartment (lowest level) In LeanIX modeling, unless explicitly stated otherwise, responsibility must always be assigned to the lowest available level of the organizational structure.
+Key Principles • Always reference the most granular organizational unit available.
+• Ensure that the assigned unit reflects the actual operational responsibility.
+• This ensures clear accountability, accurate reporting, and effective governance.
+Responsibility at the Process Organization Level Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios.
+Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet.
+• If the responsibility lies with a single portfolio—as is often the case with P51 applications—then assigning the portfolio is sufficient.
+Always ensure that the assigned ART or portfolio accurately reflects the operational ownership of the product.
+Key Principles • Use the ART Fact Sheet when agile teams are responsible for development and operations.
+• Use the Portfolio Fact Sheet when responsibility is anchored in a business or IT portfolio.
+• This ensures clear accountability, supports agile governance, and aligns with LeanIX modeling standards.
+Please note Only organizational fact sheets that are tagged with "Synced" or "Manual" may be used! The use of fact sheets with the tag "Legacy" is not allowed!
+Modeling Version History with Successor and Predecessor Relations In LeanIX, the Successor and Predecessor relations are used to model the version history of Fact Sheets over time.
+These relations should be applied whenever a new version of an existing Fact Sheet is created to replace an older version.
+Successor relations can also be used while the previous version is still active and in productive use.
+=== PAGE 4 ===
+Best Practice for Unused Relations If no predecessor or successor exists for a given Fact Sheet, it is recommended to explicitly set the relation field to:
+“Leave empty” This ensures clarity in the data model and avoids ambiguity in version tracking.
+Key Principles • Use Successor/Predecessor to document version transitions.
+• Apply even if the older version is still operational.
+• If not applicable, set the relation field to “Leave empty” instead of leaving it undefined.
+Specific Modelling Rules and Best Practices for an IT Component Authorization to create a component Only authorized users (currently: administrators and users with the "Architect" role) are permitted to create IT components in LeanIX.
+If a product manager identifies a missing component or a new version is required, a request must be submitted via the LeanIX Help Center. All required attributes must be provided accurately.
+Responsibility for IT Components The definition of who is responsible for an IT component continues to lead to heated discussions in the company. Especially due to the establishment of the so-called departmental IT (P51), we are in a dilemma here from an IT point of view. The person specified on a component is typically the person responsible for that component for the entire organization in terms of operations, maintenance, security, and compliance. This regulation is also not a problem for centrally provided components, but it causes problems in many other contexts and poses challenges for IT. We have not yet found a suitable solution to the problem, but we are working on a solution.
+The person assigned as "Responsible" for an IT component is accountable for:
+• Operation • Maintenance • Security • Compliance This applies company-wide. Creating or requesting a component without assigning a responsible person is not permitted and will be rejected.
+Creating a new IT component When a product, tool, or software is identified as a technical IT component, it must be modeled using an IT Component Fact Sheet. Required attributes and relations:
+• Category • Version (major only) • Description (in English) • Lifecycle • Vendor assignment IT Component Categories Each component must be assigned to one of the following categories:
+Versioning Only major versions are modeled (e.g., 5.x). Minor or patch versions are omitted for simplicity. If a vendor introduces significant changes in a sub-version, it may be modeled as an exception.
+Component Description The description should clearly identify the software or tool. Use the official product description from the vendor’s website.
+=== PAGE 5 ===
+Language: English only.
+Vendor Assignment The vendor must be linked via a Vendor Fact Sheet.
+Use the actual manufacturer, not the reseller.
+Example:
+• Manufacturer: TechSmith (for Camtasia) • Reseller: CCP Software GmbH → Only TechSmith should be assigned as the vendor.
+Lifecycle Management The lifecycle should reflect:
+• The vendor-defined lifecycle of the version • The internal usage period (at least the activation date) The responsible person must ensure lifecycle data is up to date.
+Components past their end-of-life must be reviewed and risk-assessed.
+Technical Capabilities Each component must be linked to at least one technical capability from the LeanIX Capability Map.
+Specify the Support Type:
+• Supports: Component supports the capability • Leading: Component is the primary implementation If no suitable capability exists, request one via the capability process.
+Technical Fit Indicates how well the component meets business needs:
+This should be assessed by the technical owner, ideally in collaboration with Solution or Enterprise Architects.
+IT Product Assignment Each IT component must be linked to one or more IT Products.
+Best practice: Assign components from the IT Product perspective.
+Governance & Compliance The following must be documented:
+• Export control relevance and classification • FOSS (Free/Open Source Software) compliance These checks must be completed outside LeanIX via the PASS process. For questions, contact the relevant compliance departments.
+Initiatives IT components can be linked to business or technical initiatives. There are currently no modeling rules for this linkage.
+Cloud-Native Components Cloud-native services (e.g., AWS, Azure) are not modeled manually. They are automatically imported and assigned via Cloud Account Management (CAM).
+New Versions of Existing Components To model a new version:
+• Clone the existing Fact Sheet
+=== PAGE 6 ===
+• Link the new version as a successor Structure Summary Metamodel View The diagram shows the possible relations between the entities that can be used to model an IT Component in the context of the appropriate architecture level.
+=== PAGE 7 ===
+LLM-Ready Structure Summary Title: Metamodel View – IT Component (TOGAF®-Aligned) Description:
+This diagram represents a metamodel view of an IT system, structured according to the TOGAF® framework and suitable for modeling in LeanIX. It is divided into three horizontal layers, each corresponding to a TOGAF® architecture domain:
+1. TOGAF® A – Architecture Vision • Element: Initiative (magenta box) • Relationship: An arrow labeled "impact on" connects the Initiative to elements in the Business Architecture layer, indicating that initiatives influence business structures and requirements.
+2. TOGAF® B – Business Architecture • Elements:
+=== PAGE 8 ===
+o Organisation (magenta box) o IT Product (magenta box) • Relationships:
+o Organisation → "responsible / consumes" → Technical Architecture layer o IT Product → "uses / requires" → Technical Architecture layer These relationships indicate that business units (organisations) are responsible for or consume technical components, and IT products depend on them.
+3. TOGAF® C – Technical Architecture • Elements:
+o IT Component (green box) o Tech Capability (magenta box) • Relationship:
+o Tech Capability → "realize" → IT Component This shows that technical capabilities are realized through specific IT components.
+Additional Visual Elements:
+• Three vertical circles on the right side, each aligned with one of the TOGAF® layers, visually reinforce the separation of architectural concerns.
+• A legend in the bottom-right corner clarifies that arrows represent directional relationships such as responsibility, usage, realization, or impact.
+Purpose: This metamodel is designed to support enterprise architecture modeling in LeanIX by clearly defining how initiatives, business structures, and technical components interrelate.
+It enables traceability from strategic initiatives down to the technical implementation, supporting impact analysis, capability mapping, and IT landscape planning.

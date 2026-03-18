@@ -1,0 +1,56 @@
+[SECTION_START]
+TITLE: Definition: Objective
+CONTENT:
+An Objective Fact Sheet is used to represent a strategic goal and the transformations required to achieve it. It serves as a formalized anchor for planning, tracking, and aligning enterprise-wide initiatives with business strategy.
+Objectives provide structure and traceability for transformation programs and enable consistent communication across business and IT stakeholders.
+Summary
+[TABLE_JSON_START]
+[
+{"element": "Entity Type", "description": "Objective Fact Sheet"},
+{"element": "Core Purpose", "description": "Represents a strategic goal and its required transformations"},
+{"element": "Usage Context", "description": "Strategic planning, transformation tracking, enterprise alignment"},
+{"element": "Stakeholders", "description": "Business Analysts, Enterprise Architects, Portfolio Managers"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Purpose and Benefits of Objectives
+CONTENT:
+Strategic Monitoring and Control Objectives enable the high-level monitoring and steering of enterprise-wide transformations, such as cloud migrations, digitalization programs, or organizational restructuring. They provide a strategic anchor for evaluating progress and ensuring alignment with business goals.
+Capability-Based Transparency By linking business capabilities to objectives, organizations can:
+• Identify critical capabilities that are essential for achieving strategic goals.
+• Gain organization-wide transparency into how well objectives are supported across business domains.
+• Detect gaps or misalignments between strategic intent and operational execution.
+[SECTION_END]
+[SECTION_START]
+TITLE: This capability-to-objective mapping supports both impact analysis and strategic
+CONTENT:
+reporting.
+[SECTION_END]
+[SECTION_START]
+TITLE: Summary
+CONTENT:
+[TABLE_JSON_START]
+[
+{"section": "Strategic Monitoring", "key_concept": "Objective → Transformation", "description": "Enables high-level control of strategic initiatives"},
+{"section": "Capability Linkage", "key_concept": "Objective → Business Capability", "description": "Identifies critical capabilities and supports transparency"},
+{"section": "Analytical Use", "key_concept": "Capability ↔ Objective", "description": "Supports impact analysis and alignment tracking"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsible / Subscriptions
+CONTENT:
+Each Objective Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. Currently, this person can have the role of Product Owner or Business Owner. The assignment of type, person and role is done via the subscriptions in the respective fact sheet.
+The owner organization and the assigned person are solely responsible for the creation and maintenance of an objective fact sheet in terms of both technical aspects and content!
+[TABLE_JSON_START]
+[
+{"o_bjective": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"},
+{"o_bjective": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"},
+{"o_bjective": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"},
+{"o_bjective": "", "all": "All", "business_owner_safe": "Product Owner (SAFe)"},
+{"o_bjective": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"},
+{"o_bjective": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[SECTION_END]

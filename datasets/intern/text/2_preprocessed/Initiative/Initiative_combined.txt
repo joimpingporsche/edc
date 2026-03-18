@@ -1,0 +1,65 @@
+[SECTION_START]
+TITLE: Definition: Initiative
+CONTENT:
+An Initiative represents a targeted, time-bound effort that drives change within the organization. It requires dedicated resources, impacts the enterprise architecture, and contributes directly to the achievement of one or more defined objectives.
+Initiatives serve as the operational link between strategic intent and execution, enabling measurable progress toward business goals.
+[SECTION_END]
+[SECTION_START]
+TITLE: Structure Summary
+CONTENT:
+[TABLE_JSON_START]
+[
+{"element": "Entity Type", "description": "Initiative"},
+{"element": "Core Purpose", "description": "Drives change and supports the realization of objectives"},
+{"element": "Characteristics", "description": "Time-bound, resource- intensive, architecture- relevant"},
+{"element": "Strategic Role", "description": "Operationalizes objectives and enables traceable execution"},
+{"element": "Stakeholders", "description": "Business Analysts, Enterprise Architects, Portfolio Managers"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Purpose and Benefits of the Initiative Fact
+CONTENT:
+Sheet Visibility and Impact Analysis Modeling an Initiative Fact Sheet provides a clear view of the status, scope, and impact of an initiative across the enterprise architecture. It enables stakeholders to assess how an initiative affects key architectural domains, including:
+• Business Capabilities • Business Contexts • Applications • Organizations • Platforms • IT Components
+[SECTION_END]
+[SECTION_START]
+TITLE: Strategic Alignment and Traceability
+CONTENT:
+Each initiative can be linked to one or more Objectives, allowing for:
+• Transparent tracking of how initiatives contribute to strategic goals.
+• Improved alignment between operational execution and business strategy.
+[SECTION_END]
+[SECTION_START]
+TITLE: Operational Insights
+CONTENT:
+The Initiative Fact Sheet also supports the surfacing of relevant metadata, such as:
+• Budget information • Timeline and milestones • Responsible units or roles This structured view enables better decision-making, prioritization, and communication across business and IT.
+[SECTION_END]
+[SECTION_START]
+TITLE: Structure Summary
+CONTENT:
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsible / Subscriptions
+CONTENT:
+[TABLE_JSON_START]
+[
+{"section": "Impact Analysis", "key_concept": "Initiative → Architecture Elements", "description": "Shows impact on capabilities, systems, and organizational units"},
+{"section": "Strategic Alignment", "key_concept": "Initiative → Objective", "description": "Links execution to strategic goals"},
+{"section": "Operational Metadata", "key_concept": "Initiative → Budget, Timeline, Roles", "description": "Surfaces key planning and governance data"}
+]
+[TABLE_JSON_END]
+Each Initiative Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. Currently, this person can have the role of Product Owner, Project Manager or Tech Lead. The assignment of type, person and role is done via the subscriptions in the respective fact sheet.
+Please note The owner organization and the assigned person are solely responsible for the creation and maintenance of an Initiative fact sheet in terms of both technical aspects and content!
+[TABLE_JSON_START]
+[
+{"i_nitiative": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"},
+{"i_nitiative": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"},
+{"i_nitiative": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"},
+{"i_nitiative": "", "all": "All", "business_owner_safe": "Product Owner (SAFe)"},
+{"i_nitiative": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"},
+{"i_nitiative": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[SECTION_END]

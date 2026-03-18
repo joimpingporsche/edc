@@ -1,0 +1,59 @@
+[SECTION_START]
+TITLE: Definition: Digital Solution
+CONTENT:
+In alignment with the Scaled Agile Framework (SAFe) and extended by Porsche-specific terminology, a Digital Solution is defined as follows:
+A Digital Solution is a cohesive construct that delivers business value by integrating multiple IT Products. These IT Products are modular, technically and logically bounded units that implement specific business functionalities. Together, they form the technical foundation of a Digital Solution.
+In addition to IT Products, a Digital Solution may also include:
+• Business processes • Methods and practices • Organizational structures
+[SECTION_END]
+[SECTION_START]
+TITLE: Characteristics of a Digital Solution
+CONTENT:
+A Digital Solution:
+• Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).
+• Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.
+• Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by delivering measurable business value.
+• Is Developed Within a Single Agile Release Train (ART) Each Digital Solution is budgeted and managed within one portfolio and is developed by one or more agile teams within a single ART.
+• Is Part of a Development Value Stream (DVS) The contributing teams are part of a DVS and are responsible for defining, building, validating, and releasing the IT Products that make up the Digital Solution.
+• Supports Independent Delivery IT Products within a Digital Solution are potentially independently deployable and operable, ensuring resilience, scalability, and speed.
+[SECTION_END]
+[SECTION_START]
+TITLE: Purpose and Benefits
+CONTENT:
+• A Digital Solution delivers end-to-end value to internal or external customers.
+• Customers do not purchase isolated features or capabilities—they seek complete solutions that fulfill their desired outcomes.
+• Digital Solutions enable organizations to align technical delivery with business strategy and customer needs.
+Structure Summary
+[TABLE_JSON_START]
+[
+{"section": "Definition", "element": "Digital Solution", "description": "Aconstruct composed of IT Products and potentially processes, methods, and organizational elements"},
+{"section": "Definition", "element": "IT Product", "description": "Application, service, or platform with supporting technologies"},
+{"section": "Composition", "element": "Modular Structure", "description": "Multiple IT Products form a Digital Solution"},
+{"section": "Composition", "element": "Logical Boundaries", "description": "Each IT Product is technically and logically self- contained"},
+{"section": "Functionality", "element": "Business Enablement", "description": "Supports business capabilities, processes, and data entities"},
+{"section": "Functionality", "element": "Value Stream Alignment", "description": "Supports Operational Value Streams (OVS)"},
+{"section": "Development Context", "element": "Agile Release Train (ART)", "description": "Each Digital Solution is developed within a single ART"},
+{"section": "Development Context", "element": "Development Value Stream (DVS)", "description": "Teams within the DVS define, build, validate, and release IT Products"},
+{"section": "Development Context", "element": "Portfolio Alignment", "description": "Budgeted and governed within one portfolio"},
+{"section": "Delivery Model", "element": "Independent Deployability", "description": "IT Products can be released and operated independently"},
+{"section": "Delivery Model", "element": "Resilience & Speed", "description": "Ensures scalable, stable, and fast delivery"},
+{"section": "Customer Value", "element": "Outcome-Oriented", "description": "Customers seek complete solutions, not isolated features"},
+{"section": "Customer Value", "element": "Internal & External Users", "description": "Solutions serve both internal employees and external customers"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsible / Subscriptions
+CONTENT:
+Each Digital Solution Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet
+[TABLE_JSON_START]
+[
+{"digital_solution": "", "all": "All", "business_owner_safe": "Chief Architect (SAFe)"},
+{"digital_solution": "", "all": "All", "business_owner_safe": "Enterprise Architect (SAFe)"},
+{"digital_solution": "", "all": "All", "business_owner_safe": "Product Management (SAFe)"},
+{"digital_solution": "", "all": "All", "business_owner_safe": "System Architect (SAFe)"},
+{"digital_solution": "", "all": "Responsible", "business_owner_safe": "Owner (non SAFe)"},
+{"digital_solution": "", "all": "Observer", "business_owner_safe": "Observer (non SAFe)"}
+]
+[TABLE_JSON_END]
+[SECTION_END]

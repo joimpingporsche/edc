@@ -1,0 +1,6 @@
+{"_page": 2, "_table": 1, "_row": 1, "section": "Definition", "key_concept": "Business Process", "description": "Logically linked activities to achieve a goal"}
+{"_page": 2, "_table": 1, "_row": 2, "section": "Strategic Insight", "key_concept": "Process → Business Architecture", "description": "Identifies critical or change-prone processes"}
+{"_page": 2, "_table": 1, "_row": 3, "section": "Application Mapping", "key_concept": "Process → Application", "description": "Enables traceability and impact analysis"}
+{"_page": 2, "_table": 1, "_row": 4, "section": "Gap & Redundancy Check", "key_concept": "Process ↔ Application", "description": "Detects white spots and overbuilds"}
+{"_page": 2, "_table": 1, "_row": 5, "section": "Architecture Alignment", "key_concept": "Process → EA & IT Planning", "description": "Supports investment and transformation decisions"}
+{"_page": 3, "_table": 2, "_row": 1, "process": "", "responsible": "Observer", "owner_non_safe": "Observer (non SAFe)"}

@@ -1,0 +1,18 @@
+{"_page": 1, "_table": 1, "_row": 1, "section": "Context", "element": "Domain", "description": "Enterprise Architecture, SAFe, LeanIX"}
+{"_page": 1, "_table": 1, "_row": 2, "section": "Context", "element": "Purpose", "description": "Visualize how interfaces connect applications and link application and data architecture"}
+{"_page": 1, "_table": 1, "_row": 3, "section": "Core Concept", "element": "Interface", "description": "Logical connection between two applications for data exchange"}
+{"_page": 1, "_table": 1, "_row": 4, "section": "Core Concept", "element": "Applications", "description": "Application Aand Application Bare connected via the interface"}
+{"_page": 1, "_table": 1, "_row": 5, "section": "Metadata Attributes", "element": "Information Object Type", "description": "Describes the type of data exchanged (e.g., master data, transactions)"}
+{"_page": 1, "_table": 1, "_row": 6, "section": "Metadata Attributes", "element": "Direction", "description": "Indicates data flow direction (e.g., unidirectional, bidirectional)"}
+{"_page": 1, "_table": 1, "_row": 7, "section": "Metadata Attributes", "element": "Frequency", "description": "Specifies how often data is exchanged (e.g., real-time, batch)"}
+{"_page": 1, "_table": 1, "_row": 8, "section": "Architectural Layers", "element": "Application Architecture", "description": "Layer where applications reside"}
+{"_page": 1, "_table": 1, "_row": 9, "section": "Architectural Layers", "element": "Information & Data Architecture", "description": "Layer where data semantics and flows are defined"}
+{"_page": 1, "_table": 1, "_row": 10, "section": "Architectural Layers", "element": "Interface Role", "description": "Acts as a bridge between the two architecture layers"}
+{"_page": 1, "_table": 1, "_row": 11, "section": "Standards & Style", "element": "Visual Style", "description": "Clean, modern, enterprise-ready; Porsche corporate colors (black, white, grey, red)"}
+{"_page": 1, "_table": 1, "_row": 12, "section": "Standards & Style", "element": "Semantic Alignment", "description": "Supports traceability, integration design, and architectural governance"}
+{"_page": 1, "_table": 2, "_row": 1, "interface": "", "all": "All", "chief_architect_safe": "Enterprise Architect (SAFe)"}
+{"_page": 1, "_table": 2, "_row": 2, "interface": "", "all": "All", "chief_architect_safe": "Product Owner (SAFe)"}
+{"_page": 1, "_table": 2, "_row": 3, "interface": "", "all": "All", "chief_architect_safe": "System Architect (SAFe)"}
+{"_page": 1, "_table": 2, "_row": 4, "interface": "", "all": "All", "chief_architect_safe": "Tech Lead (SAFe)"}
+{"_page": 1, "_table": 2, "_row": 5, "interface": "", "all": "Responsible", "chief_architect_safe": "Owner (non SAFe)"}
+{"_page": 1, "_table": 2, "_row": 6, "interface": "", "all": "Observer", "chief_architect_safe": "Observer (non SAFe)"}

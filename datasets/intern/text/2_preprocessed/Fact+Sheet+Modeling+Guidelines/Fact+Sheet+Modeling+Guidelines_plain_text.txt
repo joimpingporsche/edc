@@ -1,0 +1,40 @@
+=== PAGE 1 ===
+Overview Architectural and regulatory information systems are modeled in LeanIX across all TOGAF architecture levels. This is achieved through the creation, maintenance, and assignment of architectural objects.
+Architecture Levels Architecture Vision At this level, strategy and transformation are represented through:
+• Objectives • Initiatives (Projects) Business Architecture This layer includes the following objects:
+• Organization • Business Capability • Process Note: Except for Business Capabilities and their mappings, these elements are created and maintained outside of LeanIX as part of business process modeling.
+Information Systems Architecture This central layer maps the implementation of business capabilities. It includes:
+• Digital Solution • IT Product (Application, Platform, Group Application) • Interface These are part of the Application Architecture. Additionally:
+• Data Objects are managed in the Information Architecture layer.
+=== PAGE 2 ===
+Together, the Business Architecture and Information Systems Architecture form the Business Architecture domain.
+Technology Architecture This layer supports the technical realization of applications. Applications from the Application Architecture require infrastructure for procurement, integration, and operation. Relevant objects include:
+• IT Product (Platform) • IT Component • Vendor • Tech Capability LLM-Ready Structure Summary Image Description: TOGAF-Based Architecture Metamodel (LeanIX) General Overview The image is a structured diagram representing a metamodel of an information system architecture based on the TOGAF® framework. It is visually divided into four architecture layers, each containing specific object types. The model aligns with LeanIX terminology and structure.
+Architecture Vision (TOGAF® A) • Objective (Color: Pink) • Initiative (Color: Purple) Represents strategic goals and transformation initiatives.
+Business Architecture (TOGAF® B) • Organization (Color: Black) • Business Capability (Color: Grey) • Process (Color: Green)
+=== PAGE 3 ===
+Captures the business structure, capabilities, and operational processes.
+Information Systems Architecture (TOGAF® C) Application Architecture • Digital Solution (Color: Red) • IT Product (Color: Dark Red) • Interface (Color: Yellow) Information/Data Architecture • Information Object (Color: Purple) Represents the implementation of business capabilities through applications and data structures.
+Technology Architecture (TOGAF® D) • IT Component (Color: Dark Blue) • Vendor (Color: Teal) • Tech Capability (Color: Light Green) Describes the technical infrastructure and supporting technology components.
+Caption • Text: Metamodel Informationsystem based on LeanIX Architectural Objects and Attributes Each object in LeanIX is represented by a dedicated Fact Sheet. These are interconnected through mappings to form a comprehensive, domain-oriented, and technical architecture.
+=== PAGE 4 ===
+The attributes of each object are based on the LeanIX standard data model and are extended with Porsche-specific attributes, especially in the areas of:
+• Security • Data Protection • Governance Each Fact Sheet type includes mandatory fields required to meet PASS minimum standards.
+These fields are clearly marked.
+Page Structure and Navigation To ensure consistency and readability, all pages follow the same structure and provide context- specific content.
+Main Page Each architectural object is described in the following sections:
+• Definition: Explains what the object represents, based on standard definitions and Porsche-specific characteristics.
+• Purpose and Benefit: Describes the role and value of the object in architecture modeling.
+Attributes Subpage Details the attributes of the object, aligned with the corresponding Fact Sheet.
+Modeling Subpage Explains how the object should be modeled, where modeling takes place, and which roles are responsible. It includes Porsche-specific modeling guidelines and links to LeanIX standard modeling practices.
+Recommendation: Follow LeanIX standard guidelines unless Porsche-specific deviations apply.
+New Attributes for Future Requirements
+=== PAGE 5 ===
+New attributes can be added with sufficient justification, focusing on architecture-relevant aspects. Suggestions can be submitted at any time via a feature request.
+Structure Summary Context • Domain: Enterprise Architecture • Tool: LeanIX • Framework: TOGAF • Organization: Porsche AG (PAG) • User Roles: Enterprise Architect, Business Analyst, Business Unit Staff Architecture Levels and Objects Object Modeling in LeanIX • Fact Sheets: Each object is represented by a Fact Sheet.
+• Mappings: Objects are linked via mappings to form a domain-oriented and technical architecture.
+• Attributes:
+o Based on LeanIX standard data model o Extended with Porsche-specific attributes (e.g., security, data protection, governance) o Mandatory fields defined by PASS minimum standards
+=== PAGE 6 ===
+Documentation Structure Governance and Change Management • New Attributes:
+o Can be added with justification o Must be architecture-relevant o Submitted via feature request process

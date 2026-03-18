@@ -1,0 +1,210 @@
+[SECTION_START]
+TITLE: Introduction
+CONTENT:
+This page describes the modeling guidelines for objectives in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining objective fact sheets in LeanIX. The creation and editing of an objective fact sheet follows the standard procedure for creating a general fact sheet as described in "How to create a fact sheet".
+[SECTION_END]
+[SECTION_START]
+TITLE: General Modeling Rules
+CONTENT:
+Subscriptions In LeanIX, subscriptions are used to assign individuals and roles to a Fact Sheet. There are two main types of subscriptions:
+• Responsible: Individuals accountable for the content and maintenance of the Fact Sheet.
+• Observer: Individuals who are informed but not responsible for the content.
+The specific roles that can be assigned to a Fact Sheet are defined in the modeling guidelines for each Fact Sheet type.
+Responsibility Requirement Each Fact Sheet must have at least one person assigned as Responsible. This person (or persons):
+• Is accountable for the accuracy, completeness, and currency of the Fact Sheet.
+• Receives notifications about changes to the Fact Sheet.
+• Acts as the primary contact for questions, clarifications, or requirements related to the Fact Sheet.
+Change of Responsibility If a Responsible person:
+• Changes roles, • Leaves the company or department, • Or is no longer involved with the Fact Sheet,
+…it is their duty to ensure a successor is assigned to maintain the Fact Sheet.
+Automated Quality Checks LeanIX includes automated processes to ensure data quality. These processes include:
+1. Inactive Responsible Person If a Responsible person is no longer active in the company or subsidiary (e.g., due to departure), the system checks for other Responsible persons:
+o If none exist, the direct manager of the former Responsible is identified and automatically assigned as the new Responsible.
+o The manager also receives a To-Do to assign a new, appropriate Responsible person.
+o This escalation continues up to the department head level if necessary.
+2. No Responsible Assigned If no Responsible is assigned to a Fact Sheet:
+o The system uses the "Responsible IT Department" relation to identify the appropriate manager.
+o This manager is then assigned as the Responsible person and is expected to nominate a qualified business owner.
+[SECTION_END]
+[SECTION_START]
+TITLE: Lifecycle Management in LeanIX Fact Sheets
+CONTENT:
+Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements
+• Impact analysis for changes and decommissioning • Architecture governance across all layers
+[SECTION_END]
+[SECTION_START]
+TITLE: Organizational Responsibilities
+CONTENT:
+Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This responsibility can be defined at two levels:
+• Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility.
+At least one form of responsibility must be specified—either at the organizational structure level or the process organization level.
+Ideally, both levels should be documented to ensure full traceability and accountability.
+If IT responsibility is defined as mandatory in the modeling guidelines for a specific Fact Sheet type, it must be provided without exception.
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsibility at the Organizational Structure Level
+CONTENT:
+At Porsche, the organizational structure is defined by the official organizational chart, which organizes the company into hierarchical levels such as:
+• Division • Main Department • Department • Subdepartment (lowest level) In LeanIX modeling, unless explicitly stated otherwise, responsibility must always be assigned to the lowest available level of the organizational structure.
+Key Principles • Always reference the most granular organizational unit available.
+• Ensure that the assigned unit reflects the actual operational responsibility.
+• This ensures clear accountability, accurate reporting, and effective governance.
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsibility at the Process Organization Level
+CONTENT:
+Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios.
+Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet.
+• If the responsibility lies with a single portfolio—as is often the case with P51 applications—then assigning the portfolio is sufficient.
+Always ensure that the assigned ART or portfolio accurately reflects the operational ownership of the product.
+[SECTION_END]
+[SECTION_START]
+TITLE: Key Principles
+CONTENT:
+• Use the ART Fact Sheet when agile teams are responsible for development and operations.
+• Use the Portfolio Fact Sheet when responsibility is anchored in a business or IT portfolio.
+• This ensures clear accountability, supports agile governance, and aligns with LeanIX modeling standards.
+Please note Only organizational fact sheets that are tagged with "Synced" or "Manual" may be used! The use of fact sheets with the tag "Legacy" is not allowed!
+[SECTION_END]
+[SECTION_START]
+TITLE: Modeling Version History with Successor and Predecessor
+CONTENT:
+Relations In LeanIX, the Successor and Predecessor relations are used to model the version history of Fact Sheets over time.
+These relations should be applied whenever a new version of an existing Fact Sheet is created to replace an older version.
+[SECTION_END]
+[SECTION_START]
+TITLE: Successor relations can also be used while the previous version is still
+CONTENT:
+active and in productive use.
+[SECTION_END]
+[SECTION_START]
+TITLE: Best Practice for Unused Relations
+CONTENT:
+If no predecessor or successor exists for a given Fact Sheet, it is recommended to explicitly set the relation field to:
+“Leave empty” This ensures clarity in the data model and avoids ambiguity in version tracking.
+[SECTION_END]
+[SECTION_START]
+TITLE: Key Principles
+CONTENT:
+• Use Successor/Predecessor to document version transitions.
+• Apply even if the older version is still operational.
+• If not applicable, set the relation field to “Leave empty” instead of leaving it undefined.
+[SECTION_END]
+[SECTION_START]
+TITLE: Modeling Hierarchies with Parent/Child Relations in
+CONTENT:
+LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.
+[SECTION_END]
+[SECTION_START]
+TITLE: Usage Guidelines
+CONTENT:
+• A Parent Fact Sheet represents a higher-level entity that logically contains or governs one or more Child Fact Sheets.
+• A Child Fact Sheet is a subordinate entity that inherits context or structure from its parent.
+This relation is commonly used in the following scenarios:
+[TABLE_JSON_START]
+[
+{"use_case": "Application Suite", "parent_type": "Application", "child_type": "Application"}
+]
+[TABLE_JSON_END]
+[TABLE_JSON_START]
+[
+{"use_case": "Platform Composition", "parent_type": "Platform", "child_type": "IT Component"},
+{"use_case": "Organizational Hierarchy", "parent_type": "Organization Unit", "child_type": "Sub-Unit"},
+{"use_case": "Portfolio Structure", "parent_type": "Portfolio", "child_type": "Product / Application"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Special Rule for IT Products
+CONTENT:
+For the Fact Sheet type "IT Product", the Parent/Child relation must only be used after prior consultation with the responsible Portfolio Architect and the LeanIX team.
+This ensures that hierarchical modeling aligns with enterprise architecture principles and avoids misrepresentation of product structures.
+[SECTION_END]
+[SECTION_START]
+TITLE: Best Practices
+CONTENT:
+• Use Parent/Child relations to group related Fact Sheets under a common context.
+• Ensure that the hierarchy reflects actual ownership or architectural structure.
+• Avoid circular or ambiguous relationships.
+• Document the rationale for the hierarchy in the description field of the Fact Sheet if needed.
+• If the Parent/Child relation is not applicable, explicitly set the field to “Leave empty” to ensure clarity and data quality.
+[SECTION_END]
+[SECTION_START]
+TITLE: Benefits
+CONTENT:
+• Improves navigability and traceability in LeanIX.
+• Supports impact analysis and portfolio planning.
+• Enables structured reporting and governance alignment.
+[SECTION_END]
+[SECTION_START]
+TITLE: Specific Modelling Rules and Best
+CONTENT:
+Practices for an Objective Purpose
+An Objective Fact Sheet is used to define and document strategic goals within the enterprise architecture. It serves as a semantic anchor for aligning business and IT strategy across different organizational levels.
+Strategic Scope Each Objective must be assigned to one of the following strategic levels:
+• Enterprise Level – for company-wide strategic alignment (preferred in classical EAM).
+• Portfolio Level – for domain- or business-unit-specific goals.
+• ART/Team Level – for tactical or operational objectives.
+Recommendation: Use the Enterprise Level whenever the objective affects both business and IT strategy.
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsibility Modeling
+CONTENT:
+Each Objective must include a clearly defined responsible organizational unit:
+• If only one unit is organizationally accountable, model a single responsibility.
+• If multiple units are involved, list all affected organizational units.
+• Granularity can be coarse (e.g., Dr. Ing. h.c. F. Porsche AG instead of individual departments).
+[SECTION_END]
+[SECTION_START]
+TITLE: Business Capability Impact
+CONTENT:
+Objectives typically influence the business architecture. Therefore:
+• Link each Objective to the affected business capabilities.
+• Use existing capabilities where possible; define new ones only if necessary.
+• Ensure the impact is traceable and aligned with the capability model.
+[SECTION_END]
+[SECTION_START]
+TITLE: Initiative Linkage
+CONTENT:
+Each Objective should be operationalized through one or more initiatives:
+• Initiatives must be time-bound and reflect the implementation of the Objective.
+• At least one initiative must be linked to each Objective.
+• This linkage ensures traceability from strategic intent to execution.
+[SECTION_END]
+[SECTION_START]
+TITLE: Governance and Ownership
+CONTENT:
+• There is no central authority for managing Objectives.
+• Responsibility for creation, maintenance, and usage lies with the creator and user.
+• For guidance, contact the Enterprise Architects of the respective portfolio or the Chief Architects.
+When using initiatives and objectives, it is important to note that LeanIX is not a project management tool!
+Summary
+[TABLE_JSON_START]
+[
+{"section": "Purpose", "key_entity": "Objective", "relationships": "defines strategic intent"},
+{"section": "Scope", "key_entity": "Objective → Strategic Level", "relationships": "one-to-one"},
+{"section": "Responsibility", "key_entity": "Objective → Org Unit(s)", "relationships": "one-to-one or one-to-many"},
+{"section": "Capability Impact", "key_entity": "Objective → Business Capability", "relationships": "one-to-many"},
+{"section": "Initiative Linkage", "key_entity": "Objective → Initiative(s)", "relationships": "one-to-many"},
+{"section": "Governance", "key_entity": "Objective → Architect Roles", "relationships": "advisory"}
+]
+[TABLE_JSON_END]
+Metamodel View The diagram shows the possible relations between the entities that can be used to model an objective in the context of the appropriate architecture level.
+Diagram: Relationships Between Business Architecture Elements Entities (Nodes)
+The diagram includes four key business elements, each represented by a colored box:
+1. Objective (pink) – Represents a strategic goal.
+2. Initiative (green) – A time-bound effort to implement a goal.
+3. Organization (yellow) – An organizational unit responsible for the objective.
+4. Business Capability (blue) – A defined ability of the enterprise to deliver value.
+Relationships (Directed Edges) The diagram uses labeled arrows to define semantic relationships between the elements:
+• Objective → Initiative Relation: is supported by Meaning: The initiative supports the achievement of the objective.
+• Objective → Business Capability Relation: improves Meaning: The objective aims to enhance one or more business capabilities.
+• Objective → Organization Relation: is owned by Meaning: The organization is accountable for the objective.
+Framework References (TOGAF®) On the right side of the diagram, two yellow circles reference TOGAF® architecture phases:
+• TOGAF® A. Architecture Vision – Refers to the phase for defining the strategic architecture vision.
+• TOGAF® B. Business Architecture – Refers to the phase for modeling the business architecture.
+[SECTION_END]

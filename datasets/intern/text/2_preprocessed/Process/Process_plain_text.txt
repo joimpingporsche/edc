@@ -1,0 +1,16 @@
+=== PAGE 1 ===
+Definition: Business Process A business process is a structured sequence of logically connected activities designed to achieve a specific business or operational goal. A process may be:
+• Part of a higher-level process (process hierarchy), • Composed of subprocesses, • Or used to implement other processes.
+Purpose and Benefits of Business Process Modeling Strategic and Operational Insight Business process modeling is a key element of the business architecture. It helps identify:
+• Processes that are strategically or economically critical, • Processes that are under pressure to change due to transformation, regulation, or inefficiencies.
+This insight supports prioritization and investment decisions across business and IT.
+Application and Architecture Mapping When properly maintained, business process models enable:
+• Traceability between processes and the applications that support them, • Identification of dependencies between business operations and IT systems, • Analysis of impact in case of application failure, replacement, or decommissioning.
+=== PAGE 2 ===
+Gap and Redundancy Detection By analyzing process-to-application assignments, organizations can:
+• Detect white spots (unsupported processes), • Identify overbuilds (multiple systems supporting the same process), • Improve application portfolio rationalization.
+Decision Support for Enterprise Architecture Process architecture provides valuable input for:
+• Enterprise architects to guide transformation planning, • IT management to align systems with business needs, • Process managers to optimize workflows and reduce complexity.
+Summary Responsible / Subscriptions
+=== PAGE 3 ===
+Each Process Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

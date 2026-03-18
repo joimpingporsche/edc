@@ -1,0 +1,9 @@
+=== PAGE 1 ===
+Definition: Tech Capability A Technical Capability represents a functional classification of IT components based on what the technology enables. It describes the core function or purpose of a technology, such as a database, operating system, or server software. Unlike rapidly evolving technologies, the technical capability model remains relatively stable over time and is industry-agnostic.
+Purpose and Benefits The primary purpose of modeling Technical Capabilities is to analyze the technical structure of the IT landscape and derive actionable insights. By assigning IT components to specific capabilities, organizations can:
+• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
+• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
+• Business Stakeholders benefit from a clearer understanding of how technology supports business needs, enabling better alignment between IT and business strategy.
+Summary
+=== PAGE 2 ===
+Responsible / Subscriptions Each Tech Capability Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

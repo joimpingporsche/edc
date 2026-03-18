@@ -1,0 +1,15 @@
+{"_page": 5, "_table": 1, "_row": 1, "section": "1. Context", "element": "Framework", "description": "Enterprise Architecture at Porsche, based on SAFe and PAG modeling standards"}
+{"_page": 5, "_table": 1, "_row": 2, "section": "1. Context", "element": "Tooling", "description": "LeanIX used for creating and maintaining Digital Solution fact sheets"}
+{"_page": 5, "_table": 1, "_row": 3, "section": "1. Context", "element": "Reference", "description": "General fact sheet creation process described in “How to create a fact sheet”"}
+{"_page": 5, "_table": 1, "_row": 4, "section": "2. Applicability", "element": "Modeling Requirement", "description": "Only required if the Digital Solution is identified via Value Stream Identification during ART ramp-up"}
+{"_page": 5, "_table": 1, "_row": 5, "section": "2. Applicability", "element": "Outside Scope", "description": "Modeling outside the SAFe organization is not allowed"}
+{"_page": 5, "_table": 1, "_row": 6, "section": "2. Applicability", "element": "Contact Roles", "description": "ART Product Team and Enterprise Architect are responsible for guidance"}
+{"_page": 5, "_table": 1, "_row": 7, "section": "3. Modeling Rules", "element": "Naming Convention", "description": "Must follow the naming defined by the owning ART"}
+{"_page": 5, "_table": 1, "_row": 8, "section": "3. Modeling Rules", "element": "IT Product Assignment", "description": "At least one IT Product must be assigned to each Digital Solution"}
+{"_page": 5, "_table": 1, "_row": 9, "section": "3. Modeling Rules", "element": "ART Assignment", "description": "Responsible ART must be explicitly assigned"}
+{"_page": 5, "_table": 1, "_row": 10, "section": "3. Modeling Rules", "element": "Org Unit Assignment", "description": "Optional: organizational unit (e.g., department) can be linked"}
+{"_page": 5, "_table": 1, "_row": 11, "section": "3. Modeling Rules", "element": "Optional Linkages", "description": "May include initiatives, business capabilities, consuming org/process units"}
+{"_page": 5, "_table": 1, "_row": 12, "section": "4. Purpose", "element": "Strategic Relevance", "description": "Ensures Digital Solutions are only modeled when strategically aligned"}
+{"_page": 5, "_table": 1, "_row": 13, "section": "4. Purpose", "element": "Value Stream Alignment", "description": "Embeds Digital Solutions in SAFe delivery structure"}
+{"_page": 5, "_table": 1, "_row": 14, "section": "4. Purpose", "element": "Governance Support", "description": "Enables architectural governance and portfolio transparency"}
+{"_page": 5, "_table": 1, "_row": 15, "section": "4. Purpose", "element": "Technology Enablement", "description": "Supports consistent evolution of business-enabling technology"}

@@ -1,0 +1,18 @@
+=== PAGE 1 ===
+Definition: Digital Solution In alignment with the Scaled Agile Framework (SAFe) and extended by Porsche-specific terminology, a Digital Solution is defined as follows:
+A Digital Solution is a cohesive construct that delivers business value by integrating multiple IT Products. These IT Products are modular, technically and logically bounded units that implement specific business functionalities. Together, they form the technical foundation of a Digital Solution.
+In addition to IT Products, a Digital Solution may also include:
+• Business processes • Methods and practices • Organizational structures Characteristics of a Digital Solution A Digital Solution:
+• Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).
+• Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.
+• Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by delivering measurable business value.
+• Is Developed Within a Single Agile Release Train (ART) Each Digital Solution is budgeted and managed within one portfolio and is developed by one or more agile teams within a single ART.
+• Is Part of a Development Value Stream (DVS) The contributing teams are part of a DVS and are responsible for defining, building, validating, and releasing the IT Products that make up the Digital Solution.
+• Supports Independent Delivery IT Products within a Digital Solution are potentially independently deployable and operable, ensuring resilience, scalability, and speed.
+=== PAGE 2 ===
+Purpose and Benefits • A Digital Solution delivers end-to-end value to internal or external customers.
+• Customers do not purchase isolated features or capabilities—they seek complete solutions that fulfill their desired outcomes.
+• Digital Solutions enable organizations to align technical delivery with business strategy and customer needs.
+Structure Summary
+=== PAGE 3 ===
+Responsible / Subscriptions Each Digital Solution Fact Sheet requires a person in the subscriptions who is responsible for the content and quality of the data. The assignment of type, person and role is done via the subscriptions in the respective fact sheet

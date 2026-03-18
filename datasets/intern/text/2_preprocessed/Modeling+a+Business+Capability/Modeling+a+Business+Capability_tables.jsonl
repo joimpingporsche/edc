@@ -1,0 +1,9 @@
+{"_page": 5, "_table": 1, "_row": 1, "use_case": "Application Suite", "parent_type": "Application", "child_type": "Application"}
+{"_page": 6, "_table": 2, "_row": 1, "use_case": "Platform Composition", "parent_type": "Platform", "child_type": "IT Component"}
+{"_page": 6, "_table": 2, "_row": 2, "use_case": "Organizational Hierarchy", "parent_type": "Organization Unit", "child_type": "Sub-Unit"}
+{"_page": 6, "_table": 2, "_row": 3, "use_case": "Portfolio Structure", "parent_type": "Portfolio", "child_type": "Product / Application"}
+{"_page": 8, "_table": 3, "_row": 1, "section": "Purpose", "key_concept": "Capability → EAM", "description": "Strategic abstraction for business-IT alignment"}
+{"_page": 8, "_table": 3, "_row": 2, "section": "Modeling Autonomy", "key_concept": "Org Unit → Capability Usage", "description": "Each unit defines and maintains its own capabilities"}
+{"_page": 8, "_table": 3, "_row": 3, "section": "Subtypes in LeanIX", "key_concept": "Structured Element vs. Business Capability", "description": "Only the latter is linkable to other fact sheets"}
+{"_page": 8, "_table": 3, "_row": 4, "section": "Extensibility", "key_concept": "Capability Map → Custom Extensions", "description": "Units may add capabilities as needed"}
+{"_page": 8, "_table": 3, "_row": 5, "section": "Governance", "key_concept": "Responsibility → Org Unit", "description": "No central enforcement; local accountability applies"}

@@ -1,0 +1,119 @@
+[SECTION_START]
+TITLE: Introduction
+CONTENT:
+This page describes the modeling guidelines for Digital Solutions in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining Digital Solution fact sheets in LeanIX. The creation and editing of a Digital Solution fact sheet follows the standard procedure for creating a general fact sheet as described in "How to create a fact sheet".
+General Modeling Rules Lifecycle Management in LeanIX Fact Sheets Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers
+[SECTION_END]
+[SECTION_START]
+TITLE: Organizational Responsibilities
+CONTENT:
+Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This responsibility can be defined at two levels:
+• Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility.
+At least one form of responsibility must be specified—either at the organizational structure level or the process organization level.
+Ideally, both levels should be documented to ensure full traceability and accountability.
+If IT responsibility is defined as mandatory in the modeling guidelines for a specific Fact Sheet type, it must be provided without exception.
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsibility at the Organizational Structure Level
+CONTENT:
+At Porsche, the organizational structure is defined by the official organizational chart, which organizes the company into hierarchical levels such as:
+• Division • Main Department • Department • Subdepartment (lowest level) In LeanIX modeling, unless explicitly stated otherwise, responsibility must always be assigned to the lowest available level of the organizational structure.
+Key Principles • Always reference the most granular organizational unit available.
+• Ensure that the assigned unit reflects the actual operational responsibility.
+• This ensures clear accountability, accurate reporting, and effective governance.
+[SECTION_END]
+[SECTION_START]
+TITLE: Responsibility at the Process Organization Level
+CONTENT:
+Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios.
+Assignment Guidelines
+• If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet.
+• If the responsibility lies with a single portfolio—as is often the case with P51 applications—then assigning the portfolio is sufficient.
+Always ensure that the assigned ART or portfolio accurately reflects the operational ownership of the product.
+[SECTION_END]
+[SECTION_START]
+TITLE: Key Principles
+CONTENT:
+• Use the ART Fact Sheet when agile teams are responsible for development and operations.
+• Use the Portfolio Fact Sheet when responsibility is anchored in a business or IT portfolio.
+• This ensures clear accountability, supports agile governance, and aligns with LeanIX modeling standards.
+Please note Only organizational fact sheets that are tagged with "Synced" or "Manual" may be used! The use of fact sheets with the tag "Legacy" is not allowed!
+[SECTION_END]
+[SECTION_START]
+TITLE: Specific Modelling Rules and Best Practices
+CONTENT:
+for a Digital Solution Purpose and Applicability The modeling of a Digital Solution is only required when it has been explicitly identified through a Value Stream Identification Workshop as part of an Agile Release Train (ART) ramp-up.
+Modeling outside of this SAFe context is not permitted and must be avoided.
+If you have technical or architectural questions regarding Digital Solutions, please consult the responsible ART Product Team or the Enterprise Architect assigned to the ART.
+[SECTION_END]
+[SECTION_START]
+TITLE: Modeling Guidelines
+CONTENT:
+A Digital Solution must follow the naming convention defined by the ART that owns it. This ensures consistency and traceability across the portfolio.
+Each Digital Solution must include at least one assigned IT Product. These IT Products represent the technical building blocks that deliver business functionality and are developed and maintained by agile teams within the ART.
+To complete the modeling of a Digital Solution, the responsible ART must be explicitly assigned. Optionally, a unit from the organizational structure (e.g., a department or business unit) can also be linked to the solution.
+Additionally, it is possible—but not mandatory—to link the Digital Solution to relevant initiatives, business capabilities, and consuming organizational or processual units.
+These optional associations can enhance traceability and strategic alignment but are not required for the core modeling process.
+Summary This modeling approach ensures that Digital Solutions are only created when they are strategically relevant, aligned with value streams, and embedded within the SAFe delivery structure. It supports architectural governance, portfolio transparency, and the consistent evolution of business-enabling technology.
+[SECTION_END]
+[SECTION_START]
+TITLE: Summary: Digital Solution Modeling
+CONTENT:
+Guidelines (Porsche, SAFe Context)
+[TABLE_JSON_START]
+[
+{"section": "1. Context", "element": "Framework", "description": "Enterprise Architecture at Porsche, based on SAFe and PAG modeling standards"},
+{"section": "1. Context", "element": "Tooling", "description": "LeanIX used for creating and maintaining Digital Solution fact sheets"},
+{"section": "1. Context", "element": "Reference", "description": "General fact sheet creation process described in “How to create a fact sheet”"},
+{"section": "2. Applicability", "element": "Modeling Requirement", "description": "Only required if the Digital Solution is identified via Value Stream Identification during ART ramp-up"},
+{"section": "2. Applicability", "element": "Outside Scope", "description": "Modeling outside the SAFe organization is not allowed"},
+{"section": "2. Applicability", "element": "Contact Roles", "description": "ART Product Team and Enterprise Architect are responsible for guidance"},
+{"section": "3. Modeling Rules", "element": "Naming Convention", "description": "Must follow the naming defined by the owning ART"},
+{"section": "3. Modeling Rules", "element": "IT Product Assignment", "description": "At least one IT Product must be assigned to each Digital Solution"},
+{"section": "3. Modeling Rules", "element": "ART Assignment", "description": "Responsible ART must be explicitly assigned"},
+{"section": "3. Modeling Rules", "element": "Org Unit Assignment", "description": "Optional: organizational unit (e.g., department) can be linked"},
+{"section": "3. Modeling Rules", "element": "Optional Linkages", "description": "May include initiatives, business capabilities, consuming org/process units"},
+{"section": "4. Purpose", "element": "Strategic Relevance", "description": "Ensures Digital Solutions are only modeled when strategically aligned"},
+{"section": "4. Purpose", "element": "Value Stream Alignment", "description": "Embeds Digital Solutions in SAFe delivery structure"},
+{"section": "4. Purpose", "element": "Governance Support", "description": "Enables architectural governance and portfolio transparency"},
+{"section": "4. Purpose", "element": "Technology Enablement", "description": "Supports consistent evolution of business-enabling technology"}
+]
+[TABLE_JSON_END]
+[SECTION_END]
+[SECTION_START]
+TITLE: Metamodel View
+CONTENT:
+The diagram shows the possible relations between the entities that can be used to model a business capability in the context of the appropriate architecture level.
+Structure Summary Image Title: Metamodel View – Digital Solution Type: Conceptual Metamodel Diagram Purpose: To illustrate the structural and semantic relationships between key architectural elements involved in defining a Digital Solution within an enterprise architecture framework, aligned with SAFe and TOGAF®.
+[SECTION_END]
+[SECTION_START]
+TITLE: Structural Overview
+CONTENT:
+The diagram is divided into two main sections, each enclosed in a yellow frame:
+Upper Section • Contains a pink rectangle labeled "Initiative" • Connected via a labeled line "affected" to the Digital Solution in the lower section Lower Section • Central element: Green rectangle labeled "Digital Solution" • Connected to three pink rectangles:
+o "IT Product" (connected via "consists of") o "Business Capability" (connected via "affected") o "Organization" (connected via "Responsible / Consumes") Right Side • Two yellow circles representing TOGAF® phases:
+o TOGAF® A. Architecture Vision o TOGAF® B. Business Architecture
+[SECTION_END]
+[SECTION_START]
+TITLE: Footer
+CONTENT:
+• Caption: "Metamodel View Digital Solution"
+[SECTION_END]
+[SECTION_START]
+TITLE: Semantic Relationships Captured
+CONTENT:
+• Initiative → Digital Solution: Indicates that a business initiative affects or drives the creation of a digital solution.
+• Digital Solution → IT Product: A digital solution is composed of one or more IT products.
+• Digital Solution → Business Capability: The solution impacts or enables specific business capabilities.
+• Digital Solution → Organization: Organizational units are responsible for or consume the digital solution.
+• TOGAF® Alignment: The model is contextualized within TOGAF® phases A and B, linking strategic vision to business architecture.
+[SECTION_END]
+[SECTION_START]
+TITLE: Modeling Intent
+CONTENT:
+This metamodel provides a structured view of how digital solutions are defined and contextualized within enterprise architecture. It supports traceability from strategic initiatives to technical implementation and organizational responsibility, facilitating alignment between SAFe delivery structures and TOGAF® architectural principles.
+[SECTION_END]

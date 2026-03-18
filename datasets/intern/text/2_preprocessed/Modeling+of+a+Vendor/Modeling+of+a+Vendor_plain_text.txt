@@ -1,0 +1,56 @@
+=== PAGE 1 ===
+Introduction This page describes the modeling guidelines for Vendors in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining Vendors in LeanIX. The creation and editing of a Vendor fact sheet follows the standard procedure for creating a general fact sheet as described in "How to create a fact sheet".
+Vendors can only be created by an administror in LeanIX!
+General Modeling Rules Auf einem Vendor-Fact Sheet werden keine Organisationsrelationen modelliert und gepflegt, da es keine direkte Zuordnung zwischen einem Vendor und einer Organisationseinheit zu verwalten gibt.
+Lifecycle Management in LeanIX Fact Sheets Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page.
+Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information:
+• Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additional lifecycle milestones can also be modeled (e.g., development start, pilot phase, sunset planning).
+Benefits Accurate lifecycle data supports:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers
+=== PAGE 2 ===
+Modeling Hierarchies with Parent/Child Relations in LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.
+Usage Guidelines • A Parent Fact Sheet represents a higher-level entity that logically contains or governs one or more Child Fact Sheets.
+• A Child Fact Sheet is a subordinate entity that inherits context or structure from its parent.
+This relation is commonly used in the following scenarios:
+Special Rule for IT Products For the Fact Sheet type "IT Product", the Parent/Child relation must only be used after prior consultation with the responsible Portfolio Architect and the LeanIX team.
+This ensures that hierarchical modeling aligns with enterprise architecture principles and avoids misrepresentation of product structures.
+Best Practices • Use Parent/Child relations to group related Fact Sheets under a common context.
+• Ensure that the hierarchy reflects actual ownership or architectural structure.
+• Avoid circular or ambiguous relationships.
+=== PAGE 3 ===
+• Document the rationale for the hierarchy in the description field of the Fact Sheet if needed.
+• If the Parent/Child relation is not applicable, explicitly set the field to “Leave empty” to ensure clarity and data quality.
+Benefits • Improves navigability and traceability in LeanIX.
+• Supports impact analysis and portfolio planning.
+• Enables structured reporting and governance alignment.
+Modeling Version History with Successor and Predecessor Relations In LeanIX, the Successor and Predecessor relations are used to model the version history of Fact Sheets over time.
+These relations should be applied whenever a new version of an existing Fact Sheet is created to replace an older version.
+Successor relations can also be used while the previous version is still active and in productive use.
+Best Practice for Unused Relations If no predecessor or successor exists for a given Fact Sheet, it is recommended to explicitly set the relation field to:
+“Leave empty” This ensures clarity in the data model and avoids ambiguity in version tracking.
+Key Principles • Use Successor/Predecessor to document version transitions.
+• Apply even if the older version is still operational.
+• If not applicable, set the relation field to “Leave empty” instead of leaving it undefined.
+=== PAGE 4 ===
+Specific Modelling Rules and Best Practices for a Vendor Authorization to create a Vendor Only authorized users (currently: administrators) are permitted to create new vendors in LeanIX.
+In most cases, vendors are automatically verified and created during the request or modeling process of an IT Component. If a vendor needs to be created independently of an IT Component, a request must be submitted via the LeanIX Help Center.
+Creating a New Vendor Vendors are modeled as Vendor Fact Sheets in LeanIX. The following attributes are mandatory:
+• Name Enter the full and legally correct company name, including the legal form.
+Example: Dr. Ing. h.c. F. Porsche AG • Alias Use this field to provide a short or alternative name for the company. Vendors can also be found in the inventory using the alias.
+• Description This field must include the company’s official address and contact details. These can typically be retrieved from the company’s website (e.g., legal notice or imprint section).
+Relationships to Other Vendor Fact Sheets • Parent-Child Relationships Vendors can be linked to other vendors using parent-child relationships to model corporate hierarchies. However, this is rarely useful in practice.
+Recommendation: Avoid modeling parent-child relationships unless there is a clear business need.
+• Successor/Predecessor Relationships Use this relationship to document company renaming or legal succession.
+o Create a new Vendor Fact Sheet for the successor company.
+o Link it to the predecessor using the Successor relation.
+=== PAGE 5 ===
+o Specify the "Active From" date to indicate when the succession became effective.
+o Briefly explain the reason for the succession in the Description field.
+Ensure the Lifecycle status of the predecessor vendor is updated to prevent incorrect usage.
+Linking Vendors to IT Components The most important relationship in a Vendor Fact Sheet is the link to the IT Components developed or provided by the vendor.
+These links are typically created during the modeling of the IT Component, not during vendor creation.
+TISAX Certification In the automotive industry, it is increasingly important to know whether a vendor is TISAX- certified.
+TISAX (Trusted Information Security Assessment Exchange) is an industry-specific standard for information security in the automotive sector.
+If the vendor is TISAX-certified, this should be indicated using the TISAX Certified attribute.
+=== PAGE 6 ===
+Structure Summary

@@ -1,0 +1,5 @@
+{"_page": 2, "_table": 1, "_row": 1, "section": "Process Ownership", "key_concept": "BIC → Process Modeling", "description": "All processes are created and maintained in BIC"}
+{"_page": 2, "_table": 1, "_row": 2, "section": "LeanIX Usage", "key_concept": "Process Fact Sheet (read-only)", "description": "No modeling or editing of processes in LeanIX"}
+{"_page": 2, "_table": 1, "_row": 3, "section": "Integration: BIC → LeanIX", "key_concept": "Process Import", "description": "Active processes are synchronized into LeanIX"}
+{"_page": 2, "_table": 1, "_row": 4, "section": "Integration: LeanIX → BIC", "key_concept": "Application Export", "description": "IT products are sent to BIC for process activity assignment"}
+{"_page": 2, "_table": 1, "_row": 5, "section": "Modeling Scope", "key_concept": "Tool Separation", "description": "BIC for process logic, LeanIX for architecture context"}
