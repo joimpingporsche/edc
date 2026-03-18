@@ -422,9 +422,9 @@ class EDC:
         if output_dir is not None:
             if os.path.exists(output_dir):
                 logger.warning(f"Output directory {output_dir} already exists! Ergebnisse werden überschrieben oder ergänzt.")
-            else:
-                for iteration in range(refinement_iterations + 1):
-                    pathlib.Path(f"{output_dir}/iter{iteration}").mkdir(parents=True, exist_ok=True)
+            pathlib.Path(output_dir).mkdir(parents=True, exist_ok=True)
+            for iteration in range(refinement_iterations + 1):
+                pathlib.Path(f"{output_dir}/iter{iteration}").mkdir(parents=True, exist_ok=True)
 
 
         # EDC run
@@ -444,6 +444,7 @@ class EDC:
             logger.info(f"Iteration {iteration}:")
 
             iteration_result_dir = f"{output_dir}/iter{iteration}"
+            pathlib.Path(iteration_result_dir).mkdir(parents=True, exist_ok=True)
 
             required_model_dict_current_iteration = copy.deepcopy(required_model_dict)
 
