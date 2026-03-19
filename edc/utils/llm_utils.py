@@ -207,8 +207,7 @@ def openai_chat_completion(model, system_prompt, history, temperature=0, max_tok
     api_key = os.environ["AZURE_OPENAI_API_KEY"]
     endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
     api_version = os.environ.get("AZURE_OPENAI_API_VERSION", "2023-05-15")
-    print(f"[LLM-API-CALL] Azure OpenAI Call: model={model}, max_tokens={max_tokens}, temperature={temperature}")
-    print(f"[LLM-API-CALL] Azure OpenAI Endpoint: {endpoint}, API Version: {api_version}")
+
     llm = AzureChatOpenAI(
         model_name=model,
         azure_endpoint=endpoint,
@@ -221,8 +220,14 @@ def openai_chat_completion(model, system_prompt, history, temperature=0, max_tok
         messages = [{"role": "system", "content": system_prompt}] + history
     else:
         messages = history
-    print(f"[LLM-API-CALL] Azure OpenAI Call: model={model}, max_tokens={max_tokens}, temperature={temperature}")
+    logging.debug(f"[LLM-API-CALL] Azure OpenAI Call: model={model}, max_tokens={max_tokens}, temperature={temperature}")
     response = llm.invoke(messages)
+    logging.debug(f"[LLM-API-CALL] Azure OpenAI Response: {response}")
     content = response.content if hasattr(response, "content") else str(response)
-    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {content}")
+    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {content}\n Finish reason: {response.response_metadata.get('finish_reason', 'N/A')}")
+    if response.response_metadata.get("finish_reason") == "length":
+        logging.warning(f"Response was cut off due to max_tokens limit. Model: {model}, max_tokens: {max_tokens}")
+    elif response.response_metadata.get("finish_reason") != "stop":
+        logging.warning(f"Response finished with reason: {response.response_metadata.get('finish_reason')}. Model: {model}, max_tokens: {max_tokens}")
+
     return content

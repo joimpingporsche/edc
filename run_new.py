@@ -95,6 +95,7 @@ def build_chunks(args: Dict, documents: List[Dict[str, str]]) -> List[Dict]:
                 doc_id=document["doc_id"],
                 text=document["text"],
                 max_chunk_chars=args["v2_max_chunk_chars"],
+                min_chunk_chars=args["v2_min_chunk_chars"],
                 bullet_group_size=args["v2_bullet_group_size"],
                 prose_window_sentences=args["v2_prose_window_sentences"],
                 prose_overlap_sentences=args["v2_prose_overlap_sentences"],
@@ -326,6 +327,7 @@ if __name__ == "__main__":
 
     # v2 adaptive settings
     parser.add_argument("--v2_max_chunk_chars", type=int, default=2200)
+    parser.add_argument("--v2_min_chunk_chars", type=int, default=120)
     parser.add_argument("--v2_bullet_group_size", type=int, default=6)
     parser.add_argument("--v2_prose_window_sentences", type=int, default=4)
     parser.add_argument("--v2_prose_overlap_sentences", type=int, default=1)

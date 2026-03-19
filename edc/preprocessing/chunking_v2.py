@@ -159,10 +159,113 @@ def _parse_sections(text: str) -> List[Dict[str, Any]]:
 	return sections
 
 
+def _is_text_chunk(chunk: Dict[str, Any]) -> bool:
+	return chunk.get("chunk_type") in {"section_bullets", "section_prose"}
+
+
+def _chunk_len(chunk: Dict[str, Any]) -> int:
+	return len((chunk.get("text_for_edc") or "").strip())
+
+
+def _strip_section_prefix(section_title: str, text: str) -> str:
+	prefix = _section_prefix(section_title)
+	if text.startswith(prefix):
+		return text[len(prefix) :].lstrip()
+	return text
+
+
+def _merge_two_chunks(left: Dict[str, Any], right: Dict[str, Any]) -> Dict[str, Any]:
+	merged = dict(left)
+	left_text = (left.get("text_for_edc") or "").strip()
+	right_text = (right.get("text_for_edc") or "").strip()
+
+	# Avoid duplicate SECTION_TITLE prefix when both belong to the same section.
+	if left.get("section_id") == right.get("section_id"):
+		right_text = _strip_section_prefix(right.get("section_title", ""), right_text)
+
+	if left_text and right_text:
+		merged["text_for_edc"] = left_text + "\n" + right_text
+	else:
+		merged["text_for_edc"] = left_text or right_text
+
+	merged_meta = dict(left.get("meta", {}))
+	merged_meta["merged_short_chunk"] = True
+	merged["meta"] = merged_meta
+	return merged
+
+
+def _is_low_signal_short_chunk(chunk: Dict[str, Any], min_chunk_chars: int) -> bool:
+	if not _is_text_chunk(chunk):
+		return False
+	if _chunk_len(chunk) >= min_chunk_chars:
+		return False
+
+	section_title = (chunk.get("section_title") or "").strip().lower()
+	payload = _strip_section_prefix(chunk.get("section_title", ""), chunk.get("text_for_edc", "")).strip().lower()
+
+	low_signal_title = re.search(r"\b(footer|header|caption|metamodel view|title)\b", section_title) is not None
+	low_signal_payload = re.search(r"\b(caption|metamodel view)\b", payload) is not None
+
+	return low_signal_title or low_signal_payload
+
+
+def _merge_short_text_chunks(chunks: List[Dict[str, Any]], min_chunk_chars: int, max_chunk_chars: int) -> List[Dict[str, Any]]:
+	if min_chunk_chars <= 0:
+		return chunks
+
+	max_merge_chars = max_chunk_chars + max(120, int(0.35 * max_chunk_chars))
+	working = list(chunks)
+
+	# Backward pass: try to absorb short chunks into the previous text chunk in the same section.
+	merged: List[Dict[str, Any]] = []
+	for chunk in working:
+		if not _is_text_chunk(chunk) or _chunk_len(chunk) >= min_chunk_chars:
+			merged.append(chunk)
+			continue
+
+		if merged and _is_text_chunk(merged[-1]):
+			prev = merged[-1]
+			same_section = prev.get("section_id") == chunk.get("section_id")
+			if same_section and (_chunk_len(prev) + _chunk_len(chunk) + 1) <= max_merge_chars:
+				merged[-1] = _merge_two_chunks(prev, chunk)
+				continue
+
+		merged.append(chunk)
+
+	# Forward pass: merge remaining short chunks into the next text chunk in the same section.
+	out: List[Dict[str, Any]] = []
+	i = 0
+	while i < len(merged):
+		current = merged[i]
+		if _is_text_chunk(current) and _chunk_len(current) < min_chunk_chars and i + 1 < len(merged):
+			next_chunk = merged[i + 1]
+			same_section = _is_text_chunk(next_chunk) and current.get("section_id") == next_chunk.get("section_id")
+			if same_section and (_chunk_len(current) + _chunk_len(next_chunk) + 1) <= max_merge_chars:
+				out.append(_merge_two_chunks(current, next_chunk))
+				i += 2
+				continue
+		out.append(current)
+		i += 1
+
+	# Final cleanup: drop low-signal tiny leftovers (e.g., isolated footer captions).
+	out = [chunk for chunk in out if not _is_low_signal_short_chunk(chunk, min_chunk_chars)]
+	return out
+
+
+def _reindex_chunk_ids(chunks: List[Dict[str, Any]], doc_id: str) -> List[Dict[str, Any]]:
+	reindexed = []
+	for idx, chunk in enumerate(chunks):
+		updated = dict(chunk)
+		updated["chunk_id"] = f"{doc_id}::chunk_{idx:05d}"
+		reindexed.append(updated)
+	return reindexed
+
+
 def chunk_document(
 	doc_id: str,
 	text: str,
 	max_chunk_chars: int = 2200,
+	min_chunk_chars: int = 120,
 	bullet_group_size: int = 6,
 	prose_window_sentences: int = 4,
 	prose_overlap_sentences: int = 1,
@@ -346,4 +449,6 @@ def chunk_document(
 
 			sent_start += step
 
+	chunks = _merge_short_text_chunks(chunks, min_chunk_chars=min_chunk_chars, max_chunk_chars=max_chunk_chars)
+	chunks = _reindex_chunk_ids(chunks, doc_id)
 	return chunks

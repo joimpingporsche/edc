@@ -51,6 +51,7 @@
   --document_mode all_combined \
   --input_text_dir ./datasets/intern/text/2_preprocessed \
   --output_dir ./output/all_combined1 \
+  --v2_min_chunk_chars 120 \
   --run_mode test
   
  
