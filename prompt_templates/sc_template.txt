@@ -3,7 +3,16 @@ Given the following text and a relational triplet extracted from it:
 Text: {input_text}
 Triplet: {query_triplet}
 
-The relation '{query_relation}' in the triplet is defined as '{query_relation_definition}' In this context, is there any relation appropriate to replace it? Please answer by providing only the letter of your choice.
+The relation '{query_relation}' in the triplet is defined as '{query_relation_definition}'.
+
+Select a replacement relation only if it is semantically equivalent in this specific context.
+Apply these rules strictly:
+1. Preserve argument direction and roles (subject and object must keep the same semantics).
+2. Do not generalize a specific relation into a broader one.
+3. Preserve modality and factuality (e.g., possibility, obligation, capability, process, ownership).
+4. If none is clearly equivalent, choose "None of the above".
+
+Return only a single letter (A, B, C, ...).
 
 Choices:
 {choices}

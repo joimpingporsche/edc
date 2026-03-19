@@ -13,20 +13,32 @@ from edc.preprocessing.chunking_v2 import chunk_document as chunk_document_v2
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
-def load_documents(input_text_file_path: str = None, input_text_dir: str = None) -> List[Dict[str, str]]:
-    if bool(input_text_file_path) == bool(input_text_dir):
-        raise ValueError("Provide exactly one of --input_text_file_path or --input_text_dir.")
-
+def load_documents(
+    document_mode: str,
+    input_text_file_path: str = None,
+    input_text_dir: str = None,
+) -> List[Dict[str, str]]:
     documents = []
 
-    if input_text_dir:
+    if document_mode == "all_combined":
+        if not input_text_dir:
+            raise ValueError("--input_text_dir is required when --document_mode=all_combined.")
+
         base_path = Path(input_text_dir)
         if not base_path.exists() or not base_path.is_dir():
             raise FileNotFoundError(f"Input directory not found: {input_text_dir}")
 
-        text_files = sorted(base_path.glob("*.txt"))
+        text_files = sorted(
+            [
+                path
+                for path in base_path.rglob("*.txt")
+                if "_combined" in path.stem
+            ]
+        )
         if not text_files:
-            raise ValueError(f"No .txt files found in input directory: {input_text_dir}")
+            raise ValueError(
+                f"No files matching '*_combined*.txt' found in input directory tree: {input_text_dir}"
+            )
 
         for text_file in text_files:
             documents.append(
@@ -37,7 +49,10 @@ def load_documents(input_text_file_path: str = None, input_text_dir: str = None)
                 }
             )
 
-    else:
+    elif document_mode == "test":
+        if not input_text_file_path:
+            raise ValueError("--input_text_file_path is required when --document_mode=test.")
+
         source = Path(input_text_file_path)
         if not source.exists() or not source.is_file():
             raise FileNotFoundError(f"Input file not found: {input_text_file_path}")
@@ -50,13 +65,21 @@ def load_documents(input_text_file_path: str = None, input_text_dir: str = None)
             }
         )
 
+    else:
+        raise ValueError("Unknown --document_mode value. Use 'test' or 'all_combined'.")
+
     return documents
 
 
 def build_chunks(args: Dict, documents: List[Dict[str, str]]) -> List[Dict]:
     all_chunks = []
 
+    counter=0
+
     for document in documents:
+
+        counter+=1
+
         if args["chunking_variant"] in ["v1", "chunking1", "1", "baseline"]:
             chunks = chunk_document_v1(
                 doc_id=document["doc_id"],
@@ -124,6 +147,9 @@ def extract_edc_kwargs(args: Dict) -> Dict:
         "sd_few_shot_example_file_path": args["sd_few_shot_example_file_path"],
         "sc_llm": args["sc_llm"],
         "sc_embedder": args["sc_embedder"],
+        "sc_top_k": args["sc_top_k"],
+        "sc_min_similarity": args["sc_min_similarity"],
+        "sc_min_margin": args["sc_min_margin"],
         "embedding_api": args["embedding_api"],
         "azure_openai_api_version": args["azure_openai_api_version"],
         "sc_prompt_template_file_path": args["sc_prompt_template_file_path"],
@@ -143,6 +169,16 @@ def extract_edc_kwargs(args: Dict) -> Dict:
 
 if __name__ == "__main__":
     parser = ArgumentParser()
+
+    #Run settings
+    parser.add_argument("--run_mode", default="normal", help="You can set this to 'test' for running without EDC execution, e.g. for testing chunking.")
+    parser.add_argument(
+        "--document_mode",
+        choices=["test", "all_combined"],
+        default="test",
+        help="Document loading mode: test reads one file from --input_text_file_path, all_combined recursively reads '*_combined*.txt' from --input_text_dir.",
+    )
+
 
     # OIE module setting
     parser.add_argument("--oie_llm", default="mistralai/Mistral-7B-Instruct-v0.2", help="LLM used for open information extraction.")
@@ -180,6 +216,24 @@ if __name__ == "__main__":
         "--sc_embedder",
         default="intfloat/e5-mistral-7b-instruct",
         help="Embedder used for schema canonicalization.",
+    )
+    parser.add_argument(
+        "--sc_top_k",
+        default=3,
+        type=int,
+        help="Number of schema candidates retrieved before LLM verification.",
+    )
+    parser.add_argument(
+        "--sc_min_similarity",
+        default=None,
+        type=float,
+        help="Minimum similarity required for attempting canonicalization.",
+    )
+    parser.add_argument(
+        "--sc_min_margin",
+        default=None,
+        type=float,
+        help="Minimum score gap between top-1 and top-2 candidates for canonicalization.",
     )
     parser.add_argument(
         "--embedding_api",
@@ -291,7 +345,11 @@ if __name__ == "__main__":
     elif args["chunking_variant"] in ["chunking2", "2", "adaptive"]:
         args["chunking_variant"] = "v2"
 
-    documents = load_documents(args["input_text_file_path"], args["input_text_dir"])
+    documents = load_documents(
+        args["document_mode"],
+        args["input_text_file_path"],
+        args["input_text_dir"],
+    )
     all_chunks = build_chunks(args, documents)
 
     if not all_chunks:
@@ -304,8 +362,16 @@ if __name__ == "__main__":
 
     edc_input_text_list = [chunk["text_for_edc"] for chunk in all_chunks]
 
-    output_kg = edc.extract_kg(
+
+    if args["run_mode"] == "test":
+        logging.info("Run mode set to 'test'. Exiting after chunking without executing EDC.")
+        logging.info(f"Summary of chunks produced: Sum of chunks:{len(all_chunks)}; Average chunk length in characters: {sum(len(chunk['text_for_edc']) for chunk in all_chunks) / len(all_chunks):.2f}")
+        
+
+        exit(0)
+    else:
+        output_kg = edc.extract_kg(
         edc_input_text_list,
-        args["output_dir"],
-        refinement_iterations=args["refinement_iterations"],
-    )
+            args["output_dir"],
+            refinement_iterations=args["refinement_iterations"],
+        )

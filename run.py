@@ -47,6 +47,24 @@ if __name__ == "__main__":
         "--sc_embedder", default="intfloat/e5-mistral-7b-instruct", help="Embedder used for schema canonicalization. Has to be a sentence transformer. Please refer to https://sbert.net/"
     )
     parser.add_argument(
+        "--sc_top_k",
+        default=3,
+        type=int,
+        help="Number of schema candidates retrieved before LLM verification.",
+    )
+    parser.add_argument(
+        "--sc_min_similarity",
+        default=None,
+        type=float,
+        help="Minimum similarity required for attempting canonicalization.",
+    )
+    parser.add_argument(
+        "--sc_min_margin",
+        default=None,
+        type=float,
+        help="Minimum score gap between top-1 and top-2 candidates for canonicalization.",
+    )
+    parser.add_argument(
         "--embedding_api",
         choices=["local", "azure"],
         default="local",

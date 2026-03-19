@@ -39,6 +39,9 @@ class EDC:
         self.sc_llm_name = edc_configuration["sc_llm"]
         self.sc_embedder_name = edc_configuration["sc_embedder"]
         self.sc_template_file_path = edc_configuration["sc_prompt_template_file_path"]
+        self.sc_top_k = edc_configuration.get("sc_top_k", 5)
+        self.sc_min_similarity = edc_configuration.get("sc_min_similarity", None)
+        self.sc_min_margin = edc_configuration.get("sc_min_margin", None)
         self.embedding_api = edc_configuration.get("embedding_api", "local")
         self.azure_openai_api_version = edc_configuration.get("azure_openai_api_version", None)
 
@@ -252,9 +255,24 @@ class EDC:
             # else:
             #     logger.info(f"Model {self.sc_llm_name} is already loaded, reusing it.")
             #     sc_verify_model, sc_verify_tokenizer = self.loaded_model_dict[self.sc_llm_name]
-            schema_canonicalizer = SchemaCanonicalizer(self.schema, sc_embedder, sc_verify_model, sc_verify_tokenizer)
+            schema_canonicalizer = SchemaCanonicalizer(
+                self.schema,
+                sc_embedder,
+                sc_verify_model,
+                sc_verify_tokenizer,
+                sc_top_k=self.sc_top_k,
+                sc_min_similarity=self.sc_min_similarity,
+                sc_min_margin=self.sc_min_margin,
+            )
         else:
-            schema_canonicalizer = SchemaCanonicalizer(self.schema, sc_embedder, verify_openai_model=self.sc_llm_name)
+            schema_canonicalizer = SchemaCanonicalizer(
+                self.schema,
+                sc_embedder,
+                verify_openai_model=self.sc_llm_name,
+                sc_top_k=self.sc_top_k,
+                sc_min_similarity=self.sc_min_similarity,
+                sc_min_margin=self.sc_min_margin,
+            )
 
         canonicalized_triplets_list = []
         canon_candidate_dict_per_entry_list = []

@@ -23,6 +23,9 @@ class SchemaCanonicalizer:
         verify_model: AutoTokenizer = None,
         verify_tokenizer: AutoTokenizer = None,
         verify_openai_model: AutoTokenizer = None,
+        sc_top_k: int = 5,
+        sc_min_similarity: float = None,
+        sc_min_margin: float = None,
     ) -> None:
         # The canonicalizer uses an embedding model to first fetch candidates from the target schema, then uses a verifier schema to decide which one to canonicalize to or not
         # canonoicalize at all.
@@ -34,6 +37,9 @@ class SchemaCanonicalizer:
         self.schema_dict = target_schema_dict
 
         self.embedder = embedder
+        self.sc_top_k = sc_top_k
+        self.sc_min_similarity = sc_min_similarity
+        self.sc_min_margin = sc_min_margin
 
         # Embed the target schema
         self.schema_embedding_dict = {}
@@ -43,7 +49,9 @@ class SchemaCanonicalizer:
             embedding = self.embedder.encode(relation_definition)
             self.schema_embedding_dict[relation] = embedding
 
-    def retrieve_similar_relations(self, query_relation_definition: str, top_k=5):
+    def retrieve_similar_relations(self, query_relation_definition: str, top_k=None):
+        if top_k is None:
+            top_k = self.sc_top_k
         target_relation_list = list(self.schema_embedding_dict.keys())
         target_relation_embedding_list = list(self.schema_embedding_dict.values())
         embedder_prompts = getattr(self.embedder, "prompts", {}) or {}
@@ -61,6 +69,22 @@ class SchemaCanonicalizer:
             target_relation_list[idx]: self.schema_dict[target_relation_list[idx]]
             for idx in highest_score_indices[:top_k]
         }, [scores[idx] for idx in highest_score_indices[:top_k]]
+
+    def _passes_confidence_gate(self, candidate_scores: List[float]) -> bool:
+        if len(candidate_scores) == 0:
+            return False
+
+        best_score = candidate_scores[0]
+        second_score = candidate_scores[1] if len(candidate_scores) > 1 else None
+
+        if self.sc_min_similarity is not None and best_score < self.sc_min_similarity:
+            return False
+
+        if self.sc_min_margin is not None and second_score is not None:
+            if (best_score - second_score) < self.sc_min_margin:
+                return False
+
+        return True
 
     def llm_verify(
         self,
@@ -140,14 +164,17 @@ class SchemaCanonicalizer:
                 candidate_relations, candidate_scores = self.retrieve_similar_relations(
                     open_relation_definition_dict[open_relation]
                 )
-                canonicalized_triplet = self.llm_verify(
-                    input_text_str,
-                    open_triplet,
-                    open_relation_definition_dict[open_relation],
-                    verify_prompt_template,
-                    candidate_relations,
-                    None,
-                )
+                if self._passes_confidence_gate(candidate_scores):
+                    canonicalized_triplet = self.llm_verify(
+                        input_text_str,
+                        open_triplet,
+                        open_relation_definition_dict[open_relation],
+                        verify_prompt_template,
+                        candidate_relations,
+                        None,
+                    )
+                else:
+                    canonicalized_triplet = None
         else:
             canonicalized_triplet = None
 
