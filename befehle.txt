@@ -50,10 +50,16 @@
   --logging_verbose \
   --document_mode all_combined \
   --input_text_dir ./datasets/intern/text/2_preprocessed \
-  --output_dir ./output/all_combined1 \
+  --output_dir ./output/all_combined2 \
   --v2_min_chunk_chars 120 \
+  --v2_max_chunk_chars 2000 \
   --run_mode test
   
  
 
 python edc/preprocessing/pdf_to_text_and_tables.py datasets/intern/pdfs/Subscription+Roles+in+LeanIX\[35\].pdf  --output_dir datasets/intern/text/1_raw_text/subscription
+
+python edc/utils/ttl_to_gold_txt.py \
+  --input_ttl datasets/intern/gold/leanix_ontology_cleaned.ttl \
+  --output_txt datasets/intern/gold/leanix_ontology_triple.txt \
+  --class_mapping_jsonl datasets/intern/gold/leanix_ontology_classes.jsonl

@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List
 import json
@@ -166,6 +167,34 @@ def extract_edc_kwargs(args: Dict) -> Dict:
         "enrich_schema": args["enrich_schema"],
         "loglevel": args["loglevel"],
     }
+
+
+def write_run_settings_log(
+    output_dir: str,
+    args: Dict,
+    documents: List[Dict[str, str]],
+    chunks: List[Dict],
+) -> Path:
+    output_path = Path(output_dir)
+    output_path.mkdir(parents=True, exist_ok=True)
+
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    log_path = output_path / f"run_settings.log"
+
+    avg_chunk_length_chars = sum(len(chunk.get("text_for_edc", "")) for chunk in chunks) / max(len(chunks), 1)
+
+    with log_path.open("w", encoding="utf-8") as file_obj:
+        file_obj.write("EDC run settings\n")
+        file_obj.write(f"timestamp_utc={datetime.now(timezone.utc).isoformat()}\n")
+        file_obj.write("python_file=run_new.py\n")
+        file_obj.write(f"document_count={len(documents)}\n")
+        file_obj.write(f"chunk_count={len(chunks)}\n")
+        file_obj.write(f"avg_chunk_length_chars={avg_chunk_length_chars:.2f}\n")
+        file_obj.write("\nargs:\n")
+        for key in sorted(args.keys()):
+            file_obj.write(f"{key}={args[key]}\n")
+
+    return log_path
 
 
 if __name__ == "__main__":
@@ -372,6 +401,8 @@ if __name__ == "__main__":
 
         exit(0)
     else:
+        run_log_path = write_run_settings_log(args["output_dir"], args, documents, all_chunks)
+        logging.warning(f"Run settings written to: {run_log_path}")
         output_kg = edc.extract_kg(
         edc_input_text_list,
             args["output_dir"],

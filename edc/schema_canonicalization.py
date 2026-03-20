@@ -129,6 +129,8 @@ class SchemaCanonicalizer:
                 self.verifier_openai_model, None, messages, max_tokens=1
             )
 
+        logging.debug(verification_result)
+
         if verification_result[0] in choice_letters_list:
             canonicalized_triplet[1] = candidate_relations[choice_letters_list.index(verification_result[0])]
         else:
@@ -181,14 +183,20 @@ class SchemaCanonicalizer:
         if canonicalized_triplet is None:
             # Cannot be canonicalized
             if enrich:
-                self.schema_dict[open_relation] = open_relation_definition_dict[open_relation]
-                embedder_prompts = getattr(self.embedder, "prompts", {}) or {}
-                if "sts_query" in embedder_prompts:
-                    embedding = self.embedder.encode(
-                        open_relation_definition_dict[open_relation], prompt_name="sts_query"
+                if open_relation not in open_relation_definition_dict:
+                    logger.warning(
+                        "Skipping schema enrichment for relation '%s' because no relation definition was found.",
+                        open_relation,
                     )
                 else:
-                    embedding = self.embedder.encode(open_relation_definition_dict[open_relation])
-                self.schema_embedding_dict[open_relation] = embedding
-                canonicalized_triplet = open_triplet
+                    self.schema_dict[open_relation] = open_relation_definition_dict[open_relation]
+                    embedder_prompts = getattr(self.embedder, "prompts", {}) or {}
+                    if "sts_query" in embedder_prompts:
+                        embedding = self.embedder.encode(
+                            open_relation_definition_dict[open_relation], prompt_name="sts_query"
+                        )
+                    else:
+                        embedding = self.embedder.encode(open_relation_definition_dict[open_relation])
+                    self.schema_embedding_dict[open_relation] = embedding
+                    canonicalized_triplet = open_triplet
         return canonicalized_triplet, dict(zip(candidate_relations, candidate_scores))

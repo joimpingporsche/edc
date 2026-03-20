@@ -196,7 +196,7 @@ def generate_completion_transformers(
     return generated_texts
 
 
-def openai_chat_completion(model, system_prompt, history, temperature=0, max_tokens=512):
+def openai_chat_completion(model, system_prompt, history, temperature=0, max_tokens=640):
     """
     Führt einen Chat-Completion-Aufruf ausschließlich über Azure OpenAI (langchain_openai) aus.
     Erwartet folgende Umgebungsvariablen:
