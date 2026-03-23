@@ -1,0 +1,334 @@
+{
+  "input": {
+    "prediction_file": "output/all_combined4/iter0/canon_kg.txt",
+    "ontology_file": "datasets/intern/gold/leanix_ontology_tripel_cleaned.txt"
+  },
+  "counts": {
+    "prediction_lines": 409,
+    "prediction_triples_total": 2103,
+    "prediction_triples_unique": 1509,
+    "prediction_triples_duplicates": 594,
+    "ontology_triples_total": 936,
+    "ontology_relations_total": 29,
+    "ontology_entities_total": 38
+  },
+  "metrics": {
+    "strict_precision_exact_triple": 0.001427,
+    "normalized_precision_exact_triple": 0.009986,
+    "relation_valid_rate": 0.151213,
+    "domain_valid_rate": 0.022825,
+    "range_valid_rate": 0.01379,
+    "ontology_coverage_by_predictions": 0.012848
+  },
+  "diagnostics": {
+    "invalid_reason_counts": {
+      "known_relation_but_subject_and_object_not_allowed": 262,
+      "unknown_relation": 1785,
+      "known_relation_but_subject_not_allowed": 8,
+      "known_relation_but_object_not_allowed": 27
+    },
+    "invalid_examples": [
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Organization_Ability",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Stable_Organization_Wide_Function",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "independentOf",
+        "object": "Process",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "independentOf",
+        "object": "System",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "independentOf",
+        "object": "Organizational_Structure",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Enterprise_Architect",
+        "predicate": "uses",
+        "object": "Business_Capability",
+        "reason": "known_relation_but_subject_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Cross_Functional_Needs",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "provides",
+        "object": "Common_Language",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Common_Language",
+        "predicate": "usedFor",
+        "object": "Strategic_Planning",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Common_Language",
+        "predicate": "usedFor",
+        "object": "Transformation",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "provides",
+        "object": "Common_Language_for_Strategic_Planning_and_Transformation",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Technology",
+        "reason": "known_relation_but_object_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Resource",
+        "reason": "known_relation_but_object_not_allowed"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "forms",
+        "object": "Foundational_Layer_in_Enterprise_Architecture",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "enables",
+        "object": "Alignment_between_Business_Strategy_and_IT_Execution",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "hasCharacteristic",
+        "object": "Stable",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "hasCharacteristic",
+        "object": "Cross_Functional",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "hasCharacteristic",
+        "object": "Independent_of_Process_or_System",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedFor",
+        "object": "Strategic_Planning",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedFor",
+        "object": "Capability_Mapping",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedFor",
+        "object": "IT_Alignment",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedToDetermineClassificationOf",
+        "object": "Software_Based_System",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Software_Based_System",
+        "predicate": "classifiedAs",
+        "object": "Business_Application",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Software_Based_System",
+        "predicate": "classifiedAs",
+        "object": "Technical_Component",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability_Map",
+        "predicate": "usedFor",
+        "object": "Analyzing_IT_Landscape_From_Business_Perspective",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "describes",
+        "object": "Organizational_Ability",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Process",
+        "predicate": "describes",
+        "object": "Execution_of_Business_Capability",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "distinctFrom",
+        "object": "Business_Process",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Application",
+        "predicate": "supports",
+        "object": "Capability",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Application_Portfolio",
+        "predicate": "optimizedBy",
+        "object": "Capability",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Application_Support",
+        "predicate": "trackedBy",
+        "object": "Lifecycle",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Transition",
+        "predicate": "plannedIn",
+        "object": "Business_Unit",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Transition",
+        "predicate": "plannedIn",
+        "object": "Portfolio",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Investment",
+        "predicate": "plannedIn",
+        "object": "Business_Unit",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Investment",
+        "predicate": "plannedIn",
+        "object": "Portfolio",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "Application",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "Corporate_Goal",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Strategic_Alignment_Reporting",
+        "predicate": "achievedBy",
+        "object": "Linking_Capability_to_Application",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Strategic_Alignment_Reporting",
+        "predicate": "achievedBy",
+        "object": "Linking_Capability_to_Corporate_Goal",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "distinguishes",
+        "object": "Business_Application",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "distinguishes",
+        "object": "Technical_Component",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "distinctFrom",
+        "object": "Process",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "IT_Landscape",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "Application",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "Strategy",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Business_Capability_Fact_Sheet",
+        "predicate": "requires",
+        "object": "Responsible_Person",
+        "reason": "known_relation_but_subject_and_object_not_allowed"
+      },
+      {
+        "subject": "Responsible_Person",
+        "predicate": "assignedVia",
+        "object": "Subscription",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Subscription",
+        "predicate": "assigns",
+        "object": "Type",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Subscription",
+        "predicate": "assigns",
+        "object": "Person",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Subscription",
+        "predicate": "assigns",
+        "object": "Role",
+        "reason": "unknown_relation"
+      }
+    ],
+    "warnings": []
+  }
+}
