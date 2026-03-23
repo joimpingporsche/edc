@@ -1,37 +1,3 @@
-
-  python run.py \
-  --oie_llm gpt-4.1-mini \
-  --oie_few_shot_example_file_path ./few_shot_examples/example/oie_few_shot_examples.txt \
-  --sd_llm gpt-4.1-mini \
-  --sd_few_shot_example_file_path ./few_shot_examples/example/sd_few_shot_examples.txt \
-  --sc_llm gpt-4.1-mini \
-  --sc_embedder intfloat/e5-base-v2 \
-  --enrich_schema \
-  --logging_verbose \
-  --input_text_file_path ./datasets/intern/text/2_preprocessed/Digital+Solution/Digital+Solution_combined.txt \
-  --output_dir ./output/test_Digital_Solution_with_Chunking
-
-  python run_new.py \
-  --chunking_variant chunking2 \
-  --embedding_api azure \
-  --oie_llm gpt-4.1-mini \
-  --oie_few_shot_example_file_path ./few_shot_examples/example/oie_few_shot_examples.txt \
-  --sd_llm gpt-4.1-mini \
-  --sd_few_shot_example_file_path ./few_shot_examples/example/sd_few_shot_examples.txt \
-  --sc_llm gpt-4.1-mini \
-  --ee_llm gpt-4.1-mini \
-  --sc_embedder text-embedding-3-large \
-  --sr_embedder text-embedding-3-large \
-  --sc_top_k 3 \
-  --sc_min_similarity 0.45 \
-  --sc_min_margin 0.08 \
-  --enrich_schema \
-  --logging_verbose \
-  --input_text_file_path ./datasets/intern/text/2_preprocessed/Digital+Solution/Digital+Solution_combined.txt \
-  --output_dir ./output/test_Digital_Solution_with_Chunking3 \
-  --run_mode test
-
-
   python run_new.py \
   --chunking_variant chunking2 \
   --embedding_api azure \
@@ -50,7 +16,32 @@
   --logging_verbose \
   --document_mode all_combined \
   --input_text_dir ./datasets/intern/text/2_preprocessed \
-  --output_dir ./output/all_combined2 \
+  --output_dir ./output/all_combined3 \
+  --v2_min_chunk_chars 120 \
+  --v2_max_chunk_chars 2000 \
+  --run_mode test
+
+
+  python run_new.py \
+  --chunking_variant chunking2 \
+  --embedding_api azure \
+  --oie_llm gpt-4.1-mini \
+  --oie_few_shot_example_file_path ./few_shot_examples/example/oie_few_shot_schema_level.txt \
+  --oie_prompt_template_file_path ./prompt_templates/oie_schema_level.txt \
+  --sd_llm gpt-4.1-mini \
+  --sd_few_shot_example_file_path ./few_shot_examples/example/sd_few_shot_examples.txt \
+  --sc_llm gpt-4.1-mini \
+  --ee_llm gpt-4.1-mini \
+  --sc_embedder text-embedding-3-large \
+  --sr_embedder text-embedding-3-large \
+  --sc_top_k 3 \
+  --sc_min_similarity 0.45 \
+  --sc_min_margin 0.08 \
+  --enrich_schema \
+  --logging_verbose \
+  --document_mode all_combined \
+  --input_text_dir ./datasets/intern/text/2_preprocessed \
+  --output_dir ./output/all_combined3 \
   --v2_min_chunk_chars 120 \
   --v2_max_chunk_chars 2000 \
   --run_mode test

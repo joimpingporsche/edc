@@ -300,6 +300,7 @@ if __name__ == "__main__":
         help="Few shot examples used for refined open information extraction.",
     )
     parser.add_argument("--ee_llm", default="mistralai/Mistral-7B-Instruct-v0.2", help="LLM used for entity extraction.")
+    
     parser.add_argument(
         "--ee_prompt_template_file_path",
         default="./prompt_templates/ee_template.txt",

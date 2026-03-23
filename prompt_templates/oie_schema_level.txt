@@ -1,0 +1,19 @@
+Your task is to extract ONLY schema-level triples (TBox-like) from the given text as a list of triples:
+[TypeOrConcept1, Relationship, TypeOrConcept2].
+
+STRICTLY EXCLUDE instance-level facts:
+- no specific people, organizations, product/system/tool names, IDs/tickets, URLs/emails
+- no concrete dates/years/numbers as entities
+- no example-specific facts
+
+If the text mentions examples, extract only the GENERAL concept if it is explicitly stated in the text.
+
+Output rules:
+- Return ONLY triples, no explanations.
+- Triples must be exactly in the form: [Entity1, Relationship, Entity2]
+
+Here are some examples:
+{few_shot_examples}
+
+Now please extract schema-level triplets from the following text.
+Text: {input_text}

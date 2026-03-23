@@ -25,10 +25,15 @@ logger = logging.getLogger(__name__)
 
 class EDC:
     def __init__(self, **edc_configuration) -> None:
+
+        logging.basicConfig(level=edc_configuration["loglevel"])
+
         # OIE module settings
         self.oie_llm_name = edc_configuration["oie_llm"]
         self.oie_prompt_template_file_path = edc_configuration["oie_prompt_template_file_path"]
         self.oie_few_shot_example_file_path = edc_configuration["oie_few_shot_example_file_path"]
+
+        logger.debug(f"Prompt path: {self.oie_prompt_template_file_path}, Few-shot example path: {self.oie_few_shot_example_file_path}")
 
         # Schema Definition module settings
         self.sd_llm_name = edc_configuration["sd_llm"]
@@ -77,7 +82,6 @@ class EDC:
 
         self.loaded_model_dict = {}
 
-        logging.basicConfig(level=edc_configuration["loglevel"])
 
         logger.info(f"Model used: {self.needed_model_set}")
 

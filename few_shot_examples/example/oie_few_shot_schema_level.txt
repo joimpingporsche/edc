@@ -1,0 +1,23 @@
+Example 1:
+Text: A Digital Solution is a cohesive construct that delivers business value by integrating multiple IT Products.
+Triplets: [['Digital_Solution', 'delivers', 'Business_Value'], ['Digital_Solution', 'integrates', 'IT_Product']]
+
+Example 2:
+Text: In addition to IT Products, a Digital Solution may also include business processes, methods and practices, and organizational structures.
+Triplets: [['Digital_Solution', 'mayInclude', 'Business_Process'], ['Digital_Solution', 'mayInclude', 'Method_and_Practice'], ['Digital_Solution', 'mayInclude', 'Organizational_Structure']]
+
+Example 3:
+Text: Each IT Product is an application, business service, or business platform, including its associated technologies.
+Triplets: [['IT_Product', 'hasType', 'Application'], ['IT_Product', 'hasType', 'Business_Service'], ['IT_Product', 'hasType', 'Business_Platform'], ['IT_Product', 'includes', 'Associated_Technology']]
+
+Example 4:
+Text: Each Digital Solution is developed within a single Agile Release Train, managed within one portfolio, and developed by one or more agile teams within a development value stream.
+Triplets: [['Digital_Solution', 'developedWithin', 'Agile_Release_Train'], ['Digital_Solution', 'managedWithin', 'Portfolio'], ['Digital_Solution', 'developedBy', 'Agile_Team'], ['Agile_Team', 'partOf', 'Development_Value_Stream']]
+
+Example 5:
+Text: Active business processes from a Process Modeling Tool are imported into an Enterprise Architecture Repository. Active IT products from the Enterprise Architecture Repository are exported to the Process Modeling Tool as applications.
+Triplets: [['Business_Process', 'importedFrom', 'Process_Modeling_Tool'], ['Business_Process', 'importedTo', 'Enterprise_Architecture_Repository'], ['IT_Product', 'exportedFrom', 'Enterprise_Architecture_Repository'], ['IT_Product', 'exportedTo', 'Process_Modeling_Tool'], ['IT_Product', 'exportedAs', 'Application']]
+
+Example 6:
+Text: IT Products support Processes. Processes are linked to Business Capabilities. Initiatives are linked to Processes.
+Triplets: [['IT_Product', 'supports', 'Process'], ['Process', 'linkedTo', 'Business_Capability'], ['Initiative', 'linkedTo', 'Process']]
