@@ -6,6 +6,8 @@ STRICTLY EXCLUDE instance-level facts:
 - no concrete dates/years/numbers as entities
 - no example-specific facts
 
+Treat framework/tool names (e.g., SAFe, TOGAF, LeanIX, BIC) as context only; do not output them as entities. Use generic concepts like Agile_Framework or Process_Modeling_Tool if needed.
+
 If the text mentions examples, extract only the GENERAL concept if it is explicitly stated in the text.
 
 Output rules:
