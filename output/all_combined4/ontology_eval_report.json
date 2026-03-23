@@ -1,31 +1,31 @@
 {
   "input": {
-    "prediction_file": "output/all_combined4/iter0/canon_kg.txt",
+    "prediction_file": "output/all_combined4/iter0/canon_kg_dedup_global.txt",
     "ontology_file": "datasets/intern/gold/leanix_ontology_tripel_cleaned.txt"
   },
   "counts": {
     "prediction_lines": 409,
-    "prediction_triples_total": 2103,
+    "prediction_triples_total": 1509,
     "prediction_triples_unique": 1509,
-    "prediction_triples_duplicates": 594,
+    "prediction_triples_duplicates": 0,
     "ontology_triples_total": 936,
     "ontology_relations_total": 29,
     "ontology_entities_total": 38
   },
   "metrics": {
-    "strict_precision_exact_triple": 0.001427,
-    "normalized_precision_exact_triple": 0.009986,
-    "relation_valid_rate": 0.151213,
-    "domain_valid_rate": 0.022825,
-    "range_valid_rate": 0.01379,
+    "strict_precision_exact_triple": 0.001325,
+    "normalized_precision_exact_triple": 0.007952,
+    "relation_valid_rate": 0.139165,
+    "domain_valid_rate": 0.023194,
+    "range_valid_rate": 0.013254,
     "ontology_coverage_by_predictions": 0.012848
   },
   "diagnostics": {
     "invalid_reason_counts": {
-      "known_relation_but_subject_and_object_not_allowed": 262,
-      "unknown_relation": 1785,
+      "known_relation_but_subject_and_object_not_allowed": 167,
+      "unknown_relation": 1299,
       "known_relation_but_subject_not_allowed": 8,
-      "known_relation_but_object_not_allowed": 27
+      "known_relation_but_object_not_allowed": 23
     },
     "invalid_examples": [
       {
@@ -289,12 +289,6 @@
       {
         "subject": "Capability",
         "predicate": "linkedTo",
-        "object": "Application",
-        "reason": "unknown_relation"
-      },
-      {
-        "subject": "Capability",
-        "predicate": "linkedTo",
         "object": "Strategy",
         "reason": "unknown_relation"
       },
@@ -326,6 +320,12 @@
         "subject": "Subscription",
         "predicate": "assigns",
         "object": "Role",
+        "reason": "unknown_relation"
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "delivers",
+        "object": "Business_Value",
         "reason": "unknown_relation"
       }
     ],

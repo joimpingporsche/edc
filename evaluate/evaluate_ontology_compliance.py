@@ -99,9 +99,55 @@ def _load_predictions(pred_path: Path) -> Tuple[List[List[Triple]], List[str]]:
     return per_line_triples, warnings
 
 
-def evaluate(pred_path: Path, ontology_path: Path, max_invalid_examples: int = 50) -> Dict:
+def _load_alignment_map(alignment_path: Path) -> Tuple[Dict[str, str], List[str]]:
+    warnings: List[str] = []
+
+    with alignment_path.open("r", encoding="utf-8") as file_obj:
+        payload = json.load(file_obj)
+
+    if not isinstance(payload, dict):
+        raise ValueError(f"Alignment JSON must be an object: {alignment_path}")
+
+    accepted = payload.get("accepted", [])
+    if not isinstance(accepted, list):
+        raise ValueError(f"Alignment JSON key 'accepted' must be a list: {alignment_path}")
+
+    alignment_map: Dict[str, str] = {}
+    for idx, item in enumerate(accepted):
+        if not isinstance(item, dict):
+            warnings.append(f"alignment: accepted[{idx}] ignored because it is not an object.")
+            continue
+
+        source_relation = item.get("system_relation")
+        target_relation = item.get("best_gold_relation")
+        if not source_relation or not target_relation:
+            warnings.append(f"alignment: accepted[{idx}] ignored because mapping fields are missing.")
+            continue
+
+        source_norm = _normalize_label(_to_str(source_relation))
+        target_norm = _normalize_label(_to_str(target_relation))
+        if not source_norm or not target_norm:
+            warnings.append(f"alignment: accepted[{idx}] ignored because normalized mapping is empty.")
+            continue
+
+        alignment_map[source_norm] = target_norm
+
+    return alignment_map, warnings
+
+
+def evaluate(
+    pred_path: Path,
+    ontology_path: Path,
+    max_invalid_examples: int = 50,
+    alignment_path: Optional[Path] = None,
+) -> Dict:
     ontology_triples, ontology_warnings = _load_ontology(ontology_path)
     pred_per_line, pred_warnings = _load_predictions(pred_path)
+
+    alignment_map_norm: Dict[str, str] = {}
+    alignment_warnings: List[str] = []
+    if alignment_path is not None:
+        alignment_map_norm, alignment_warnings = _load_alignment_map(alignment_path)
 
     ontology_triples_norm = {_normalize_triple(t) for t in ontology_triples}
 
@@ -123,8 +169,12 @@ def evaluate(pred_path: Path, ontology_path: Path, max_invalid_examples: int = 5
     strict_valid = 0
     normalized_valid = 0
     relation_known = 0
+    relation_known_semantic = 0
+    relation_aligned = 0
     domain_valid = 0
     range_valid = 0
+    domain_valid_semantic = 0
+    range_valid_semantic = 0
 
     reason_counter = Counter()
     invalid_examples: List[Dict[str, str]] = []
@@ -142,28 +192,57 @@ def evaluate(pred_path: Path, ontology_path: Path, max_invalid_examples: int = 5
             normalized_valid += 1
 
         rel_exists = rel_norm in ontology_relations_norm
+        rel_effective_norm = rel_norm
+        rel_aligned = False
+        if (not rel_exists) and rel_norm in alignment_map_norm:
+            mapped_rel_norm = alignment_map_norm[rel_norm]
+            if mapped_rel_norm in ontology_relations_norm:
+                rel_effective_norm = mapped_rel_norm
+                rel_aligned = True
+
+        rel_exists_semantic = rel_exists or rel_aligned
+
         if rel_exists:
             relation_known += 1
-
             if subj_norm in relation_domains_norm[rel_norm]:
                 domain_valid += 1
             if obj_norm in relation_ranges_norm[rel_norm]:
                 range_valid += 1
 
+        if rel_exists_semantic:
+            relation_known_semantic += 1
+            if rel_aligned:
+                relation_aligned += 1
+            if subj_norm in relation_domains_norm[rel_effective_norm]:
+                domain_valid_semantic += 1
+            if obj_norm in relation_ranges_norm[rel_effective_norm]:
+                range_valid_semantic += 1
+
         if not is_normalized_valid:
-            if not rel_exists:
+            if not rel_exists_semantic:
                 reason = "unknown_relation"
             else:
-                subj_ok = subj_norm in relation_domains_norm[rel_norm]
-                obj_ok = obj_norm in relation_ranges_norm[rel_norm]
-                if not subj_ok and not obj_ok:
-                    reason = "known_relation_but_subject_and_object_not_allowed"
-                elif not subj_ok:
-                    reason = "known_relation_but_subject_not_allowed"
-                elif not obj_ok:
-                    reason = "known_relation_but_object_not_allowed"
+                subj_ok = subj_norm in relation_domains_norm[rel_effective_norm]
+                obj_ok = obj_norm in relation_ranges_norm[rel_effective_norm]
+
+                if rel_aligned:
+                    if not subj_ok and not obj_ok:
+                        reason = "aligned_relation_but_subject_and_object_not_allowed"
+                    elif not subj_ok:
+                        reason = "aligned_relation_but_subject_not_allowed"
+                    elif not obj_ok:
+                        reason = "aligned_relation_but_object_not_allowed"
+                    else:
+                        reason = "aligned_relation_and_arguments_allowed_but_triple_not_in_ontology"
                 else:
-                    reason = "known_relation_and_arguments_allowed_but_triple_not_in_ontology"
+                    if not subj_ok and not obj_ok:
+                        reason = "known_relation_but_subject_and_object_not_allowed"
+                    elif not subj_ok:
+                        reason = "known_relation_but_subject_not_allowed"
+                    elif not obj_ok:
+                        reason = "known_relation_but_object_not_allowed"
+                    else:
+                        reason = "known_relation_and_arguments_allowed_but_triple_not_in_ontology"
 
             reason_counter[reason] += 1
             if len(invalid_examples) < max_invalid_examples:
@@ -173,6 +252,7 @@ def evaluate(pred_path: Path, ontology_path: Path, max_invalid_examples: int = 5
                         "predicate": rel,
                         "object": obj,
                         "reason": reason,
+                        "mapped_predicate": rel_effective_norm if rel_aligned else None,
                     }
                 )
 
@@ -182,13 +262,17 @@ def evaluate(pred_path: Path, ontology_path: Path, max_invalid_examples: int = 5
     normalized_precision = (normalized_valid / total_pred) if total_pred else 0.0
     ontology_coverage = (ontology_covered / len(ontology_triples_norm)) if ontology_triples_norm else 0.0
     relation_valid_rate = (relation_known / total_pred) if total_pred else 0.0
+    relation_valid_rate_semantic = (relation_known_semantic / total_pred) if total_pred else 0.0
     domain_valid_rate = (domain_valid / total_pred) if total_pred else 0.0
+    domain_valid_rate_semantic = (domain_valid_semantic / total_pred) if total_pred else 0.0
     range_valid_rate = (range_valid / total_pred) if total_pred else 0.0
+    range_valid_rate_semantic = (range_valid_semantic / total_pred) if total_pred else 0.0
 
     result = {
         "input": {
             "prediction_file": str(pred_path),
             "ontology_file": str(ontology_path),
+            "alignment_file": str(alignment_path) if alignment_path else None,
         },
         "counts": {
             "prediction_lines": len(pred_per_line),
@@ -203,14 +287,20 @@ def evaluate(pred_path: Path, ontology_path: Path, max_invalid_examples: int = 5
             "strict_precision_exact_triple": round(strict_precision, 6),
             "normalized_precision_exact_triple": round(normalized_precision, 6),
             "relation_valid_rate": round(relation_valid_rate, 6),
+            "relation_valid_rate_semantic": round(relation_valid_rate_semantic, 6),
             "domain_valid_rate": round(domain_valid_rate, 6),
+            "domain_valid_rate_semantic": round(domain_valid_rate_semantic, 6),
             "range_valid_rate": round(range_valid_rate, 6),
+            "range_valid_rate_semantic": round(range_valid_rate_semantic, 6),
             "ontology_coverage_by_predictions": round(ontology_coverage, 6),
         },
         "diagnostics": {
+            "alignment_used": alignment_path is not None,
+            "alignment_mappings_total": len(alignment_map_norm),
+            "aligned_relations_in_predictions": relation_aligned,
             "invalid_reason_counts": dict(reason_counter),
             "invalid_examples": invalid_examples,
-            "warnings": ontology_warnings + pred_warnings,
+            "warnings": ontology_warnings + pred_warnings + alignment_warnings,
         },
     }
     return result
@@ -239,9 +329,18 @@ def _print_summary(result: Dict) -> None:
     print(f"- strict_precision_exact_triple:      {metrics['strict_precision_exact_triple']}")
     print(f"- normalized_precision_exact_triple:  {metrics['normalized_precision_exact_triple']}")
     print(f"- relation_valid_rate:                {metrics['relation_valid_rate']}")
+    print(f"- relation_valid_rate_semantic:       {metrics['relation_valid_rate_semantic']}")
     print(f"- domain_valid_rate:                  {metrics['domain_valid_rate']}")
+    print(f"- domain_valid_rate_semantic:         {metrics['domain_valid_rate_semantic']}")
     print(f"- range_valid_rate:                   {metrics['range_valid_rate']}")
+    print(f"- range_valid_rate_semantic:          {metrics['range_valid_rate_semantic']}")
     print(f"- ontology_coverage_by_predictions:   {metrics['ontology_coverage_by_predictions']}")
+    print()
+
+    print("Alignment")
+    print(f"- alignment_used:                     {diagnostics['alignment_used']}")
+    print(f"- alignment_mappings_total:           {diagnostics['alignment_mappings_total']}")
+    print(f"- aligned_relations_in_predictions:   {diagnostics['aligned_relations_in_predictions']}")
     print()
 
     print("Invalid reasons")
@@ -280,18 +379,31 @@ def main() -> None:
         default=None,
         help="Optional path to save full evaluation result as JSON.",
     )
+    parser.add_argument(
+        "--alignment_json",
+        default=None,
+        help="Optional path to relation alignment JSON produced by align_relation_definitions.py.",
+    )
 
     args = parser.parse_args()
 
     pred_path = Path(args.edc_output)
     ontology_path = Path(args.reference)
+    alignment_path = Path(args.alignment_json) if args.alignment_json else None
 
     if not pred_path.exists():
         raise FileNotFoundError(f"Prediction file not found: {pred_path}")
     if not ontology_path.exists():
         raise FileNotFoundError(f"Ontology file not found: {ontology_path}")
+    if alignment_path is not None and not alignment_path.exists():
+        raise FileNotFoundError(f"Alignment file not found: {alignment_path}")
 
-    result = evaluate(pred_path, ontology_path, max_invalid_examples=args.max_invalid_examples)
+    result = evaluate(
+        pred_path,
+        ontology_path,
+        max_invalid_examples=args.max_invalid_examples,
+        alignment_path=alignment_path,
+    )
     _print_summary(result)
 
     if args.save_json:
