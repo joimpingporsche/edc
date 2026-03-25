@@ -45,6 +45,9 @@
   --v2_min_chunk_chars 120 \
   --v2_max_chunk_chars 2000 \
   --run_mode test
+
+
+python evaluate/evaluate_ontology_compliance.py --edc_output output/all_combined4/iter0/canon_kg_dedup_global.txt --reference datasets/intern/gold/leanix_ontology_tripel_cleaned.txt --alignment_json output/all_combined4/relation_definition_alignment_2.json --max_invalid_examples 20 --save_json output/all_combined4/ontology_eval_report_with_alignment.json 
   
  
 
