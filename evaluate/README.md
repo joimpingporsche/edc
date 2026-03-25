@@ -61,3 +61,47 @@ Notes:
 - semantic metrics only affect relation/domain/range checks by resolving mapped relations.
 - the alignment JSON must follow the structure produced by align_relation_definitions.py
   (accepted list with system_relation and best_gold_relation).
+
+### Two-Track Evaluation (Alignment + Enrichment)
+
+The ontology evaluator now supports a two-track report:
+
+- Alignment track:
+  - evaluates only alignable triples against the gold ontology
+  - reports alignment precision/recall/F1 and gold coverage
+- Enrichment track:
+  - treats non-alignable and unmatched triples as novel knowledge
+  - reports novelty rate, novel predicates, and exports manual-review samples
+
+Example run:
+
+```
+python evaluate_ontology_compliance.py \
+	--edc_output /path/to/useful_kg_dedup.txt \
+	--reference /path/to/ontology_gold.txt \
+	--alignment_json /path/to/relation_definition_alignment.json \
+	--result_at_each_stage_json /path/to/result_at_each_stage.json \
+	--relation_threshold 0.85 \
+	--entity_threshold 0.85 \
+	--sample_size 100 \
+	--sample_seed 42 \
+	--save_json /path/to/two_track_eval_report.json
+```
+
+New key parameters:
+
+- `--relation_threshold`: semantic threshold for relation matching in alignment.
+- `--entity_threshold`: semantic/fuzzy threshold for entity matching in alignment.
+- `--sample_size`: number of novel triples sampled for manual review export.
+- `--sample_seed`: deterministic seed for stratified sampling.
+- `--result_at_each_stage_json`: optional source context file to enrich review exports.
+- `--labels_input`: optional labeled review CSV to compute enrichment precision.
+- `--alignment_matches_csv`: optional explicit output path for match-level CSV.
+- `--review_sample_output`: optional explicit output path for manual review CSV.
+- `--top_predicates_csv`: optional explicit output path for top-predicate CSV.
+
+Generated exports (defaults next to `--save_json`):
+
+- `alignment_matches.csv`
+- `novel_sample_for_manual_review.csv`
+- `top_predicates.csv`

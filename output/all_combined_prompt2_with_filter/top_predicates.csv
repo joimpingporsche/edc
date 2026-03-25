@@ -1,0 +1,128 @@
+scope,predicate,count
+total_predictions,consists of,77
+total_predictions,supports,74
+total_predictions,affects,44
+total_predictions,realizes,30
+total_predictions,provides,28
+total_predictions,classifies,23
+total_predictions,responsible for,23
+total_predictions,defines,17
+total_predictions,linked to,14
+total_predictions,parent,14
+total_predictions,requires,13
+total_predictions,owned by,13
+total_predictions,is similar to,12
+total_predictions,uses,11
+total_predictions,aligned with,9
+total_predictions,part of,7
+total_predictions,connected to,7
+total_predictions,connects,6
+total_predictions,consumes,5
+total_predictions,used in,4
+total_predictions,documents,4
+total_predictions,transmits,4
+total_predictions,supported by,4
+total_predictions,focuses on,4
+total_predictions,informs,4
+total_predictions,governed by,3
+total_predictions,developed by,3
+total_predictions,captures,3
+total_predictions,ensures,3
+total_predictions,child,3
+total_predictions,consumed by,3
+total_predictions,occurs between,3
+total_predictions,integrates,2
+total_predictions,manages,2
+total_predictions,tech platform,2
+total_predictions,integrates with,2
+total_predictions,links,2
+total_predictions,models,2
+total_predictions,status of,2
+total_predictions,excluded from,2
+total_predictions,separates,2
+total_predictions,regulates,2
+total_predictions,defined at,2
+total_predictions,developed within,1
+total_predictions,managed within,1
+total_predictions,aligns,1
+total_predictions,runs,1
+total_predictions,monitors,1
+total_predictions,automates,1
+total_predictions,documented in,1
+total_predictions,resides in,1
+total_predictions,defined in,1
+total_predictions,successor,1
+total_predictions,predecessor,1
+total_predictions,inherits from,1
+total_predictions,imported from,1
+total_predictions,synchronized to,1
+total_predictions,interacts with,1
+total_predictions,provided by,1
+total_predictions,versioned as,1
+total_predictions,exists between,1
+total_predictions,embedded within,1
+total_predictions,improves,1
+total_predictions,enables,1
+total_predictions,applies to,1
+novel_predictions,consists of,72
+novel_predictions,supports,67
+novel_predictions,affects,37
+novel_predictions,realizes,29
+novel_predictions,provides,27
+novel_predictions,classifies,22
+novel_predictions,responsible for,21
+novel_predictions,defines,17
+novel_predictions,linked to,14
+novel_predictions,parent,14
+novel_predictions,is similar to,12
+novel_predictions,owned by,12
+novel_predictions,requires,11
+novel_predictions,uses,11
+novel_predictions,aligned with,9
+novel_predictions,part of,7
+novel_predictions,connected to,7
+novel_predictions,connects,6
+novel_predictions,consumes,5
+novel_predictions,used in,4
+novel_predictions,documents,4
+novel_predictions,transmits,4
+novel_predictions,supported by,4
+novel_predictions,focuses on,4
+novel_predictions,informs,4
+novel_predictions,governed by,3
+novel_predictions,developed by,3
+novel_predictions,captures,3
+novel_predictions,ensures,3
+novel_predictions,consumed by,3
+novel_predictions,occurs between,3
+novel_predictions,integrates,2
+novel_predictions,manages,2
+novel_predictions,tech platform,2
+novel_predictions,integrates with,2
+novel_predictions,links,2
+novel_predictions,models,2
+novel_predictions,child,2
+novel_predictions,status of,2
+novel_predictions,excluded from,2
+novel_predictions,separates,2
+novel_predictions,regulates,2
+novel_predictions,defined at,2
+novel_predictions,developed within,1
+novel_predictions,managed within,1
+novel_predictions,aligns,1
+novel_predictions,runs,1
+novel_predictions,monitors,1
+novel_predictions,automates,1
+novel_predictions,documented in,1
+novel_predictions,resides in,1
+novel_predictions,defined in,1
+novel_predictions,inherits from,1
+novel_predictions,imported from,1
+novel_predictions,synchronized to,1
+novel_predictions,interacts with,1
+novel_predictions,provided by,1
+novel_predictions,versioned as,1
+novel_predictions,exists between,1
+novel_predictions,embedded within,1
+novel_predictions,enables,1
+novel_predictions,applies to,1

@@ -1,0 +1,2313 @@
+{
+  "input": {
+    "prediction_file": "output/all_combined5/iter0/useful_kg_dedup.txt",
+    "ontology_file": "datasets/intern/gold/leanix_ontology_tripel_cleaned.txt",
+    "alignment_file": "output/all_combined4/relation_definition_alignment_2.json",
+    "result_at_each_stage_json": "output/all_combined5/iter0/result_at_each_stage.json",
+    "labels_input": "output/all_combined5/ai_eval.csv"
+  },
+  "counts": {
+    "prediction_total": 1160,
+    "prediction_lines": 409,
+    "prediction_triples_total": 1160,
+    "prediction_triples_unique": 1160,
+    "prediction_triples_duplicates": 0,
+    "gold_total": 934,
+    "ontology_triples_total": 934,
+    "ontology_relations_total": 29,
+    "ontology_entities_total": 38,
+    "alignable_predictions": 116,
+    "matched": 34,
+    "unmatched_alignable": 82,
+    "novel_count": 1126
+  },
+  "metrics_alignment": {
+    "alignment_precision": 0.293103,
+    "alignment_recall": 0.036403,
+    "alignment_f1": 0.064762,
+    "coverage_gold": 0.036403
+  },
+  "metrics_enrichment_auto": {
+    "novel_count": 1126,
+    "novel_relation_count": 110,
+    "novelty_rate": 0.97069,
+    "unique_predicates_total": 110,
+    "unique_predicates_novel": 110,
+    "unique_predicates_after_canonicalization": 0,
+    "top_novel_predicates": [
+      {
+        "predicate": "consists of",
+        "count": 136
+      },
+      {
+        "predicate": "classifies",
+        "count": 125
+      },
+      {
+        "predicate": "supports",
+        "count": 117
+      },
+      {
+        "predicate": "responsible for",
+        "count": 77
+      },
+      {
+        "predicate": "provides",
+        "count": 63
+      },
+      {
+        "predicate": "defines",
+        "count": 50
+      },
+      {
+        "predicate": "affects",
+        "count": 48
+      },
+      {
+        "predicate": "realizes",
+        "count": 43
+      },
+      {
+        "predicate": "requires",
+        "count": 40
+      },
+      {
+        "predicate": "is similar to",
+        "count": 32
+      },
+      {
+        "predicate": "uses",
+        "count": 32
+      },
+      {
+        "predicate": "linked to",
+        "count": 22
+      },
+      {
+        "predicate": "informs",
+        "count": 21
+      },
+      {
+        "predicate": "ensures",
+        "count": 18
+      },
+      {
+        "predicate": "governed by",
+        "count": 17
+      },
+      {
+        "predicate": "owned by",
+        "count": 17
+      },
+      {
+        "predicate": "parent",
+        "count": 15
+      },
+      {
+        "predicate": "child",
+        "count": 13
+      },
+      {
+        "predicate": "defined by",
+        "count": 10
+      },
+      {
+        "predicate": "aligned with",
+        "count": 10
+      }
+    ]
+  },
+  "metrics_enrichment_manual": {
+    "enrichment_precision": 0.28,
+    "enrichment_precision_strict": 0.35,
+    "label_counts": {
+      "SUPPORTED": 14,
+      "PARTIALLY_SUPPORTED": 10,
+      "UNSUPPORTED": 26
+    }
+  },
+  "metrics_legacy": {
+    "strict_precision_exact_triple": 0.006897,
+    "normalized_precision_exact_triple": 0.028448,
+    "relation_valid_rate": 0.817241,
+    "relation_valid_rate_semantic": 0.817241,
+    "domain_valid_rate": 0.162931,
+    "domain_valid_rate_semantic": 0.162931,
+    "range_valid_rate": 0.078448,
+    "range_valid_rate_semantic": 0.078448,
+    "ontology_coverage_by_predictions": 0.035332
+  },
+  "metrics": {
+    "strict_precision_exact_triple": 0.006897,
+    "normalized_precision_exact_triple": 0.028448,
+    "relation_valid_rate": 0.817241,
+    "relation_valid_rate_semantic": 0.817241,
+    "domain_valid_rate": 0.162931,
+    "domain_valid_rate_semantic": 0.162931,
+    "range_valid_rate": 0.078448,
+    "range_valid_rate_semantic": 0.078448,
+    "ontology_coverage_by_predictions": 0.035332
+  },
+  "sampling_info": {
+    "sample_size_requested": 50,
+    "sample_size_exported": 50,
+    "sampling_seed": 7,
+    "strata": {
+      "unknown_relation_or_unmapped_relation": 212,
+      "domain_range_violation": 914
+    },
+    "sampled_strata": {
+      "unknown_relation_or_unmapped_relation": 25,
+      "domain_range_violation": 25,
+      "fallback_other": 0
+    },
+    "strata_description": {
+      "A": "unknown_relation / relation_unmapped",
+      "B": "domain/range violation"
+    }
+  },
+  "thresholds": {
+    "relation_threshold": 0.85,
+    "entity_threshold": 0.85
+  },
+  "diagnostics": {
+    "alignment_used": true,
+    "alignment_relations_indexed": 406,
+    "invalid_reason_counts": {
+      "known_relation_but_subject_and_object_not_allowed": 701,
+      "known_relation_but_object_not_allowed": 156,
+      "known_relation_but_subject_not_allowed": 58,
+      "unknown_relation": 212
+    },
+    "invalid_examples": [
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Organization_Ability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "is_similar_to",
+        "object": "Stable_Organization_Wide_Function",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "System",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Organizational_Structure",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Internal_User",
+        "predicate": "uses",
+        "object": "Business_Capability",
+        "reason": "known_relation_but_subject_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "informs",
+        "object": "Cross_Functional_Needs",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "provides",
+        "object": "Common_Language",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "provides",
+        "object": "Concept",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Technology",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Resource",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Organizational_Ability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "affects",
+        "object": "Strategic_Planning",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "affects",
+        "object": "Capability_Mapping",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "affects",
+        "object": "IT_Alignment",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "classifies",
+        "object": "Software_Based_System",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Software_Based_System",
+        "predicate": "classifies",
+        "object": "Business_Application",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Software_Based_System",
+        "predicate": "classifies",
+        "object": "Technical_Component",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Process",
+        "predicate": "defines",
+        "object": "Execution_of_Business_Capability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "is_similar_to",
+        "object": "Business_Process",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Application",
+        "predicate": "supports",
+        "object": "Capability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Application_Support",
+        "predicate": "classifies",
+        "object": "Capability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Transition",
+        "predicate": "governed_by",
+        "object": "Business_Unit",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Transition",
+        "predicate": "governed_by",
+        "object": "Portfolio",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Investment",
+        "predicate": "governed_by",
+        "object": "Business_Unit",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Investment",
+        "predicate": "governed_by",
+        "object": "Portfolio",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "Application",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "linkedTo",
+        "object": "Corporate_Goal",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "classifies",
+        "object": "Business_Application",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "classifies",
+        "object": "Technical_Component",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "is_similar_to",
+        "object": "Process",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "relatedTo",
+        "object": "IT_Landscape",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "relatedTo",
+        "object": "Application",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Capability",
+        "predicate": "relatedTo",
+        "object": "Strategy",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability_Fact_Sheet",
+        "predicate": "requires",
+        "object": "Internal_User",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Internal_User",
+        "predicate": "responsible_for",
+        "object": "Role",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "provides",
+        "object": "Business_Value",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "uses",
+        "object": "IT_Product",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "classifies",
+        "object": "Modular_Unit",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "classifies",
+        "object": "Technically_Bounded_Unit",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "classifies",
+        "object": "Logically_Bounded_Unit",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "realizes",
+        "object": "Business_Functionality",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "forms",
+        "object": "Technical_Foundation",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "consists_of",
+        "object": "Business_Process",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "consists_of",
+        "object": "Method_and_Practice",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "consists_of",
+        "object": "Organizational_Structure",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "classifies",
+        "object": "Business_Service",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "classifies",
+        "object": "Business_Platform",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "consists_of",
+        "object": "Associated_Technology",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "IT_Product",
+        "predicate": "supports",
+        "object": "Data_Entity",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Digital_Solution",
+        "predicate": "supports",
+        "object": "Operational_Value_Stream",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      }
+    ],
+    "alignable_unmatched_cause_counts": {
+      "relation_mismatch": 48,
+      "entity_mismatch": 16,
+      "direction_mismatch": 10,
+      "threshold_not_met": 8
+    },
+    "alignable_unmatched_examples_top20": {
+      "relation_mismatch": [
+        {
+          "subject": "Digital_Solution",
+          "predicate": "uses",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "consists_of",
+          "object": "Process",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "realizes",
+          "object": "Business_Capability",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "realizes",
+          "object": "Application",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Architecture_Vision",
+          "predicate": "consists_of",
+          "object": "Objective",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Architecture_Vision",
+          "predicate": "consists_of",
+          "object": "Initiative",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "Parent",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "provides",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "uses",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "classifies",
+          "object": "Database",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "requiredBy",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Application",
+          "predicate": "supports",
+          "object": "Business_Capability",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "informs",
+          "object": "Objective",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "realizes",
+          "object": "Application",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "responsible_for",
+          "object": "Process",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "supported_by",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Process",
+          "predicate": "affects",
+          "object": "Business_Capability",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "defines",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "is_similar_to",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Component",
+          "predicate": "supports",
+          "object": "Technical_Capability",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        }
+      ],
+      "entity_mismatch": [
+        {
+          "subject": "IT_Product",
+          "predicate": "classifies",
+          "object": "Business_Service",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "supports",
+          "object": "Organization",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Information_Systems_Architecture",
+          "predicate": "consists_of",
+          "object": "Vendor",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Information_Systems_Architecture",
+          "predicate": "consists_of",
+          "object": "Tech_Capability",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Information_Systems_Architecture",
+          "predicate": "consists_of",
+          "object": "Interface",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "provides",
+          "object": "Compliance",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "requires",
+          "object": "Infrastructure_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IaaS",
+          "predicate": "classifies",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "PaaS",
+          "predicate": "classifies",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "SaaS",
+          "predicate": "classifies",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Service",
+          "predicate": "classifies",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Component",
+          "predicate": "realizes",
+          "object": "Technical_Capability",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "SaaS",
+          "predicate": "Child",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Organization",
+          "predicate": "responsible_for",
+          "object": "Fact_Sheet",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "owned_by",
+          "object": "Organization",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Vendor",
+          "predicate": "responsible_for",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        }
+      ],
+      "direction_mismatch": [
+        {
+          "subject": "IT_Product",
+          "predicate": "classifies",
+          "object": "Service",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Information_Systems_Architecture",
+          "predicate": "consists_of",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Group_Application",
+          "predicate": "classifies",
+          "object": "Application",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "consists_of",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Tech_Capability",
+          "predicate": "realizes",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "affects",
+          "object": "Initiative",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "supported_by",
+          "object": "Digital_Solution",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Interface",
+          "predicate": "provides",
+          "object": "IT_Product",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "owned_by",
+          "object": "Organization",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Vendor",
+          "predicate": "provides",
+          "object": "IT_Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        }
+      ],
+      "threshold_not_met": [
+        {
+          "subject": "Technical_Capability",
+          "predicate": "supports",
+          "object": "Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Technical_Capability",
+          "predicate": "improves",
+          "object": "Component",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "is_similar_to",
+          "object": "SaaS",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "affects",
+          "object": "Organization",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Tech_Capability",
+          "predicate": "affects",
+          "object": "Organization",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "ADR",
+          "predicate": "affects",
+          "object": "Organization",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Vendor",
+          "predicate": "supports",
+          "object": "Risk_Management",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        },
+        {
+          "subject": "Vendor",
+          "predicate": "supports",
+          "object": "Compliance",
+          "doc_id": null,
+          "chunk_id": null,
+          "section_title": null
+        }
+      ]
+    },
+    "top_novel_predicates": [
+      {
+        "predicate": "consists of",
+        "count": 136
+      },
+      {
+        "predicate": "classifies",
+        "count": 125
+      },
+      {
+        "predicate": "supports",
+        "count": 117
+      },
+      {
+        "predicate": "responsible for",
+        "count": 77
+      },
+      {
+        "predicate": "provides",
+        "count": 63
+      },
+      {
+        "predicate": "defines",
+        "count": 50
+      },
+      {
+        "predicate": "affects",
+        "count": 48
+      },
+      {
+        "predicate": "realizes",
+        "count": 43
+      },
+      {
+        "predicate": "requires",
+        "count": 40
+      },
+      {
+        "predicate": "is similar to",
+        "count": 32
+      },
+      {
+        "predicate": "uses",
+        "count": 32
+      },
+      {
+        "predicate": "linked to",
+        "count": 22
+      },
+      {
+        "predicate": "informs",
+        "count": 21
+      },
+      {
+        "predicate": "ensures",
+        "count": 18
+      },
+      {
+        "predicate": "governed by",
+        "count": 17
+      },
+      {
+        "predicate": "owned by",
+        "count": 17
+      },
+      {
+        "predicate": "parent",
+        "count": 15
+      },
+      {
+        "predicate": "child",
+        "count": 13
+      },
+      {
+        "predicate": "defined by",
+        "count": 10
+      },
+      {
+        "predicate": "aligned with",
+        "count": 10
+      }
+    ],
+    "novel_examples_by_top_predicate": {
+      "consists of": [
+        {
+          "subject": "Digital_Solution",
+          "predicate": "consists_of",
+          "object": "Business_Process",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "consists_of",
+          "object": "Method_and_Practice",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "consists_of",
+          "object": "Organizational_Structure",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "consists_of",
+          "object": "Associated_Technology",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "consists_of",
+          "object": "Organizational_Element",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "consists_of",
+          "object": "Supporting_Technology",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Architecture",
+          "predicate": "consists_of",
+          "object": "Objective",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Architecture",
+          "predicate": "consists_of",
+          "object": "Initiative",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Architecture",
+          "predicate": "consists_of",
+          "object": "Organization",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Architecture",
+          "predicate": "consists_of",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "classifies": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "classifies",
+          "object": "Software_Based_System",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Software_Based_System",
+          "predicate": "classifies",
+          "object": "Business_Application",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Software_Based_System",
+          "predicate": "classifies",
+          "object": "Technical_Component",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Application_Support",
+          "predicate": "classifies",
+          "object": "Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Capability",
+          "predicate": "classifies",
+          "object": "Business_Application",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Capability",
+          "predicate": "classifies",
+          "object": "Technical_Component",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "classifies",
+          "object": "Modular_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "classifies",
+          "object": "Technically_Bounded_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "classifies",
+          "object": "Logically_Bounded_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "classifies",
+          "object": "Business_Platform",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "supports": [
+        {
+          "subject": "Application",
+          "predicate": "supports",
+          "object": "Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "supports",
+          "object": "Data_Entity",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "supports",
+          "object": "Operational_Value_Stream",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Enablement",
+          "predicate": "supports",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Enablement",
+          "predicate": "supports",
+          "object": "Process",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Enablement",
+          "predicate": "supports",
+          "object": "Data_Entity",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Enablement",
+          "predicate": "supports",
+          "object": "Business_Process",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Value_Stream_Alignment",
+          "predicate": "supports",
+          "object": "Operational_Value_Stream",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Technology_Architecture",
+          "predicate": "supports",
+          "object": "Technical_Realization",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Infrastructure",
+          "predicate": "supports",
+          "object": "Procurement",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "responsible for": [
+        {
+          "subject": "Internal_User",
+          "predicate": "responsible_for",
+          "object": "Role",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Information_Architecture",
+          "predicate": "responsible_for",
+          "object": "Data_Object",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Modeling_Guideline",
+          "predicate": "responsible_for",
+          "object": "Responsible_Role",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Internal_User",
+          "predicate": "responsible_for",
+          "object": "Initiative_Fact_Sheet",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Organization",
+          "predicate": "responsible_for",
+          "object": "Initiative_Fact_Sheet",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Owner_Organization",
+          "predicate": "responsible_for",
+          "object": "Initiative",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Role",
+          "predicate": "responsible_for",
+          "object": "Initiative",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Architect",
+          "predicate": "responsible_for",
+          "object": "Interface",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Subscription",
+          "predicate": "responsible_for",
+          "object": "Individual",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Subscription",
+          "predicate": "responsible_for",
+          "object": "Role",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "provides": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "provides",
+          "object": "Common_Language",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "provides",
+          "object": "Concept",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "provides",
+          "object": "Business_Value",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "provides",
+          "object": "End_to_End_Value",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Object",
+          "predicate": "provides",
+          "object": "Fact_Sheet",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "provides",
+          "object": "Functionality",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "provides",
+          "object": "Operation",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "provides",
+          "object": "Functionality_of_IT_Product",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "provides",
+          "object": "Operation_of_IT_Product",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Database",
+          "predicate": "provides",
+          "object": "Structured_Data_Management",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "defines": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "defines",
+          "object": "Organization_Ability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "defines",
+          "object": "Organizational_Ability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Process",
+          "predicate": "defines",
+          "object": "Execution_of_Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Architecture",
+          "predicate": "defines",
+          "object": "Business_Architecture_Domain",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Technology_Architecture",
+          "predicate": "defines",
+          "object": "Technical_Infrastructure",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Technology_Architecture",
+          "predicate": "defines",
+          "object": "Technology_Component",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Architectural_Object",
+          "predicate": "defines",
+          "object": "Definition",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Architectural_Object",
+          "predicate": "defines",
+          "object": "Purpose_and_Benefit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Architectural_Object",
+          "predicate": "defines",
+          "object": "Architecture_Modeling",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Architectural_Object",
+          "predicate": "defines",
+          "object": "Modeling_Guideline",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "affects": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "affects",
+          "object": "Strategic_Planning",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "affects",
+          "object": "Capability_Mapping",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "affects",
+          "object": "IT_Alignment",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Role_and_Value",
+          "predicate": "affects",
+          "object": "Architecture_Modeling",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "affects",
+          "object": "Business_Logic",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "affects",
+          "object": "Business_Context",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "affects",
+          "object": "Enterprise_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "affects",
+          "object": "Architectural_Domain",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "affects",
+          "object": "Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "affects",
+          "object": "System",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "realizes": [
+        {
+          "subject": "IT_Product",
+          "predicate": "realizes",
+          "object": "Business_Functionality",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Technical_Realization",
+          "predicate": "realizes",
+          "object": "Application",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "realizes",
+          "object": "Strategic_Goal",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "realizes",
+          "object": "Data_Structure",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Fact_Sheet",
+          "predicate": "realizes",
+          "object": "Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Mapping",
+          "predicate": "realizes",
+          "object": "Domain_Oriented_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Mapping",
+          "predicate": "realizes",
+          "object": "Technical_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "realizes",
+          "object": "Strategic_Objective",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Interface",
+          "predicate": "realizes",
+          "object": "Logical_Connection",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "realizes",
+          "object": "Strategic_Abstraction",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "requires": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "requires",
+          "object": "System",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "requires",
+          "object": "Organizational_Structure",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "requires",
+          "object": "Technology",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "requires",
+          "object": "Resource",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability_Fact_Sheet",
+          "predicate": "requires",
+          "object": "Internal_User",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Application",
+          "predicate": "requires",
+          "object": "Infrastructure",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Mandatory_Field",
+          "predicate": "requires",
+          "object": "Standard",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Attribute",
+          "predicate": "requires",
+          "object": "Justification",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "requires",
+          "object": "Dedicated_Resource",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative_Fact_Sheet",
+          "predicate": "requires",
+          "object": "Internal_User",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "is similar to": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "is_similar_to",
+          "object": "Stable_Organization_Wide_Function",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "is_similar_to",
+          "object": "Business_Process",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Capability",
+          "predicate": "is_similar_to",
+          "object": "Process",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Architecture",
+          "predicate": "is_similar_to",
+          "object": "Information_Systems_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "is_similar_to",
+          "object": "Transformation_Initiative",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Platform",
+          "predicate": "is_similar_to",
+          "object": "IT_Product",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Structured_Element",
+          "predicate": "is_similar_to",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "is_similar_to",
+          "object": "Non_Architecture_Relevant_Object",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "is_similar_to",
+          "object": "Non_Architecture_Relevant_Object",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Product",
+          "predicate": "is_similar_to",
+          "object": "Technical_IT_Component",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "uses": [
+        {
+          "subject": "Internal_User",
+          "predicate": "uses",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Fact_Sheet",
+          "predicate": "uses",
+          "object": "Mapping",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "uses",
+          "object": "Technical_Platform",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "uses",
+          "object": "IT_Architecture_Modeling",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "uses",
+          "object": "Documentation_Tool",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "System",
+          "predicate": "uses",
+          "object": "Internal_Organization",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Organizational_Unit",
+          "predicate": "uses",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "uses",
+          "object": "Business_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Entity",
+          "predicate": "uses",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Process",
+          "predicate": "uses",
+          "object": "Process_Design_Tool",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "linked to": [
+        {
+          "subject": "Capability",
+          "predicate": "linkedTo",
+          "object": "Application",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Capability",
+          "predicate": "linkedTo",
+          "object": "Corporate_Goal",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "linkedTo",
+          "object": "Strategic_Intent",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "linkedTo",
+          "object": "Execution",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "linkedTo",
+          "object": "Fact_Sheet",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Business_Process",
+          "predicate": "linkedTo",
+          "object": "Application",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Business_Process",
+          "predicate": "linkedTo",
+          "object": "Business_Capability",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "linkedTo",
+          "object": "IT_Component",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "linkedTo",
+          "object": "IT_Product",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "IT_Component",
+          "predicate": "linkedTo",
+          "object": "Business_Initiative",
+          "reason_for_novelty": "unknown_relation"
+        }
+      ],
+      "informs": [
+        {
+          "subject": "Business_Capability",
+          "predicate": "informs",
+          "object": "Cross_Functional_Needs",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Purpose_and_Benefit",
+          "predicate": "informs",
+          "object": "Role_and_Value",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Main_Page",
+          "predicate": "informs",
+          "object": "Definition",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Main_Page",
+          "predicate": "informs",
+          "object": "Purpose",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Main_Page",
+          "predicate": "informs",
+          "object": "Benefit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Interface",
+          "predicate": "informs",
+          "object": "Data_Dependency",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Interface",
+          "predicate": "informs",
+          "object": "Integration_Complexity",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Interface",
+          "predicate": "informs",
+          "object": "Potential_Risk",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Manager",
+          "predicate": "informs",
+          "object": "To-Do",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "System_Check",
+          "predicate": "informs",
+          "object": "Responsible_Role",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "ensures": [
+        {
+          "subject": "Delivery_Model",
+          "predicate": "ensures",
+          "object": "Scalability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Delivery_Model",
+          "predicate": "ensures",
+          "object": "Stability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Delivery_Model",
+          "predicate": "ensures",
+          "object": "Speed",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "ensures",
+          "object": "Measurable_Progress",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Initiative",
+          "predicate": "ensures",
+          "object": "Traceable_Execution",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Automated_Process",
+          "predicate": "ensures",
+          "object": "Data_Quality",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Automated_Quality_Check",
+          "predicate": "ensures",
+          "object": "Data_Quality",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Responsibility",
+          "predicate": "ensures",
+          "object": "Accountability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Responsibility",
+          "predicate": "ensures",
+          "object": "Accurate_Reporting",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Responsibility",
+          "predicate": "ensures",
+          "object": "Effective_Governance",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "governed by": [
+        {
+          "subject": "Transition",
+          "predicate": "governed_by",
+          "object": "Business_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Transition",
+          "predicate": "governed_by",
+          "object": "Portfolio",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Investment",
+          "predicate": "governed_by",
+          "object": "Business_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Investment",
+          "predicate": "governed_by",
+          "object": "Portfolio",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "governed_by",
+          "object": "Architecture_Level",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Export_Control_Relevance",
+          "predicate": "governed_by",
+          "object": "Governance_and_Compliance",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "FOSS_Compliance",
+          "predicate": "governed_by",
+          "object": "Governance_and_Compliance",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_System",
+          "predicate": "governed_by",
+          "object": "Architecture_Framework",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Fact_Sheet",
+          "predicate": "governed_by",
+          "object": "Standard_Procedure",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Versioning",
+          "predicate": "governed_by",
+          "object": "Release_Attribute",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "owned by": [
+        {
+          "subject": "Attribute",
+          "predicate": "owned_by",
+          "object": "Object",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Fact_Sheet",
+          "predicate": "owned_by",
+          "object": "Internal_User",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Responsible",
+          "predicate": "owned_by",
+          "object": "IT_Department",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Responsible",
+          "predicate": "owned_by",
+          "object": "Business_Owner",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "To-Do",
+          "predicate": "owned_by",
+          "object": "Responsible_Person",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Fact_Sheet",
+          "predicate": "owned_by",
+          "object": "Responsible",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Role",
+          "predicate": "owned_by",
+          "object": "Organizational_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Interface",
+          "predicate": "owned_by",
+          "object": "IT_Product_Provider",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "owned_by",
+          "object": "Organizational_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "owned_by",
+          "object": "Organizational_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "parent": [
+        {
+          "subject": "IT_Component",
+          "predicate": "Parent",
+          "object": "Technical_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Structured_Element",
+          "predicate": "Parent",
+          "object": "Business_Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "Parent",
+          "object": "Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Structured_Element",
+          "predicate": "Parent",
+          "object": "Capability",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Software_Component",
+          "predicate": "Parent",
+          "object": "Technical_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Platform",
+          "predicate": "Parent",
+          "object": "Technical_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Hosting_Type",
+          "predicate": "Parent",
+          "object": "Technical_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Required_Service",
+          "predicate": "Parent",
+          "object": "Technical_Architecture",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "Parent",
+          "object": "Enterprise_Architecture_Framework",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Organizational_Unit",
+          "predicate": "Parent",
+          "object": "Organizational_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "child": [
+        {
+          "subject": "Platform",
+          "predicate": "Child",
+          "object": "IT_Component",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Organization_Unit",
+          "predicate": "Child",
+          "object": "Sub_Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Portfolio",
+          "predicate": "Child",
+          "object": "Product_Application",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "Child",
+          "object": "Structured_Element",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "Child",
+          "object": "Business_Capability_Subtype",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Organization_Unit",
+          "predicate": "Child",
+          "object": "Sub-Unit",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Deployed_Software_Product",
+          "predicate": "Child",
+          "object": "Software_Component",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "OS_Platform",
+          "predicate": "Child",
+          "object": "Platform",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "Database",
+          "predicate": "Child",
+          "object": "Platform",
+          "reason_for_novelty": "entity_mismatch"
+        },
+        {
+          "subject": "DBMS_Platform",
+          "predicate": "Child",
+          "object": "Platform",
+          "reason_for_novelty": "entity_mismatch"
+        }
+      ],
+      "defined by": [
+        {
+          "subject": "IT_Product",
+          "predicate": "definedBy",
+          "object": "Development_Value_Stream",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Architectural_Information_System",
+          "predicate": "definedBy",
+          "object": "Architecture_Repository",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Regulatory_Information_System",
+          "predicate": "definedBy",
+          "object": "Architecture_Repository",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Business_Capability",
+          "predicate": "definedBy",
+          "object": "Enterprise_Architecture",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Technical_Capability",
+          "predicate": "definedBy",
+          "object": "Capability_Map",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "definedBy",
+          "object": "Fact_Sheet",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Vendor",
+          "predicate": "definedBy",
+          "object": "Enterprise_Architecture",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Fact_Sheet",
+          "predicate": "definedBy",
+          "object": "Standard_Procedure",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Vendor",
+          "predicate": "definedBy",
+          "object": "IT_Component_Modeling",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Objective",
+          "predicate": "definedBy",
+          "object": "Enterprise_Architecture",
+          "reason_for_novelty": "unknown_relation"
+        }
+      ],
+      "aligned with": [
+        {
+          "subject": "Technical_Delivery",
+          "predicate": "alignedWith",
+          "object": "Business_Strategy",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Technical_Delivery",
+          "predicate": "alignedWith",
+          "object": "External_User_Needs",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Attribute",
+          "predicate": "alignedWith",
+          "object": "Fact_Sheet",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Application",
+          "predicate": "alignedWith",
+          "object": "Value_Creation_Process",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "IT_Product",
+          "predicate": "alignedWith",
+          "object": "Business_Goal",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Enterprise_Architecture_Modeling",
+          "predicate": "alignedWith",
+          "object": "Architecture_Vision_Phase",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Enterprise_Architecture_Modeling",
+          "predicate": "alignedWith",
+          "object": "Business_Architecture_Phase",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Digital_Solution",
+          "predicate": "alignedWith",
+          "object": "Value_Stream",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "Enterprise_Wide_Initiative",
+          "predicate": "alignedWith",
+          "object": "Business_Strategy",
+          "reason_for_novelty": "unknown_relation"
+        },
+        {
+          "subject": "IT",
+          "predicate": "alignedWith",
+          "object": "Business_Strategy",
+          "reason_for_novelty": "unknown_relation"
+        }
+      ]
+    },
+    "warnings": []
+  },
+  "exports": {
+    "alignment_matches_csv": "output/all_combined5/alignment_matches.csv",
+    "novel_sample_for_manual_review_csv": "output/all_combined5/novel_sample_for_manual_review.csv",
+    "top_predicates_csv": "output/all_combined5/top_predicates.csv"
+  }
+}
