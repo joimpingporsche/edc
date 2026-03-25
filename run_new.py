@@ -141,6 +141,7 @@ def write_chunk_outputs(output_dir: str, chunks: List[Dict], chunking_variant: s
 
 def extract_edc_kwargs(args: Dict) -> Dict:
     return {
+        "run_dc": args["run_dc"],
         "oie_llm": args["oie_llm"],
         "oie_prompt_template_file_path": args["oie_prompt_template_file_path"],
         "oie_few_shot_example_file_path": args["oie_few_shot_example_file_path"],
@@ -202,6 +203,8 @@ if __name__ == "__main__":
 
     #Run settings
     parser.add_argument("--run_mode", default="normal", help="You can set this to 'test' for running without EDC execution, e.g. for testing chunking.")
+    parser.add_argument("--run_dc", default="true", help="You can set this to 'false' to disable EDC phases 'Definition' and 'Canonicalization', e.g. for testing 'Extraction' and 'Refinement' with an existing schema.")
+
     parser.add_argument(
         "--document_mode",
         choices=["test", "all_combined"],

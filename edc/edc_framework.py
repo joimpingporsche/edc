@@ -28,6 +28,13 @@ class EDC:
 
         logging.basicConfig(level=edc_configuration["loglevel"])
 
+        #Run  settings
+        self.run_dc = edc_configuration["run_dc"]
+        if self.run_dc or self.run_dc == "true":
+            logger.info("Definition and Canonicalization phases are enabled.")
+        else:
+            logger.info("Definition and Canonicalization phases are disabled. Only Extraction and Refinement will be run.")
+
         # OIE module settings
         self.oie_llm_name = edc_configuration["oie_llm"]
         self.oie_prompt_template_file_path = edc_configuration["oie_prompt_template_file_path"]
@@ -487,23 +494,47 @@ class EDC:
                 previous_extracted_triplets_list=triplets_from_last_iteration,
             )
 
-            del required_model_dict_current_iteration["sd"]
-            sd_dict_list = self.schema_definition(
-                input_text_list,
-                oie_triplets_list,
-                free_model=self.sd_llm_name not in required_model_dict_current_iteration.values()
-                and iteration == refinement_iterations,
-            )
+            # Remove duplicate OIE triplets per input text while preserving original order.
+            deduped_oie_triplets_list = []
+            removed_duplicates = 0
+            for triplets in oie_triplets_list:
+                seen = set()
+                deduped_triplets = []
+                for triplet in triplets:
+                    key = tuple(triplet) if isinstance(triplet, (list, tuple)) else triplet
+                    if key in seen:
+                        removed_duplicates += 1
+                        continue
+                    seen.add(key)
+                    deduped_triplets.append(triplet)
+                deduped_oie_triplets_list.append(deduped_triplets)
+            oie_triplets_list = deduped_oie_triplets_list
+            logger.info(f"Removed {removed_duplicates} duplicate OIE triplets.")
 
-            del required_model_dict_current_iteration["sc_embed"]
-            del required_model_dict_current_iteration["sc_verify"]
-            canon_triplets_list, canon_candidate_dict_list = self.schema_canonicalization(
-                input_text_list,
-                oie_triplets_list,
-                sd_dict_list,
-                free_model=self.sc_llm_name not in required_model_dict_current_iteration.values()
-                and iteration == refinement_iterations,
-            )
+            
+
+            if self.run_dc == "false" or self.run_dc == False:
+                logger.info("Skipping Definition and Canonicalization phases as per the run configuration.")
+                canon_triplets_list = oie_triplets_list
+                canon_candidate_dict_list = [{} for _ in oie_triplets_list]
+            else:
+                del required_model_dict_current_iteration["sd"]
+                sd_dict_list = self.schema_definition(
+                    input_text_list,
+                    oie_triplets_list,
+                    free_model=self.sd_llm_name not in required_model_dict_current_iteration.values()
+                    and iteration == refinement_iterations,
+                )
+
+                del required_model_dict_current_iteration["sc_embed"]
+                del required_model_dict_current_iteration["sc_verify"]
+                canon_triplets_list, canon_candidate_dict_list = self.schema_canonicalization(
+                    input_text_list,
+                    oie_triplets_list,
+                    sd_dict_list,
+                    free_model=self.sc_llm_name not in required_model_dict_current_iteration.values()
+                    and iteration == refinement_iterations,
+                )
 
             non_null_triplets_list = [
                 [triple for triple in triplets if triple is not None] for triplets in canon_triplets_list
