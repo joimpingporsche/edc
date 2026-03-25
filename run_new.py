@@ -141,7 +141,11 @@ def write_chunk_outputs(output_dir: str, chunks: List[Dict], chunking_variant: s
 
 def extract_edc_kwargs(args: Dict) -> Dict:
     return {
-        "run_dc": args["run_dc"],
+        "disable_dc": args["disable_dc"],
+        "enable_triple_utility_filter": args["enable_triple_utility_filter"],
+        "tu_llm": args["tu_llm"],
+        "tu_prompt_template_file_path": args["tu_prompt_template_file_path"],
+        "tu_few_shot_example_file_path": args["tu_few_shot_example_file_path"],
         "oie_llm": args["oie_llm"],
         "oie_prompt_template_file_path": args["oie_prompt_template_file_path"],
         "oie_few_shot_example_file_path": args["oie_few_shot_example_file_path"],
@@ -203,7 +207,9 @@ if __name__ == "__main__":
 
     #Run settings
     parser.add_argument("--run_mode", default="normal", help="You can set this to 'test' for running without EDC execution, e.g. for testing chunking.")
-    parser.add_argument("--run_dc", default="true", help="You can set this to 'false' to disable EDC phases 'Definition' and 'Canonicalization', e.g. for testing 'Extraction' and 'Refinement' with an existing schema.")
+    parser.add_argument("--disable_dc", 
+                        action="store_true",
+                        help="You can set this to 'false' to disable EDC phases 'Definition' and 'Canonicalization', e.g. for testing 'Extraction' and 'Refinement' with an existing schema.")
 
     parser.add_argument(
         "--document_mode",
@@ -318,6 +324,28 @@ if __name__ == "__main__":
         "--em_prompt_template_file_path",
         default="./prompt_templates/em_template.txt",
         help="Prompt template used for entity merging.",
+    )
+
+    # Triple utility filter setting
+    parser.add_argument(
+        "--enable_triple_utility_filter",
+        action="store_true",
+        help="Enable final LLM filtering step that keeps only schema-useful triplets.",
+    )
+    parser.add_argument(
+        "--tu_llm",
+        default="mistralai/Mistral-7B-Instruct-v0.2",
+        help="LLM used for triple utility filtering.",
+    )
+    parser.add_argument(
+        "--tu_prompt_template_file_path",
+        default="./prompt_templates/tu_filter_template.txt",
+        help="Prompt template used for triple utility filtering.",
+    )
+    parser.add_argument(
+        "--tu_few_shot_example_file_path",
+        default=None,
+        help="Few-shot examples used for triple utility filtering.",
     )
 
     # Input setting

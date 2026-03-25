@@ -41,9 +41,14 @@
   --logging_verbose \
   --document_mode all_combined \
   --input_text_dir ./datasets/intern/text/2_preprocessed \
-  --output_dir ./output/all_combined3 \
+  --output_dir ./output/all_combinedx \
   --v2_min_chunk_chars 120 \
   --v2_max_chunk_chars 2000 \
+  --enable_triple_utility_filter \
+  --tu_llm gpt-4.1-mini \
+  --tu_prompt_template_file_path ./prompt_templates/tu_filter_template.txt \
+  --tu_few_shot_example_file_path ./few_shot_examples/example/tu_few_shot_schema_level.txt \
+  --disable_dc
   --run_mode test
 
 

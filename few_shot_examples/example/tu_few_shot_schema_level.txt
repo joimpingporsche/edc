@@ -1,0 +1,23 @@
+Example 1:
+Input Tripel: [['Digital_Solution', 'consistsOf', 'IT_Product'], ['IT_Product', 'hasType', 'Application'], ['IT_Product', 'supports', 'Business_Capability']]
+Output Tripel: [['Digital_Solution', 'consistsOf', 'IT_Product'], ['IT_Product', 'supports', 'Business_Capability']]
+
+Example 2:
+Input Tripel: [['Process', 'createdIn', 'Process_Modeling_Tool'], ['Process', 'maintainedIn', 'Process_Modeling_Tool'], ['Process', 'synchronizedTo', 'Architecture_Repository']]
+Output Tripel: [['Process', 'synchronizedWith', 'Architecture_Repository']]
+
+Example 3:
+Input Tripel: [['Business_Process', 'importedFrom', 'Process_Modeling_Tool'], ['Business_Process', 'receives', 'Enterprise_Architecture_Repository'], ['Business_Process', 'linkedTo', 'Application']]
+Output Tripel: [['Business_Process', 'importedTo', 'Enterprise_Architecture_Repository'], ['Business_Process', 'linkedTo', 'Application']]
+
+Example 4:
+Input Tripel: [['IT_Product', 'developedBy', 'Agile_Release_Train'], ['IT_Product', 'managedWithin', 'Portfolio'], ['Agile_Release_Train', 'maintainedIn', 'Database']]
+Output Tripel: [['IT_Product', 'developedBy', 'Agile_Release_Train'], ['IT_Product', 'managedWithin', 'Portfolio']]
+
+Example 5:
+Input Tripel: [['Application', 'supports', 'Business_Process'], ['Application', 'supports', 'Business_Capability'], ['Application', 'mayExpose', 'API']]
+Output Tripel: [['Application', 'supports', 'Process'], ['Application', 'supports', 'Business_Capability']]
+
+Example 6:
+Input Tripel: [['Digital_Solution', 'developedWithin', 'Agile_Release_Train'], ['Digital_Solution', 'managedWithin', 'Portfolio'], ['Digital_Solution', 'linkedTo', 'Business_Capability']]
+Output Tripel: [['Digital_Solution', 'developedWithin', 'Agile_Release_Train'], ['Digital_Solution', 'managedWithin', 'Portfolio']]

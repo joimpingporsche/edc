@@ -1,6 +1,7 @@
 from edc.extract import Extractor
 from edc.schema_definition import SchemaDefiner
 from edc.schema_canonicalization import SchemaCanonicalizer
+from edc.triple_utility_filter import TripleUtilityFilter
 from edc.entity_extraction import EntityExtractor
 import edc.utils.llm_utils as llm_utils
 from typing import List
@@ -18,6 +19,7 @@ from sentence_transformers import SentenceTransformer
 from importlib import reload
 import random
 import json
+from collections import Counter
 
 reload(logging)
 logger = logging.getLogger(__name__)
@@ -29,9 +31,9 @@ class EDC:
         logging.basicConfig(level=edc_configuration["loglevel"])
 
         #Run  settings
-        self.run_dc = edc_configuration["run_dc"]
-        if self.run_dc or self.run_dc == "true":
-            logger.info("Definition and Canonicalization phases are enabled.")
+        self.disable_dc = edc_configuration.get("disable_dc", False)
+        if self.disable_dc == "false" or self.disable_dc == False:
+            logger.info(f"Definition and Canonicalization phases are enabled.")
         else:
             logger.info("Definition and Canonicalization phases are disabled. Only Extraction and Refinement will be run.")
 
@@ -73,6 +75,16 @@ class EDC:
         self.initial_schema_path = edc_configuration["target_schema_path"]
         self.enrich_schema = edc_configuration["enrich_schema"]
 
+        # Triple utility filtering settings
+        self.enable_triple_utility_filter = edc_configuration.get("enable_triple_utility_filter", False)
+        if isinstance(self.enable_triple_utility_filter, str):
+            self.enable_triple_utility_filter = self.enable_triple_utility_filter.lower() == "true"
+        self.tu_llm_name = edc_configuration.get("tu_llm", self.oie_llm_name)
+        self.tu_prompt_template_file_path = edc_configuration.get(
+            "tu_prompt_template_file_path", "./prompt_templates/tu_filter_template.txt"
+        )
+        self.tu_few_shot_example_file_path = edc_configuration.get("tu_few_shot_example_file_path", None)
+
         if self.initial_schema_path is not None:
             reader = csv.reader(open(self.initial_schema_path, "r"))
             self.schema = {}
@@ -86,11 +98,103 @@ class EDC:
         self.needed_model_set = set(
             [self.oie_llm_name, self.sd_llm_name, self.sc_llm_name, self.sc_embedder_name, self.ee_llm_name]
         )
+        if self.enable_triple_utility_filter:
+            self.needed_model_set.add(self.tu_llm_name)
 
         self.loaded_model_dict = {}
 
 
         logger.info(f"Model used: {self.needed_model_set}")
+
+    def _build_triplet_change_trace(self, before_triplets: List[List[str]], after_triplets: List[List[str]]):
+        before_counter = Counter(tuple(triplet) for triplet in before_triplets)
+        after_counter = Counter(tuple(triplet) for triplet in after_triplets)
+
+        unchanged_counter = before_counter & after_counter
+        removed_counter = before_counter - after_counter
+        added_counter = after_counter - before_counter
+
+        def expand(counter: Counter):
+            expanded = []
+            for triplet_tuple, count in counter.items():
+                for _ in range(count):
+                    expanded.append(list(triplet_tuple))
+            return expanded
+
+        unchanged_triplets = expand(unchanged_counter)
+        removed_triplets = expand(removed_counter)
+        added_triplets = expand(added_counter)
+
+        return {
+            "input_count": len(before_triplets),
+            "output_count": len(after_triplets),
+            "unchanged_count": len(unchanged_triplets),
+            "removed_count": len(removed_triplets),
+            "added_count": len(added_triplets),
+            "estimated_rewritten_count": min(len(removed_triplets), len(added_triplets)),
+            "unchanged_triplets": unchanged_triplets,
+            "removed_triplets": removed_triplets,
+            "added_triplets": added_triplets,
+        }
+
+    def triple_utility_filter(self, triplets_list: List[List[List[str]]], free_model=False):
+        if not llm_utils.is_model_openai(self.tu_llm_name):
+            tu_model, tu_tokenizer = self.load_model(self.tu_llm_name, "hf")
+            utility_filter = TripleUtilityFilter(model=tu_model, tokenizer=tu_tokenizer)
+        else:
+            utility_filter = TripleUtilityFilter(openai_model=self.tu_llm_name)
+
+        tu_prompt_template_str = open(self.tu_prompt_template_file_path).read()
+        tu_few_shot_examples_str = ""
+        if self.tu_few_shot_example_file_path:
+            if os.path.exists(self.tu_few_shot_example_file_path):
+                tu_few_shot_examples_str = open(self.tu_few_shot_example_file_path).read()
+            else:
+                logger.warning(
+                    f"Triple utility few-shot file not found: {self.tu_few_shot_example_file_path}. Continuing without examples."
+                )
+
+        filtered_triplets_list = []
+        dropped_triplet_count = 0
+        triplet_change_trace_list = []
+
+        logger.info("Running Triple Utility Filter...")
+        for triplets in tqdm(triplets_list):
+            # Normalize each entry so empty placeholders (e.g., [] or [[], ...]) are ignored.
+            normalized_triplets = []
+            if isinstance(triplets, list):
+                normalized_triplets = [
+                    triplet
+                    for triplet in triplets
+                    if isinstance(triplet, (list, tuple)) and len(triplet) > 0
+                ]
+
+            if len(normalized_triplets) == 0:
+                logger.debug("Skipping Triple Utility Filter call for empty triplet entry.")
+                filtered_triplets = []
+            else:
+                filtered_triplets, parse_ok = utility_filter.filter_useful_triplets(
+                    normalized_triplets,
+                    tu_few_shot_examples_str,
+                    tu_prompt_template_str,
+                )
+                if not parse_ok:
+                    logger.warning("Could not parse triple utility filter output. Falling back to unfiltered triplets.")
+                    filtered_triplets = normalized_triplets
+
+            dropped_triplet_count += max(len(normalized_triplets) - len(filtered_triplets), 0)
+            filtered_triplets_list.append(filtered_triplets)
+            triplet_change_trace_list.append(self._build_triplet_change_trace(normalized_triplets, filtered_triplets))
+
+        logger.info(f"Triple Utility Filter finished. Dropped triplets: {dropped_triplet_count}")
+
+        if free_model and not llm_utils.is_model_openai(self.tu_llm_name):
+            logger.info(f"Freeing model {self.tu_llm_name} as it is no longer needed")
+            llm_utils.free_model(tu_model, tu_tokenizer)
+            if self.tu_llm_name in self.loaded_model_dict:
+                del self.loaded_model_dict[self.tu_llm_name]
+
+        return filtered_triplets_list, dropped_triplet_count, triplet_change_trace_list
 
     def oie(
         self, input_text_list: List[str], previous_extracted_triplets_list: List[List[str]] = None, free_model=False
@@ -476,6 +580,8 @@ class EDC:
             "ee": self.ee_llm_name,
             "sr": self.sr_embedder_name,
         }
+        if self.enable_triple_utility_filter:
+            required_model_dict["tu"] = self.tu_llm_name
 
         triplets_from_last_iteration = None
         for iteration in range(refinement_iterations + 1):
@@ -513,8 +619,9 @@ class EDC:
 
             
 
-            if self.run_dc == "false" or self.run_dc == False:
+            if self.disable_dc == "true" or self.disable_dc == True:
                 logger.info("Skipping Definition and Canonicalization phases as per the run configuration.")
+                sd_dict_list = [{} for _ in oie_triplets_list]
                 canon_triplets_list = oie_triplets_list
                 canon_candidate_dict_list = [{} for _ in oie_triplets_list]
             else:
@@ -539,6 +646,18 @@ class EDC:
             non_null_triplets_list = [
                 [triple for triple in triplets if triple is not None] for triplets in canon_triplets_list
             ]
+
+            filtered_triplets_list = non_null_triplets_list
+            dropped_triplet_count = 0
+            triplet_change_trace_list = [
+                self._build_triplet_change_trace(entry_triplets, entry_triplets) for entry_triplets in non_null_triplets_list
+            ]
+            if self.enable_triple_utility_filter and iteration == refinement_iterations:
+                del required_model_dict_current_iteration["tu"]
+                filtered_triplets_list, dropped_triplet_count, triplet_change_trace_list = self.triple_utility_filter(
+                    non_null_triplets_list,
+                    free_model=self.tu_llm_name not in required_model_dict_current_iteration.values(),
+                )
             # for triplets in canon_triplets_list:
             #     non_null_triplets = []
             #     for triple in triplets:
@@ -560,6 +679,9 @@ class EDC:
                     "schema_definition": sd_dict_list[idx],
                     "canonicalization_candidates": str(canon_candidate_dict_list[idx]),
                     "schema_canonicalizaiton": canon_triplets_list[idx],
+                    "triples_before_utility_filter": non_null_triplets_list[idx],
+                    "useful_triplets": filtered_triplets_list[idx],
+                    "utility_filter_trace": triplet_change_trace_list[idx],
                 }
                 json_results_list.append(result_json)
             result_at_each_stage_file = open(f"{iteration_result_dir}/result_at_each_stage.json", "w")
@@ -572,4 +694,15 @@ class EDC:
                     final_result_file.write("\n")
                 final_result_file.flush()
 
+            if self.enable_triple_utility_filter and iteration == refinement_iterations:
+                logger.info(f"Writing useful KG output after filtering. Dropped triplets: {dropped_triplet_count}")
+                useful_result_file = open(f"{iteration_result_dir}/useful_kg.txt", "w")
+                for idx, useful_triplets in enumerate(filtered_triplets_list):
+                    useful_result_file.write(str(useful_triplets))
+                    if idx != len(filtered_triplets_list) - 1:
+                        useful_result_file.write("\n")
+                    useful_result_file.flush()
+
+        if self.enable_triple_utility_filter:
+            return filtered_triplets_list
         return canon_triplets_list

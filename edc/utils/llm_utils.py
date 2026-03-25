@@ -221,13 +221,44 @@ def openai_chat_completion(model, system_prompt, history, temperature=0, max_tok
     else:
         messages = history
     logging.debug(f"[LLM-API-CALL] Azure OpenAI Call: model={model}, max_tokens={max_tokens}, temperature={temperature}")
-    response = llm.invoke(messages)
-    logging.debug(f"[LLM-API-CALL] Azure OpenAI Response: {response}")
-    content = response.content if hasattr(response, "content") else str(response)
-    logging.debug(f"Model: {model}\nPrompt:\n {messages}\n Result: {content}\n Finish reason: {response.response_metadata.get('finish_reason', 'N/A')}")
-    if response.response_metadata.get("finish_reason") == "length":
-        logging.warning(f"Response was cut off due to max_tokens limit. Model: {model}, max_tokens: {max_tokens}")
-    elif response.response_metadata.get("finish_reason") != "stop":
-        logging.warning(f"Response finished with reason: {response.response_metadata.get('finish_reason')}. Model: {model}, max_tokens: {max_tokens}")
 
-    return content
+    last_exception = None
+    for attempt in range(2):
+        try:
+            response = llm.invoke(messages)
+            logging.debug(f"[LLM-API-CALL] Azure OpenAI Response: {response}")
+
+            content = response.content if hasattr(response, "content") else str(response)
+            response_metadata = getattr(response, "response_metadata", {}) or {}
+            finish_reason = response_metadata.get("finish_reason", "N/A") if isinstance(response_metadata, dict) else "N/A"
+
+            logging.debug(
+                f"Model: {model}\nPrompt:\n {messages}\n Result: {content}\n Finish reason: {finish_reason}"
+            )
+            if finish_reason == "length":
+                logging.warning(f"Response was cut off due to max_tokens limit. Model: {model}, max_tokens: {max_tokens}")
+            elif finish_reason != "stop" and finish_reason != "N/A":
+                logging.warning(
+                    f"Response finished with reason: {finish_reason}. Model: {model}, max_tokens: {max_tokens}"
+                )
+
+            return content
+        except Exception as exc:
+            last_exception = exc
+            if attempt == 0:
+                logger.warning(
+                    "AzureChatOpenAI call failed; retrying once. "
+                    f"Model: {model},\n Prompt:\n {messages}, error: {type(exc).__name__}: {exc}"
+                )
+                time.sleep(0.5)
+            else:
+                logger.error(
+                    "AzureChatOpenAI call failed again after retry; aborting. "
+                    f"Model: {model}, error: {type(exc).__name__}: {exc}"
+                )
+                raise
+
+    # Defensive fallback; should never be reached because second failure raises.
+    if last_exception is not None:
+        raise last_exception
+    raise RuntimeError("AzureChatOpenAI call failed without a captured exception.")

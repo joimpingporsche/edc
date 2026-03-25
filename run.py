@@ -7,6 +7,11 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 if __name__ == "__main__":
     parser = ArgumentParser()
+    parser.add_argument(
+        "--run_dc",
+        default="true",
+        help="Set to 'false' to skip Schema Definition and Schema Canonicalization.",
+    )
     # OIE module setting
     parser.add_argument(
         "--oie_llm", default="mistralai/Mistral-7B-Instruct-v0.2", help="LLM used for open information extraction."
@@ -113,6 +118,28 @@ if __name__ == "__main__":
         "--em_prompt_template_file_path",
         default="./prompt_templates/em_template.txt",
         help="Prompt template used for entity merging.",
+    )
+
+    # Triple utility filter setting
+    parser.add_argument(
+        "--enable_triple_utility_filter",
+        action="store_true",
+        help="Enable final LLM filtering step that keeps only schema-useful triplets.",
+    )
+    parser.add_argument(
+        "--tu_llm",
+        default="mistralai/Mistral-7B-Instruct-v0.2",
+        help="LLM used for triple utility filtering.",
+    )
+    parser.add_argument(
+        "--tu_prompt_template_file_path",
+        default="./prompt_templates/tu_filter_template.txt",
+        help="Prompt template used for triple utility filtering.",
+    )
+    parser.add_argument(
+        "--tu_few_shot_example_file_path",
+        default=None,
+        help="Few-shot examples used for triple utility filtering.",
     )
 
     # Input setting

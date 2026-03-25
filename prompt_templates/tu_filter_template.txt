@@ -1,0 +1,25 @@
+Your task is to transform the given triples into a SCHEMA-LEVEL (TBox-like) set of triples.
+
+Input: a list of triples in the form [Entity1, Relationship, Entity2].
+
+For each triple:
+1) DROP it if it is instance-specific (proper names, tool/product names, IDs/tickets, URLs/emails, dates/years/numbers as entities, one-off events).
+2) Otherwise KEEP it, but ABSTRACT it:
+   - Convert Entity1/Entity2 into generic types/concepts (e.g., "LeanIX" -> "Enterprise_Architecture_Tool", "BIC" -> "Process_Modeling_Tool", "SAFe" -> "Agile_Framework", "TOGAF" -> "Architecture_Framework").
+   - Generalize overly specific entities (e.g., "Customer" -> "External_User", "Employee" -> "Internal_User") only if supported by the text meaning.
+   - Map Relationship to ONE canonical schema predicate from this list only:
+["Child","Parent","Predecessor","RequiredBy","Requires","Successor","TechPlatform","affects","classifies","consists_of","consumes","defines","ensures","governed_by","improves","informs","is_similar_to","owned_by","protects","provides","realizes","regulates","requires","responsible_for","status_of","supported_by","supports","transmits","uses","versioned_as"]
+   - Keep direction consistent with the original meaning.
+3) Do NOT invent new facts. Do NOT output anything that is not justified by the input triples.
+
+Output rules:
+- Return ONLY a list of abstracted triples.
+- Each triple must be exactly: [Entity1, Relationship, Entity2]
+- No explanations, no extra text.
+- If unsure whether a triple is schema-level, DROP it.
+
+Here are some examples:
+{few_shot_examples}
+
+Now transform the following triples:
+Triples: {input_triplets}
