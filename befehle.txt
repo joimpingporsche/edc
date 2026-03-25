@@ -27,7 +27,7 @@
   --embedding_api azure \
   --oie_llm gpt-4.1-mini \
   --oie_few_shot_example_file_path ./few_shot_examples/example/oie_few_shot_schema_level.txt \
-  --oie_prompt_template_file_path ./prompt_templates/oie_schema_level.txt \
+  --oie_prompt_template_file_path ./prompt_templates/oie_schema_level1.txt \
   --sd_llm gpt-4.1-mini \
   --sd_few_shot_example_file_path ./few_shot_examples/example/sd_few_shot_examples.txt \
   --sc_llm gpt-4.1-mini \
@@ -49,11 +49,9 @@
   --tu_prompt_template_file_path ./prompt_templates/tu_filter_template.txt \
   --tu_few_shot_example_file_path ./few_shot_examples/example/tu_few_shot_schema_level.txt \
   --disable_dc
-  --run_mode test
 
 
-python evaluate/evaluate_ontology_compliance.py --edc_output output/all_combined4/iter0/canon_kg_dedup_global.txt --reference datasets/intern/gold/leanix_ontology_tripel_cleaned.txt --alignment_json output/all_combined4/relation_definition_alignment_2.json --max_invalid_examples 20 --save_json output/all_combined4/ontology_eval_report_with_alignment.json 
-  
+python evaluate/evaluate_ontology_compliance.py --edc_output output/all_combined_prompt2_with_filter/iter0/canon_kg_dedup.txt --reference datasets/intern/gold/leanix_ontology_tripel_cleaned.txt --alignment_json output/all_combined4/relation_definition_alignment_2.json --max_invalid_examples 20 --save_json output/all_combined_prompt2_with_filter/ontology_eval_report_with_alignment.json  
  
 
 python edc/preprocessing/pdf_to_text_and_tables.py datasets/intern/pdfs/Subscription+Roles+in+LeanIX\[35\].pdf  --output_dir datasets/intern/text/1_raw_text/subscription

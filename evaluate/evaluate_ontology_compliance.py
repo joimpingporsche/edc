@@ -45,8 +45,19 @@ def _parse_line_to_triples(line: str, line_no: int, source_name: str) -> Tuple[L
 
 
 def _normalize_label(text: str) -> str:
-    # Insert spaces before capitals (e.g. relToParent -> rel To Parent)
+    # Remove optional RDF-like language tags if they leak into plain text labels.
+    # Examples: Business Capability@en, "Business Capability"@en
+    text = re.sub(r"@([a-z]{2,3}(?:-[a-z0-9]+)?)$", "", str(text).strip(), flags=re.IGNORECASE)
+
+    # Drop wrapping quotes if present.
+    text = text.strip("\"'")
+
+    # Split camelCase and acronym boundaries.
+    # relToParent -> rel To Parent
+    # ITComponent -> IT Component
     text = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", text)
+    text = re.sub(r"(?<=[A-Z])(?=[A-Z][a-z])", " ", text)
+
     text = text.replace("&", " and ")
     text = re.sub(r"[_\-/]+", " ", text)
     text = text.casefold()

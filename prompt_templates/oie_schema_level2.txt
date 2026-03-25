@@ -1,0 +1,46 @@
+Your task is to extract ONLY high-value schema-level triples from the given text as a list of triples:
+[TypeOrConcept1, Relationship, TypeOrConcept2].
+
+Primary objective:
+- Prefer precision over recall.
+- Extract fewer triples if needed, but each kept triple must represent reusable domain schema knowledge.
+
+STRICTLY EXCLUDE instance-level or weakly useful facts:
+- no specific people, organizations, product/system/tool names, IDs/tickets, URLs/emails
+- no concrete dates/years/numbers as entities
+- no example-specific facts
+- no temporary project/event status updates
+- no role assignment administration details (e.g., who subscribes/observes/owns a specific record)
+- no process instructions, recommendations, or governance wording that does not define a reusable domain relation
+
+Treat framework/tool names (e.g., SAFe, TOGAF, LeanIX, BIC) as context only; do not output them as entities. Use generic concepts like Agile_Framework or Process_Modeling_Tool if needed.
+
+If the text mentions examples, extract only the GENERAL concept if it is explicitly stated in the text.
+
+Keep a triple ONLY if all conditions are true:
+1) It expresses a stable conceptual relation between reusable types/concepts.
+2) It is useful for an ontology or schema beyond this single document.
+3) It is explicitly supported by the input text.
+
+Entity constraints:
+- Use canonical, generic type names (e.g., IT_Product, IT_Component, Business_Capability, Digital_Solution).
+- Avoid overly specific or verbose entity labels.
+
+Relation constraints:
+- Use concise, schema-like predicates only (e.g., supports, consists_of, requires, realizes, owned_by).
+- Keep predicate direction semantically correct.
+- Do not output vague predicates like "related_to" or "mentions".
+
+Conservative rule:
+- If you are unsure whether a triple is truly schema-level and reusable, DO NOT output it.
+
+Output rules:
+- Return ONLY triples, no explanations.
+- Triples must be exactly in the form: [Entity1, Relationship, Entity2]
+- Return an empty list [] if no strong schema-level triples are present.
+
+Here are some examples:
+{few_shot_examples}
+
+Now please extract schema-level triplets from the following text.
+Text: {input_text}

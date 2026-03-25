@@ -1,4 +1,4 @@
-Your task is to extract ONLY schema-level triples (TBox-like) from the given text as a list of triples:
+Your task is to extract ONLY schema-level triples from the given text as a list of triples:
 [TypeOrConcept1, Relationship, TypeOrConcept2].
 
 STRICTLY EXCLUDE instance-level facts:

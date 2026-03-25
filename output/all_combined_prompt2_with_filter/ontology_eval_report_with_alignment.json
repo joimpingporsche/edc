@@ -1,0 +1,183 @@
+{
+  "input": {
+    "prediction_file": "output/all_combined_prompt2_with_filter/iter0/useful_kg_dedup.txt",
+    "ontology_file": "datasets/intern/gold/leanix_ontology_tripel_cleaned.txt",
+    "alignment_file": "output/all_combined4/relation_definition_alignment_2.json"
+  },
+  "counts": {
+    "prediction_lines": 409,
+    "prediction_triples_total": 516,
+    "prediction_triples_unique": 516,
+    "prediction_triples_duplicates": 0,
+    "ontology_triples_total": 936,
+    "ontology_relations_total": 29,
+    "ontology_entities_total": 38
+  },
+  "metrics": {
+    "strict_precision_exact_triple": 0.011628,
+    "normalized_precision_exact_triple": 0.05814,
+    "relation_valid_rate": 0.804264,
+    "relation_valid_rate_semantic": 0.813953,
+    "domain_valid_rate": 0.238372,
+    "domain_valid_rate_semantic": 0.238372,
+    "range_valid_rate": 0.133721,
+    "range_valid_rate_semantic": 0.135659,
+    "ontology_coverage_by_predictions": 0.03212
+  },
+  "diagnostics": {
+    "alignment_used": true,
+    "alignment_mappings_total": 43,
+    "aligned_relations_in_predictions": 5,
+    "invalid_reason_counts": {
+      "known_relation_but_subject_and_object_not_allowed": 253,
+      "known_relation_but_object_not_allowed": 93,
+      "unknown_relation": 96,
+      "known_relation_but_subject_not_allowed": 39,
+      "aligned_relation_but_subject_and_object_not_allowed": 4,
+      "aligned_relation_but_subject_not_allowed": 1
+    },
+    "invalid_examples": [
+      {
+        "subject": "Business_Capability",
+        "predicate": "is_similar_to",
+        "object": "Organizational_Function",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "provides",
+        "object": "Common_Language",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Technology",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "requires",
+        "object": "Resource",
+        "reason": "known_relation_but_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "governed_by",
+        "object": "Enterprise_Architecture",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Core_Purpose",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedIn",
+        "object": "Strategic_Planning",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedIn",
+        "object": "Capability_Mapping",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "usedIn",
+        "object": "IT_Alignment",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "classifies",
+        "object": "Application",
+        "reason": "known_relation_but_subject_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Application_Classification",
+        "predicate": "classifies",
+        "object": "Application",
+        "reason": "known_relation_but_subject_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "supports",
+        "object": "IT_Landscape",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "defines",
+        "object": "Organizational_Ability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Process",
+        "predicate": "defines",
+        "object": "Business_Capability",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Application",
+        "predicate": "supports",
+        "object": "Business_Capability",
+        "reason": "known_relation_but_subject_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "linkedTo",
+        "object": "Corporate_Goal",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "is_similar_to",
+        "object": "Business_Process",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "affects",
+        "object": "IT_Landscape",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "affects",
+        "object": "Application",
+        "reason": "known_relation_but_subject_and_object_not_allowed",
+        "mapped_predicate": null
+      },
+      {
+        "subject": "Business_Capability",
+        "predicate": "alignedWith",
+        "object": "Strategy",
+        "reason": "unknown_relation",
+        "mapped_predicate": null
+      }
+    ],
+    "warnings": []
+  }
+}
