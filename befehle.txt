@@ -51,8 +51,17 @@
   --disable_dc
 
 
-python evaluate/evaluate_ontology_compliance.py --edc_output output/all_combined_prompt2_with_filter/iter0/canon_kg_dedup.txt --reference datasets/intern/gold/leanix_ontology_tripel_cleaned.txt --alignment_json output/all_combined4/relation_definition_alignment_2.json --max_invalid_examples 20 --save_json output/all_combined_prompt2_with_filter/ontology_eval_report_with_alignment.json  
- 
+python evaluate/evaluate_ontology_compliance.py \
+  --edc_output output/all_combined2/iter0/canon_kg_dedup.txt \
+  --reference datasets/intern/gold/leanix_ontology_tripel_cleaned.txt \
+  --alignment_json output/all_combined4/relation_definition_alignment_2.json \
+  --result_at_each_stage_json output/all_combined2/iter0/result_at_each_stage.json \
+  --sample_size 50 \
+  --sample_seed 7 \
+  --relation_threshold 0.85 \
+  --labels_input output/all_combined2/ai_eval.csv \
+  --entity_threshold 0.85 \
+  --save_json output/all_combined2/two_track_eval_report_with_labels.json 
 
 python edc/preprocessing/pdf_to_text_and_tables.py datasets/intern/pdfs/Subscription+Roles+in+LeanIX\[35\].pdf  --output_dir datasets/intern/text/1_raw_text/subscription
 
