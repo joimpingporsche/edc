@@ -1,0 +1,135 @@
+scope,predicate,count
+total_predictions,consists of,77
+total_predictions,supports,73
+total_predictions,affects,42
+total_predictions,classifies,33
+total_predictions,realizes,31
+total_predictions,responsible for,27
+total_predictions,linked to,22
+total_predictions,provides,21
+total_predictions,defines,18
+total_predictions,requires,16
+total_predictions,parent,13
+total_predictions,owned by,11
+total_predictions,informs,9
+total_predictions,uses,8
+total_predictions,part of,7
+total_predictions,connected to,7
+total_predictions,aligned with,6
+total_predictions,consumes,5
+total_predictions,connects,5
+total_predictions,developed by,4
+total_predictions,documents,4
+total_predictions,improves,4
+total_predictions,transmits,4
+total_predictions,aligns,3
+total_predictions,is similar to,3
+total_predictions,child,3
+total_predictions,ensures,3
+total_predictions,supported by,3
+total_predictions,links,3
+total_predictions,integrates,2
+total_predictions,developed within,2
+total_predictions,manages,2
+total_predictions,tech platform,2
+total_predictions,defined in,2
+total_predictions,status of,2
+total_predictions,defined at,2
+total_predictions,versioned as,2
+total_predictions,governed by,2
+total_predictions,consumed by,2
+total_predictions,regulates,2
+total_predictions,facilitates alignment between,2
+total_predictions,owns,2
+total_predictions,identifies,2
+total_predictions,required by,1
+total_predictions,managed within,1
+total_predictions,monitors,1
+total_predictions,hosts,1
+total_predictions,automates,1
+total_predictions,documented in,1
+total_predictions,enables,1
+total_predictions,resides in,1
+total_predictions,successor,1
+total_predictions,predecessor,1
+total_predictions,inherits from,1
+total_predictions,imported from,1
+total_predictions,synchronized to,1
+total_predictions,associated with,1
+total_predictions,interacts with,1
+total_predictions,provided by,1
+total_predictions,models,1
+total_predictions,connected via,1
+total_predictions,handled by,1
+total_predictions,separates from,1
+total_predictions,represents,1
+total_predictions,assigned by,1
+total_predictions,embedded within,1
+total_predictions,applies to,1
+total_predictions,used by,1
+novel_predictions,consists of,73
+novel_predictions,supports,66
+novel_predictions,affects,35
+novel_predictions,classifies,32
+novel_predictions,realizes,30
+novel_predictions,responsible for,25
+novel_predictions,linked to,22
+novel_predictions,provides,20
+novel_predictions,defines,18
+novel_predictions,requires,14
+novel_predictions,parent,12
+novel_predictions,owned by,10
+novel_predictions,informs,9
+novel_predictions,uses,8
+novel_predictions,part of,7
+novel_predictions,connected to,7
+novel_predictions,aligned with,6
+novel_predictions,consumes,5
+novel_predictions,connects,5
+novel_predictions,developed by,4
+novel_predictions,documents,4
+novel_predictions,transmits,4
+novel_predictions,aligns,3
+novel_predictions,is similar to,3
+novel_predictions,supported by,3
+novel_predictions,improves,3
+novel_predictions,ensures,3
+novel_predictions,links,3
+novel_predictions,integrates,2
+novel_predictions,developed within,2
+novel_predictions,manages,2
+novel_predictions,tech platform,2
+novel_predictions,child,2
+novel_predictions,defined in,2
+novel_predictions,status of,2
+novel_predictions,defined at,2
+novel_predictions,governed by,2
+novel_predictions,versioned as,2
+novel_predictions,consumed by,2
+novel_predictions,regulates,2
+novel_predictions,facilitates alignment between,2
+novel_predictions,owns,2
+novel_predictions,identifies,2
+novel_predictions,managed within,1
+novel_predictions,monitors,1
+novel_predictions,hosts,1
+novel_predictions,automates,1
+novel_predictions,documented in,1
+novel_predictions,enables,1
+novel_predictions,resides in,1
+novel_predictions,inherits from,1
+novel_predictions,imported from,1
+novel_predictions,synchronized to,1
+novel_predictions,associated with,1
+novel_predictions,interacts with,1
+novel_predictions,provided by,1
+novel_predictions,models,1
+novel_predictions,connected via,1
+novel_predictions,handled by,1
+novel_predictions,separates from,1
+novel_predictions,represents,1
+novel_predictions,assigned by,1
+novel_predictions,embedded within,1
+novel_predictions,applies to,1
+novel_predictions,used by,1
+novel_predictions,required by,1

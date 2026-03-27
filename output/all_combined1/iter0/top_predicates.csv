@@ -1,0 +1,401 @@
+scope,predicate,count
+total_predictions,includes,132
+total_predictions,type,78
+total_predictions,supports,69
+total_predictions,description,58
+total_predictions,example,58
+total_predictions,color,42
+total_predictions,purpose,40
+total_predictions,responsible for,39
+total_predictions,examples,39
+total_predictions,requires,31
+total_predictions,include,30
+total_predictions,enables,29
+total_predictions,context,27
+total_predictions,represents,24
+total_predictions,example categories,24
+total_predictions,affects,24
+total_predictions,describes,19
+total_predictions,is,18
+total_predictions,used for,18
+total_predictions,role,18
+total_predictions,part of,17
+total_predictions,based on,17
+total_predictions,contains,17
+total_predictions,applies to,17
+total_predictions,ensures,17
+total_predictions,category,16
+total_predictions,provides,15
+total_predictions,example use cases,14
+total_predictions,assigned to,14
+total_predictions,relationship,14
+total_predictions,can be,14
+total_predictions,definition,13
+total_predictions,linked to,13
+total_predictions,use,12
+total_predictions,serves as,12
+total_predictions,has field,12
+total_predictions,for,11
+total_predictions,to,11
+total_predictions,key concept,11
+total_predictions,defines,10
+total_predictions,provide,10
+total_predictions,identifies,10
+total_predictions,may include,10
+total_predictions,models,10
+total_predictions,notes,10
+total_predictions,are,9
+total_predictions,must be,9
+total_predictions,function,9
+total_predictions,implies,9
+total_predictions,requires attribute,9
+total_predictions,attribute concept,9
+total_predictions,ensure,8
+total_predictions,subscription,8
+total_predictions,has section,8
+total_predictions,aligned with,8
+total_predictions,between,8
+total_predictions,used to model,8
+total_predictions,label,8
+total_predictions,location,8
+total_predictions,has element,8
+total_predictions,developed by,7
+total_predictions,enable,7
+total_predictions,captures,7
+total_predictions,key benefits,7
+total_predictions,language,7
+total_predictions,used in,7
+total_predictions,must be specified at,7
+total_predictions,should be,7
+total_predictions,can be linked to,7
+total_predictions,usage,7
+total_predictions,follows,7
+total_predictions,reason,7
+total_predictions,improves,7
+total_predictions,recommendation,7
+total_predictions,subscription type,7
+total_predictions,forms,6
+total_predictions,relates to,6
+total_predictions,done via,6
+total_predictions,consists of,6
+total_predictions,contributes to,6
+total_predictions,stakeholders,6
+total_predictions,role type,6
+total_predictions,receives,6
+total_predictions,aligns with,6
+total_predictions,has,6
+total_predictions,source,6
+total_predictions,classification,6
+total_predictions,target roles,6
+total_predictions,implements,6
+total_predictions,required elements,6
+total_predictions,not operated by,6
+total_predictions,connected to,6
+total_predictions,status,5
+total_predictions,also called,5
+total_predictions,occur in,5
+total_predictions,corresponds to,5
+total_predictions,composed of,5
+total_predictions,focus on,5
+total_predictions,are essential for,5
+total_predictions,enabled by,5
+total_predictions,used by,5
+total_predictions,can have role,5
+total_predictions,scope,5
+total_predictions,indicates,5
+total_predictions,assign to,5
+total_predictions,has responsible,5
+total_predictions,indicated on,5
+total_predictions,should be documented for,5
+total_predictions,applied when,5
+total_predictions,relies on,5
+total_predictions,key concepts,5
+total_predictions,controlled vocabulary,5
+total_predictions,justification,5
+total_predictions,consumer,5
+total_predictions,role in model,5
+total_predictions,tagged as,5
+total_predictions,optionally linked to,5
+total_predictions,defined by,4
+total_predictions,delivers,4
+total_predictions,define,4
+total_predictions,has role,4
+total_predictions,divided into,4
+total_predictions,explains,4
+total_predictions,usage context,4
+total_predictions,operated by,4
+total_predictions,is primary reference for,4
+total_predictions,described in,4
+total_predictions,must ensure,4
+total_predictions,checks for,4
+total_predictions,assigned as,4
+total_predictions,can be assigned,4
+total_predictions,can include,4
+total_predictions,distinguish between,4
+total_predictions,condition,4
+total_predictions,use case,4
+total_predictions,parent type,4
+total_predictions,child type,4
+total_predictions,should reflect,4
+total_predictions,related to,4
+total_predictions,synchronized to,4
+total_predictions,causes,4
+total_predictions,accountable for,4
+total_predictions,must be linked to,4
+total_predictions,meaning,4
+total_predictions,required,4
+total_predictions,defines relationships between,4
+total_predictions,must be created if,4
+total_predictions,depends on,4
+total_predictions,can be defined at,4
+total_predictions,has attribute,4
+total_predictions,consult,4
+total_predictions,represent,4
+total_predictions,color codes,4
+total_predictions,helps identify,4
+total_predictions,use for,4
+total_predictions,primary user,4
+total_predictions,is independent of,3
+total_predictions,involves,3
+total_predictions,links,3
+total_predictions,within,3
+total_predictions,fulfill,3
+total_predictions,align,3
+total_predictions,has type,3
+total_predictions,modeled in,3
+total_predictions,achieves,3
+total_predictions,created and maintained outside of,3
+total_predictions,represented by,3
+total_predictions,through,3
+total_predictions,form,3
+total_predictions,content,3
+total_predictions,title,3
+total_predictions,provides functionality via,3
+total_predictions,direction,3
+total_predictions,frequency,3
+total_predictions,domain,3
+total_predictions,associated with,3
+total_predictions,is accountable for,3
+total_predictions,uses relation,3
+total_predictions,recommended information,3
+total_predictions,must include,3
+total_predictions,level,3
+total_predictions,managed within,3
+total_predictions,reflects,3
+total_predictions,avoids,3
+total_predictions,action,3
+total_predictions,help structure,3
+total_predictions,has child type,3
+total_predictions,modeled using,3
+total_predictions,platform,3
+total_predictions,can be assigned to,3
+total_predictions,challenge,3
+total_predictions,can be modeled as,3
+total_predictions,illustrate distinction between,3
+total_predictions,modeled as,3
+total_predictions,support type,3
+total_predictions,contact,3
+total_predictions,recommends,3
+total_predictions,lies with,3
+total_predictions,help,3
+total_predictions,refers to,3
+novel_predictions,includes,132
+novel_predictions,type,78
+novel_predictions,supports,66
+novel_predictions,description,58
+novel_predictions,example,58
+novel_predictions,color,42
+novel_predictions,purpose,40
+novel_predictions,examples,39
+novel_predictions,responsible for,37
+novel_predictions,requires,30
+novel_predictions,include,30
+novel_predictions,enables,29
+novel_predictions,context,27
+novel_predictions,represents,24
+novel_predictions,example categories,24
+novel_predictions,describes,19
+novel_predictions,is,18
+novel_predictions,used for,18
+novel_predictions,role,18
+novel_predictions,part of,17
+novel_predictions,based on,17
+novel_predictions,contains,17
+novel_predictions,affects,17
+novel_predictions,applies to,17
+novel_predictions,ensures,17
+novel_predictions,category,16
+novel_predictions,provides,15
+novel_predictions,example use cases,14
+novel_predictions,assigned to,14
+novel_predictions,relationship,14
+novel_predictions,can be,14
+novel_predictions,definition,13
+novel_predictions,linked to,13
+novel_predictions,use,12
+novel_predictions,serves as,12
+novel_predictions,has field,12
+novel_predictions,for,11
+novel_predictions,to,11
+novel_predictions,key concept,11
+novel_predictions,defines,10
+novel_predictions,provide,10
+novel_predictions,identifies,10
+novel_predictions,may include,10
+novel_predictions,models,10
+novel_predictions,notes,10
+novel_predictions,are,9
+novel_predictions,must be,9
+novel_predictions,function,9
+novel_predictions,implies,9
+novel_predictions,requires attribute,9
+novel_predictions,attribute concept,9
+novel_predictions,ensure,8
+novel_predictions,subscription,8
+novel_predictions,has section,8
+novel_predictions,aligned with,8
+novel_predictions,between,8
+novel_predictions,used to model,8
+novel_predictions,label,8
+novel_predictions,location,8
+novel_predictions,has element,8
+novel_predictions,developed by,7
+novel_predictions,enable,7
+novel_predictions,captures,7
+novel_predictions,key benefits,7
+novel_predictions,language,7
+novel_predictions,used in,7
+novel_predictions,must be specified at,7
+novel_predictions,should be,7
+novel_predictions,can be linked to,7
+novel_predictions,usage,7
+novel_predictions,follows,7
+novel_predictions,reason,7
+novel_predictions,recommendation,7
+novel_predictions,subscription type,7
+novel_predictions,forms,6
+novel_predictions,relates to,6
+novel_predictions,done via,6
+novel_predictions,contributes to,6
+novel_predictions,stakeholders,6
+novel_predictions,role type,6
+novel_predictions,receives,6
+novel_predictions,aligns with,6
+novel_predictions,has,6
+novel_predictions,source,6
+novel_predictions,classification,6
+novel_predictions,target roles,6
+novel_predictions,implements,6
+novel_predictions,required elements,6
+novel_predictions,improves,6
+novel_predictions,not operated by,6
+novel_predictions,connected to,6
+novel_predictions,status,5
+novel_predictions,also called,5
+novel_predictions,occur in,5
+novel_predictions,corresponds to,5
+novel_predictions,composed of,5
+novel_predictions,focus on,5
+novel_predictions,are essential for,5
+novel_predictions,enabled by,5
+novel_predictions,used by,5
+novel_predictions,can have role,5
+novel_predictions,scope,5
+novel_predictions,indicates,5
+novel_predictions,assign to,5
+novel_predictions,has responsible,5
+novel_predictions,indicated on,5
+novel_predictions,should be documented for,5
+novel_predictions,applied when,5
+novel_predictions,relies on,5
+novel_predictions,consists of,5
+novel_predictions,key concepts,5
+novel_predictions,controlled vocabulary,5
+novel_predictions,justification,5
+novel_predictions,consumer,5
+novel_predictions,role in model,5
+novel_predictions,tagged as,5
+novel_predictions,optionally linked to,5
+novel_predictions,defined by,4
+novel_predictions,delivers,4
+novel_predictions,define,4
+novel_predictions,has role,4
+novel_predictions,divided into,4
+novel_predictions,explains,4
+novel_predictions,usage context,4
+novel_predictions,operated by,4
+novel_predictions,is primary reference for,4
+novel_predictions,described in,4
+novel_predictions,must ensure,4
+novel_predictions,checks for,4
+novel_predictions,assigned as,4
+novel_predictions,can be assigned,4
+novel_predictions,can include,4
+novel_predictions,distinguish between,4
+novel_predictions,condition,4
+novel_predictions,use case,4
+novel_predictions,parent type,4
+novel_predictions,child type,4
+novel_predictions,should reflect,4
+novel_predictions,related to,4
+novel_predictions,synchronized to,4
+novel_predictions,causes,4
+novel_predictions,accountable for,4
+novel_predictions,must be linked to,4
+novel_predictions,meaning,4
+novel_predictions,required,4
+novel_predictions,defines relationships between,4
+novel_predictions,must be created if,4
+novel_predictions,depends on,4
+novel_predictions,can be defined at,4
+novel_predictions,has attribute,4
+novel_predictions,consult,4
+novel_predictions,represent,4
+novel_predictions,color codes,4
+novel_predictions,helps identify,4
+novel_predictions,use for,4
+novel_predictions,primary user,4
+novel_predictions,is independent of,3
+novel_predictions,involves,3
+novel_predictions,links,3
+novel_predictions,within,3
+novel_predictions,fulfill,3
+novel_predictions,align,3
+novel_predictions,has type,3
+novel_predictions,modeled in,3
+novel_predictions,achieves,3
+novel_predictions,created and maintained outside of,3
+novel_predictions,represented by,3
+novel_predictions,through,3
+novel_predictions,form,3
+novel_predictions,content,3
+novel_predictions,title,3
+novel_predictions,provides functionality via,3
+novel_predictions,direction,3
+novel_predictions,frequency,3
+novel_predictions,domain,3
+novel_predictions,associated with,3
+novel_predictions,is accountable for,3
+novel_predictions,uses relation,3
+novel_predictions,recommended information,3
+novel_predictions,must include,3
+novel_predictions,level,3
+novel_predictions,managed within,3
+novel_predictions,reflects,3
+novel_predictions,avoids,3
+novel_predictions,action,3
+novel_predictions,help structure,3
+novel_predictions,has child type,3
+novel_predictions,modeled using,3
+novel_predictions,platform,3
+novel_predictions,can be assigned to,3
+novel_predictions,challenge,3
+novel_predictions,can be modeled as,3
+novel_predictions,illustrate distinction between,3
+novel_predictions,modeled as,3
+novel_predictions,support type,3
+novel_predictions,contact,3
+novel_predictions,recommends,3
+novel_predictions,lies with,3
+novel_predictions,help,3
+novel_predictions,refers to,3

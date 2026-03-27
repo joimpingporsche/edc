@@ -1,0 +1,111 @@
+scope,predicate,count
+total_predictions,consists of,86
+total_predictions,supports,68
+total_predictions,affects,49
+total_predictions,classifies,38
+total_predictions,provides,35
+total_predictions,defines,30
+total_predictions,realizes,27
+total_predictions,is similar to,17
+total_predictions,requires,16
+total_predictions,parent,16
+total_predictions,owned by,16
+total_predictions,linked to,14
+total_predictions,responsible for,14
+total_predictions,uses,11
+total_predictions,connects,8
+total_predictions,ensures,7
+total_predictions,consumes,6
+total_predictions,structures,6
+total_predictions,aligned with,5
+total_predictions,documents,5
+total_predictions,informs,5
+total_predictions,governed by,4
+total_predictions,focuses on,4
+total_predictions,developed within,3
+total_predictions,part of,3
+total_predictions,captures,3
+total_predictions,child,3
+total_predictions,status of,3
+total_predictions,versioned as,3
+total_predictions,includes,3
+total_predictions,identifies,3
+total_predictions,managed within,2
+total_predictions,tech platform,2
+total_predictions,links,2
+total_predictions,defined at,2
+total_predictions,developed by,2
+total_predictions,successor,2
+total_predictions,predecessor,2
+total_predictions,applies to,2
+total_predictions,models,2
+total_predictions,transmits,2
+total_predictions,supported by,2
+total_predictions,integrates,1
+total_predictions,used in,1
+total_predictions,integrates with,1
+total_predictions,inherits from,1
+total_predictions,imported from,1
+total_predictions,synchronized with,1
+total_predictions,synchronized to,1
+total_predictions,operated by,1
+total_predictions,represents,1
+total_predictions,traceable to,1
+total_predictions,related to,1
+total_predictions,informed by,1
+total_predictions,improves,1
+total_predictions,used by,1
+novel_predictions,consists of,81
+novel_predictions,supports,62
+novel_predictions,affects,42
+novel_predictions,classifies,37
+novel_predictions,provides,34
+novel_predictions,defines,30
+novel_predictions,realizes,25
+novel_predictions,is similar to,17
+novel_predictions,linked to,14
+novel_predictions,requires,14
+novel_predictions,parent,14
+novel_predictions,responsible for,12
+novel_predictions,owned by,12
+novel_predictions,uses,11
+novel_predictions,connects,8
+novel_predictions,ensures,7
+novel_predictions,structures,6
+novel_predictions,aligned with,5
+novel_predictions,documents,5
+novel_predictions,consumes,5
+novel_predictions,informs,5
+novel_predictions,governed by,4
+novel_predictions,focuses on,4
+novel_predictions,developed within,3
+novel_predictions,part of,3
+novel_predictions,captures,3
+novel_predictions,child,3
+novel_predictions,status of,3
+novel_predictions,versioned as,3
+novel_predictions,includes,3
+novel_predictions,identifies,3
+novel_predictions,managed within,2
+novel_predictions,tech platform,2
+novel_predictions,links,2
+novel_predictions,defined at,2
+novel_predictions,developed by,2
+novel_predictions,applies to,2
+novel_predictions,models,2
+novel_predictions,transmits,2
+novel_predictions,supported by,2
+novel_predictions,integrates,1
+novel_predictions,used in,1
+novel_predictions,integrates with,1
+novel_predictions,inherits from,1
+novel_predictions,imported from,1
+novel_predictions,synchronized with,1
+novel_predictions,synchronized to,1
+novel_predictions,operated by,1
+novel_predictions,represents,1
+novel_predictions,traceable to,1
+novel_predictions,related to,1
+novel_predictions,informed by,1
+novel_predictions,used by,1
+novel_predictions,predecessor,1
