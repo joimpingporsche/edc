@@ -43,4 +43,5 @@ Here are some examples:
 {few_shot_examples}
 
 Now please extract schema-level triplets from the following text.
+The text is structured into chunks. Each chunk begins with "SECTION_TITLE:" followed by the title of the chunk, and "CONTENT:" followed by the actual content of the chunk. Use the section title as additional context to interpret the content, but extract triples only from the conceptual information present.
 Text: {input_text}

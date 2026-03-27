@@ -27,7 +27,7 @@
   --embedding_api azure \
   --oie_llm gpt-4.1-mini \
   --oie_few_shot_example_file_path ./few_shot_examples/example/oie_few_shot_schema_level.txt \
-  --oie_prompt_template_file_path ./prompt_templates/oie_schema_level1.txt \
+  --oie_prompt_template_file_path ./prompt_templates/oie_schema_level2.txt \
   --sd_llm gpt-4.1-mini \
   --sd_few_shot_example_file_path ./few_shot_examples/example/sd_few_shot_examples.txt \
   --sc_llm gpt-4.1-mini \
