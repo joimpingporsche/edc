@@ -1,0 +1,312 @@
+scope,predicate,count
+total_predictions,includes,69
+total_predictions,supports,55
+total_predictions,affects,24
+total_predictions,enables,20
+total_predictions,linked to,20
+total_predictions,has attribute,14
+total_predictions,represents,13
+total_predictions,provides,12
+total_predictions,aligned with,11
+total_predictions,defines,10
+total_predictions,assigned to,10
+total_predictions,connected to,10
+total_predictions,classified as,9
+total_predictions,consists of,9
+total_predictions,requires,9
+total_predictions,has characteristic,9
+total_predictions,is type of,9
+total_predictions,associated with,8
+total_predictions,may include,8
+total_predictions,impacts,8
+total_predictions,implements,7
+total_predictions,connects,6
+total_predictions,parent of,6
+total_predictions,is element of,6
+total_predictions,part of,5
+total_predictions,realizes,5
+total_predictions,documents,5
+total_predictions,has type,5
+total_predictions,responsible for,5
+total_predictions,includes attribute,5
+total_predictions,identifies,5
+total_predictions,used by,4
+total_predictions,used for,4
+total_predictions,distinguishes,4
+total_predictions,describes,4
+total_predictions,delivers,4
+total_predictions,developed within,4
+total_predictions,contributes to,4
+total_predictions,structures,4
+total_predictions,owned by,4
+total_predictions,accountable for,4
+total_predictions,consumes,4
+total_predictions,may be,4
+total_predictions,modeled separately if,4
+total_predictions,focuses on,4
+total_predictions,owns,4
+total_predictions,independent of,3
+total_predictions,used in,3
+total_predictions,captures,3
+total_predictions,serves as,3
+total_predictions,models,3
+total_predictions,assigned lifecycle,3
+total_predictions,affected by,3
+total_predictions,has property,3
+total_predictions,realized by,3
+total_predictions,interdependent with,3
+total_predictions,aligns,3
+total_predictions,provides input for,3
+total_predictions,forms,2
+total_predictions,managed within,2
+total_predictions,is self contained,2
+total_predictions,equivalent to,2
+total_predictions,drives,2
+total_predictions,bridges,2
+total_predictions,defined at,2
+total_predictions,has subtype,2
+total_predictions,subject to,2
+total_predictions,developed by,2
+total_predictions,interrelates with,2
+total_predictions,supported by,2
+total_predictions,applies to,2
+total_predictions,modeled between,2
+total_predictions,created by,2
+total_predictions,depends on,2
+total_predictions,related by,2
+total_predictions,anchors,2
+total_predictions,communicated across,2
+total_predictions,divided into,2
+total_predictions,enables traceability between,2
+total_predictions,optimized by,1
+total_predictions,distinct from,1
+total_predictions,integrates,1
+total_predictions,independently deployable within,1
+total_predictions,manages,1
+total_predictions,combined with,1
+total_predictions,used within,1
+total_predictions,encapsulated within,1
+total_predictions,integrated into,1
+total_predictions,may expose,1
+total_predictions,serves as foundation for,1
+total_predictions,central modeling object in,1
+total_predictions,ensures,1
+total_predictions,integrates with,1
+total_predictions,accessed by,1
+total_predictions,toward,1
+total_predictions,operationalizes,1
+total_predictions,exchanges,1
+total_predictions,resides in,1
+total_predictions,defined in,1
+total_predictions,operated by,1
+total_predictions,has successor,1
+total_predictions,has predecessor,1
+total_predictions,exists between,1
+total_predictions,contains,1
+total_predictions,inherits from,1
+total_predictions,cannot link to,1
+total_predictions,can link to,1
+total_predictions,extends,1
+total_predictions,extendable by,1
+total_predictions,imported from,1
+total_predictions,available for,1
+total_predictions,exported to,1
+total_predictions,exported as,1
+total_predictions,synchronizes with,1
+total_predictions,created in,1
+total_predictions,maintained in,1
+total_predictions,synchronized to,1
+total_predictions,forms part of,1
+total_predictions,has vendor,1
+total_predictions,not classified as,1
+total_predictions,has responsible,1
+total_predictions,modeled using,1
+total_predictions,primary implementation of,1
+total_predictions,has category,1
+total_predictions,has version,1
+total_predictions,has cloud component,1
+total_predictions,has versioning,1
+total_predictions,uses,1
+total_predictions,bundles,1
+total_predictions,processes,1
+total_predictions,linked by,1
+total_predictions,modeled as,1
+total_predictions,provides or consumes,1
+total_predictions,involves,1
+total_predictions,interacts with,1
+total_predictions,occurs between,1
+total_predictions,versioned by,1
+total_predictions,not modeled as,1
+total_predictions,inherits responsibility from,1
+total_predictions,is standard for,1
+total_predictions,indicates,1
+total_predictions,has certification,1
+total_predictions,consumed by,1
+total_predictions,traceable to,1
+total_predictions,assigned at,1
+total_predictions,inferred via,1
+total_predictions,advised by,1
+total_predictions,improves,1
+total_predictions,structured by,1
+total_predictions,modeled within,1
+total_predictions,classifies,1
+total_predictions,is stable over time,1
+total_predictions,is industry agnostic,1
+total_predictions,defined by,1
+total_predictions,supplies,1
+total_predictions,is external organization,1
+novel_predictions,includes,69
+novel_predictions,supports,50
+novel_predictions,enables,20
+novel_predictions,linked to,20
+novel_predictions,affects,17
+novel_predictions,has attribute,14
+novel_predictions,represents,13
+novel_predictions,provides,11
+novel_predictions,aligned with,11
+novel_predictions,defines,10
+novel_predictions,assigned to,10
+novel_predictions,connected to,10
+novel_predictions,classified as,9
+novel_predictions,has characteristic,9
+novel_predictions,is type of,9
+novel_predictions,associated with,8
+novel_predictions,may include,8
+novel_predictions,impacts,8
+novel_predictions,consists of,8
+novel_predictions,implements,7
+novel_predictions,requires,7
+novel_predictions,connects,6
+novel_predictions,parent of,6
+novel_predictions,is element of,6
+novel_predictions,part of,5
+novel_predictions,documents,5
+novel_predictions,has type,5
+novel_predictions,includes attribute,5
+novel_predictions,identifies,5
+novel_predictions,realizes,5
+novel_predictions,used by,4
+novel_predictions,used for,4
+novel_predictions,distinguishes,4
+novel_predictions,describes,4
+novel_predictions,delivers,4
+novel_predictions,developed within,4
+novel_predictions,contributes to,4
+novel_predictions,structures,4
+novel_predictions,owned by,4
+novel_predictions,accountable for,4
+novel_predictions,may be,4
+novel_predictions,modeled separately if,4
+novel_predictions,focuses on,4
+novel_predictions,owns,4
+novel_predictions,independent of,3
+novel_predictions,used in,3
+novel_predictions,captures,3
+novel_predictions,serves as,3
+novel_predictions,models,3
+novel_predictions,assigned lifecycle,3
+novel_predictions,responsible for,3
+novel_predictions,consumes,3
+novel_predictions,affected by,3
+novel_predictions,has property,3
+novel_predictions,realized by,3
+novel_predictions,interdependent with,3
+novel_predictions,aligns,3
+novel_predictions,provides input for,3
+novel_predictions,forms,2
+novel_predictions,managed within,2
+novel_predictions,is self contained,2
+novel_predictions,equivalent to,2
+novel_predictions,drives,2
+novel_predictions,bridges,2
+novel_predictions,defined at,2
+novel_predictions,has subtype,2
+novel_predictions,subject to,2
+novel_predictions,developed by,2
+novel_predictions,interrelates with,2
+novel_predictions,supported by,2
+novel_predictions,applies to,2
+novel_predictions,modeled between,2
+novel_predictions,created by,2
+novel_predictions,depends on,2
+novel_predictions,related by,2
+novel_predictions,anchors,2
+novel_predictions,communicated across,2
+novel_predictions,divided into,2
+novel_predictions,enables traceability between,2
+novel_predictions,optimized by,1
+novel_predictions,distinct from,1
+novel_predictions,integrates,1
+novel_predictions,independently deployable within,1
+novel_predictions,manages,1
+novel_predictions,combined with,1
+novel_predictions,used within,1
+novel_predictions,encapsulated within,1
+novel_predictions,integrated into,1
+novel_predictions,may expose,1
+novel_predictions,serves as foundation for,1
+novel_predictions,central modeling object in,1
+novel_predictions,integrates with,1
+novel_predictions,accessed by,1
+novel_predictions,toward,1
+novel_predictions,operationalizes,1
+novel_predictions,exchanges,1
+novel_predictions,resides in,1
+novel_predictions,defined in,1
+novel_predictions,operated by,1
+novel_predictions,has successor,1
+novel_predictions,has predecessor,1
+novel_predictions,exists between,1
+novel_predictions,contains,1
+novel_predictions,inherits from,1
+novel_predictions,cannot link to,1
+novel_predictions,can link to,1
+novel_predictions,extends,1
+novel_predictions,extendable by,1
+novel_predictions,imported from,1
+novel_predictions,available for,1
+novel_predictions,exported to,1
+novel_predictions,exported as,1
+novel_predictions,synchronizes with,1
+novel_predictions,created in,1
+novel_predictions,maintained in,1
+novel_predictions,synchronized to,1
+novel_predictions,forms part of,1
+novel_predictions,has vendor,1
+novel_predictions,not classified as,1
+novel_predictions,has responsible,1
+novel_predictions,modeled using,1
+novel_predictions,primary implementation of,1
+novel_predictions,has category,1
+novel_predictions,has version,1
+novel_predictions,has cloud component,1
+novel_predictions,has versioning,1
+novel_predictions,uses,1
+novel_predictions,bundles,1
+novel_predictions,processes,1
+novel_predictions,linked by,1
+novel_predictions,modeled as,1
+novel_predictions,provides or consumes,1
+novel_predictions,involves,1
+novel_predictions,interacts with,1
+novel_predictions,occurs between,1
+novel_predictions,versioned by,1
+novel_predictions,not modeled as,1
+novel_predictions,inherits responsibility from,1
+novel_predictions,is standard for,1
+novel_predictions,indicates,1
+novel_predictions,has certification,1
+novel_predictions,consumed by,1
+novel_predictions,traceable to,1
+novel_predictions,assigned at,1
+novel_predictions,inferred via,1
+novel_predictions,advised by,1
+novel_predictions,structured by,1
+novel_predictions,modeled within,1
+novel_predictions,is stable over time,1
+novel_predictions,is industry agnostic,1
+novel_predictions,defined by,1
+novel_predictions,supplies,1
+novel_predictions,is external organization,1
+novel_predictions,ensures,1
+novel_predictions,classifies,1

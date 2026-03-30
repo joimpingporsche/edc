@@ -9,7 +9,9 @@ For each triple:
    - Generalize overly specific entities (e.g., "Customer" -> "External_User", "Employee" -> "Internal_User") only if supported by the text meaning.
    - Map Relationship to ONE canonical schema predicate from this list only:
 ["Child","Parent","Predecessor","RequiredBy","Requires","Successor","TechPlatform","affects","classifies","consists_of","consumes","defines","ensures","governed_by","improves","informs","is_similar_to","owned_by","protects","provides","realizes","regulates","requires","responsible_for","status_of","supported_by","supports","transmits","uses","versioned_as"]
-   - Keep direction consistent with the original meaning.
+   - CRITICAL — Do NOT reverse the semantic direction of the relation. The subject (Entity1) and object (Entity2) must remain the same as in the input. Never swap Entity1 and Entity2, and never choose a predicate whose meaning implicitly flips the direction. The predicate may be kept unchanged (if already canonical) or mapped to the closest canonical equivalent — but only if that equivalent preserves the original direction.
+     * Before choosing a canonical predicate, ask: "Does Entity1 [predicate] Entity2 mean the same thing as the original triple?" If not, choose a different predicate or DROP the triple.
+     * Example of a FORBIDDEN direction flip: [A, "usedFor", B] must NOT become [A, "uses", B]. "A usedFor B" means B is the purpose/user of A (B uses A), whereas "A uses B" means A is the actor using B — the semantic direction is opposite. The correct mapping would be [B, "uses", A] or drop the triple if no canonical predicate preserves the original direction with the same Entity1/Entity2 order.
 3) Do NOT invent new facts. Do NOT output anything that is not justified by the input triples.
 
 Output rules:
