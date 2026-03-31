@@ -1,204 +1,122 @@
 sample_id,doc_id,chunk_id,section_title,source_text_snippet,subject,predicate,object,reason_for_novelty,legacy_reason,human_label
-175|Data_Exchange|occursBetween|IT_Product,,,,"SECTION_TITLE: Structure Summary – Interface Fact Sheets in LeanIX
+175|Interface_Fact_Sheet|represents|Logical_Interface,,,,"SECTION_TITLE: Structure Summary – Interface Fact Sheets in LeanIX
 CONTENT:
 [
 {""section"": ""Introduction"", ""key_concept"": ""Interface Fact Sheet"", ""description__rule"": ""Object in LeanIX to model data exchange between IT Products"", ""examples"": ""—""},
 {""section"": ""Conceptual Overview"", ""key_concept"": ""Business-oriented modeling"", ""description__rule"": ""Focus on data flow, transfer type, frequency, and IT components"", ""examples"": ""—""},
-{""section"": ""Interface Creation"", ""key_concept"": ""Consumer modeling",Data_Exchange,occursBetween,IT_Product,unknown_relation,unknown_relation,
-17|Business_Architecture|combinedWith|Information_Systems_Architecture,,,,"SECTION_TITLE: Together, the Business Architecture and Information Systems Architecture form
+{""section"": ""Interface Creation"", ""key_concept"": ""Consumer modeling",Interface_Fact_Sheet,represents,Logical_Interface,unknown_relation,unknown_relation,
+38|IT_Product|documents|Compliance_Requirements,,,,"SECTION_TITLE: Purpose and Benefits
 CONTENT:
-the Business Architecture domain. Technology Architecture This layer supports the technical realization of applications. Applications from the Application Architecture require infrastructure for procurement, integration, and operation. Relevant objects include: • IT Product (Platform) • IT Component • Vendor • Tech Capability LLM-Ready Structure Summary Image Description: TOGAF-Based Architectur",Business_Architecture,combinedWith,Information_Systems_Architecture,unknown_relation,unknown_relation,
-2|Business_Capability|enables|Business_Aligned_IT_Landscape_Analysis,,,,"SECTION_TITLE: Structure Summary
+From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,documents,Compliance_Requirements,unknown_relation,unknown_relation,
+10|Digital_Solution|developedWithin|Agile_Release_Train,,,,"SECTION_TITLE: Characteristics of a Digital Solution
 CONTENT:
-Purpose and Benefits of Business Capabilities Role in Application Classification Business capabilities are used to determine whether a software-based system should be classified as a business application or merely a technical component. This classification is essential for maintaining a consistent and business-aligned IT landscape. Without a complete and validated capability map, it is difficult to analyze the IT landscape from a business perspective.",Business_Capability,enables,Business_Aligned_IT_Landscape_Analysis,unknown_relation,unknown_relation,
-216|Digital_Solution|linkedTo|Organizational_Unit,,,,"SECTION_TITLE: Modeling Guidelines
-CONTENT:
-A Digital Solution must follow the naming convention defined by the ART that owns it. This ensures consistency and traceability across the portfolio. Each Digital Solution must include at least one assigned IT Product. These IT Products represent the technical building blocks that deliver business functionality and are developed and maintained by agile teams within the ART.
-These IT Products represent the technical building blocks that deliver business",Digital_Solution,linkedTo,Organizational_Unit,unknown_relation,unknown_relation,
-52|Application|residesIn|Application_Architecture,,,,"SECTION_TITLE: Structure Summary: Interface Modeling in
-CONTENT:
-[
-{""section"": ""Context"", ""element"": ""Domain"", ""description"": ""Enterprise Architecture, SAFe, LeanIX""},
-{""section"": ""Context"", ""element"": ""Purpose"", ""description"": ""Visualize how interfaces connect applications and link application and data architecture""},
-{""section"": ""Core Concept"", ""element"": ""Interface"", ""description"": ""Logical connection between two applications for data exchange""},
-{""section"": ""Core Concept"", ""element"": ""Applic",Application,residesIn,Application_Architecture,unknown_relation,unknown_relation,
-43|Initiative|hasCharacteristic|Time_Bound,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""element"": ""Entity Type"", ""description"": ""Initiative""},
-{""element"": ""Core Purpose"", ""description"": ""Drives change and supports the realization of objectives""},
-{""element"": ""Characteristics"", ""description"": ""Time-bound, resource- intensive, architecture- relevant""},
-{""element"": ""Strategic Role"", ""description"": ""Operationalizes objectives and enables traceable execution""},
-{""element"": ""Stakeholders"", ""description"": ""Business Analysts, Enterprise Archite",Initiative,hasCharacteristic,Time_Bound,unknown_relation,unknown_relation,
-38|IT_Product|integratesWith|Enterprise_Tool,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,integratesWith,Enterprise_Tool,unknown_relation,unknown_relation,
-24|Information_Systems_Architecture|includes|Digital_Solution,,,,"SECTION_TITLE: Architecture Levels and Objects
-CONTENT:
-[
-{""togaf_layer"": ""Architecture Vision"", ""leanix_objects"": ""Objectives, Initiatives (Projects)"", ""notes"": ""Represents strategy and transformation""},
-{""togaf_layer"": ""Business Architecture"", ""leanix_objects"": ""Organization, Business Capability, Process"", ""notes"": ""Process and Organization modeled outside LeanIX""},
-{""togaf_layer"": ""Information Systems Architecture"", ""leanix_objects"": ""Digital Solution, IT Product (Application, Platform, Group",Information_Systems_Architecture,includes,Digital_Solution,unknown_relation,unknown_relation,
-216|IT_Product|developedBy|Agile_Team,,,,"SECTION_TITLE: Modeling Guidelines
+• Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).
+• Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.
+• Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by deliv",Digital_Solution,developedWithin,Agile_Release_Train,unknown_relation,unknown_relation,
+216|Digital_Solution|linkedTo|Processual_Unit,,,,"SECTION_TITLE: Modeling Guidelines
 CONTENT:
 A Digital Solution must follow the naming convention defined by the ART that owns it. This ensures consistency and traceability across the portfolio. Each Digital Solution must include at least one assigned IT Product. These IT Products represent the technical building blocks that deliver business functionality and are developed and maintained by agile teams within the ART.
-These IT Products represent the technical building blocks that deliver business",IT_Product,developedBy,Agile_Team,unknown_relation,unknown_relation,
-16|Application_Architecture|includes|Interface,,,,"SECTION_TITLE: Architecture Levels
+These IT Products represent the technical building blocks that deliver business",Digital_Solution,linkedTo,Processual_Unit,unknown_relation,unknown_relation,
+66|Parent_Child_Relation|structures|Organizational_Unit,,,,"SECTION_TITLE: Modeling Hierarchies with Parent/Child Relations in
 CONTENT:
-• Objectives • Initiatives (Projects) Business Architecture This layer includes the following objects:
-• Organization • Business Capability • Process Note: Except for Business Capabilities and their mappings, these elements are created and maintained outside of LeanIX as part of business process modeling.
-• Digital Solution • IT Product (Application, Platform, Group Application) • Interface These are part of the Application Architecture. Additionally:
-",Application_Architecture,includes,Interface,unknown_relation,unknown_relation,
-189|Initiative|connectedTo|Organization,,,,"SECTION_TITLE: 1. TOGAF® A – Architecture Vision (Top Section)
+LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.",Parent_Child_Relation,structures,Organizational_Unit,unknown_relation,unknown_relation,
+66|Parent_Child_Relation|structures|Complex_System,,,,"SECTION_TITLE: Modeling Hierarchies with Parent/Child Relations in
 CONTENT:
-• Elements: o Objective (pink box) o Initiative (pink box) • Relationship to Organization: o Both elements are connected to Organization via arrows labeled ""responsible / affected"".",Initiative,connectedTo,Organization,unknown_relation,unknown_relation,
-292|Technical_Capability|represents|Core_Function,,,,"SECTION_TITLE: Definition: Tech Capability
+LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.",Parent_Child_Relation,structures,Complex_System,unknown_relation,unknown_relation,
+66|Hierarchical_Dependency|existsBetween|Fact_Sheet,,,,"SECTION_TITLE: Modeling Hierarchies with Parent/Child Relations in
 CONTENT:
-A Technical Capability represents a functional classification of IT components based on what the technology enables. It describes the core function or purpose of a technology, such as a database, operating system, or server software. Unlike rapidly evolving technologies, the technical capability model remains relatively stable over time and is industry-agnostic.",Technical_Capability,represents,Core_Function,unknown_relation,unknown_relation,
-153|Technical_Architecture|includes|Software_Component,,,,"SECTION_TITLE: Technical Architecture
+LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.",Hierarchical_Dependency,existsBetween,Fact_Sheet,unknown_relation,unknown_relation,
+38|IT_Product|documents|Data_Protection_Requirements,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,documents,Data_Protection_Requirements,unknown_relation,unknown_relation,
+269|Initiative|linkedTo|Objective,,,,"SECTION_TITLE: Initiative Linkage
+CONTENT:
+• Initiatives must be time-bound and reflect the implementation of the Objective.
+• At least one initiative must be linked to each Objective.
+• This linkage ensures traceability from strategic intent to execution.",Initiative,linkedTo,Objective,unknown_relation,unknown_relation,
+38|IT_Product|documents|Security_Requirements,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,documents,Security_Requirements,unknown_relation,unknown_relation,
+213|IT_Product|operatedBy|Agile_Release_Train,,,,"SECTION_TITLE: Responsibility at the Process Organization Level
+CONTENT:
+Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios. Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet. • If the responsibility lies with a single portfolio—as is often ",IT_Product,operatedBy,Agile_Release_Train,unknown_relation,unknown_relation,
+153|IT_Component|linkedTo|Product,,,,"SECTION_TITLE: Technical Architecture
 CONTENT:
 • Software components • Platforms • Hosting type and provider (mandatory) On-Premises Architecture Model the following components:
 • Deployed software product • OS platforms (e.g., Windows, Linux) • Databases and DBMS platforms • Runtime environments (e.g., Tomcat) • Container platforms • Required services Ensure all components are documented in the correct version.
 • Only deployed software products need to be modeled manually.
-• For SaaS products, ",Technical_Architecture,includes,Software_Component,unknown_relation,unknown_relation,
-12|Digital_Solution|delivers|End_to_End_Value,,,,"SECTION_TITLE: Purpose and Benefits
+• For SaaS products, ",IT_Component,linkedTo,Product,unknown_relation,unknown_relation,
+11|IT_Product|developedWithin|Development_Value_Stream,,,,"SECTION_TITLE: Purpose and Benefits
 CONTENT:
-• A Digital Solution delivers end-to-end value to internal or external customers.
-• Customers do not purchase isolated features or capabilities—they seek complete solutions that fulfill their desired outcomes.
-• Digital Solutions enable organizations to align technical delivery with business strategy and customer needs.",Digital_Solution,delivers,End_to_End_Value,unknown_relation,unknown_relation,
+[
+{""section"": ""Definition"", ""element"": ""Digital Solution"", ""description"": ""Aconstruct composed of IT Products and potentially processes, methods, and organizational elements""},
+{""section"": ""Definition"", ""element"": ""IT Product"", ""description"": ""Application, service, or platform with supporting technologies""},
+{""section"": ""Composition"", ""element"": ""Modular Structure"", ""description"": ""Multiple IT Products form a Digital Solution""},
+{""section"": ""Compositi",IT_Product,developedWithin,Development_Value_Stream,unknown_relation,unknown_relation,
+165|Interface|connects|IT_Product,,,,"SECTION_TITLE: Introduction
+CONTENT:
+This document outlines the modeling guidelines for Interface Fact Sheets within the enterprise architecture framework at Porsche. It builds upon the PAG General Modeling Guidelines and provides specific instructions for creating and maintaining Interface Fact Sheets in LeanIX. The creation process follows the general fact sheet creation procedure described in ""How to Create a Fact Sheet."" Description In LeanIX, interfaces are modeled from a business-oriented ",Interface,connects,IT_Product,unknown_relation,unknown_relation,
+120|Component|linkedTo|Technical_Capability,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""field"": ""Name"", ""description"": ""Component name"", ""required"": """", ""controlled_vocabulary"": ""—"", ""notes"": ""—""},
+{""field"": ""Category"", ""description"": ""Type of component"", ""required"": """", ""controlled_vocabulary"": ""Hardware, IaaS, PaaS, SaaS, Service, Software"", ""notes"": ""—""},
+{""field"": ""Version"", ""description"": ""Major version only"", ""required"": """", ""controlled_vocabulary"": ""Format: X.x"", ""notes"": ""Minor/patch optional only if significant""},
+{""field"": ""De",Component,linkedTo,Technical_Capability,unknown_relation,unknown_relation,
+10|Digital_Solution|managedWithin|Portfolio,,,,"SECTION_TITLE: Characteristics of a Digital Solution
+CONTENT:
+• Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).
+• Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.
+• Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by deliv",Digital_Solution,managedWithin,Portfolio,unknown_relation,unknown_relation,
+285|Business_Process_Modeling|isElementOf|Business_Architecture,,,,"SECTION_TITLE: Purpose and Benefits of Business Process
+CONTENT:
+Modeling Strategic and Operational Insight Business process modeling is a key element of the business architecture. It helps identify: • Processes that are strategically or economically critical, • Processes that are under pressure to change due to transformation, regulation, or inefficiencies. This insight supports prioritization and investment decisions across business and IT.",Business_Process_Modeling,isElementOf,Business_Architecture,unknown_relation,unknown_relation,
+216|Digital_Solution|linkedTo|Organizational_Unit,,,,"SECTION_TITLE: Modeling Guidelines
+CONTENT:
+A Digital Solution must follow the naming convention defined by the ART that owns it. This ensures consistency and traceability across the portfolio. Each Digital Solution must include at least one assigned IT Product. These IT Products represent the technical building blocks that deliver business functionality and are developed and maintained by agile teams within the ART.
+These IT Products represent the technical building blocks that deliver business",Digital_Solution,linkedTo,Organizational_Unit,unknown_relation,unknown_relation,
+60|IT_Product|managedWithin|Portfolio,,,,"SECTION_TITLE: Responsibility at the Process Organization Level
+CONTENT:
+Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios. Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet. • If the responsibility lies with a single portfolio—as is often ",IT_Product,managedWithin,Portfolio,unknown_relation,unknown_relation,
+235|Child_Fact_Sheet|inheritsFrom|Parent_Fact_Sheet,,,,"SECTION_TITLE: Usage Guidelines
+CONTENT:
+• A Parent Fact Sheet represents a higher-level entity that logically contains or governs one or more Child Fact Sheets.
+• A Child Fact Sheet is a subordinate entity that inherits context or structure from its parent.",Child_Fact_Sheet,inheritsFrom,Parent_Fact_Sheet,unknown_relation,unknown_relation,
+120|Component|hasVersioning|Versioning,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""field"": ""Name"", ""description"": ""Component name"", ""required"": """", ""controlled_vocabulary"": ""—"", ""notes"": ""—""},
+{""field"": ""Category"", ""description"": ""Type of component"", ""required"": """", ""controlled_vocabulary"": ""Hardware, IaaS, PaaS, SaaS, Service, Software"", ""notes"": ""—""},
+{""field"": ""Version"", ""description"": ""Major version only"", ""required"": """", ""controlled_vocabulary"": ""Format: X.x"", ""notes"": ""Minor/patch optional only if significant""},
+{""field"": ""De",Component,hasVersioning,Versioning,unknown_relation,unknown_relation,
+175|Interface_Fact_Sheet|models|Data_Exchange,,,,"SECTION_TITLE: Structure Summary – Interface Fact Sheets in LeanIX
+CONTENT:
+[
+{""section"": ""Introduction"", ""key_concept"": ""Interface Fact Sheet"", ""description__rule"": ""Object in LeanIX to model data exchange between IT Products"", ""examples"": ""—""},
+{""section"": ""Conceptual Overview"", ""key_concept"": ""Business-oriented modeling"", ""description__rule"": ""Focus on data flow, transfer type, frequency, and IT components"", ""examples"": ""—""},
+{""section"": ""Interface Creation"", ""key_concept"": ""Consumer modeling",Interface_Fact_Sheet,models,Data_Exchange,unknown_relation,unknown_relation,
+60|IT_Product|developedWithin|Agile_Release_Train,,,,"SECTION_TITLE: Responsibility at the Process Organization Level
+CONTENT:
+Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios. Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet. • If the responsibility lies with a single portfolio—as is often ",IT_Product,developedWithin,Agile_Release_Train,unknown_relation,unknown_relation,
+117|IT_Component|linkedTo|Initiative,,,,"SECTION_TITLE: Initiatives
+CONTENT:
+IT components can be linked to business or technical initiatives. There are currently no modeling rules for this linkage.",IT_Component,linkedTo,Initiative,unknown_relation,unknown_relation,
 158|Digital_Solution|alignedWith|Business_Process,,,,"SECTION_TITLE: Structure Summary
 CONTENT:
 [
 {""section"": ""Category"", ""attribute__concept"": ""Application / Platform / Group App"", ""description"": ""Defines the type of IT Product"", ""notes__examples"": ""CATIA = Application""},
 {""section"": ""Naming"", ""attribute__concept"": ""Contextual, user-friendly"", ""description"": ""Should reflect business use and be unique"", ""notes__examples"": ""\""HR- Manager\""""},
 {""section"": ""Versioning"", ""attribute__concept"": ""Release"", ""description"": ""Functional versioning, not techni",Digital_Solution,alignedWith,Business_Process,unknown_relation,unknown_relation,
-105|IT_Component_Fact_Sheet|includesAttribute|Description,,,,"SECTION_TITLE: Creating a new IT component
-CONTENT:
-When a product, tool, or software is identified as a technical IT component, it must be modeled using an IT Component Fact Sheet. Required attributes and relations: • Category • Version (major only) • Description (in English) • Lifecycle • Vendor assignment",IT_Component_Fact_Sheet,includesAttribute,Description,unknown_relation,unknown_relation,
-6|Business_Capability|distinctFrom|Business_Process,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""section"": ""Application Classification"", ""key_concept"": ""Capability ↔ System Type"", ""description"": ""Distinguishes business application vs. technical component""},
-{""section"": ""Conceptual Separation"", ""key_concept"": ""Capability ≠ Process"", ""description"": ""\""What\"" vs. \""How\"" distinction""},
-{""section"": ""Analytical Use"", ""key_concept"": ""Capability → IT Landscape"", ""description"": ""Identifies gaps, overlaps, and optimization potential""},
-{""section"": ""Lifec",Business_Capability,distinctFrom,Business_Process,unknown_relation,unknown_relation,
-5|Business_Capability|alignedWith|Corporate_Goal,,,,"SECTION_TITLE: Lifecycle and Strategic Planning
-CONTENT:
-• Lifecycle tracking of application support per capability.
-• Planning of transitions and investments in business units or portfolios.
-• Strategic alignment reporting by linking capabilities to applications and corporate goals.",Business_Capability,alignedWith,Corporate_Goal,unknown_relation,unknown_relation,
-16|Business_Architecture|includes|Organization,,,,"SECTION_TITLE: Architecture Levels
-CONTENT:
-• Objectives • Initiatives (Projects) Business Architecture This layer includes the following objects:
-• Organization • Business Capability • Process Note: Except for Business Capabilities and their mappings, these elements are created and maintained outside of LeanIX as part of business process modeling.
-• Digital Solution • IT Product (Application, Platform, Group Application) • Interface These are part of the Application Architecture. Additionally:
-",Business_Architecture,includes,Organization,unknown_relation,unknown_relation,
-38|Compliance|includes|Risk_Management_Obligations,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",Compliance,includes,Risk_Management_Obligations,unknown_relation,unknown_relation,
-42|Initiative|contributesTo|Objective,,,,"SECTION_TITLE: Definition: Initiative
-CONTENT:
-An Initiative represents a targeted, time-bound effort that drives change within the organization. It requires dedicated resources, impacts the enterprise architecture, and contributes directly to the achievement of one or more defined objectives. Initiatives serve as the operational link between strategic intent and execution, enabling measurable progress toward business goals.",Initiative,contributesTo,Objective,unknown_relation,unknown_relation,
-131|IT_Product|modeledSeparatelyIf|Involves_Different_Organizational_Responsibilities,,,,"SECTION_TITLE: Modeling Rule: When to Create a Separate IT Product
-CONTENT:
-Even if the same software is used across departments (e.g., CATIA, MATLAB), a separate IT Product must be modeled if: • It is used in a different business or logical context • It processes different types of data, possibly with different classifications • It involves different organizational responsibilities • It runs on different infrastructures (e.g., cloud vs. on-prem, Windows vs. Linux)",IT_Product,modeledSeparatelyIf,Involves_Different_Organizational_Responsibilities,unknown_relation,unknown_relation,
-165|Interface|represents|Data_Exchange,,,,"SECTION_TITLE: Introduction
-CONTENT:
-This document outlines the modeling guidelines for Interface Fact Sheets within the enterprise architecture framework at Porsche. It builds upon the PAG General Modeling Guidelines and provides specific instructions for creating and maintaining Interface Fact Sheets in LeanIX. The creation process follows the general fact sheet creation procedure described in ""How to Create a Fact Sheet."" Description In LeanIX, interfaces are modeled from a business-oriented ",Interface,represents,Data_Exchange,unknown_relation,unknown_relation,
-3|Business_Process|describes|Execution_of_Business_Capability,,,,"SECTION_TITLE: Differentiation from Business Processes
-CONTENT:
-Business capabilities and business processes serve distinct purposes: • Capabilities describe what the organization must be able to do. • Processes describe how those capabilities are executed. While overlaps may occur, the abstraction level and modeling intent are fundamentally different.",Business_Process,describes,Execution_of_Business_Capability,unknown_relation,unknown_relation,
-153|Technical_Architecture|includes|Container_Platform,,,,"SECTION_TITLE: Technical Architecture
-CONTENT:
-• Software components • Platforms • Hosting type and provider (mandatory) On-Premises Architecture Model the following components:
-• Deployed software product • OS platforms (e.g., Windows, Linux) • Databases and DBMS platforms • Runtime environments (e.g., Tomcat) • Container platforms • Required services Ensure all components are documented in the correct version.
-• Only deployed software products need to be modeled manually.
-• For SaaS products, ",Technical_Architecture,includes,Container_Platform,unknown_relation,unknown_relation,
-37|Platform|servesAsFoundationFor|Application,,,,"SECTION_TITLE: Definition: IT Product
-CONTENT:
-At Porsche, an IT Product is classified as either an Application or a Platform. Regardless of category, each IT Product must have clearly defined ownership and accountability. Applikationen An Application is an IT Product that delivers specific business functionality to support business processes—for example, by automating process steps. Applications contribute to the realization of business capabilities and are aligned with the value creation proce",Platform,servesAsFoundationFor,Application,unknown_relation,unknown_relation,
-209|Vendor|relatedBy|Parent_Child_Relationship,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""section"": ""Authorization"", ""field__concept"": ""User Role"", ""description__instruction"": ""Only administrators can create vendors""},
-{""section"": ""Creation Process"", ""field__concept"": ""Automatic vs. Manual"", ""description__instruction"": ""Vendors are usually created during IT Component modeling; otherwise via Help Center request""},
-{""section"": ""Vendor Attributes"", ""field__concept"": ""Name"", ""description__instruction"": ""Full legal company name including legal",Vendor,relatedBy,Parent_Child_Relationship,unknown_relation,unknown_relation,
-175|Interface_Fact_Sheet|createdBy|Consuming_IT_Product,,,,"SECTION_TITLE: Structure Summary – Interface Fact Sheets in LeanIX
-CONTENT:
-[
-{""section"": ""Introduction"", ""key_concept"": ""Interface Fact Sheet"", ""description__rule"": ""Object in LeanIX to model data exchange between IT Products"", ""examples"": ""—""},
-{""section"": ""Conceptual Overview"", ""key_concept"": ""Business-oriented modeling"", ""description__rule"": ""Focus on data flow, transfer type, frequency, and IT components"", ""examples"": ""—""},
-{""section"": ""Interface Creation"", ""key_concept"": ""Consumer modeling",Interface_Fact_Sheet,createdBy,Consuming_IT_Product,unknown_relation,unknown_relation,
-191|ADR|connectedTo|Organization,,,,"SECTION_TITLE: 3. TOGAF® C – Technical Architecture (Bottom Section)
-CONTENT:
-• Elements: o IT Component (pink box) o Tech Capability (pink box) o ADR (pink box) • Relationship to Organization: o All elements are connected to Organization via arrows labeled ""responsible / affected"".",ADR,connectedTo,Organization,unknown_relation,unknown_relation,
-105|IT_Component_Fact_Sheet|includesAttribute|Category,,,,"SECTION_TITLE: Creating a new IT component
-CONTENT:
-When a product, tool, or software is identified as a technical IT component, it must be modeled using an IT Component Fact Sheet. Required attributes and relations: • Category • Version (major only) • Description (in English) • Lifecycle • Vendor assignment",IT_Component_Fact_Sheet,includesAttribute,Category,unknown_relation,unknown_relation,
-38|Compliance|includes|Information_Security_Standards,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",Compliance,includes,Information_Security_Standards,unknown_relation,unknown_relation,
-120|Component|hasCategory|Component_Type,,,,"SECTION_TITLE: Structure Summary
+120|Component|hasCloudComponent|Cloud_Component,,,,"SECTION_TITLE: Structure Summary
 CONTENT:
 [
 {""field"": ""Name"", ""description"": ""Component name"", ""required"": """", ""controlled_vocabulary"": ""—"", ""notes"": ""—""},
 {""field"": ""Category"", ""description"": ""Type of component"", ""required"": """", ""controlled_vocabulary"": ""Hardware, IaaS, PaaS, SaaS, Service, Software"", ""notes"": ""—""},
 {""field"": ""Version"", ""description"": ""Major version only"", ""required"": """", ""controlled_vocabulary"": ""Format: X.x"", ""notes"": ""Minor/patch optional only if significant""},
-{""field"": ""De",Component,hasCategory,Component_Type,unknown_relation,unknown_relation,
-158|Digital_Solution|alignedWith|Business_Capability,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""section"": ""Category"", ""attribute__concept"": ""Application / Platform / Group App"", ""description"": ""Defines the type of IT Product"", ""notes__examples"": ""CATIA = Application""},
-{""section"": ""Naming"", ""attribute__concept"": ""Contextual, user-friendly"", ""description"": ""Should reflect business use and be unique"", ""notes__examples"": ""\""HR- Manager\""""},
-{""section"": ""Versioning"", ""attribute__concept"": ""Release"", ""description"": ""Functional versioning, not techni",Digital_Solution,alignedWith,Business_Capability,unknown_relation,unknown_relation,
-52|Interface|bridges|Application_Architecture,,,,"SECTION_TITLE: Structure Summary: Interface Modeling in
-CONTENT:
-[
-{""section"": ""Context"", ""element"": ""Domain"", ""description"": ""Enterprise Architecture, SAFe, LeanIX""},
-{""section"": ""Context"", ""element"": ""Purpose"", ""description"": ""Visualize how interfaces connect applications and link application and data architecture""},
-{""section"": ""Core Concept"", ""element"": ""Interface"", ""description"": ""Logical connection between two applications for data exchange""},
-{""section"": ""Core Concept"", ""element"": ""Applic",Interface,bridges,Application_Architecture,unknown_relation,unknown_relation,
-266|Objective|assignedTo|Strategic_Level,,,,"SECTION_TITLE: Specific Modelling Rules and Best
-CONTENT:
-Practices for an Objective Purpose An Objective Fact Sheet is used to define and document strategic goals within the enterprise architecture. It serves as a semantic anchor for aligning business and IT strategy across different organizational levels. Strategic Scope Each Objective must be assigned to one of the following strategic levels: • Enterprise Level – for company-wide strategic alignment (preferred in classical EAM). • Portfolio L",Objective,assignedTo,Strategic_Level,unknown_relation,unknown_relation,
-285|Business_Process_Modeling|identifies|Operationally_Critical_Process,,,,"SECTION_TITLE: Purpose and Benefits of Business Process
-CONTENT:
-Modeling Strategic and Operational Insight Business process modeling is a key element of the business architecture. It helps identify: • Processes that are strategically or economically critical, • Processes that are under pressure to change due to transformation, regulation, or inefficiencies. This insight supports prioritization and investment decisions across business and IT.",Business_Process_Modeling,identifies,Operationally_Critical_Process,unknown_relation,unknown_relation,
-0|Business_Capability|usedBy|Enterprise_Architect,,,,"SECTION_TITLE: Definition: Business Capability
-CONTENT:
-A business capability defines what an organization must be able to do to fulfill its mission and deliver value. It represents a stable, organization-wide function that is independent of specific processes, systems, or organizational structures. Enterprise architects use business capabilities to: • Capture cross-functional needs across business units. • Provide a common language for strategic planning and transformation.
-• Provide a common l",Business_Capability,usedBy,Enterprise_Architect,unknown_relation,unknown_relation,
-220|Initiative|drives|Digital_Solution,,,,"SECTION_TITLE: Semantic Relationships Captured
-CONTENT:
-• Initiative → Digital Solution: Indicates that a business initiative affects or drives the creation of a digital solution.
-• Digital Solution → IT Product: A digital solution is composed of one or more IT products.
-• Digital Solution → Business Capability: The solution impacts or enables specific business capabilities.
-• Digital Solution → Organization: Organizational units are responsible for or consume the digital solution.
-• TOGAF® Alig",Initiative,drives,Digital_Solution,unknown_relation,unknown_relation,
-266|Objective_Fact_Sheet|aligns|Business_Strategy,,,,"SECTION_TITLE: Specific Modelling Rules and Best
-CONTENT:
-Practices for an Objective Purpose An Objective Fact Sheet is used to define and document strategic goals within the enterprise architecture. It serves as a semantic anchor for aligning business and IT strategy across different organizational levels. Strategic Scope Each Objective must be assigned to one of the following strategic levels: • Enterprise Level – for company-wide strategic alignment (preferred in classical EAM). • Portfolio L",Objective_Fact_Sheet,aligns,Business_Strategy,unknown_relation,unknown_relation,
-29|IT_Component|usedWithin|Technical_Platform,,,,"SECTION_TITLE: Purpose and benefits
-CONTENT:
-[
-{""field"": ""Entity"", ""content"": ""IT Component""},
-{""field"": ""Definition"", ""content"": ""Atechnical building block of an IT product, independent of business logic, sourced from vendors or developed in-house.""},
-{""field"": ""Purpose"", ""content"": ""Enables organizations to run, maintain, and change IT products.""},
-{""field"": ""Usage Context"", ""content"": ""Used within technical platforms or directly in IT products.""},
-{""field"": ""Key Benefits"", ""content"": ""Lifecyc",IT_Component,usedWithin,Technical_Platform,unknown_relation,unknown_relation,
-191|IT_Component|connectedTo|Organization,,,,"SECTION_TITLE: 3. TOGAF® C – Technical Architecture (Bottom Section)
-CONTENT:
-• Elements: o IT Component (pink box) o Tech Capability (pink box) o ADR (pink box) • Relationship to Organization: o All elements are connected to Organization via arrows labeled ""responsible / affected"".",IT_Component,connectedTo,Organization,unknown_relation,unknown_relation,
+{""field"": ""De",Component,hasCloudComponent,Cloud_Component,unknown_relation,unknown_relation,
 81|Business_Process|importedFrom|Process_Modeling_Tool,,,,"SECTION_TITLE: System Integration: LeanIX ↔ BIC
 CONTENT:
 To support enterprise architecture modeling, especially the business architecture layer, LeanIX relies on the availability of active business processes. For this reason, a synchronization interface is in place: Process Import from BIC to LeanIX • All active business processes modeled in BIC are automatically imported into LeanIX. • These processes are available in LeanIX for reference and linkage to other architectural elements (e.g., appl",Business_Process,importedFrom,Process_Modeling_Tool,unknown_relation,unknown_relation,
-28|IT_Component|classifiedAs|Custom_Developed_Software,,,,"SECTION_TITLE: Definition: IT Component
-CONTENT:
-An IT Component is a foundational element within the technical architecture of an IT product. It operates independently of any business logic or context. IT components can either be: • Commercial off-the-shelf (COTS) products acquired from external vendors, or • Custom-developed software created in-house. They serve as the technical building blocks that enable the functionality and operation of IT products.
-They serve as the technical building blo",IT_Component,classifiedAs,Custom_Developed_Software,unknown_relation,unknown_relation,
-38|Compliance|includes|Corporate_Due_Diligence,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",Compliance,includes,Corporate_Due_Diligence,unknown_relation,unknown_relation,
 220|Digital_Solution|consumedBy|Organization,,,,"SECTION_TITLE: Semantic Relationships Captured
 CONTENT:
 • Initiative → Digital Solution: Indicates that a business initiative affects or drives the creation of a digital solution.
@@ -206,248 +124,335 @@ CONTENT:
 • Digital Solution → Business Capability: The solution impacts or enables specific business capabilities.
 • Digital Solution → Organization: Organizational units are responsible for or consume the digital solution.
 • TOGAF® Alig",Digital_Solution,consumedBy,Organization,unknown_relation,unknown_relation,
-78|Business_Capability|associatedWith|Fact_Sheet,,,,"SECTION_TITLE: Structure Summary
+115|IT_Component|linkedTo|IT_Product,,,,"SECTION_TITLE: IT Product Assignment
+CONTENT:
+Each IT component must be linked to one or more IT Products. Best practice: Assign components from the IT Product perspective.",IT_Component,linkedTo,IT_Product,unknown_relation,unknown_relation,
+6|Business_Capability|alignedWith|Strategy,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""section"": ""Application Classification"", ""key_concept"": ""Capability ↔ System Type"", ""description"": ""Distinguishes business application vs. technical component""},
+{""section"": ""Conceptual Separation"", ""key_concept"": ""Capability ≠ Process"", ""description"": ""\""What\"" vs. \""How\"" distinction""},
+{""section"": ""Analytical Use"", ""key_concept"": ""Capability → IT Landscape"", ""description"": ""Identifies gaps, overlaps, and optimization potential""},
+{""section"": ""Lifec",Business_Capability,alignedWith,Strategy,unknown_relation,unknown_relation,
+98|IT_Product|developedBy|Agile_Release_Train,,,,"SECTION_TITLE: Responsibility at the Process Organization Level
+CONTENT:
+Many IT products and applications at Porsche are developed and operated by Agile Release Trains (ARTs). Others are managed within specific portfolios. Assignment Guidelines • If an ART is responsible for a product (or any other relevant Fact Sheet type), this responsibility must be explicitly documented in LeanIX by assigning the corresponding ART Fact Sheet. • If the responsibility lies with a single portfolio—as is often ",IT_Product,developedBy,Agile_Release_Train,unknown_relation,unknown_relation,
+165|Interface|involves|IT_Product,,,,"SECTION_TITLE: Introduction
+CONTENT:
+This document outlines the modeling guidelines for Interface Fact Sheets within the enterprise architecture framework at Porsche. It builds upon the PAG General Modeling Guidelines and provides specific instructions for creating and maintaining Interface Fact Sheets in LeanIX. The creation process follows the general fact sheet creation procedure described in ""How to Create a Fact Sheet."" Description In LeanIX, interfaces are modeled from a business-oriented ",Interface,involves,IT_Product,unknown_relation,unknown_relation,
+96|Organizational_Responsibility|definedAt|Organizational_Structure_Level,,,,"SECTION_TITLE: Organizational Responsibilities
+CONTENT:
+Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This responsibility can be defined at two levels: • Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility. At least one form of respon",Organizational_Responsibility,definedAt,Organizational_Structure_Level,unknown_relation,unknown_relation,
+209|Vendor|linkedTo|IT_Component,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""section"": ""Authorization"", ""field__concept"": ""User Role"", ""description__instruction"": ""Only administrators can create vendors""},
+{""section"": ""Creation Process"", ""field__concept"": ""Automatic vs. Manual"", ""description__instruction"": ""Vendors are usually created during IT Component modeling; otherwise via Help Center request""},
+{""section"": ""Vendor Attributes"", ""field__concept"": ""Name"", ""description__instruction"": ""Full legal company name including legal",Vendor,linkedTo,IT_Component,unknown_relation,unknown_relation,
+38|IT_Product|integratesWith|Enterprise_Tool,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,integratesWith,Enterprise_Tool,unknown_relation,unknown_relation,
+120|Component|linkedTo|IT_Product,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""field"": ""Name"", ""description"": ""Component name"", ""required"": """", ""controlled_vocabulary"": ""—"", ""notes"": ""—""},
+{""field"": ""Category"", ""description"": ""Type of component"", ""required"": """", ""controlled_vocabulary"": ""Hardware, IaaS, PaaS, SaaS, Service, Software"", ""notes"": ""—""},
+{""field"": ""Version"", ""description"": ""Major version only"", ""required"": """", ""controlled_vocabulary"": ""Format: X.x"", ""notes"": ""Minor/patch optional only if significant""},
+{""field"": ""De",Component,linkedTo,IT_Product,unknown_relation,unknown_relation,
+10|Agile_Team|partOf|Development_Value_Stream,,,,"SECTION_TITLE: Characteristics of a Digital Solution
+CONTENT:
+• Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).
+• Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.
+• Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by deliv",Agile_Team,partOf,Development_Value_Stream,unknown_relation,unknown_relation,
+216|Digital_Solution|linkedTo|Business_Capability,,,,"SECTION_TITLE: Modeling Guidelines
+CONTENT:
+A Digital Solution must follow the naming convention defined by the ART that owns it. This ensures consistency and traceability across the portfolio. Each Digital Solution must include at least one assigned IT Product. These IT Products represent the technical building blocks that deliver business functionality and are developed and maintained by agile teams within the ART.
+These IT Products represent the technical building blocks that deliver business",Digital_Solution,linkedTo,Business_Capability,unknown_relation,unknown_relation,
+92|IT_Product|linkedTo|IT_Component,,,,"SECTION_TITLE: General Modeling Rules
+CONTENT:
+[
+{""field"": ""Section Title"", ""content"": ""Interface Fact Sheet Modeling Guideline""},
+{""field"": ""Purpose"", ""content"": ""To guide users in distinguishing between IT Components and IT Products in LeanIX modeling.""},
+{""field"": ""Target Roles"", ""content"": ""Enterprise Architects, Business Analysts, Business Stakeholders""},
+{""field"": ""Key Concepts"", ""content"": ""IT Component, IT Product, Technical Architecture, Vendor Lifecycle, Modeling Criteria""},
+{""field"": ",IT_Product,linkedTo,IT_Component,unknown_relation,unknown_relation,
+10|Digital_Solution|developedWithin|Agile_Team,,,,"SECTION_TITLE: Characteristics of a Digital Solution
+CONTENT:
+• Consists of IT Products Each IT Product is an application, business service, or business platform, including its associated technologies. These are delivered to internal users (employees) and/or external users (customers).
+• Supports Business Capabilities IT Products enable business capabilities, processes, and data entities.
+• Enables Operational Value Streams (OVS) Digital Solutions are designed to support and enhance OVS by deliv",Digital_Solution,developedWithin,Agile_Team,unknown_relation,unknown_relation,
+293|IT|alignedWith|Business_Strategy,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
+• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
+• Bu",IT,alignedWith,Business_Strategy,unknown_relation,unknown_relation,
+120|Component|assignedLifecycle|Lifecycle,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""field"": ""Name"", ""description"": ""Component name"", ""required"": """", ""controlled_vocabulary"": ""—"", ""notes"": ""—""},
+{""field"": ""Category"", ""description"": ""Type of component"", ""required"": """", ""controlled_vocabulary"": ""Hardware, IaaS, PaaS, SaaS, Service, Software"", ""notes"": ""—""},
+{""field"": ""Version"", ""description"": ""Major version only"", ""required"": """", ""controlled_vocabulary"": ""Format: X.x"", ""notes"": ""Minor/patch optional only if significant""},
+{""field"": ""De",Component,assignedLifecycle,Lifecycle,unknown_relation,unknown_relation,
+216|IT_Product|developedBy|Agile_Team,,,,"SECTION_TITLE: Modeling Guidelines
+CONTENT:
+A Digital Solution must follow the naming convention defined by the ART that owns it. This ensures consistency and traceability across the portfolio. Each Digital Solution must include at least one assigned IT Product. These IT Products represent the technical building blocks that deliver business functionality and are developed and maintained by agile teams within the ART.
+These IT Products represent the technical building blocks that deliver business",IT_Product,developedBy,Agile_Team,unknown_relation,unknown_relation,
+175|Logical_Interface|realizedBy|Technical_IT_Product,,,,"SECTION_TITLE: Structure Summary – Interface Fact Sheets in LeanIX
+CONTENT:
+[
+{""section"": ""Introduction"", ""key_concept"": ""Interface Fact Sheet"", ""description__rule"": ""Object in LeanIX to model data exchange between IT Products"", ""examples"": ""—""},
+{""section"": ""Conceptual Overview"", ""key_concept"": ""Business-oriented modeling"", ""description__rule"": ""Focus on data flow, transfer type, frequency, and IT components"", ""examples"": ""—""},
+{""section"": ""Interface Creation"", ""key_concept"": ""Consumer modeling",Logical_Interface,realizedBy,Technical_IT_Product,unknown_relation,unknown_relation,
+152|Process|linkedTo|Business_Capability,,,,"SECTION_TITLE: Business Architecture
+CONTENT:
+• Digital Solution (if developed under SAFe/ART) • Business Capabilities • Processes (via BIC-LeanIX sync only) Digital Solution
+• If the product is part of an Agile Release Train (ART), link it to the corresponding Digital Solution.
+• If the required Digital Solution is missing, request it from the responsible Program Management team.
+• Always set the Support Type to indicate how the product supports the capability.
+• Manual linking is not allowed.",Process,linkedTo,Business_Capability,unknown_relation,unknown_relation,
+38|IT_Product|documents|Governance_Requirements,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,documents,Governance_Requirements,unknown_relation,unknown_relation,
+81|Business_Process|associatedWith|Application,,,,"SECTION_TITLE: System Integration: LeanIX ↔ BIC
+CONTENT:
+To support enterprise architecture modeling, especially the business architecture layer, LeanIX relies on the availability of active business processes. For this reason, a synchronization interface is in place: Process Import from BIC to LeanIX • All active business processes modeled in BIC are automatically imported into LeanIX. • These processes are available in LeanIX for reference and linkage to other architectural elements (e.g., appl",Business_Process,associatedWith,Application,unknown_relation,unknown_relation,
+158|Digital_Solution|alignedWith|Business_Capability,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""section"": ""Category"", ""attribute__concept"": ""Application / Platform / Group App"", ""description"": ""Defines the type of IT Product"", ""notes__examples"": ""CATIA = Application""},
+{""section"": ""Naming"", ""attribute__concept"": ""Contextual, user-friendly"", ""description"": ""Should reflect business use and be unique"", ""notes__examples"": ""\""HR- Manager\""""},
+{""section"": ""Versioning"", ""attribute__concept"": ""Release"", ""description"": ""Functional versioning, not techni",Digital_Solution,alignedWith,Business_Capability,unknown_relation,unknown_relation,
+293|Capability_Model|usedBy|Internal_User,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
+• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
+• Bu",Capability_Model,usedBy,Internal_User,unknown_relation,unknown_relation,
+243|IT_Product|linkedTo|Process,,,,"SECTION_TITLE: Interface and Impact Modeling
+CONTENT:
+• Focus on identifying actual interfaces and points of impact.
+• In most cases, assigning only the directly affected IT products is sufficient.
+• If IT Product fact sheets are properly maintained, indirect impacts (e.g. on business capabilities, IT components, or processes) can be inferred via the linked IT products.",IT_Product,linkedTo,Process,unknown_relation,unknown_relation,
+37|Platform|consists_of|Platform,,,,"SECTION_TITLE: Definition: IT Product
+CONTENT:
+At Porsche, an IT Product is classified as either an Application or a Platform. Regardless of category, each IT Product must have clearly defined ownership and accountability. Applikationen An Application is an IT Product that delivers specific business functionality to support business processes—for example, by automating process steps. Applications contribute to the realization of business capabilities and are aligned with the value creation proce",Platform,consists_of,Platform,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+158|IT_Product|classifies|Group_App,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""section"": ""Category"", ""attribute__concept"": ""Application / Platform / Group App"", ""description"": ""Defines the type of IT Product"", ""notes__examples"": ""CATIA = Application""},
+{""section"": ""Naming"", ""attribute__concept"": ""Contextual, user-friendly"", ""description"": ""Should reflect business use and be unique"", ""notes__examples"": ""\""HR- Manager\""""},
+{""section"": ""Versioning"", ""attribute__concept"": ""Release"", ""description"": ""Functional versioning, not techni",IT_Product,classifies,Group_App,entity_mismatch,known_relation_but_object_not_allowed,
+21|Technology_Architecture|consists_of|Technical_Infrastructure,,,,"SECTION_TITLE: Technology Architecture (TOGAF® D)
+CONTENT:
+• IT Component (Color: Dark Blue) • Vendor (Color: Teal) • Tech Capability (Color: Light Green) Describes the technical infrastructure and supporting technology components.",Technology_Architecture,consists_of,Technical_Infrastructure,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+293|Capability_Model|provides|Transparency,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
+• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
+• Bu",Capability_Model,provides,Transparency,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+121|Initiative|affects|Business_Architecture_Element,,,,"SECTION_TITLE: 1. TOGAF® A – Architecture Vision
+CONTENT:
+• Element: Initiative (magenta box) • Relationship: An arrow labeled ""impact on"" connects the Initiative to elements in the Business Architecture layer, indicating that initiatives influence business structures and requirements.",Initiative,affects,Business_Architecture_Element,entity_mismatch,known_relation_but_object_not_allowed,
+123|Tech_Capability|realizes|IT_Component,,,,"SECTION_TITLE: 3. TOGAF® C – Technical Architecture
+CONTENT:
+• Elements: o IT Component (green box) o Tech Capability (magenta box) • Relationship: o Tech Capability → ""realize"" → IT Component This shows that technical capabilities are realized through specific IT components.",Tech_Capability,realizes,IT_Component,direction_mismatch,known_relation_but_subject_and_object_not_allowed,
+106|IaaS|classifies|IT_Component,,,,"SECTION_TITLE: IT Component Categories
+CONTENT:
+[
+{""category"": ""Hardware"", ""description"": ""Physical IT infrastructure"", ""examples"": ""IBM z15, HP ProLiant DL560""},
+{""category"": ""IaaS"", ""description"": ""Virtualized infrastructure"", ""examples"": ""AWS EC2, Azure VMs""},
+{""category"": ""PaaS"", ""description"": ""Cloud platforms for development"", ""examples"": ""Google App Engine, SAP BTP""},
+{""category"": ""SaaS"", ""description"": ""Subscription-based software"", ""examples"": ""Salesforce, LeanIX""},
+{""category"": ""Servic",IaaS,classifies,IT_Component,entity_mismatch,known_relation_but_object_not_allowed,
+153|Technical_Architecture|consists_of|Required_Service,,,,"SECTION_TITLE: Technical Architecture
+CONTENT:
+• Software components • Platforms • Hosting type and provider (mandatory) On-Premises Architecture Model the following components:
+• Deployed software product • OS platforms (e.g., Windows, Linux) • Databases and DBMS platforms • Runtime environments (e.g., Tomcat) • Container platforms • Required services Ensure all components are documented in the correct version.
+• Only deployed software products need to be modeled manually.
+• For SaaS products, ",Technical_Architecture,consists_of,Required_Service,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+20|Digital_Solution|realizes|Business_Capability,,,,"SECTION_TITLE: Information Systems Architecture (TOGAF® C)
+CONTENT:
+Application Architecture • Digital Solution (Color: Red) • IT Product (Color: Dark Red) • Interface (Color: Yellow) Information/Data Architecture • Information Object (Color: Purple) Represents the implementation of business capabilities through applications and data structures.",Digital_Solution,realizes,Business_Capability,relation_mismatch,known_relation_but_subject_and_object_not_allowed,
+58|Organizational_Responsibility|classifies|Functional_Responsibility,,,,"SECTION_TITLE: Organizational Responsibilities
+CONTENT:
+Each Fact Sheet in LeanIX must include an assignment of organizational responsibility. This responsibility can be defined at two levels: • Organizational Structure Level (e.g., departments, business units) • Process Organization Level (e.g., Agile Release Trains, portfolios) For certain Fact Sheet types, a distinction may also be made between functional (business) responsibility and technical (IT) responsibility. At least one form of respon",Organizational_Responsibility,classifies,Functional_Responsibility,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+18|Initiative|realizes|Strategic_Goal,,,,"SECTION_TITLE: Architecture Vision (TOGAF® A)
+CONTENT:
+• Objective (Color: Pink) • Initiative (Color: Purple) Represents strategic goals and transformation initiatives.",Initiative,realizes,Strategic_Goal,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+12|Digital_Solution|provides|End_to_End_Value,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+• A Digital Solution delivers end-to-end value to internal or external customers.
+• Customers do not purchase isolated features or capabilities—they seek complete solutions that fulfill their desired outcomes.
+• Digital Solutions enable organizations to align technical delivery with business strategy and customer needs.",Digital_Solution,provides,End_to_End_Value,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+219|Digital_Solution|affects|Initiative,,,,"SECTION_TITLE: Structural Overview
+CONTENT:
+The diagram is divided into two main sections, each enclosed in a yellow frame: Upper Section • Contains a pink rectangle labeled ""Initiative"" • Connected via a labeled line ""affected"" to the Digital Solution in the lower section Lower Section • Central element: Green rectangle labeled ""Digital Solution"" • Connected to three pink rectangles: o ""IT Product"" (connected via ""consists of"") o ""Business Capability"" (connected via ""affected"") o ""Organization""",Digital_Solution,affects,Initiative,direction_mismatch,known_relation_but_subject_and_object_not_allowed,
+76|Organizational_Unit|responsible_for|Business_Capability,,,,"SECTION_TITLE: Extensibility and Responsibility
+CONTENT:
+• Each organizational unit may extend the existing capability map with its own capabilities as needed.
+• The accuracy, maintenance, and relevance of these additions are the sole responsibility of the respective unit.",Organizational_Unit,responsible_for,Business_Capability,entity_mismatch,known_relation_but_subject_not_allowed,
+106|Software|classifies|IT_Component,,,,"SECTION_TITLE: IT Component Categories
+CONTENT:
+[
+{""category"": ""Hardware"", ""description"": ""Physical IT infrastructure"", ""examples"": ""IBM z15, HP ProLiant DL560""},
+{""category"": ""IaaS"", ""description"": ""Virtualized infrastructure"", ""examples"": ""AWS EC2, Azure VMs""},
+{""category"": ""PaaS"", ""description"": ""Cloud platforms for development"", ""examples"": ""Google App Engine, SAP BTP""},
+{""category"": ""SaaS"", ""description"": ""Subscription-based software"", ""examples"": ""Salesforce, LeanIX""},
+{""category"": ""Servic",Software,classifies,IT_Component,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+78|Responsibility|ownedBy|Organizational_Unit,,,,"SECTION_TITLE: Structure Summary
 CONTENT:
 [
 {""section"": ""Purpose"", ""key_concept"": ""Capability → EAM"", ""description"": ""Strategic abstraction for business-IT alignment""},
 {""section"": ""Modeling Autonomy"", ""key_concept"": ""Org Unit → Capability Usage"", ""description"": ""Each unit defines and maintains its own capabilities""},
 {""section"": ""Subtypes in LeanIX"", ""key_concept"": ""Structured Element vs. Business Capability"", ""description"": ""Only the latter is linkable to other fact sheets""},
-{""section"": ""Exte",Business_Capability,associatedWith,Fact_Sheet,unknown_relation,unknown_relation,
-85|IT_Component|includes|Service_Component,,,,"SECTION_TITLE: Introduction
-CONTENT:
-This page describes the modeling guidelines for IT Components in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining IT Component in LeanIX. The creation and editing of an IT Component fact sheet follows the standard procedure for creating a general fact sheet as described in ""How to create a fact sheet"". IT components are modeled to describe t",IT_Component,includes,Service_Component,unknown_relation,unknown_relation,
-16|Business_Architecture|includes|Process,,,,"SECTION_TITLE: Architecture Levels
-CONTENT:
-• Objectives • Initiatives (Projects) Business Architecture This layer includes the following objects:
-• Organization • Business Capability • Process Note: Except for Business Capabilities and their mappings, these elements are created and maintained outside of LeanIX as part of business process modeling.
-• Digital Solution • IT Product (Application, Platform, Group Application) • Interface These are part of the Application Architecture. Additionally:
-",Business_Architecture,includes,Process,unknown_relation,unknown_relation,
-82|IT_Product|assignedTo|Process,,,,"SECTION_TITLE: Zusätzliche Relationen
-CONTENT:
-In addition to the automatically existing assignments between IT product and process, which are synchronized from BIC, business capabilities and modeling initiatives can be assigned to a process. Manual assignment of IT products via LeanIX should be avoided and should be done exclusively in BIC! Further Information Detailed technical and functional information about the synchronization between LeanIX and BIC can be found in the chapter LeanIX System",IT_Product,assignedTo,Process,unknown_relation,unknown_relation,
-276|Capability|linkedTo|Objective,,,,"SECTION_TITLE: Summary
-CONTENT:
-[
-{""section"": ""Strategic Monitoring"", ""key_concept"": ""Objective → Transformation"", ""description"": ""Enables high-level control of strategic initiatives""},
-{""section"": ""Capability Linkage"", ""key_concept"": ""Objective → Business Capability"", ""description"": ""Identifies critical capabilities and supports transparency""},
-{""section"": ""Analytical Use"", ""key_concept"": ""Capability ↔ Objective"", ""description"": ""Supports impact analysis and alignment tracking""}
-]",Capability,linkedTo,Objective,unknown_relation,unknown_relation,
-95|Accurate_Lifecycle_Data|supports|Strategic_Planning,,,,"SECTION_TITLE: Accurate lifecycle data supports:
-CONTENT:
-• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Strategic_Planning,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-266|Objective_Fact_Sheet|defines|Strategic_Goal,,,,"SECTION_TITLE: Specific Modelling Rules and Best
-CONTENT:
-Practices for an Objective Purpose An Objective Fact Sheet is used to define and document strategic goals within the enterprise architecture. It serves as a semantic anchor for aligning business and IT strategy across different organizational levels. Strategic Scope Each Objective must be assigned to one of the following strategic levels: • Enterprise Level – for company-wide strategic alignment (preferred in classical EAM). • Portfolio L",Objective_Fact_Sheet,defines,Strategic_Goal,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-66|Parent_Child_Relation|defines|Ownership_Hierarchy,,,,"SECTION_TITLE: Modeling Hierarchies with Parent/Child Relations in
-CONTENT:
-LeanIX In LeanIX, Parent/Child relations are used to model hierarchical dependencies between Fact Sheets. These relations help structure complex systems, portfolios, or organizational units by defining logical containment or ownership hierarchies.",Parent_Child_Relation,defines,Ownership_Hierarchy,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-112|Component|supports|Technical_Capability,,,,"SECTION_TITLE: Technical Capabilities
-CONTENT:
-Each component must be linked to at least one technical capability from the LeanIX Capability Map. Specify the Support Type: • Supports: Component supports the capability • Leading: Component is the primary implementation If no suitable capability exists, request one via the capability process.",Component,supports,Technical_Capability,relation_mismatch,known_relation_but_subject_and_object_not_allowed,
-3|Business_Capability|defines|Organizational_Ability,,,,"SECTION_TITLE: Differentiation from Business Processes
-CONTENT:
-Business capabilities and business processes serve distinct purposes: • Capabilities describe what the organization must be able to do. • Processes describe how those capabilities are executed. While overlaps may occur, the abstraction level and modeling intent are fundamentally different.",Business_Capability,defines,Organizational_Ability,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-293|Capability_Model|supports|IT_Portfolio_Optimization,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
-• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
-• Bu",Capability_Model,supports,IT_Portfolio_Optimization,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-129|Technical_Component|provides|Business_Platform,,,,"SECTION_TITLE: Characteristics of an IT Product
-CONTENT:
-• It bundles business functions in a logically and functionally bounded way to process data.
-• It may include custom-developed elements such as application code, configuration data, macros, etc.
-• It can be a third-party software product, used as SaaS, cloud-based, or on-premises.
-• It may represent a bundle of technical components that together provide infrastructure or business platforms.",Technical_Component,provides,Business_Platform,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-217|Digital_Solution|supports|Architectural_Governance,,,,"SECTION_TITLE: Summary: Digital Solution Modeling
-CONTENT:
-[
-{""section"": ""1. Context"", ""element"": ""Framework"", ""description"": ""Enterprise Architecture at Porsche, based on SAFe and PAG modeling standards""},
-{""section"": ""1. Context"", ""element"": ""Tooling"", ""description"": ""LeanIX used for creating and maintaining Digital Solution fact sheets""},
-{""section"": ""1. Context"", ""element"": ""Reference"", ""description"": ""General fact sheet creation process described in “How to create a fact sheet”""},
-{""section",Digital_Solution,supports,Architectural_Governance,entity_mismatch,known_relation_but_object_not_allowed,
-37|Application|supports|Operational_Value_Stream,,,,"SECTION_TITLE: Definition: IT Product
-CONTENT:
-At Porsche, an IT Product is classified as either an Application or a Platform. Regardless of category, each IT Product must have clearly defined ownership and accountability. Applikationen An Application is an IT Product that delivers specific business functionality to support business processes—for example, by automating process steps. Applications contribute to the realization of business capabilities and are aligned with the value creation proce",Application,supports,Operational_Value_Stream,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-95|Accurate_Lifecycle_Data|supports|Architecture_Governance,,,,"SECTION_TITLE: Accurate lifecycle data supports:
-CONTENT:
-• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Architecture_Governance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-17|Technology_Architecture|supports|Application,,,,"SECTION_TITLE: Together, the Business Architecture and Information Systems Architecture form
-CONTENT:
-the Business Architecture domain. Technology Architecture This layer supports the technical realization of applications. Applications from the Application Architecture require infrastructure for procurement, integration, and operation. Relevant objects include: • IT Product (Platform) • IT Component • Vendor • Tech Capability LLM-Ready Structure Summary Image Description: TOGAF-Based Architectur",Technology_Architecture,supports,Application,entity_mismatch,known_relation_but_subject_not_allowed,
-224|Lifecycle_Data|supports|Regulatory_Compliance,,,,"SECTION_TITLE: Lifecycle Management in LeanIX Fact Sheets
-CONTENT:
-Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page. Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information: • Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additi",Lifecycle_Data,supports,Regulatory_Compliance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-76|Organizational_Unit|responsibleFor|Business_Capability,,,,"SECTION_TITLE: Extensibility and Responsibility
-CONTENT:
-• Each organizational unit may extend the existing capability map with its own capabilities as needed.
-• The accuracy, maintenance, and relevance of these additions are the sole responsibility of the respective unit.",Organizational_Unit,responsibleFor,Business_Capability,entity_mismatch,known_relation_but_subject_not_allowed,
-132|Business_Capability|realizes|IT_Product,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""section"": ""Decision Rule"", ""key_concept"": ""Classification Logic"", ""description"": ""Defines when to use IT Product vs. IT Component"", ""examples"": ""Business Capability → IT Product; Technical Capability → IT Component""},
-{""section"": ""IT Product Characteristics"", ""key_concept"": ""Definition"", ""description"": ""Logical bundle of business functions, may include custom or third-party software"", ""examples"": ""SaaS, on-prem apps, business platforms""},
-{""section"":",Business_Capability,realizes,IT_Product,relation_mismatch,known_relation_but_object_not_allowed,
-273|Objective|requires|Transformation,,,,"SECTION_TITLE: Definition: Objective
-CONTENT:
-An Objective Fact Sheet is used to represent a strategic goal and the transformations required to achieve it. It serves as a formalized anchor for planning, tracking, and aligning enterprise-wide initiatives with business strategy. Objectives provide structure and traceability for transformation programs and enable consistent communication across business and IT stakeholders. Summary
-Summary",Objective,requires,Transformation,entity_mismatch,known_relation_but_object_not_allowed,
-270|Objective|ownedBy|Organizational_Unit,,,,"SECTION_TITLE: Governance and Ownership
-CONTENT:
-[
-{""section"": ""Purpose"", ""key_entity"": ""Objective"", ""relationships"": ""defines strategic intent""},
-{""section"": ""Scope"", ""key_entity"": ""Objective → Strategic Level"", ""relationships"": ""one-to-one""},
-{""section"": ""Responsibility"", ""key_entity"": ""Objective → Org Unit(s)"", ""relationships"": ""one-to-one or one-to-many""},
-{""section"": ""Capability Impact"", ""key_entity"": ""Objective → Business Capability"", ""relationships"": ""one-to-many""},
-{""section"": ""Initiativ",Objective,ownedBy,Organizational_Unit,entity_mismatch,known_relation_but_object_not_allowed,
-95|Accurate_Lifecycle_Data|supports|Compliance,,,,"SECTION_TITLE: Accurate lifecycle data supports:
-CONTENT:
-• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Compliance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-246|Initiative|affects|Architecture_Component,,,,"SECTION_TITLE: Summary – Initiative
-CONTENT:
-Metamodel View The diagram shows the possible relations between the entities that can be used to model an initiative in the context of the appropriate architecture level. Overview The diagram illustrates the relationships between various architectural entities within the TOGAF® framework. It is divided into three layers: • A. Architecture Vision • B.
-Architecture Vision • B. Business Architecture • C. Technical Architecture 1. Top Layer – Architecture",Initiative,affects,Architecture_Component,entity_mismatch,known_relation_but_object_not_allowed,
-43|Initiative|supports|Objective_Realization,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""element"": ""Entity Type"", ""description"": ""Initiative""},
-{""element"": ""Core Purpose"", ""description"": ""Drives change and supports the realization of objectives""},
-{""element"": ""Characteristics"", ""description"": ""Time-bound, resource- intensive, architecture- relevant""},
-{""element"": ""Strategic Role"", ""description"": ""Operationalizes objectives and enables traceable execution""},
-{""element"": ""Stakeholders"", ""description"": ""Business Analysts, Enterprise Archite",Initiative,supports,Objective_Realization,entity_mismatch,known_relation_but_object_not_allowed,
-288|Process|supports|Enterprise_Architecture_Planning,,,,"SECTION_TITLE: Decision Support for Enterprise Architecture
-CONTENT:
-[
-{""section"": ""Definition"", ""key_concept"": ""Business Process"", ""description"": ""Logically linked activities to achieve a goal""},
-{""section"": ""Strategic Insight"", ""key_concept"": ""Process → Business Architecture"", ""description"": ""Identifies critical or change-prone processes""},
-{""section"": ""Application Mapping"", ""key_concept"": ""Process → Application"", ""description"": ""Enables traceability and impact analysis""},
-{""section"": ""Gap & R",Process,supports,Enterprise_Architecture_Planning,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-11|Digital_Solution|supports|Business_Process,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-[
-{""section"": ""Definition"", ""element"": ""Digital Solution"", ""description"": ""Aconstruct composed of IT Products and potentially processes, methods, and organizational elements""},
-{""section"": ""Definition"", ""element"": ""IT Product"", ""description"": ""Application, service, or platform with supporting technologies""},
-{""section"": ""Composition"", ""element"": ""Modular Structure"", ""description"": ""Multiple IT Products form a Digital Solution""},
-{""section"": ""Compositi",Digital_Solution,supports,Business_Process,entity_mismatch,known_relation_but_object_not_allowed,
-247|Objective|affects|Tech_Capability,,,,"SECTION_TITLE: Summary – Initiative
-CONTENT:
-Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,Tech_Capability,entity_mismatch,known_relation_but_subject_not_allowed,
-280|Organizational_Unit|responsibleFor|Object,,,,"SECTION_TITLE: Purpose and benefits
-CONTENT:
-By using the organizational units, it is possible to describe and define the areas responsible and used for an object. This information is relevant for necessary evaluations and analyses, as well as the identification of the respective responsible areas in the event of problems and changes.",Organizational_Unit,responsibleFor,Object,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-57|Lifecycle_Data|supports|Compliance,,,,"SECTION_TITLE: Lifecycle Management in LeanIX Fact Sheets
-CONTENT:
-Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page. Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information: • Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additi",Lifecycle_Data,supports,Compliance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-33|IT_Component|supports|IT_Product,,,,"SECTION_TITLE: Purpose and benefits
-CONTENT:
-IT components are essential to run, maintain, and change IT products. They may be: • Encapsulated within technical platforms, or • Directly integrated into the IT product. The use of IT components supports strategic architecture management by enabling: • Lifecycle planning of technical assets • Clear documentation of ownership, responsibilities, and competencies • Transparency in the technical landscape • Identification of redundancies (overengineerin",IT_Component,supports,IT_Product,relation_mismatch,known_relation_but_subject_not_allowed,
-207|Vendor|provides|IT_Component,,,,"SECTION_TITLE: Linking Vendors to IT Components
-CONTENT:
-The most important relationship in a Vendor Fact Sheet is the link to the IT Components developed or provided by the vendor. These links are typically created during the modeling of the IT Component, not during vendor creation.",Vendor,provides,IT_Component,direction_mismatch,known_relation_but_object_not_allowed,
-247|Objective|affects|Business_Capability,,,,"SECTION_TITLE: Summary – Initiative
-CONTENT:
-Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,Business_Capability,relation_mismatch,known_relation_but_subject_not_allowed,
-38|IT_Product|ensures|Compliance,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-From an enterprise architecture perspective, the IT Product is the central modeling object across all architecture layers. It enables: • Functional development planning • Portfolio and release planning • Centralized documentation of: o Security o Compliance o Data protection o Governance requirements The IT Product is the primary reference object for ensuring: • Compliance with the Federal Data Protection Act (BDSG) • Fulfillment of corporate due dili",IT_Product,ensures,Compliance,entity_mismatch,known_relation_but_subject_not_allowed,
-29|IT_Component|supports|Strategic_IT_Planning,,,,"SECTION_TITLE: Purpose and benefits
+{""section"": ""Exte",Responsibility,ownedBy,Organizational_Unit,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+29|IT_Component|supports|Architecture_Governance,,,,"SECTION_TITLE: Purpose and benefits
 CONTENT:
 [
 {""field"": ""Entity"", ""content"": ""IT Component""},
 {""field"": ""Definition"", ""content"": ""Atechnical building block of an IT product, independent of business logic, sourced from vendors or developed in-house.""},
 {""field"": ""Purpose"", ""content"": ""Enables organizations to run, maintain, and change IT products.""},
 {""field"": ""Usage Context"", ""content"": ""Used within technical platforms or directly in IT products.""},
-{""field"": ""Key Benefits"", ""content"": ""Lifecyc",IT_Component,supports,Strategic_IT_Planning,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-247|Objective|affects|IT_Product,,,,"SECTION_TITLE: Summary – Initiative
-CONTENT:
-Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,IT_Product,relation_mismatch,known_relation_but_subject_not_allowed,
-68|Organization_Unit|consists_of|Sub_Unit,,,,"SECTION_TITLE: Usage Guidelines
+{""field"": ""Key Benefits"", ""content"": ""Lifecyc",IT_Component,supports,Architecture_Governance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+158|Technical_Architecture|consists_of|Component,,,,"SECTION_TITLE: Structure Summary
 CONTENT:
 [
-{""use_case"": ""Platform Composition"", ""parent_type"": ""Platform"", ""child_type"": ""IT Component""},
-{""use_case"": ""Organizational Hierarchy"", ""parent_type"": ""Organization Unit"", ""child_type"": ""Sub-Unit""},
-{""use_case"": ""Portfolio Structure"", ""parent_type"": ""Portfolio"", ""child_type"": ""Product / Application""}
-]",Organization_Unit,consists_of,Sub_Unit,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-247|Objective|affects|Interface,,,,"SECTION_TITLE: Summary – Initiative
+{""section"": ""Category"", ""attribute__concept"": ""Application / Platform / Group App"", ""description"": ""Defines the type of IT Product"", ""notes__examples"": ""CATIA = Application""},
+{""section"": ""Naming"", ""attribute__concept"": ""Contextual, user-friendly"", ""description"": ""Should reflect business use and be unique"", ""notes__examples"": ""\""HR- Manager\""""},
+{""section"": ""Versioning"", ""attribute__concept"": ""Release"", ""description"": ""Functional versioning, not techni",Technical_Architecture,consists_of,Component,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+104|Internal_User|responsible_for|Operation,,,,"SECTION_TITLE: Responsibility for IT Components
 CONTENT:
-Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,Interface,entity_mismatch,known_relation_but_subject_not_allowed,
-273|Objective|provides|Structure,,,,"SECTION_TITLE: Definition: Objective
-CONTENT:
-An Objective Fact Sheet is used to represent a strategic goal and the transformations required to achieve it. It serves as a formalized anchor for planning, tracking, and aligning enterprise-wide initiatives with business strategy. Objectives provide structure and traceability for transformation programs and enable consistent communication across business and IT stakeholders. Summary
-Summary",Objective,provides,Structure,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-172|IT_Product|consumes|Interface,,,,"SECTION_TITLE: Interfaces to External Systems
-CONTENT:
-In enterprise architecture, it is common for IT Products to interact with external systems— for example, to exchange data with banks, government agencies, or third-party services. These systems are considered external if they: • Are not part of the Porsche network (including ToGe networks), • Are not operated by PAG, a subsidiary, or a group brand, • Are not part of the internal Porsche IT landscape. Important: External systems must not be m",IT_Product,consumes,Interface,relation_mismatch,known_relation_but_object_not_allowed,
-39|Platform|supports|Application_Development,,,,"SECTION_TITLE: Structure Summary
+The definition of who is responsible for an IT component continues to lead to heated discussions in the company. Especially due to the establishment of the so-called departmental IT (P51), we are in a dilemma here from an IT point of view. The person specified on a component is typically the person responsible for that component for the entire organization in terms of operations, maintenance, security, and compliance. This regulation is al",Internal_User,responsible_for,Operation,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+217|Digital_Solution|supports|Portfolio_Transparency,,,,"SECTION_TITLE: Summary: Digital Solution Modeling
 CONTENT:
 [
-{""section"": ""IT Product"", ""description"": ""Central modeling object; categorized as Application or Platform""},
-{""section"": ""Ownership Requirement"", ""description"": ""Must have clearly defined ownership and accountability""},
-{""section"": ""Application Definition"", ""description"": ""Supports business processes and capabilities; user-facing""},
-{""section"": ""Application Characteristics"", ""description"": ""UI/API-based access; requires IT Components; supports value st",Platform,supports,Application_Development,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-95|Accurate_Lifecycle_Data|supports|Impact_Analysis,,,,"SECTION_TITLE: Accurate lifecycle data supports:
-CONTENT:
-• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Impact_Analysis,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-95|Accurate_Lifecycle_Data|supports|Portfolio_Management,,,,"SECTION_TITLE: Accurate lifecycle data supports:
-CONTENT:
-• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Portfolio_Management,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-44|Initiative|affects|Platform,,,,"SECTION_TITLE: Purpose and Benefits of the Initiative Fact
-CONTENT:
-Sheet Visibility and Impact Analysis Modeling an Initiative Fact Sheet provides a clear view of the status, scope, and impact of an initiative across the enterprise architecture. It enables stakeholders to assess how an initiative affects key architectural domains, including: • Business Capabilities • Business Contexts • Applications • Organizations • Platforms • IT Components",Initiative,affects,Platform,entity_mismatch,known_relation_but_object_not_allowed,
-68|Platform|consists_of|IT_Component,,,,"SECTION_TITLE: Usage Guidelines
-CONTENT:
-[
-{""use_case"": ""Platform Composition"", ""parent_type"": ""Platform"", ""child_type"": ""IT Component""},
-{""use_case"": ""Organizational Hierarchy"", ""parent_type"": ""Organization Unit"", ""child_type"": ""Sub-Unit""},
-{""use_case"": ""Portfolio Structure"", ""parent_type"": ""Portfolio"", ""child_type"": ""Product / Application""}
-]",Platform,consists_of,IT_Component,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-273|Objective|provides|Traceability,,,,"SECTION_TITLE: Definition: Objective
-CONTENT:
-An Objective Fact Sheet is used to represent a strategic goal and the transformations required to achieve it. It serves as a formalized anchor for planning, tracking, and aligning enterprise-wide initiatives with business strategy. Objectives provide structure and traceability for transformation programs and enable consistent communication across business and IT stakeholders. Summary
-Summary",Objective,provides,Traceability,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-11|Digital_Solution|supports|Data_Entity,,,,"SECTION_TITLE: Purpose and Benefits
-CONTENT:
-[
-{""section"": ""Definition"", ""element"": ""Digital Solution"", ""description"": ""Aconstruct composed of IT Products and potentially processes, methods, and organizational elements""},
-{""section"": ""Definition"", ""element"": ""IT Product"", ""description"": ""Application, service, or platform with supporting technologies""},
-{""section"": ""Composition"", ""element"": ""Modular Structure"", ""description"": ""Multiple IT Products form a Digital Solution""},
-{""section"": ""Compositi",Digital_Solution,supports,Data_Entity,entity_mismatch,known_relation_but_object_not_allowed,
-300|Vendor|supports|Risk_Management,,,,"SECTION_TITLE: Summary
-CONTENT:
-[
-{""ld"": ""object_type"", ""description"": ""Vendor / Provider""},
-{""ld"": ""leanix_reference"", ""description"": ""Known as \""Provider\"" in the original LeanIX metamodel""},
-{""ld"": ""definition"", ""description"": ""External organization supplying or manufacturing an IT component""},
-{""ld"": ""purpose"", ""description"": ""Document and manage supplier information""},
-{""ld"": ""key_attributes"", ""description"": ""Contact details, certifications (e.g., TISAX), metadata""},
-{""ld"": ""use_cases"", ""de",Vendor,supports,Risk_Management,threshold_not_met,known_relation_but_subject_and_object_not_allowed,
-39|Platform|supports|Application_Operation,,,,"SECTION_TITLE: Structure Summary
-CONTENT:
-[
-{""section"": ""IT Product"", ""description"": ""Central modeling object; categorized as Application or Platform""},
-{""section"": ""Ownership Requirement"", ""description"": ""Must have clearly defined ownership and accountability""},
-{""section"": ""Application Definition"", ""description"": ""Supports business processes and capabilities; user-facing""},
-{""section"": ""Application Characteristics"", ""description"": ""UI/API-based access; requires IT Components; supports value st",Platform,supports,Application_Operation,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-247|Objective|affects|Process,,,,"SECTION_TITLE: Summary – Initiative
-CONTENT:
-Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,Process,relation_mismatch,known_relation_but_subject_not_allowed,
-57|Lifecycle_Data|supports|Architecture_Governance,,,,"SECTION_TITLE: Lifecycle Management in LeanIX Fact Sheets
-CONTENT:
-Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page. Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information: • Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additi",Lifecycle_Data,supports,Architecture_Governance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-286|Application|affects|Business_Process,,,,"SECTION_TITLE: Application and Architecture Mapping
-CONTENT:
-When properly maintained, business process models enable: • Traceability between processes and the applications that support them, • Identification of dependencies between business operations and IT systems, • Analysis of impact in case of application failure, replacement, or decommissioning.",Application,affects,Business_Process,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-132|IT_Product|consists_of|Business_Function,,,,"SECTION_TITLE: Structure Summary
+{""section"": ""1. Context"", ""element"": ""Framework"", ""description"": ""Enterprise Architecture at Porsche, based on SAFe and PAG modeling standards""},
+{""section"": ""1. Context"", ""element"": ""Tooling"", ""description"": ""LeanIX used for creating and maintaining Digital Solution fact sheets""},
+{""section"": ""1. Context"", ""element"": ""Reference"", ""description"": ""General fact sheet creation process described in “How to create a fact sheet”""},
+{""section",Digital_Solution,supports,Portfolio_Transparency,entity_mismatch,known_relation_but_object_not_allowed,
+132|Business_Capability|realizes|IT_Product,,,,"SECTION_TITLE: Structure Summary
 CONTENT:
 [
 {""section"": ""Decision Rule"", ""key_concept"": ""Classification Logic"", ""description"": ""Defines when to use IT Product vs. IT Component"", ""examples"": ""Business Capability → IT Product; Technical Capability → IT Component""},
 {""section"": ""IT Product Characteristics"", ""key_concept"": ""Definition"", ""description"": ""Logical bundle of business functions, may include custom or third-party software"", ""examples"": ""SaaS, on-prem apps, business platforms""},
-{""section"":",IT_Product,consists_of,Business_Function,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
-247|Objective|affects|IT_Component,,,,"SECTION_TITLE: Summary – Initiative
+{""section"":",Business_Capability,realizes,IT_Product,relation_mismatch,known_relation_but_object_not_allowed,
+155|IT_Product|consists_of|Governance_Information,,,,"SECTION_TITLE: Governance
 CONTENT:
-Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,IT_Component,relation_mismatch,known_relation_but_subject_not_allowed,
-44|Initiative|affects|Application,,,,"SECTION_TITLE: Purpose and Benefits of the Initiative Fact
+Each IT Product must include governance-related information from the following areas: • IT Security • GoBD • Export Control • Document Classification • P51 Assignment • Data Protection Refer to the internal governance documentation for responsibilities and further details.",IT_Product,consists_of,Governance_Information,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+47|Initiative|affects|Architecture_Element,,,,"SECTION_TITLE: Responsible / Subscriptions
 CONTENT:
-Sheet Visibility and Impact Analysis Modeling an Initiative Fact Sheet provides a clear view of the status, scope, and impact of an initiative across the enterprise architecture. It enables stakeholders to assess how an initiative affects key architectural domains, including: • Business Capabilities • Business Contexts • Applications • Organizations • Platforms • IT Components",Initiative,affects,Application,relation_mismatch,known_relation_but_object_not_allowed,
-224|Lifecycle_Data|supports|Audit_Requirements,,,,"SECTION_TITLE: Lifecycle Management in LeanIX Fact Sheets
+[
+{""section"": ""Impact Analysis"", ""key_concept"": ""Initiative → Architecture Elements"", ""description"": ""Shows impact on capabilities, systems, and organizational units""},
+{""section"": ""Strategic Alignment"", ""key_concept"": ""Initiative → Objective"", ""description"": ""Links execution to strategic goals""},
+{""section"": ""Operational Metadata"", ""key_concept"": ""Initiative → Budget, Timeline, Roles"", ""description"": ""Surfaces key planning and governance data""",Initiative,affects,Architecture_Element,entity_mismatch,known_relation_but_object_not_allowed,
+155|Governance_Information|consists_of|Export_Control,,,,"SECTION_TITLE: Governance
 CONTENT:
-Each Fact Sheet type in LeanIX can be assigned a lifecycle. Whether this assignment is mandatory depends on the specific Fact Sheet type and is indicated on its detail page. Recommended Practice Regardless of whether the lifecycle is mandatory, it is strongly recommended to provide the following information: • Start of productive use (Go-Live date) • Decommissioning date (if known) Depending on the desired level of detail, additi",Lifecycle_Data,supports,Audit_Requirements,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+Each IT Product must include governance-related information from the following areas: • IT Security • GoBD • Export Control • Document Classification • P51 Assignment • Data Protection Refer to the internal governance documentation for responsibilities and further details.",Governance_Information,consists_of,Export_Control,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+153|Technical_Architecture|consists_of|Hosting_Type,,,,"SECTION_TITLE: Technical Architecture
+CONTENT:
+• Software components • Platforms • Hosting type and provider (mandatory) On-Premises Architecture Model the following components:
+• Deployed software product • OS platforms (e.g., Windows, Linux) • Databases and DBMS platforms • Runtime environments (e.g., Tomcat) • Container platforms • Required services Ensure all components are documented in the correct version.
+• Only deployed software products need to be modeled manually.
+• For SaaS products, ",Technical_Architecture,consists_of,Hosting_Type,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+73|Business_Capability|realizes|Strategic_Abstraction,,,,"SECTION_TITLE: Specific Modelling Rules and Best Practices
+CONTENT:
+for a Business Capability Purpose of Business Capabilities in EAM A business capability serves as a stable, strategic abstraction of what an organization must be able to do to deliver value and fulfill its mission. In the context of Enterprise Architecture Management (EAM), business capabilities provide a structured, technology-neutral view of the enterprise’s functional needs and enable alignment between business and IT.",Business_Capability,realizes,Strategic_Abstraction,entity_mismatch,known_relation_but_object_not_allowed,
+247|Objective|affects|Business_Capability,,,,"SECTION_TITLE: Summary – Initiative
+CONTENT:
+Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,Business_Capability,relation_mismatch,known_relation_but_subject_not_allowed,
+95|Accurate_Lifecycle_Data|supports|Strategic_Planning,,,,"SECTION_TITLE: Accurate lifecycle data supports:
+CONTENT:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Strategic_Planning,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+247|Objective|affects|Tech_Capability,,,,"SECTION_TITLE: Summary – Initiative
+CONTENT:
+Top Layer – Architecture Vision (TOGAF® A) • Entities: o Objective (purple box) o Initiative (green box) • Relationships: o Objective → supports/affects → Initiative o Both Objective and Initiative → affect → downstream architecture components o Objective is linked to a responsible organizational unit 2. Middle Layer – Business Architecture (TOGAF® B) • Entities: o Organization o Business Capability o IT Product o Digital Solution o Process o Interfac",Objective,affects,Tech_Capability,entity_mismatch,known_relation_but_subject_not_allowed,
+177|Initiative|requires|Interface,,,,"SECTION_TITLE: 1. Upper Section – Strategic Alignment (TOGAF® A: Architecture Vision)
+CONTENT:
+• Element: Initiative (colored pink) • Element: Interface (colored green) • Relationship: A downward arrow from Initiative to Interface indicates that the initiative is influenced by or dependent on the interface.
+• Contextual Tag: A yellow circle labeled ""TOGAF® A. Architecture Vision"" is placed to the right, signifying that this relationship supports strategic planning and vision alignment.",Initiative,requires,Interface,relation_mismatch,known_relation_but_subject_and_object_not_allowed,
+19|Business_Architecture|defines|Organization,,,,"SECTION_TITLE: Business Architecture (TOGAF® B)
+CONTENT:
+• Organization (Color: Black) • Business Capability (Color: Grey) • Process (Color: Green) Captures the business structure, capabilities, and operational processes.",Business_Architecture,defines,Organization,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+82|Business_Capability|responsible_for|Process,,,,"SECTION_TITLE: Zusätzliche Relationen
+CONTENT:
+In addition to the automatically existing assignments between IT product and process, which are synchronized from BIC, business capabilities and modeling initiatives can be assigned to a process. Manual assignment of IT products via LeanIX should be avoided and should be done exclusively in BIC! Further Information Detailed technical and functional information about the synchronization between LeanIX and BIC can be found in the chapter LeanIX System",Business_Capability,responsible_for,Process,relation_mismatch,known_relation_but_subject_not_allowed,
+52|Application|owned_by|Application_Architecture,,,,"SECTION_TITLE: Structure Summary: Interface Modeling in
+CONTENT:
+[
+{""section"": ""Context"", ""element"": ""Domain"", ""description"": ""Enterprise Architecture, SAFe, LeanIX""},
+{""section"": ""Context"", ""element"": ""Purpose"", ""description"": ""Visualize how interfaces connect applications and link application and data architecture""},
+{""section"": ""Core Concept"", ""element"": ""Interface"", ""description"": ""Logical connection between two applications for data exchange""},
+{""section"": ""Core Concept"", ""element"": ""Applic",Application,owned_by,Application_Architecture,entity_mismatch,known_relation_but_object_not_allowed,
+286|Business_Process_Model|informs|Application,,,,"SECTION_TITLE: Application and Architecture Mapping
+CONTENT:
+When properly maintained, business process models enable: • Traceability between processes and the applications that support them, • Identification of dependencies between business operations and IT systems, • Analysis of impact in case of application failure, replacement, or decommissioning.",Business_Process_Model,informs,Application,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+85|IT_Component|consists_of|Service_Component,,,,"SECTION_TITLE: Introduction
+CONTENT:
+This page describes the modeling guidelines for IT Components in the context of enterprise architecture at Porsche. It is based on the general modeling guidelines of PAG and includes specific instructions for creating and maintaining IT Component in LeanIX. The creation and editing of an IT Component fact sheet follows the standard procedure for creating a general fact sheet as described in ""How to create a fact sheet"". IT components are modeled to describe t",IT_Component,consists_of,Service_Component,entity_mismatch,known_relation_but_object_not_allowed,
+243|Interface|affects|Point_of_Impact,,,,"SECTION_TITLE: Interface and Impact Modeling
+CONTENT:
+• Focus on identifying actual interfaces and points of impact.
+• In most cases, assigning only the directly affected IT products is sufficient.
+• If IT Product fact sheets are properly maintained, indirect impacts (e.g. on business capabilities, IT components, or processes) can be inferred via the linked IT products.",Interface,affects,Point_of_Impact,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+95|Accurate_Lifecycle_Data|supports|Compliance,,,,"SECTION_TITLE: Accurate lifecycle data supports:
+CONTENT:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Compliance,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+153|IT_Component|classifies|IT_Component,,,,"SECTION_TITLE: Technical Architecture
+CONTENT:
+• Software components • Platforms • Hosting type and provider (mandatory) On-Premises Architecture Model the following components:
+• Deployed software product • OS platforms (e.g., Windows, Linux) • Databases and DBMS platforms • Runtime environments (e.g., Tomcat) • Container platforms • Required services Ensure all components are documented in the correct version.
+• Only deployed software products need to be modeled manually.
+• For SaaS products, ",IT_Component,classifies,IT_Component,relation_mismatch,known_relation_but_object_not_allowed,
+287|Process|responsible_for|Application,,,,"SECTION_TITLE: Gap and Redundancy Detection
+CONTENT:
+By analyzing process-to-application assignments, organizations can: • Detect white spots (unsupported processes), • Identify overbuilds (multiple systems supporting the same process), • Improve application portfolio rationalization.",Process,responsible_for,Application,relation_mismatch,known_relation_but_subject_not_allowed,
+293|Capability_Model|supports|IT_Portfolio_Optimization,,,,"SECTION_TITLE: Purpose and Benefits
+CONTENT:
+• Increase transparency across the technology stack • Identify redundancies in the IT landscape • Detect whitespots (missing or underrepresented capabilities) Use Cases and Stakeholder Value • Product Teams can use the capability model to identify suitable IT components for their solutions.
+• Domain Architects and Enterprise Architects can leverage it to optimize the IT portfolio, reduce duplication, and identify gaps in the technology landscape.
+• Bu",Capability_Model,supports,IT_Portfolio_Optimization,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+75|Structured_Element|supports|Business_Capability,,,,"SECTION_TITLE: Subtypes in LeanIX
+CONTENT:
+In LeanIX, business capabilities are divided into two subtypes: Structured Element • Used to organize and group business capabilities hierarchically. • Cannot be linked directly to other fact sheets. • Typically represents Level 1 or Level 2 capabilities. Business Capability • Used to describe actual functional abilities in detail.
+Business Capability • Used to describe actual functional abilities in detail. • Can be linked directly to other fact sheets",Structured_Element,supports,Business_Capability,entity_mismatch,known_relation_but_subject_not_allowed,
+270|Objective|responsible_for|Initiative,,,,"SECTION_TITLE: Governance and Ownership
+CONTENT:
+[
+{""section"": ""Purpose"", ""key_entity"": ""Objective"", ""relationships"": ""defines strategic intent""},
+{""section"": ""Scope"", ""key_entity"": ""Objective → Strategic Level"", ""relationships"": ""one-to-one""},
+{""section"": ""Responsibility"", ""key_entity"": ""Objective → Org Unit(s)"", ""relationships"": ""one-to-one or one-to-many""},
+{""section"": ""Capability Impact"", ""key_entity"": ""Objective → Business Capability"", ""relationships"": ""one-to-many""},
+{""section"": ""Initiativ",Objective,responsible_for,Initiative,relation_mismatch,known_relation_but_subject_not_allowed,
+129|IT_Product|consists_of|Configuration_Data,,,,"SECTION_TITLE: Characteristics of an IT Product
+CONTENT:
+• It bundles business functions in a logically and functionally bounded way to process data.
+• It may include custom-developed elements such as application code, configuration data, macros, etc.
+• It can be a third-party software product, used as SaaS, cloud-based, or on-premises.
+• It may represent a bundle of technical components that together provide infrastructure or business platforms.",IT_Product,consists_of,Configuration_Data,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+16|Application_Architecture|consists_of|IT_Product,,,,"SECTION_TITLE: Architecture Levels
+CONTENT:
+• Objectives • Initiatives (Projects) Business Architecture This layer includes the following objects:
+• Organization • Business Capability • Process Note: Except for Business Capabilities and their mappings, these elements are created and maintained outside of LeanIX as part of business process modeling.
+• Digital Solution • IT Product (Application, Platform, Group Application) • Interface These are part of the Application Architecture. Additionally:
+",Application_Architecture,consists_of,IT_Product,entity_mismatch,known_relation_but_subject_not_allowed,
+78|Capability|supports|Enterprise_Architecture_Management,,,,"SECTION_TITLE: Structure Summary
+CONTENT:
+[
+{""section"": ""Purpose"", ""key_concept"": ""Capability → EAM"", ""description"": ""Strategic abstraction for business-IT alignment""},
+{""section"": ""Modeling Autonomy"", ""key_concept"": ""Org Unit → Capability Usage"", ""description"": ""Each unit defines and maintains its own capabilities""},
+{""section"": ""Subtypes in LeanIX"", ""key_concept"": ""Structured Element vs. Business Capability"", ""description"": ""Only the latter is linkable to other fact sheets""},
+{""section"": ""Exte",Capability,supports,Enterprise_Architecture_Management,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+9|Digital_Solution|consists_of|Organizational_Structure,,,,"SECTION_TITLE: Definition: Digital Solution
+CONTENT:
+In alignment with the Scaled Agile Framework (SAFe) and extended by Porsche-specific terminology, a Digital Solution is defined as follows: A Digital Solution is a cohesive construct that delivers business value by integrating multiple IT Products. These IT Products are modular, technically and logically bounded units that implement specific business functionalities. Together, they form the technical foundation of a Digital Solution. In additi",Digital_Solution,consists_of,Organizational_Structure,entity_mismatch,known_relation_but_object_not_allowed,
+125|Initiative|supports|IT_Landscape_Planning,,,,"SECTION_TITLE: Purpose: This metamodel is designed to support enterprise architecture modeling in LeanIX
+CONTENT:
+by clearly defining how initiatives, business structures, and technical components interrelate. It enables traceability from strategic initiatives down to the technical implementation, supporting impact analysis, capability mapping, and IT landscape planning.",Initiative,supports,IT_Landscape_Planning,entity_mismatch,known_relation_but_object_not_allowed,
+172|IT_Product|transmits|External_System,,,,"SECTION_TITLE: Interfaces to External Systems
+CONTENT:
+In enterprise architecture, it is common for IT Products to interact with external systems— for example, to exchange data with banks, government agencies, or third-party services. These systems are considered external if they: • Are not part of the Porsche network (including ToGe networks), • Are not operated by PAG, a subsidiary, or a group brand, • Are not part of the internal Porsche IT landscape. Important: External systems must not be m",IT_Product,transmits,External_System,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+95|Accurate_Lifecycle_Data|supports|Portfolio_Management,,,,"SECTION_TITLE: Accurate lifecycle data supports:
+CONTENT:
+• Strategic planning and portfolio management • Compliance with regulatory and audit requirements • Impact analysis for changes and decommissioning • Architecture governance across all layers",Accurate_Lifecycle_Data,supports,Portfolio_Management,entity_mismatch,known_relation_but_subject_and_object_not_allowed,
+17|Infrastructure|consists_of|IT_Component,,,,"SECTION_TITLE: Together, the Business Architecture and Information Systems Architecture form
+CONTENT:
+the Business Architecture domain. Technology Architecture This layer supports the technical realization of applications. Applications from the Application Architecture require infrastructure for procurement, integration, and operation. Relevant objects include: • IT Product (Platform) • IT Component • Vendor • Tech Capability LLM-Ready Structure Summary Image Description: TOGAF-Based Architectur",Infrastructure,consists_of,IT_Component,entity_mismatch,known_relation_but_subject_and_object_not_allowed,

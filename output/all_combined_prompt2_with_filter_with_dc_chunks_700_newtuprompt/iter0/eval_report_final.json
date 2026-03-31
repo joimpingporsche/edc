@@ -4,7 +4,7 @@
     "ontology_file": "datasets/intern/gold/leanix_ontology_tripel_cleaned.txt",
     "alignment_file": "output/all_combined4/relation_definition_alignment_2.json",
     "result_at_each_stage_json": "output/all_combined_prompt2_with_filter_with_dc_chunks_700_newtuprompt/iter0/result_at_each_stage.json",
-    "labels_input": null
+    "labels_input": "output/all_combined_prompt2_with_filter_with_dc_chunks_700_newtuprompt/iter0/ai_eval.csv"
   },
   "counts": {
     "prediction_total": 443,
@@ -118,9 +118,13 @@
     ]
   },
   "metrics_enrichment_manual": {
-    "enrichment_precision": null,
-    "enrichment_precision_strict": null,
-    "label_counts": {}
+    "enrichment_precision": 0.42,
+    "enrichment_precision_strict": 0.636364,
+    "label_counts": {
+      "SUPPORTED": 42,
+      "UNSUPPORTED": 24,
+      "PARTIALLY_SUPPORTED": 34
+    }
   },
   "metrics_legacy": {
     "strict_precision_exact_triple": 0.013544,
@@ -1963,7 +1967,7 @@
   },
   "exports": {
     "alignment_matches_csv": "output/all_combined_prompt2_with_filter_with_dc_chunks_700_newtuprompt/iter0/alignment_matches.csv",
-    "novel_sample_for_manual_review_csv": "output/all_combined_prompt2_with_filter_with_dc_chunks_700_newtuprompt/iter0/novel_sample_for_manual_review.csv",
+    "novel_sample_for_manual_review_csv": "output/all_combined_prompt2_with_filter_with_dc_chunks_700_newtuprompt/iter0/novel_sample_with_labels.csv",
     "top_predicates_csv": "output/all_combined_prompt2_with_filter_with_dc_chunks_700_newtuprompt/iter0/top_predicates.csv"
   }
 }
