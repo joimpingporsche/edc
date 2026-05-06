@@ -96,6 +96,13 @@ You may use EDC on customized input and target schema by following the formats u
 
 
 
+## Dokumentation (Erweiterte Pipeline)
+
+Für die erweiterte Pipeline (`run_new.py`) mit Chunking, Azure OpenAI und Triple Utility Filter:
+
+- **[docs/QUICKSTART.md](docs/QUICKSTART.md)** – Schnellanleitung mit fertigem Befehl zum sofortigen Loslegen
+- **[docs/DOCUMENTATION.md](docs/DOCUMENTATION.md)** – Vollständige Projektdokumentation aller Skripte, Argumente, Module und Evaluationsergebnisse
+
 ## Evaluation
 
 Please refer to `evaluate` folder and its README.

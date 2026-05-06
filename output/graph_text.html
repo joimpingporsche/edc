@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Graph Visualisierung</title>
+    <!-- Tailwind CSS für das Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Vis-Network für die Graph-Darstellung -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style>
+        body, html { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+        #mynetwork { width: 100%; height: 100%; }
+        /* Lade-Indikator */
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #4f46e5;
+            z-index: 10;
+            display: none;
+        }
+        /* Initiale Nachricht */
+        #initialMessage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #6b7280;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="flex flex-col h-screen bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Header-Bereich -->
+    <header class="bg-white shadow-md p-4 flex flex-wrap justify-between items-center z-10 gap-4">
+        <div>
+            <h1 class="text-xl font-bold text-indigo-700">Architektur Knowledge Graph</h1>
+            <p class="text-sm text-gray-500" id="stats">Warte auf Datei-Upload...</p>
+        </div>
+        <div class="flex gap-4 items-center">
+            <!-- Datei-Upload Input -->
+            <input type="file" id="fileInput" accept=".txt" class="block w-full text-sm text-gray-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-md file:border-0
+              file:text-sm file:font-semibold
+              file:bg-indigo-50 file:text-indigo-700
+              hover:file:bg-indigo-100 cursor-pointer transition">
+            
+            <input type="text" id="searchInput" placeholder="Knoten suchen..." class="border border-gray-300 rounded-md px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+            <button id="resetView" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1.5 rounded-md shadow transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>Zentrieren</button>
+        </div>
+    </header>
+
+    <!-- Graph Container -->
+    <main class="flex-grow relative bg-gray-100 border-t border-gray-200">
+        <div id="initialMessage">
+            <svg class="mx-auto h-12 w-12 text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h3 class="mt-2 text-lg font-medium text-gray-900">Keine Daten vorhanden</h3>
+            <p class="mt-1 text-sm text-gray-500">Bitte lade oben rechts eine .txt Datei mit Tripel-Daten hoch.</p>
+        </div>
+        <div id="loading">Graph wird berechnet und gerendert...</div>
+        <div id="mynetwork"></div>
+    </main>
+
+    <script>
+        let network = null;
+        let graphData = null;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileInput = document.getElementById('fileInput');
+            const searchInput = document.getElementById('searchInput');
+            const resetBtn = document.getElementById('resetView');
+            const initialMessage = document.getElementById('initialMessage');
+            const loadingIndicator = document.getElementById('loading');
+
+            // 1. Datei-Upload Event Listener
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (!file) return;
+
+                // UI Status aktualisieren
+                initialMessage.style.display = 'none';
+                loadingIndicator.style.display = 'block';
+                document.getElementById('stats').innerText = `Lade und parse Datei: ${file.name}...`;
+
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const rawText = event.target.result;
+                    setTimeout(() => processData(rawText), 50); // Kleines Delay, damit der UI Loader rendern kann
+                };
+                reader.readAsText(file);
+            });
+
+            // 2. Daten verarbeiten und Graph bauen
+            function processData(rawText) {
+                const lines = rawText.split('\n');
+                
+                const nodesMap = new Map();
+                const edgesData = [];
+                const degrees = {};
+
+                lines.forEach(line => {
+                    const trimmed = line.trim();
+                    // Überspringe leere Zeilen oder leere Listen
+                    if (!trimmed || trimmed === '[]') return;
+                    
+                    try {
+                        // Python Listen-Syntax zu JSON umwandeln (einfache Anführungszeichen durch doppelte ersetzen)
+                        const jsonStr = trimmed.replace(/'/g, '"');
+                        const triplesArray = JSON.parse(jsonStr);
+                        
+                        triplesArray.forEach(triple => {
+                            if (triple.length === 3) {
+                                const [subj, pred, obj] = triple;
+                                
+                                // Grade zählen (wie oft ist ein Knoten verbunden)
+                                degrees[subj] = (degrees[subj] || 0) + 1;
+                                degrees[obj] = (degrees[obj] || 0) + 1;
+
+                                // Setze Knoten in Map (um Duplikate zu vermeiden)
+                                if (!nodesMap.has(subj)) nodesMap.set(subj, { id: subj, label: subj.replace(/_/g, ' ') });
+                                if (!nodesMap.has(obj)) nodesMap.set(obj, { id: obj, label: obj.replace(/_/g, ' ') });
+                                
+                                // Füge Kante hinzu
+                                edgesData.push({
+                                    from: subj,
+                                    to: obj,
+                                    label: pred.replace(/_/g, ' '),
+                                    font: { align: 'middle', size: 10, color: '#6b7280' },
+                                    color: { color: '#9ca3af', highlight: '#6366f1' },
+                                    arrows: 'to'
+                                });
+                            }
+                        });
+                    } catch (e) {
+                        console.error("Fehler beim Parsen der Zeile:", line, e);
+                    }
+                });
+
+                // Knoten basierend auf ihrem Vernetzungsgrad (Degree) formatieren
+                const nodesData = Array.from(nodesMap.values()).map(node => {
+                    const degree = degrees[node.id] || 1;
+                    // Skaliere Schriftgröße und Box basierend auf Relevanz
+                    const fontSize = Math.min(14 + (degree * 1.5), 28);
+                    const isHub = degree > 5;
+                    
+                    return {
+                        ...node,
+                        shape: 'box',
+                        font: { face: 'Inter, sans-serif', size: fontSize },
+                        color: {
+                            background: isHub ? '#c7d2fe' : '#f3f4f6',
+                            border: isHub ? '#4f46e5' : '#d1d5db',
+                            highlight: { background: '#e0e7ff', border: '#4338ca' }
+                        },
+                        borderWidth: isHub ? 2 : 1,
+                        shadow: isHub
+                    };
+                });
+
+                // Statistik im Header aktualisieren
+                document.getElementById('stats').innerText = `${nodesData.length} Knoten | ${edgesData.length} Verbindungen`;
+
+                // 3. vis-network initialisieren
+                const container = document.getElementById('mynetwork');
+                graphData = {
+                    nodes: new vis.DataSet(nodesData),
+                    edges: new vis.DataSet(edgesData)
+                };
+                
+                const options = {
+                    physics: {
+                        forceAtlas2Based: {
+                            gravitationalConstant: -100,
+                            centralGravity: 0.01,
+                            springLength: 200,
+                            springConstant: 0.08,
+                            damping: 0.4
+                        },
+                        maxVelocity: 50,
+                        solver: 'forceAtlas2Based',
+                        timestep: 0.35,
+                        stabilization: {
+                            iterations: 150, // Graph vorab stabilisieren
+                            updateInterval: 25
+                        }
+                    },
+                    interaction: {
+                        hover: true,
+                        tooltipDelay: 200,
+                        zoomSpeed: 0.8
+                    },
+                    edges: {
+                        smooth: { type: 'continuous' }
+                    }
+                };
+
+                // Falls ein alter Graph existiert, diesen zerstören
+                if (network !== null) {
+                    network.destroy();
+                }
+
+                network = new vis.Network(container, graphData, options);
+
+                // UI Interaktionen freischalten
+                searchInput.disabled = false;
+                resetBtn.disabled = false;
+
+                // Verstecke Lade-Indikator, sobald Stabilisierung startet/endet
+                network.on("stabilizationIterationsDone", function () {
+                    loadingIndicator.style.display = 'none';
+                    network.setOptions({ physics: false }); // Physik abschalten für statische Ansicht
+                    network.fit();
+                });
+
+                // 4. Doppel-Klick für Fokus auf direkt verbundene Knoten
+                network.on("doubleClick", function (params) {
+                    if (params.nodes.length > 0) {
+                        const clickedNode = params.nodes[0];
+                        const connectedNodes = network.getConnectedNodes(clickedNode);
+                        const allowedNodes = new Set([...connectedNodes, clickedNode]);
+
+                        // Alle anderen Knoten ausblenden
+                        const allNodes = graphData.nodes.get();
+                        const updates = allNodes.map(node => ({
+                            id: node.id, 
+                            hidden: !allowedNodes.has(node.id)
+                        }));
+                        graphData.nodes.update(updates);
+                        
+                        // Ansicht auf die verbleibenden Knoten zentrieren
+                        network.fit({ nodes: Array.from(allowedNodes), animation: { duration: 500, easingFunction: 'easeInOutQuad' } });
+                    } else {
+                        // Doppelklick in den leeren Hintergrund setzt alles zurück
+                        resetGraphView();
+                    }
+                });
+            }
+
+            // 5. Interaktive Features (Suchen & Zentrieren)
+            searchInput.addEventListener('input', (e) => {
+                if (!graphData) return;
+                const term = e.target.value.toLowerCase();
+                const allNodes = graphData.nodes.get();
+                
+                allNodes.forEach(node => {
+                    if (term === '') {
+                        graphData.nodes.update({id: node.id, hidden: false});
+                    } else if (!node.label.toLowerCase().includes(term)) {
+                        graphData.nodes.update({id: node.id, hidden: true});
+                    } else {
+                        graphData.nodes.update({id: node.id, hidden: false});
+                    }
+                });
+            });
+
+            function resetGraphView() {
+                if (!graphData || !network) return;
+                searchInput.value = '';
+                const allNodes = graphData.nodes.get();
+                const updates = allNodes.map(node => ({ id: node.id, hidden: false }));
+                graphData.nodes.update(updates);
+                network.fit({ animation: { duration: 1000, easingFunction: 'easeInOutQuad' }});
+            }
+
+            resetBtn.addEventListener('click', resetGraphView);
+        });
+    </script>
+</body>
+</html>
